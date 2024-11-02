@@ -1,9 +1,11 @@
 "use client";
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { WordsPullUp } from "../Common/Animations/WordPullUp";
+import { motion } from "framer-motion";
+import { Icon } from "@iconify/react";
 
 export default function WelcomeSection() {
-	const roles = ["frontend", "backend", "mobile"];
+	const roles: Array<keyof typeof images> = ["frontend", "backend", "mobile"];
 	const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
 
 	useEffect(() => {
@@ -13,32 +15,48 @@ export default function WelcomeSection() {
 		return () => clearInterval(interval);
 	}, [roles.length]);
 
+	const images = {
+		frontend: "/assets/pc.svg",
+		backend: "/assets/server.svg",
+		mobile: "/assets/phone.svg",
+	};
+
+	const imageVariants = {
+		initial: { opacity: 0, scale: 0.8 },
+		animate: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
+		exit: { opacity: 0, scale: 0.8, transition: { duration: 0.5 } },
+	};
+
 	return (
-		<section
-			className="h-screen w-full"
-			style={{
-				backgroundImage: "url('/assets/Gradient.png')",
-				backgroundSize: "cover",
-				backgroundPosition: "center",
-			}}
-		>
+		<section className="h-screen w-full">
 			<div className="flex flex-col w-10/12 pt-20 mx-auto">
-				<h1 className="text-8xl">Hi, I'm Raphaël</h1>
-				<div className="overflow-hidden h-24">
-					<AnimatePresence>
-						<motion.h2
-							key={roles[currentRoleIndex]}
-							className="text-8xl"
-							initial={{ y: "100%", opacity: 0 }}
-							animate={{ y: "0%", opacity: 1 }}
-							exit={{ y: "-100%", opacity: 0 }}
-							transition={{ duration: 0.5 }}
-						>
-							{roles[currentRoleIndex]}
-						</motion.h2>
-					</AnimatePresence>
-					<div>developer</div>
+				<h1 className="text-8xl">👋 Hi, I&apos;m Raphaël</h1>
+				<div className="flex pt-4 items-center ml-10">
+					<p className="text-8xl pr-4">developer</p>
+					<WordsPullUp
+						key={currentRoleIndex}
+						text={roles[currentRoleIndex]}
+						className="text-8xl"
+					/>
 				</div>
+				<div className="flex justify-center mt-10">
+					<motion.img
+						key={currentRoleIndex}
+						src={images[roles[currentRoleIndex]]}
+						variants={imageVariants}
+						initial="initial"
+						animate="animate"
+						exit="exit"
+						className="w-1/3 h-auto"
+					/>
+				</div>
+			</div>
+
+			<div className="absolute bottom-0 w-full text-center">
+				<Icon
+					icon="akar-icons:chevron-down"
+					className="text-4xl mt-10 animate-bounce mx-auto"
+				/>
 			</div>
 		</section>
 	);
