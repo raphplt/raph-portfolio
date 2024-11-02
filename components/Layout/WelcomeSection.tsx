@@ -1,19 +1,23 @@
 "use client";
 import { useState, useEffect } from "react";
 import { WordsPullUp } from "../Common/Animations/WordPullUp";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Icon } from "@iconify/react";
+import Switch from "../Common/Animations/Switch";
 
 export default function WelcomeSection() {
-	const roles: Array<keyof typeof images> = ["frontend", "backend", "mobile"];
+	const roles = ["frontend", "backend", "mobile"];
 	const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
+	const [isPaused, setIsPaused] = useState(false); // State to manage pause
 
 	useEffect(() => {
-		const interval = setInterval(() => {
-			setCurrentRoleIndex((prevIndex) => (prevIndex + 1) % roles.length);
-		}, 2000);
-		return () => clearInterval(interval);
-	}, [roles.length]);
+		if (!isPaused) {
+			const interval = setInterval(() => {
+				setCurrentRoleIndex((prevIndex) => (prevIndex + 1) % roles.length);
+			}, 2000); // Synchronize interval with animation duration
+			return () => clearInterval(interval);
+		}
+	}, [roles.length, isPaused]);
 
 	const images = {
 		frontend: "/assets/pc.svg",
@@ -22,10 +26,12 @@ export default function WelcomeSection() {
 	};
 
 	const imageVariants = {
-		initial: { opacity: 0, scale: 0.8 },
-		animate: { opacity: 1, scale: 1, transition: { duration: 0.5 } },
-		exit: { opacity: 0, scale: 0.8, transition: { duration: 0.5 } },
+		initial: { opacity: 0, x: 100 },
+		animate: { opacity: 1, x: 0, transition: { duration: 0.5 } },
+		exit: { opacity: 0, x: -100, transition: { duration: 0.5 } },
 	};
+
+	const handleToggle = () => setIsPaused(!isPaused); // Toggle pause state
 
 	return (
 		<section className="h-screen w-full">
@@ -40,19 +46,32 @@ export default function WelcomeSection() {
 					/>
 				</div>
 				<div className="flex justify-center mt-10">
-					<motion.img
-						key={currentRoleIndex}
-						src={images[roles[currentRoleIndex]]}
-						variants={imageVariants}
-						initial="initial"
-						animate="animate"
-						exit="exit"
-						className="w-1/3 h-auto"
-					/>
+					<Switch isOn={!isPaused} handleToggle={handleToggle} />
+				</div>
+				<div className="flex justify-center mt-10">
+					<AnimatePresence mode="wait">
+						<motion.img
+							key={currentRoleIndex}
+							src={images[roles[currentRoleIndex]]}
+							alt={roles[currentRoleIndex]}
+							variants={imageVariants}
+							initial="initial"
+							animate="animate"
+							exit="exit"
+							className="w-1/3 h-auto"
+						/>
+					</AnimatePresence>
 				</div>
 			</div>
 
-			<div className="absolute bottom-0 w-full text-center">
+			<div
+				className="absolute bottom-0 w-full text-center"
+				onClick={() => {
+					document.getElementById("skills")?.scrollIntoView({
+						behavior: "smooth",
+					});
+				}}
+			>
 				<Icon
 					icon="akar-icons:chevron-down"
 					className="text-4xl mt-10 animate-bounce mx-auto"
