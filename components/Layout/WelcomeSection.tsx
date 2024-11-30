@@ -36,18 +36,18 @@ export default function WelcomeSection() {
 	return (
 		<section className="h-screen w-full">
 			<div className="flex flex-col w-10/12 pt-20 mx-auto">
-				<h1 className="text-8xl">👋 Hi, I&apos;m Raphaël</h1>
+				<h1 className="text-7xl">👋 Hi, I&apos;m Raphaël</h1>
 				<div className="flex pt-4 items-center ml-10">
-					<p className="text-8xl pr-4">developer</p>
+					<p className="text-7xl pr-4">developer</p>
 					<WordsPullUp
 						key={currentRoleIndex}
 						text={roles[currentRoleIndex]}
-						className="text-8xl"
+						className="text-7xl"
 					/>
 				</div>
-				<div className="flex justify-center mt-10">
+				{/* <div className="flex justify-center mt-10">
 					<Switch isOn={!isPaused} handleToggle={handleToggle} />
-				</div>
+				</div> */}
 				<div className="flex justify-center mt-10">
 					<AnimatePresence mode="wait">
 						<motion.img
