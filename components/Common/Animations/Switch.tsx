@@ -1,7 +1,12 @@
 import { motion } from "framer-motion";
-import { useState } from "react";
 
-export default function Switch({ isOn, handleToggle }) {
+export default function Switch({
+	isOn,
+	handleToggle,
+}: {
+	isOn: boolean;
+	handleToggle: () => void;
+}) {
 	return (
 		<div
 			className={`flex items-center cursor-pointer w-16 h-8 p-1 rounded-full ${
