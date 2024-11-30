@@ -2,6 +2,7 @@
 import { ProjectType } from "@/type/project";
 import React from "react";
 import ProjectImage from "./ProjectImage";
+import { Button } from "@nextui-org/react";
 
 const Project = ({
 	project,
@@ -28,12 +29,13 @@ const Project = ({
 				<p className="text-center text-pretty text-gray-800 w-10/12 mx-auto">
 					{project.description}
 				</p>
-				<button
-					className="font-semibold text-lg px-5 py-2 bg-purple-600 w-fit text-white mx-auto rounded-2xl"
+				<Button
+					className="w-fit mx-auto"
+					color="secondary"
 					onClick={() => window.open(project.url, "_blank")}
 				>
 					Découvrir
-				</button>
+				</Button>
 			</div>
 		</div>
 	);

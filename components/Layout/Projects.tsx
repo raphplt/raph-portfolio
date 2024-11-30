@@ -25,7 +25,7 @@ const Projects = () => {
 	console.log(projects);
 
 	return (
-		<div className="flex flex-col gap-10">
+		<div className="flex flex-col gap-10" id="projects">
 			{projects.map((project, index) => (
 				<Project key={project.id} project={project} inverted={index % 2 === 0} />
 			))}

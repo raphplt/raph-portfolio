@@ -26,13 +26,14 @@ const ProgressBar = () => {
 	}, []);
 
 	return (
-		<div
-			className="fixed bottom-5 w-[95%] right-0 left-0 mx-auto h-6 bg-gradient-to-l 
-        from-[#ff0080] to-[#7928ca] rounded-2xl"
-			style={{
-				width: `${scrollDistance}%`,
-			}}
-		></div>
+		<div className="fixed bottom-5 left-0 right-0 w-[95%] mx-auto h-4 bg-gray-200 rounded-full overflow-hidden">
+			<div
+				className={`h-full animate-advanced-rgb`}
+				style={{
+					width: `${scrollDistance}%`,
+				}}
+			></div>
+		</div>
 	);
 };
 
