@@ -1,25 +1,41 @@
 "use client";
+import { useState } from "react";
 import { Button, Link } from "@heroui/react";
-import { Icon } from "@iconify/react/dist/iconify.js";
+import { Icon } from "@iconify/react";
 import Image from "next/image";
 import React from "react";
 
 const Header = () => {
+	const [isOpen, setIsOpen] = useState(false);
+
+	const toggleMenu = () => {
+		setIsOpen(!isOpen);
+	};
+
+	const closeMenu = () => {
+		setIsOpen(false);
+	};
+
 	return (
-		<div className="flex flex-row items-center justify-between fixed top-0 w-full px-20 h-16 shadow-md bg-white/30 z-50">
-			<div className="flex flex-row items-center gap-x-2">
-				<Image src={"/Logo.png"} alt="Logo" width={50} height={50} />
+		<div className="fixed top-0 w-full h-16 shadow-md bg-white/30 z-50 px-6 md:px-20 flex items-center justify-between">
+			<div className="flex items-center gap-x-2">
+				<Image src="/Logo.png" alt="Logo" width={50} height={50} />
 				<p className="font-bold">Raphael Plassart</p>
 			</div>
-			<nav className="flex flex-row gap-x-10">
-				<Link href="/about" className="text-black font-semibold">
+
+			{/* Desktop Navigation */}
+			<nav className="hidden md:flex gap-x-10">
+				<Link href="#home" className="text-black font-semibold">
+					Accueil
+				</Link>
+				<Link href="#about" className="text-black font-semibold">
 					A propos
 				</Link>
-				<Link href="/projects" className="text-black font-semibold">
+				<Link href="#projects" className="text-black font-semibold">
 					Mes projets
 				</Link>
-				<Link href="/projects" className="text-black font-semibold">
-					Stack
+				<Link href="#contact" className="text-black font-semibold">
+					Formulaire de contact
 				</Link>
 				<Button
 					as={Link}
@@ -28,9 +44,48 @@ const Header = () => {
 					variant="bordered"
 					endContent={<Icon icon="lucide:send" />}
 				>
-					Contact
+					Me contacter
 				</Button>
 			</nav>
+
+			{/* Mobile Menu Button */}
+			<button className="md:hidden" onClick={toggleMenu}>
+				<Icon icon="mdi:menu" className="text-3xl" />
+			</button>
+
+			{/* Mobile Menu Overlay */}
+			{isOpen && (
+				<div className="fixed inset-0 bg-white flex flex-col items-center justify-center text-white text-xl space-y-6 z-50">
+					<button
+						className="absolute top-6 right-6 text-white text-3xl"
+						onClick={closeMenu}
+					>
+						<Icon icon="mdi:close" />
+					</button>
+					<Link href="#home" onClick={closeMenu}>
+						Accueil
+					</Link>
+					<Link href="#about" onClick={closeMenu}>
+						A propos
+					</Link>
+					<Link href="#projects" onClick={closeMenu}>
+						Mes projets
+					</Link>
+					<Link href="#contact" onClick={closeMenu}>
+						Formulaire de contact
+					</Link>
+					<Button
+						as={Link}
+						href="mailto:raphael.plassart@gmail.com"
+						color="primary"
+						variant="bordered"
+						endContent={<Icon icon="lucide:send" />}
+						onClick={closeMenu}
+					>
+						Me contacter
+					</Button>
+				</div>
+			)}
 		</div>
 	);
 };

@@ -89,8 +89,11 @@ const AboutMe = () => {
 	}, []);
 
 	return (
-		<section className="w-full px-4 flex flex-col items-center justify-center py-10 lg:pb-96 mt-10" id="about">
-			<h1 className="text-4xl font-bold text-center mb-12 text-default-800">
+		<section
+			className="w-full px-4 flex flex-col items-center justify-center py-10 lg:pb-96 mt-10"
+			id="about"
+		>
+			<h1 className="text-2xl lg:text-4xl 2xl:text-4xl font-bold text-center mb-12 text-default-800">
 				À propos de moi
 			</h1>
 

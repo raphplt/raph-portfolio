@@ -90,8 +90,8 @@ const Projects = () => {
 	});
 
 	return (
-		<div className="mb-20">
-			<h2 className="text-4xl font-bold text-center mb-10 text-default-800">
+		<div className="mb-20" id="projects">
+			<h2 className="text-2xl lg:text-4xl 2xl:text-4xl font-bold text-center mb-10 text-default-800">
 				Mes projets
 			</h2>
 

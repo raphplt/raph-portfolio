@@ -19,15 +19,15 @@ const Contact = () => {
 	];
 
 	return (
-		<div className="py-20">
-			<h2 className="text-4xl font-bold text-center mb-10 text-default-800">
+		<div className="py-20" id="contact">
+			<h2 className="text-2xl lg:text-4xl 2xl:text-4xl font-bold text-center mb-10 text-default-800">
 				Un projet, une question, un café ?
 			</h2>
 
 			<FormContext value={{}}>
 				<Form
 					onSubmit={(e) => e.preventDefault()}
-					className="w-1/2 xl:w-1/3 mx-auto py-4 flex flex-col gap-4"
+					className="w-10/12 xl:w-1/3 mx-auto py-4 flex flex-col gap-4"
 				>
 					<div className="flex flex-row gap-2 items-center w-full">
 						<Input label="Nom" name="name" />

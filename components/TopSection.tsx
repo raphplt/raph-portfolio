@@ -45,16 +45,23 @@ const TopSection = () => {
 	}, []);
 
 	return (
-		<section className="flex flex-row items-center justify-between lg:h-screen bg-gradient-to-r from-white via-gray-100 to-gray-300 relative overflow-hidden">
-			<div className="flex flex-col gap-y-6 px-20 xl:px-32">
-				<h2 className="text-6xl font-semibold">👋 Hello, I’m</h2>
-				<h1 className="inline font-semibold from-secondary to-tertiary text-[clamp(1rem,10vw,2rem)] sm:text-[clamp(1rem,10vw,3rem)] lg:text-7xl bg-clip-text text-transparent bg-gradient-to-b">
+		<section
+			id="home"
+			className="flex flex-col xl:flex-row items-center justify-around xl:justify-between min-h-screen xl:bg-gradient-to-r from-white via-gray-100 to-gray-300 relative overflow-hidden"
+		>
+			<div className="flex flex-col gap-y-6 2xl:px-32 px-4">
+				<h2 className="text-2xl lg:text-4xl 2xl:text-6xl font-semibold">
+					👋 Hello, I’m
+				</h2>
+				<h1 className="inline font-semibold from-secondary to-tertiary text-[clamp(1rem,10vw,2rem)] sm:text-[clamp(1rem,10vw,3rem)] text-2xl lg:text-5xl 2xl:text-6xl bg-clip-text text-transparent bg-gradient-to-b">
 					Raphael Plassart
 				</h1>
-				<h2 className="text-6xl font-semibold">Full Stack Developer</h2>
+				<h2 className="text-2xl lg:text-4xl 2xl:text-6xl font-semibold">
+					Full Stack Developer
+				</h2>
 				<ListTechnos />
 
-				<div className="flex flex-row gap-x-4 mt-10 xl:mt-12">
+				<div className="flex flex-row gap-x-4 mt-2 xl:mt-12">
 					<Button
 						color="secondary"
 						className="text-white"

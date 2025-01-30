@@ -4,7 +4,7 @@ import React from "react";
 
 const ListTechnos = () => {
 	return (
-		<div className="flex flex-row gap-x-2">
+		<div className="flex flex-row gap-2 flex-wrap">
 			<Chip
 				color="primary"
 				variant="bordered"

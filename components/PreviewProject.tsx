@@ -26,7 +26,7 @@ const PreviewProject = ({
 				<Icon icon={icon} className="text-black mr-2" width={20} />
 				<h4 className="text-black font-semibold">{title}</h4>
 			</CardHeader>
-			<CardBody className="flex flex-col gap-y-1 w-96 lg:min-w-[500px]">
+			<CardBody className="flex flex-col gap-y-1 w-80 xl:w-96 2xl:min-w-[500px]">
 				<p className="text-default-700 text-sm">{description}</p>
 				<ul className="flex flex-wrap gap-x-2 py-2">
 					{technologies.map((tech) => (
@@ -41,7 +41,7 @@ const PreviewProject = ({
 						alt={title}
 						width={500}
 						height={500}
-						className="w-full h-44 lg:h-52 object-cover rounded-lg "
+						className="w-full h-40 xl:h-48 2xl:h-52 object-cover rounded-lg"
 					/>
 				) : (
 					<div className="w-32 h-32 bg-gray-200"></div>
