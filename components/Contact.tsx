@@ -27,7 +27,7 @@ const Contact = () => {
 			<FormContext value={{}}>
 				<Form
 					onSubmit={(e) => e.preventDefault()}
-					className="w-1/2 mx-auto py-4 flex flex-col gap-4"
+					className="w-1/2 xl:w-1/3 mx-auto py-4 flex flex-col gap-4"
 				>
 					<div className="flex flex-row gap-2 items-center w-full">
 						<Input label="Nom" name="name" />

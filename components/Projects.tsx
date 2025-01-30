@@ -95,7 +95,7 @@ const Projects = () => {
 				Mes projets
 			</h2>
 
-			<div className="flex flex-col items-start justify-start py-2 mb-2 w-2/3 mx-auto">
+			<div className="flex flex-col gap-2 items-start justify-start py-2 mb-2 w-2/3 mx-auto">
 				<Input
 					placeholder="Rechercher un projet..."
 					startContent={<Icon icon="mdi:search" className="text-default-500" />}
@@ -123,7 +123,7 @@ const Projects = () => {
 				</div>
 			</div>
 
-			<div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 w-2/3 mx-auto mt-4">
+			<div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 w-2/3 mx-auto mt-6">
 				{filteredProjects.map((project, index) => (
 					<ProjectItem key={index} {...project} />
 				))}

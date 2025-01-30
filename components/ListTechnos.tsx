@@ -7,43 +7,43 @@ const ListTechnos = () => {
 		<div className="flex flex-row gap-x-2">
 			<Chip
 				color="primary"
+				variant="bordered"
 				startContent={<Icon icon="ri:nextjs-fill" />}
-				className="text-white "
 			>
 				NextJS
 			</Chip>
 			<Chip
 				color="secondary"
+				variant="bordered"
 				startContent={<Icon icon="logos:react" />}
-				className="text-white "
 			>
 				ReactNative
 			</Chip>
 			<Chip
-				color="warning"
+				color="primary"
 				startContent={<Icon icon="logos:nestjs" />}
-				className="text-white "
+				variant="bordered"
 			>
 				NestJS
 			</Chip>
 			<Chip
-				color="danger"
+				color="secondary"
 				startContent={<Icon icon="logos:symfony" />}
-				className="text-white "
+				variant="bordered"
 			>
 				Symfony
 			</Chip>
 			<Chip
 				color="primary"
 				startContent={<Icon icon="logos:mysql" />}
-				className="text-white "
+				variant="bordered"
 			>
 				MySQL
 			</Chip>
 			<Chip
 				color="secondary"
 				startContent={<Icon icon="logos:postgresql" />}
-				className="text-white "
+				variant="bordered"
 			>
 				PostgreSQL
 			</Chip>

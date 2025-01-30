@@ -66,7 +66,6 @@ const AboutMe = () => {
 	const [selectedEvent, setSelectedEvent] = useState<TimelineItem | null>(null);
 	const timelineRef = useRef<HTMLDivElement>(null);
 
-	// Gère l'ouverture du modal
 	const handleOpen = (eventData: TimelineItem) => {
 		setSelectedEvent(eventData);
 	};
@@ -74,7 +73,6 @@ const AboutMe = () => {
 	const handleClose = () => {
 		setSelectedEvent(null);
 	};
-	// Gère la fermeture du modal
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -91,20 +89,17 @@ const AboutMe = () => {
 	}, []);
 
 	return (
-		<section className="w-full px-4 flex flex-col items-center justify-center py-10">
+		<section className="w-full px-4 flex flex-col items-center justify-center py-10 lg:pb-96 mt-10" id="about">
 			<h1 className="text-4xl font-bold text-center mb-12 text-default-800">
 				À propos de moi
 			</h1>
 
-			{/* Container principal de la timeline (scroll horizontal) */}
 			<div
 				ref={timelineRef}
 				className="relative w-full overflow-x-auto overflow-y-hidden py-20 scrollbar-hide"
 			>
-				{/* Ligne de la frise : position absolue ou relative */}
 				<div className="absolute top-1/2 left-0 h-1 w-[200%] bg-slate-200 -translate-y-1/2" />
 
-				{/* Contenu horizontal (les étapes) */}
 				<div className="relative flex items-center space-x-8 w-max pl-80">
 					{timelineData.map((item) => (
 						<Tooltip
@@ -119,15 +114,13 @@ const AboutMe = () => {
 						>
 							<motion.div
 								key={item.id}
-								className="relative min-w-[300px] snap-center flex flex-col items-center cursor-pointer"
-								// Animations Framer Motion
+								className="relative min-w-[300px] lg:min-w-[500px] snap-center flex flex-col items-center cursor-pointer"
 								initial={{ opacity: 0, x: 100 }}
 								whileInView={{ opacity: 1, x: 0 }}
 								transition={{ duration: 0.5 }}
 								viewport={{ once: true, amount: 0.6 }}
 								onClick={() => handleOpen(item)}
 							>
-								{/* Le "point" sur la ligne */}
 								<div className="flex flex-col items-center">
 									<div className="relative z-10 mb-4 flex items-center justify-center bg-white rounded-full p-3 shadow-lg">
 										{item.icon}
@@ -143,7 +136,6 @@ const AboutMe = () => {
 				</div>
 			</div>
 
-			{/* Modal pour afficher les détails de chaque événement */}
 			<Modal isOpen={!!selectedEvent} onClose={handleClose} className="p-4">
 				<ModalHeader className="flex justify-between items-center">
 					<p className="text-xl font-bold">{selectedEvent?.title}</p>
