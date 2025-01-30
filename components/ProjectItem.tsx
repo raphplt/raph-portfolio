@@ -1,4 +1,5 @@
-import { Card, CardBody, Chip } from "@heroui/react";
+import { Card, CardBody, CardHeader, Chip } from "@heroui/react";
+import { Icon } from "@iconify/react/dist/iconify.js";
 import React from "react";
 
 type Props = {
@@ -6,20 +7,25 @@ type Props = {
 	description: string;
 	technologies: string[];
 	image: string;
-	className?: string;
+	icon: string;
+	link: string;
 };
 
-const PreviewProject = ({
+const ProjectItem = ({
 	title,
 	description,
 	technologies,
 	image,
-	className,
+	icon,
+	link,
 }: Props) => {
 	return (
-		<Card isHoverable className={className}>
-			<CardBody className="flex flex-col gap-y-1 w-72">
+		<Card isHoverable>
+			<CardHeader>
+				<Icon icon={icon} className="text-black" width={20} />
 				<h4 className="text-black font-semibold">{title}</h4>
+			</CardHeader>
+			<CardBody>
 				<p className="text-default-700 text-sm">{description}</p>
 				<ul className="flex flex-wrap gap-x-2 py-1">
 					{technologies.map((tech) => (
@@ -32,7 +38,7 @@ const PreviewProject = ({
 					<img
 						src={image}
 						alt={title}
-						className="w-full h-48 object-cover rounded-lg"
+						className="w-full h-48 object-cover rounded-lg mt-1"
 					/>
 				) : (
 					<div className="w-32 h-32 bg-gray-200"></div>
@@ -42,4 +48,4 @@ const PreviewProject = ({
 	);
 };
 
-export default PreviewProject;
+export default ProjectItem;
