@@ -16,23 +16,12 @@ const Footer = () => {
 				</div>
 				<nav className="flex flex-col md:flex-row items-center gap-6">
 					<a href="#home" className="text-sm hover:text-gray-400">
-						Accueil
+						A propos
 					</a>
 					<a href="#analyse" className="text-sm hover:text-gray-400">
-						Analyse marketing gratuite
+						Mes projets
 					</a>
-
-					<Popover>
-						<PopoverTrigger>
-							<a className="text-sm hover:text-gray-400">Blog</a>
-						</PopoverTrigger>
-						<PopoverContent>Bientôt disponible !</PopoverContent>
-					</Popover>
-
-					<a
-						href="mailto:waheb.moad@gmail.com"
-						className="text-sm hover:text-gray-400"
-					>
+					<a href="#analyse" className="text-sm hover:text-gray-400">
 						Contact
 					</a>
 				</nav>

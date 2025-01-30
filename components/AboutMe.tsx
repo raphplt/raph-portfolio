@@ -1,6 +1,6 @@
 import React, { JSX, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { Button, Modal, ModalBody, ModalHeader } from "@heroui/react";
+import { Button, Modal, ModalBody, ModalHeader, Tooltip } from "@heroui/react";
 import { Icon } from "@iconify/react/dist/iconify.js";
 
 interface TimelineItem {
@@ -14,51 +14,51 @@ interface TimelineItem {
 const timelineData: TimelineItem[] = [
 	{
 		id: 1,
-		title: "Formation Web",
-		date: "2018 - 2019",
+		title: "ETNA - APAE",
+		date: "2022-2023",
 		icon: <Icon icon="mdi:academic-cap" className="h-8 w-8 text-primary" />,
 		details:
-			"Diplôme en développement web avec une spécialisation Front-end (HTML, CSS, JavaScript, React).",
+			"Année de préparation accélérée à l'ETNA, spécialisation en développement web.",
 	},
 	{
 		id: 2,
-		title: "Formation FullStack",
-		date: "2019 - 2020",
+		title: "ETNA - Bachelor",
+		date: "2023 - 2024",
 		icon: <Icon icon="mdi:code-braces" className="h-8 w-8 text-primary" />,
 		details:
-			"Approfondissement en Node.js, Express, MongoDB, ainsi que la gestion de projets complexes.",
+			"Approfondissement en React, NextJS, ExpressJS, SQL ainsi que la gestion de projets complexes.",
 	},
 	{
 		id: 3,
-		title: "Expérience Pro #1",
-		date: "2020 - 2021",
-		icon: <Icon icon="mdi:briefcase" className="h-8 w-8 text-secondary" />,
+		title: "ETNA - Master",
+		date: "2023 - 2024",
+		icon: <Icon icon="mdi:code-braces" className="h-8 w-8 text-primary" />,
 		details:
-			"Développeur Front-End dans une startup spécialisée en e-commerce. Mise en place d’interfaces réactives et optimisées.",
+			"Forger une expertise en architecture logicielle, DevOps, sécurité informatique et management de projets. (en cours)",
 	},
 	{
 		id: 4,
-		title: "Expérience Pro #2",
-		date: "2021 - 2022",
+		title: "Mes Allocs",
+		date: "2023 - 2024",
 		icon: <Icon icon="mdi:briefcase" className="h-8 w-8 text-secondary" />,
 		details:
-			"Développeur Full-Stack dans une entreprise FinTech. Déploiement d’API, microservices et dashboards.",
+			"Année en alternance au sein de la Startup Mes Allocs, développement de plusieurs site web en VueJS et ExpressJS",
 	},
 	{
 		id: 5,
-		title: "Projet #1",
-		date: "2022",
-		icon: <Icon icon="mdi:lightbulb-on" className="h-8 w-8 text-tertiary" />,
+		title: "Tkorp",
+		date: "2024-2025",
+		icon: <Icon icon="mdi:briefcase" className="h-8 w-8 text-secondary" />,
 		details:
-			"Création d’une application mobile en React Native pour la gestion de tâches (to-do list) avec synchronisation cloud.",
+			"Année en alternance au sein de la Startup Tkorp, maintenance de la plateforme Evasion et conception du projet Pulse",
 	},
 	{
 		id: 6,
-		title: "Projet #2",
-		date: "2023",
+		title: "Melios",
+		date: "2024-2025",
 		icon: <Icon icon="mdi:lightbulb-on" className="h-8 w-8 text-tertiary" />,
 		details:
-			"Refonte d’un site e-commerce avec Next.js et Tailwind, focus sur l’accessibilité et le SEO.",
+			"Projet entrepreneurial de développement d'une application mobile de gestion de tâches et de récompenses.",
 	},
 ];
 
@@ -92,42 +92,53 @@ const AboutMe = () => {
 
 	return (
 		<section className="w-full px-4 flex flex-col items-center justify-center py-10">
-			<h1 className="text-4xl font-bold text-center mb-10 text-default-800">
+			<h1 className="text-4xl font-bold text-center mb-12 text-default-800">
 				À propos de moi
 			</h1>
 
 			{/* Container principal de la timeline (scroll horizontal) */}
 			<div
 				ref={timelineRef}
-				className="relative w-full overflow-x-auto overflow-y-hidden py-24 scrollbar-hide"
+				className="relative w-full overflow-x-auto overflow-y-hidden py-20 scrollbar-hide"
 			>
 				{/* Ligne de la frise : position absolue ou relative */}
 				<div className="absolute top-1/2 left-0 h-1 w-[200%] bg-slate-200 -translate-y-1/2" />
 
 				{/* Contenu horizontal (les étapes) */}
-				<div className="relative flex items-center space-x-8 w-max pl-24">
+				<div className="relative flex items-center space-x-8 w-max pl-80">
 					{timelineData.map((item) => (
-						<motion.div
+						<Tooltip
+							content={
+								<div className="p-2">
+									<p className="text-lg font-semibold text-primary">{item.title}</p>
+									<p className="text-sm text-default-900 opacity-80">{item.date}</p>
+									<p className="text-default-500">{item.details}</p>
+								</div>
+							}
 							key={item.id}
-							className="relative min-w-[300px] snap-center flex flex-col items-center cursor-pointer"
-							// Animations Framer Motion
-							initial={{ opacity: 0, x: 100 }}
-							whileInView={{ opacity: 1, x: 0 }}
-							transition={{ duration: 0.5 }}
-							viewport={{ once: true, amount: 0.6 }}
-							onClick={() => handleOpen(item)}
 						>
-							{/* Le "point" sur la ligne */}
-							<div className="flex flex-col items-center">
-								<div className="relative z-10 mb-4 flex items-center justify-center bg-white rounded-full p-3 shadow-lg">
-									{item.icon}
+							<motion.div
+								key={item.id}
+								className="relative min-w-[300px] snap-center flex flex-col items-center cursor-pointer"
+								// Animations Framer Motion
+								initial={{ opacity: 0, x: 100 }}
+								whileInView={{ opacity: 1, x: 0 }}
+								transition={{ duration: 0.5 }}
+								viewport={{ once: true, amount: 0.6 }}
+								onClick={() => handleOpen(item)}
+							>
+								{/* Le "point" sur la ligne */}
+								<div className="flex flex-col items-center">
+									<div className="relative z-10 mb-4 flex items-center justify-center bg-white rounded-full p-3 shadow-lg">
+										{item.icon}
+									</div>
+									<div className="text-center">
+										<h3 className="text-lg font-semibold text-primary">{item.title}</h3>
+										<p className="text-sm text-foreground opacity-80">{item.date}</p>
+									</div>
 								</div>
-								<div className="text-center">
-									<h3 className="text-lg font-semibold text-primary">{item.title}</h3>
-									<p className="text-sm text-foreground opacity-80">{item.date}</p>
-								</div>
-							</div>
-						</motion.div>
+							</motion.div>
+						</Tooltip>
 					))}
 				</div>
 			</div>

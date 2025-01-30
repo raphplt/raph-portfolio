@@ -1,5 +1,7 @@
 import { Card, CardBody, CardHeader, Chip } from "@heroui/react";
 import { Icon } from "@iconify/react/dist/iconify.js";
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 type Props = {
@@ -20,9 +22,9 @@ const ProjectItem = ({
 	link,
 }: Props) => {
 	return (
-		<Card isHoverable>
+		<Card isHoverable href={link} as={Link} target="_blank">
 			<CardHeader>
-				<Icon icon={icon} className="text-black" width={20} />
+				<Icon icon={icon} className="text-black mr-2" width={20} />
 				<h4 className="text-black font-semibold">{title}</h4>
 			</CardHeader>
 			<CardBody>
@@ -35,9 +37,11 @@ const ProjectItem = ({
 					))}
 				</ul>
 				{image ? (
-					<img
+					<Image
 						src={image}
 						alt={title}
+						width={300}
+						height={300}
 						className="w-full h-48 object-cover rounded-lg mt-1"
 					/>
 				) : (

@@ -18,9 +18,9 @@ const PreviewProject = ({
 }: Props) => {
 	return (
 		<Card isHoverable className={className}>
-			<CardBody className="flex flex-col gap-y-1 w-72">
+			<CardBody className="flex flex-col gap-y-1 w-96">
 				<h4 className="text-black font-semibold">{title}</h4>
-				<p className="text-default-700 text-sm">{description}</p>
+				<p className="text-default-500 text-sm">{description}</p>
 				<ul className="flex flex-wrap gap-x-2 py-1">
 					{technologies.map((tech) => (
 						<Chip key={tech} size="sm">
@@ -32,7 +32,7 @@ const PreviewProject = ({
 					<img
 						src={image}
 						alt={title}
-						className="w-full h-48 object-cover rounded-lg"
+						className="w-full h-44 object-cover rounded-lg border"
 					/>
 				) : (
 					<div className="w-32 h-32 bg-gray-200"></div>

@@ -3,6 +3,7 @@ import React from "react";
 import TopSection from "@/components/TopSection";
 import AboutMe from "@/components/AboutMe";
 import Projects from "@/components/Projects";
+import Contact from "@/components/Contact";
 
 const Home = () => {
 	return (
@@ -10,6 +11,7 @@ const Home = () => {
 			<TopSection />
 			<AboutMe />
 			<Projects />
+			<Contact />
 		</main>
 	);
 };
