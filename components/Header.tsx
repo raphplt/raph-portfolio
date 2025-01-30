@@ -62,16 +62,16 @@ const Header = () => {
 					>
 						<Icon icon="mdi:close" />
 					</button>
-					<Link href="#home" onClick={closeMenu}>
+					<Link href="#home" onPress={closeMenu}>
 						Accueil
 					</Link>
-					<Link href="#about" onClick={closeMenu}>
+					<Link href="#about" onPress={closeMenu}>
 						A propos
 					</Link>
-					<Link href="#projects" onClick={closeMenu}>
+					<Link href="#projects" onPress={closeMenu}>
 						Mes projets
 					</Link>
-					<Link href="#contact" onClick={closeMenu}>
+					<Link href="#contact" onPress={closeMenu}>
 						Formulaire de contact
 					</Link>
 					<Button
@@ -80,7 +80,7 @@ const Header = () => {
 						color="primary"
 						variant="bordered"
 						endContent={<Icon icon="lucide:send" />}
-						onClick={closeMenu}
+						onPress={closeMenu}
 					>
 						Me contacter
 					</Button>
