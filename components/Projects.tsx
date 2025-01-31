@@ -33,7 +33,7 @@ const ProjectsList = [
 	{
 		title: "Pokélab",
 		description:
-			"Une plateforme dédié aux fans de Pokémon GO, avec des informations sur chaque Pokémon et un calculateur.",
+			"Une plateforme dédiée aux fans de Pokémon GO, avec des informations sur chaque Pokémon et un calculateur.",
 		technologies: ["NextJS", "TailwindCSS", "Vercel"],
 		image: "/Pokélab.png",
 		icon: "mdi:pokeball",
