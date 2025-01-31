@@ -90,7 +90,7 @@ const AboutMe = () => {
 
 	return (
 		<section
-			className="w-full px-4 flex flex-col items-center justify-center py-10 lg:pb-96 mt-10"
+			className="w-full px-4 flex flex-col items-center justify-center py-10 xl:pb-40 2xl:pb-96 mt-10"
 			id="about"
 		>
 			<h1 className="text-2xl lg:text-4xl 2xl:text-4xl font-bold text-center mb-12 text-default-800">
@@ -117,7 +117,7 @@ const AboutMe = () => {
 						>
 							<motion.div
 								key={item.id}
-								className="relative min-w-[300px] lg:min-w-[500px] snap-center flex flex-col items-center cursor-pointer"
+								className="relative min-w-[300px] 2xl:min-w-[500px] snap-center flex flex-col items-center cursor-pointer"
 								initial={{ opacity: 0, x: 100 }}
 								whileInView={{ opacity: 1, x: 0 }}
 								transition={{ duration: 0.5 }}

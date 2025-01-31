@@ -49,7 +49,7 @@ const TopSection = () => {
 			id="home"
 			className="flex flex-col xl:flex-row items-center justify-around xl:justify-between min-h-screen xl:bg-gradient-to-r from-white via-gray-100 to-gray-300 relative overflow-hidden"
 		>
-			<div className="flex flex-col gap-y-6 2xl:px-32 px-4">
+			<div className="flex flex-col gap-y-6 xl:px-12 2xl:px-32 px-4">
 				<h2 className="text-2xl lg:text-4xl 2xl:text-6xl font-semibold">
 					👋 Hello, I’m
 				</h2>

@@ -17,24 +17,24 @@ const Header = () => {
 	};
 
 	return (
-		<div className="fixed top-0 w-full h-16 shadow-md bg-white/30 z-50 px-6 md:px-20 flex items-center justify-between">
+		<div className="fixed top-0 w-full h-16 shadow-md bg-white bg-opacity-90 z-50 px-6 md:px-20 flex items-center justify-between">
 			<div className="flex items-center gap-x-2">
 				<Image src="/Logo.png" alt="Logo" width={50} height={50} />
 				<p className="font-bold">Raphael Plassart</p>
 			</div>
 
 			{/* Desktop Navigation */}
-			<nav className="hidden md:flex gap-x-10">
-				<Link href="#home" className="text-black font-semibold">
+			<nav className="hidden md:flex gap-x-6">
+				<Link href="#home" className="text-black text-sm">
 					Accueil
 				</Link>
-				<Link href="#about" className="text-black font-semibold">
+				<Link href="#about" className="text-black text-sm">
 					A propos
 				</Link>
-				<Link href="#projects" className="text-black font-semibold">
+				<Link href="#projects" className="text-black text-sm">
 					Mes projets
 				</Link>
-				<Link href="#contact" className="text-black font-semibold">
+				<Link href="#contact" className="text-black text-sm">
 					Formulaire de contact
 				</Link>
 				<Button
