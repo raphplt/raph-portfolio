@@ -5,59 +5,96 @@ import React from "react";
 
 const Footer = () => {
 	return (
-		<footer className="bg-gray-800 text-white py-8">
-			<div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
-				<div className="mb-4 md:mb-0 flex flex-col gap-4">
-					<h1 className="text-2xl font-bold">Raphaël Plassart</h1>
-					<Image aria-hidden src="/Logo.png" alt="Logo" width={50} height={50} />
-					<p className="text-sm">
-						© {new Date().getFullYear()} - Tous droits réservés
-					</p>
-				</div>
-				<nav className="flex flex-col md:flex-row items-center gap-6">
-					<a href="#home" className="text-sm hover:text-gray-400">
-						A propos
-					</a>
-					<a href="#analyse" className="text-sm hover:text-gray-400">
-						Mes projets
-					</a>
-					<a href="#analyse" className="text-sm hover:text-gray-400">
-						Contact
-					</a>
-				</nav>
-				<div className="flex space-x-4 mt-4 md:mt-0">
-					<Popover>
-						<PopoverTrigger>
-							<div>
-								<Icon icon="mdi:facebook" className="text-2xl" />
-							</div>
-						</PopoverTrigger>
-						<PopoverContent>Bientôt disponible !</PopoverContent>
-					</Popover>
-					<Popover>
-						<PopoverTrigger>
-							<div>
-								<Icon icon="mdi:linkedin" className="text-2xl" />
-							</div>
-						</PopoverTrigger>
-						<PopoverContent>Bientôt disponible !</PopoverContent>
-					</Popover>
-					<Popover>
-						<PopoverTrigger>
-							<div>
-								<Icon icon="mdi:instagram" className="text-2xl" />
-							</div>
-						</PopoverTrigger>
-						<PopoverContent>Bientôt disponible !</PopoverContent>
-					</Popover>
-					<Popover>
-						<PopoverTrigger>
-							<div>
-								<Icon icon="mdi:mail" className="text-2xl" />
-							</div>
-						</PopoverTrigger>
-						<PopoverContent>Bientôt disponible !</PopoverContent>
-					</Popover>
+		<footer className="bg-black text-white py-12 relative">
+			<div className="container mx-auto px-4">
+				<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+					{/* Brand Section */}
+					<div className="flex flex-col items-center md:items-start gap-4">
+						<h1 className="text-2xl font-bold">Raphaël Plassart</h1>
+						<Image
+							aria-hidden
+							src="/Logo.png"
+							alt="Logo"
+							width={60}
+							height={60}
+							className="hover:scale-110 transition-transform duration-300"
+						/>
+						<p className="text-sm text-tea-green">
+							© {new Date().getFullYear()} - Tous droits réservés
+						</p>
+					</div>
+
+					{/* Navigation */}
+					<nav className="flex flex-col items-center gap-4">
+						<h2 className="text-lg font-semibold text-olivine mb-2">Navigation</h2>
+						<a
+							href="#home"
+							className="text-tea-green hover:text-olivine transition-colors"
+						>
+							A propos
+						</a>
+						<a
+							href="#projects"
+							className="text-tea-green hover:text-olivine transition-colors"
+						>
+							Mes projets
+						</a>
+						<a
+							href="#contact"
+							className="text-tea-green hover:text-olivine transition-colors"
+						>
+							Contact
+						</a>
+					</nav>
+
+					{/* Social Links */}
+					<div className="flex flex-col items-center gap-4">
+						<h2 className="text-lg font-semibold text-olivine mb-2">
+							Réseaux sociaux
+						</h2>
+						<div className="flex gap-6">
+							<Popover>
+								<PopoverTrigger>
+									<div className="hover:text-olivine transition-colors p-2 hover:scale-110">
+										<Icon icon="mdi:facebook" className="text-2xl" />
+									</div>
+								</PopoverTrigger>
+								<PopoverContent className="bg-parchment text-umber p-2">
+									Bientôt disponible !
+								</PopoverContent>
+							</Popover>
+							<Popover>
+								<PopoverTrigger>
+									<div className="hover:text-olivine transition-colors p-2 hover:scale-110">
+										<Icon icon="mdi:linkedin" className="text-2xl" />
+									</div>
+								</PopoverTrigger>
+								<PopoverContent className="bg-parchment text-umber p-2">
+									Bientôt disponible !
+								</PopoverContent>
+							</Popover>
+							<Popover>
+								<PopoverTrigger>
+									<div className="hover:text-olivine transition-colors p-2 hover:scale-110">
+										<Icon icon="mdi:instagram" className="text-2xl" />
+									</div>
+								</PopoverTrigger>
+								<PopoverContent className="bg-parchment text-umber p-2">
+									Bientôt disponible !
+								</PopoverContent>
+							</Popover>
+							<Popover>
+								<PopoverTrigger>
+									<div className="hover:text-olivine transition-colors p-2 hover:scale-110">
+										<Icon icon="mdi:mail" className="text-2xl" />
+									</div>
+								</PopoverTrigger>
+								<PopoverContent className="bg-parchment text-umber p-2">
+									Bientôt disponible !
+								</PopoverContent>
+							</Popover>
+						</div>
+					</div>
 				</div>
 			</div>
 		</footer>

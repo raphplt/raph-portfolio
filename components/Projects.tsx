@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import ProjectItem from "./ProjectItem";
-import { Chip, Input } from "@heroui/react";
+import { Card, CardBody, Chip, Input } from "@heroui/react";
 import { Icon } from "@iconify/react/dist/iconify.js";
+import { motion } from "framer-motion";
 
 const ProjectsList = [
 	{
@@ -12,6 +13,15 @@ const ProjectsList = [
 		image: "/Melios.png",
 		icon: "game-icons:greek-temple",
 		link: "https://linktr.ee/Melios_app",
+	},
+	{
+		title: "Penfolio",
+		description:
+			"Une plateforme de création de portfolios pour les étudiants et les professionnels.",
+		technologies: ["NextJS", "TailwindCSS", "Vercel"],
+		image: "/Penfolio.png",
+		icon: "mdi:folder-account",
+		link: "https://portfolio-maker-five.vercel.app/",
 	},
 	{
 		title: "Novacoach",
@@ -90,45 +100,119 @@ const Projects = () => {
 	});
 
 	return (
-		<div className="mb-20" id="projects">
-			<h2 className="text-2xl lg:text-4xl 2xl:text-4xl font-bold text-center mb-10 text-default-800">
+		<motion.div
+			className="pb-20 min-h-screen relative bg-gradient-top pt-20"
+			id="projects"
+			initial={{ opacity: 0 }}
+			whileInView={{ opacity: 1 }}
+			transition={{ duration: 0.5 }}
+			viewport={{ once: true }}
+		>
+			{/* Background decorative elements */}
+			<div className="absolute inset-0 -z-10 overflow-hidden">
+				<div className="absolute top-1/4 -left-20 w-72 h-72 bg-gradient-radial opacity-20 blur-3xl" />
+				<div className="absolute bottom-1/3 right-0 w-96 h-96 bg-gradient-diagonal opacity-10 blur-3xl" />
+			</div>
+
+			<motion.h2
+				className="text-2xl lg:text-4xl 2xl:text-4xl font-bold text-center mb-10 text-primary"
+				initial={{ y: 20, opacity: 0 }}
+				whileInView={{ y: 0, opacity: 1 }}
+				transition={{ duration: 0.5 }}
+				viewport={{ once: true }}
+			>
 				Mes projets
-			</h2>
+				<div className="w-20 h-1 bg-gradient-accent mx-auto mt-2 rounded-full" />
+			</motion.h2>
 
-			<div className="flex flex-col gap-2 items-start justify-start py-2 mb-2 w-2/3 mx-auto">
-				<Input
-					placeholder="Rechercher un projet..."
-					startContent={<Icon icon="mdi:search" className="text-default-500" />}
-					value={search}
-					onChange={handleSearchChange}
-					isClearable
-					onClear={() => setSearch("")}
-				/>
+			<Card className="w-2/3 mx-auto backdrop-blur-md bg-white/50 border border-white/20 shadow-lg">
+				<CardBody className="p-6">
+					<Input
+						placeholder="Rechercher un projet..."
+						startContent={<Icon icon="mdi:search" className="text-primary" />}
+						value={search}
+						onChange={handleSearchChange}
+						isClearable
+						onClear={() => setSearch("")}
+						className="mb-4"
+						classNames={{
+							input: "bg-transparent",
+							innerWrapper: "bg-primary/5",
+							inputWrapper:
+								"backdrop-blur-sm bg-white/30 hover:bg-white/40 transition-all duration-300",
+						}}
+					/>
 
-				<div className="flex flex-row justify-start gap-2 mt-2 flex-wrap py-1">
-					{uniqueTechnologies.map((tech) => (
-						<Chip
-							key={tech}
-							size="sm"
-							onClick={() => handleTechnologyClick(tech)}
-							style={{
-								cursor: "pointer",
-								color: selectedTechnologies.includes(tech) ? "white" : "black",
-							}}
-							color={selectedTechnologies.includes(tech) ? "primary" : "default"}
+					<motion.div
+						className="flex flex-row justify-start gap-2 mt-2 flex-wrap py-1"
+						initial={{ y: 10, opacity: 0 }}
+						whileInView={{ y: 0, opacity: 1 }}
+						transition={{ duration: 0.5, delay: 0.3 }}
+						viewport={{ once: true }}
+					>
+						{uniqueTechnologies.map((tech, index) => (
+							<motion.div
+								key={tech}
+								initial={{ opacity: 0, scale: 0.8 }}
+								animate={{ opacity: 1, scale: 1 }}
+								transition={{ delay: 0.1 * index, duration: 0.3 }}
+								whileHover={{ scale: 1.05 }}
+								whileTap={{ scale: 0.95 }}
+							>
+								<Chip
+									size="sm"
+									onClick={() => handleTechnologyClick(tech)}
+									className={`cursor-pointer transition-all duration-300 ${
+										selectedTechnologies.includes(tech)
+											? "bg-primary text-white"
+											: "bg-primary/10 text-primary hover:bg-primary/20"
+									}`}
+								>
+									{tech}
+								</Chip>
+							</motion.div>
+						))}
+					</motion.div>
+				</CardBody>
+			</Card>
+
+			<motion.div
+				className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 w-2/3 mx-auto mt-8"
+				initial={{ opacity: 0 }}
+				whileInView={{ opacity: 1 }}
+				transition={{ staggerChildren: 0.1, delayChildren: 0.3 }}
+				viewport={{ once: true }}
+			>
+				{filteredProjects.length > 0 ? (
+					filteredProjects.map((project, index) => (
+						<motion.div
+							key={index}
+							initial={{ opacity: 0, y: 20 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							transition={{ duration: 0.5, delay: 0.1 * index }}
+							viewport={{ once: true }}
+							whileHover={{ y: -5 }}
 						>
-							{tech}
-						</Chip>
-					))}
-				</div>
-			</div>
-
-			<div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 w-2/3 mx-auto mt-6">
-				{filteredProjects.map((project, index) => (
-					<ProjectItem key={index} {...project} />
-				))}
-			</div>
-		</div>
+							<ProjectItem {...project} />
+						</motion.div>
+					))
+				) : (
+					<motion.div
+						className="col-span-full text-center py-12"
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+					>
+						<Icon
+							icon="mdi:folder-search-outline"
+							className="text-6xl text-primary/50 mx-auto mb-4"
+						/>
+						<p className="text-gray-500">
+							Aucun projet ne correspond à votre recherche
+						</p>
+					</motion.div>
+				)}
+			</motion.div>
+		</motion.div>
 	);
 };
 

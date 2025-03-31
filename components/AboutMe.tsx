@@ -2,6 +2,7 @@ import React, { JSX, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Button, Modal, ModalBody, ModalHeader, Tooltip } from "@heroui/react";
 import { Icon } from "@iconify/react/dist/iconify.js";
+import Image from "next/image";
 
 interface TimelineItem {
 	id: number;
@@ -90,7 +91,7 @@ const AboutMe = () => {
 
 	return (
 		<section
-			className="w-full px-4 flex flex-col items-center justify-center py-10 xl:pb-40 2xl:pb-96 mt-10"
+			className="w-full px-4 flex flex-col items-center justify-center py-10 xl:pb-40 2xl:pb-96 mt-10 min-h-screen"
 			id="about"
 		>
 			<h1 className="text-2xl lg:text-4xl 2xl:text-4xl font-bold text-center mb-12 text-default-800">
@@ -136,6 +137,43 @@ const AboutMe = () => {
 							</motion.div>
 						</Tooltip>
 					))}
+				</div>
+			</div>
+
+			<div className="mt-20 container mx-auto flex flex-row items-center justify-center gap-8 px-4">
+				<div className="space-y-4 flex-1">
+					<h2 className="text-2xl font-bold text-primary">Raphael Plassart</h2>
+					<p className="text-default-800 leading-relaxed w-10/12">
+						Développeur web et mobile passionné, je poursuis mes études à l&apos;ETNA
+						tout en travaillant en alternance et en menant des projets
+						entrepreneuriaux avec ambition. Curieux, créatif et orienté solution,
+						j&apos;ai développé une solide expertise en React, Vue.js et Node.js, que
+						je mets au service de produits utiles et bien pensés, notamment dans des
+						environnements startup où réactivité et impact priment.
+						<br />
+						<br />
+						Mon parcours m&apos;a permis de concevoir des applications de A à Z, de
+						l&apos;interface au backend, jusqu&apos;à la mise en production. Plus que
+						la technique, c&apos;est la valeur concrète que peut apporter un produit
+						numérique qui me motive : résoudre de vrais problèmes, proposer une
+						expérience engageante, et créer du sens pour les utilisateurs.
+						<br />
+						<br />
+						Je m&apos;intéresse particulièrement à l&apos;innovation, à la
+						gamification, et à la croisée entre design, technologie et
+						entrepreneuriat. C&apos;est dans cette logique que j&apos;ai cofondé un
+						projet axé sur le développement personnel des jeunes adultes. Chaque
+						projet est pour moi un terrain d&apos;apprentissage, de création et
+						d&apos;impact.
+					</p>
+				</div>
+				<div className="relative h-[400px] w-[400px] flex-shrink-0">
+					<Image
+						src="/Raphael-Plassart.png"
+						alt="Raphael Plassart"
+						fill
+						className="object-cover rounded-lg shadow-lg"
+					/>
 				</div>
 			</div>
 

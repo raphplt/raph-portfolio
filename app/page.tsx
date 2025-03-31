@@ -4,15 +4,21 @@ import TopSection from "@/components/TopSection";
 import AboutMe from "@/components/AboutMe";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
+import { motion } from "framer-motion";
 
 const Home = () => {
 	return (
-		<main className="overflow-x-hidden">
+		<motion.main
+			className="overflow-x-hidden"
+			initial={{ opacity: 0 }}
+			animate={{ opacity: 1 }}
+			transition={{ duration: 0.8 }}
+		>
 			<TopSection />
 			<AboutMe />
 			<Projects />
 			<Contact />
-		</main>
+		</motion.main>
 	);
 };
 
