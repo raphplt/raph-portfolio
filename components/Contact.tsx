@@ -103,7 +103,7 @@ const Contact = () => {
 	};
 
 	return (
-		<div className="min-h-screen flex flex-col items-center justify-center bg-gradient-bottom p-4">
+		<div className="min-h-screen flex flex-col items-center justify-center bg-gradient-neutral-flow p-4">
 			{/* Toast container pour les notifications */}
 			<Toaster position="top-center" />
 

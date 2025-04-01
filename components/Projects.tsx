@@ -41,6 +41,15 @@ const ProjectsList = [
 		link: "https://raphotos.fr",
 	},
 	{
+		title: "Melios web",
+		description:
+			"Le site vitrine de Melios, qui contient un blog et des informations sur l'application.",
+		technologies: ["NextJS", "TailwindCSS", "Vercel"],
+		image: "/Melios-web.png",
+		icon: "game-icons:greek-temple",
+		link: "https://melios.me",
+	},
+	{
 		title: "Pokélab",
 		description:
 			"Une plateforme dédiée aux fans de Pokémon GO, avec des informations sur chaque Pokémon et un calculateur.",
@@ -66,6 +75,15 @@ const ProjectsList = [
 		image: "/Verifact.png",
 		icon: "lets-icons:check-fill",
 		link: "https://github.com/raphplt/verifact",
+	},
+	{
+		title: "Clear Mind",
+		description:
+			"Une extension Chrome pour vous aider à rester concentré en bloquant les sites distrayants.",
+		technologies: ["JavaScript", "Chrome Extension"],
+		image: "/Clear-Mind.png",
+		icon: "material-symbols:timer",
+		link: "/",
 	},
 ];
 
@@ -101,7 +119,7 @@ const Projects = () => {
 
 	return (
 		<motion.div
-			className="pb-20 min-h-screen relative bg-gradient-top pt-20"
+			className="pb-20 min-h-screen relative bg-gradient-top pt-20 bg-gradient-accent-flow"
 			id="projects"
 			initial={{ opacity: 0 }}
 			whileInView={{ opacity: 1 }}
@@ -115,7 +133,7 @@ const Projects = () => {
 			</div>
 
 			<motion.h2
-				className="text-2xl lg:text-4xl 2xl:text-4xl font-bold text-center mb-10 text-primary"
+				className="text-2xl lg:text-4xl 2xl:text-4xl font-bold text-center mb-10 text-default-800"
 				initial={{ y: 20, opacity: 0 }}
 				whileInView={{ y: 0, opacity: 1 }}
 				transition={{ duration: 0.5 }}
@@ -125,7 +143,7 @@ const Projects = () => {
 				<div className="w-20 h-1 bg-gradient-accent mx-auto mt-2 rounded-full" />
 			</motion.h2>
 
-			<Card className="w-2/3 mx-auto backdrop-blur-md bg-white/50 border border-white/20 shadow-lg">
+			<Card className="lg:w-2/3 w-11/12 mx-auto backdrop-blur-md bg-white/50 border border-white/20 shadow-lg">
 				<CardBody className="p-6">
 					<Input
 						placeholder="Rechercher un projet..."
@@ -177,7 +195,7 @@ const Projects = () => {
 			</Card>
 
 			<motion.div
-				className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 w-2/3 mx-auto mt-8"
+				className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:w-2/3 w-11/12 mx-auto mt-8"
 				initial={{ opacity: 0 }}
 				whileInView={{ opacity: 1 }}
 				transition={{ staggerChildren: 0.1, delayChildren: 0.3 }}
