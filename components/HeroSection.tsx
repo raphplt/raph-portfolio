@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { motion, useScroll } from "framer-motion";
 import DiscoverProfil from "./Hero/DiscoverProfil";
 import RightColum from "./Hero/RightColum";
@@ -11,7 +11,21 @@ const HeroSection = () => {
 		offset: ["start start", "end start"],
 	});
 
-	const isMobile = window.innerWidth < 768;
+	const [isMobile, setIsMobile] = useState(false);
+
+	useEffect(() => {
+		setIsMobile(window.innerWidth < 768);
+
+		const handleResize = () => {
+			setIsMobile(window.innerWidth < 768);
+		};
+
+		window.addEventListener("resize", handleResize);
+
+		return () => {
+			window.removeEventListener("resize", handleResize);
+		};
+	}, []);
 
 	return (
 		<motion.section
