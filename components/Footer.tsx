@@ -1,5 +1,5 @@
 "use client";
-import { Image, Popover, PopoverContent, PopoverTrigger } from "@heroui/react";
+import { Image } from "@heroui/react";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import React from "react";
 
