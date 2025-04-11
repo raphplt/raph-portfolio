@@ -5,3 +5,32 @@
 * {
     scroll-behavior: smooth;
 }
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Hover effect can also be handled with state for mobile compatibility */
+@media (hover: hover) {
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+}
+
+/* Touch device support */
+.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+/* ...existing code... */

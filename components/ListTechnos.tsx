@@ -25,6 +25,7 @@ const ListTechnos = () => {
 				<Chip
 					key={index}
 					color="default"
+					size="sm"
 					className="font-semibold"
 					startContent={<Icon icon={techno.icon} width={16} />}
 				>

@@ -32,7 +32,7 @@ const RightColum = ({ scrollYProgress }: { scrollYProgress: any }) => {
 			style={{ y: textY }}
 		>
 			<motion.div
-				className="inline-flex items-center gap-x-3 px-4 py-2 rounded-full bg-white dark:bg-gray-800 shadow-sm"
+				className="inline-flex items-center gap-x-3 px-4 py-2 backdrop-blur-md bg-white/50 border-b border-white/20 shadow-lg rounded-full"
 				initial={{ opacity: 0, scale: 0.8 }}
 				animate={{ opacity: 1, scale: 1 }}
 				transition={{ delay: 0.2, duration: 0.5 }}
@@ -54,7 +54,7 @@ const RightColum = ({ scrollYProgress }: { scrollYProgress: any }) => {
 			</motion.h2>
 
 			<div className="overflow-hidden">
-				<motion.h1 className="text-4xl md:text-5xl lg:text-7xl font-black tracking-tight">
+				<motion.h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-default-900 tracking-tight">
 					{nameLetters.map((letter, index) => (
 						<motion.span
 							key={index}
@@ -99,13 +99,12 @@ const RightColum = ({ scrollYProgress }: { scrollYProgress: any }) => {
 				initial={{ opacity: 0, y: 20 }}
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ delay: 1.2, duration: 0.6 }}
-				className="mt-2"
 			>
-				<ListTechnos />
+				{/* <ListTechnos /> */}
 			</motion.div>
 
 			<motion.div
-				className="flex flex-wrap gap-4 mt-4 items-center"
+				className="flex flex-wrap gap-4 items-center"
 				initial={{ opacity: 0, y: 20 }}
 				animate={{ opacity: 1, y: 0 }}
 				transition={{ delay: 1.4, duration: 0.6 }}
@@ -134,7 +133,7 @@ const RightColum = ({ scrollYProgress }: { scrollYProgress: any }) => {
 						}
 						as={Link}
 						href="#contact"
-						size="lg"
+						// size="lg"
 					>
 						Démarrer un projet
 					</Button>
@@ -162,7 +161,7 @@ const RightColum = ({ scrollYProgress }: { scrollYProgress: any }) => {
 						}
 						as={Link}
 						href="#projects"
-						size="lg"
+						// size="lg"
 					>
 						Voir mes projets
 					</Button>

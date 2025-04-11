@@ -119,7 +119,7 @@ const Projects = () => {
 
 	return (
 		<motion.div
-			className="pb-20 min-h-screen relative bg-gradient-top pt-20 bg-gradient-accent-flow"
+			className="pb-20 min-h-screen relative bg-gradient-accent-soft pt-20"
 			id="projects"
 			initial={{ opacity: 0 }}
 			whileInView={{ opacity: 1 }}
@@ -139,7 +139,7 @@ const Projects = () => {
 				transition={{ duration: 0.5 }}
 				viewport={{ once: true }}
 			>
-				Mes projets
+				[ Mes projets ]
 				<div className="w-20 h-1 bg-gradient-accent mx-auto mt-2 rounded-full" />
 			</motion.h2>
 
@@ -153,12 +153,6 @@ const Projects = () => {
 						isClearable
 						onClear={() => setSearch("")}
 						className="mb-4"
-						classNames={{
-							input: "bg-transparent",
-							innerWrapper: "bg-primary/5",
-							inputWrapper:
-								"backdrop-blur-sm bg-white/30 hover:bg-white/40 transition-all duration-300",
-						}}
 					/>
 
 					<motion.div

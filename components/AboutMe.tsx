@@ -101,11 +101,11 @@ const AboutMe = () => {
 
 	return (
 		<section
-			className="w-full px-4 flex flex-col items-center justify-center py-10 xl:pb-40 2xl:pb-96 min-h-screen bg-gradient-secondary-flow"
+			className="w-full px-4 flex flex-col items-center justify-center pt-20 xl:pb-40 2xl:pb-96 min-h-screen bg-gradient-secondary-soft"
 			id="about"
 		>
-			<h1 className="text-2xl lg:text-4xl 2xl:text-4xl font-bold text-center mb-12 text-default-50">
-				À propos de moi
+			<h1 className="text-2xl lg:text-3xl 2xl:text-4xl font-bold text-center mb-20 text-default-700">
+				[ À propos de moi ]
 			</h1>
 
 			{/* Mobile Timeline (Vertical) */}
@@ -127,7 +127,7 @@ const AboutMe = () => {
 								</div>
 								<div className="ml-10">
 									<h3 className="text-lg font-semibold text-accent-400">{item.title}</h3>
-									<p className="text-sm text-default-200 opacity-80 mb-1">{item.date}</p>
+									<p className="text-sm text-default-600 opacity-90 mb-1">{item.date}</p>
 									<p className="text-default-100 text-sm">{item.details}</p>
 								</div>
 							</motion.div>
@@ -142,7 +142,7 @@ const AboutMe = () => {
 					ref={timelineRef}
 					className="relative w-full overflow-x-auto overflow-y-hidden py-20 scrollbar-hide"
 				>
-					<div className="absolute top-1/2 left-0 h-1 w-[200%] bg-slate-200 -translate-y-1/2" />
+					<div className="absolute top-1/2 left-0 h-1 w-[200%] bg-default-500 -translate-y-1/2" />
 
 					<div className="relative flex items-center space-x-8 w-max pl-80">
 						{timelineData.map((item) => (
@@ -150,7 +150,7 @@ const AboutMe = () => {
 								content={
 									<div className="p-2">
 										<p className="text-lg font-semibold text-primary">{item.title}</p>
-										<p className="text-sm text-default-100 opacity-80">{item.date}</p>
+										<p className="text-sm text-default-500 opacity-80">{item.date}</p>
 										<p className="text-default-500">{item.details}</p>
 									</div>
 								}
@@ -173,7 +173,7 @@ const AboutMe = () => {
 											<h3 className="text-lg font-semibold text-accent-400">
 												{item.title}
 											</h3>
-											<p className="text-sm text-default-100 opacity-80">{item.date}</p>
+											<p className="text-sm text-default-500 opacity-80">{item.date}</p>
 										</div>
 									</div>
 								</motion.div>
@@ -184,39 +184,105 @@ const AboutMe = () => {
 			)}
 
 			<div className="mt-20 container mx-auto flex flex-col md:flex-row items-center justify-center gap-8 px-4">
-				<div className="space-y-4 flex-1">
-					<h2 className="text-2xl font-bold text-accent-400">Raphael Plassart</h2>
-					<p className="text-default-200 leading-relaxed w-full md:w-2/3">
-						Développeur web et mobile passionné, je poursuis mes études à l&apos;ETNA
-						tout en travaillant en alternance et en menant des projets
-						entrepreneuriaux avec ambition. Curieux, créatif et orienté solution,
-						j&apos;ai développé une solide expertise en React, Vue.js et Node.js, que
-						je mets au service de produits utiles et bien pensés, notamment dans des
-						environnements startup où réactivité et impact priment.
-						<br />
-						<br />
-						Mon parcours m&apos;a permis de concevoir des applications de A à Z, de
-						l&apos;interface au backend, jusqu&apos;à la mise en production. Plus que
-						la technique, c&apos;est la valeur concrète que peut apporter un produit
-						numérique qui me motive : résoudre de vrais problèmes, proposer une
-						expérience engageante, et créer du sens pour les utilisateurs.
-						<br />
-						<br />
-						Je m&apos;intéresse particulièrement à l&apos;innovation, à la
-						gamification, et à la croisée entre design, technologie et
-						entrepreneuriat. C&apos;est dans cette logique que j&apos;ai cofondé un
-						projet axé sur le développement personnel des jeunes adultes. Chaque
-						projet est pour moi un terrain d&apos;apprentissage, de création et
-						d&apos;impact.
-					</p>
-				</div>
-				<div className="relative h-[300px] w-[300px] md:h-[400px] md:w-[400px] flex-shrink-0 mt-6 md:mt-0">
-					<Image
-						src="/Raphael-Plassart.png"
-						alt="Raphael Plassart"
-						fill
-						className="object-cover rounded-lg shadow-lg"
-					/>
+				<div className="mt-20 container mx-auto flex flex-col items-center justify-center gap-8 px-4">
+					<div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-6xl">
+						{/* Card 1 */}
+						<div className="flip-card h-[350px] w-full perspective-1000">
+							<div className="flip-card-inner relative w-full h-full transition-transform duration-700 transform-style-3d hover:rotate-y-180">
+								{/* Front */}
+								<div className="flip-card-front absolute w-full h-full backface-hidden bg-accent-100 rounded-xl shadow-lg p-6 flex flex-col justify-center">
+									<h3 className="text-xl font-bold text-accent-500 mb-3">
+										Développeur Passionné
+									</h3>
+									<Icon
+										icon="mdi:code-braces"
+										className="text-5xl text-accent-400 mb-4 self-center"
+									/>
+									<p className="text-center text-default-700">
+										Cliquez pour en savoir plus sur mon parcours
+									</p>
+								</div>
+								{/* Back */}
+								<div className="flip-card-back absolute w-full h-full backface-hidden bg-white rounded-xl shadow-lg p-6 rotate-y-180 overflow-auto">
+									<p className="text-default-800 leading-relaxed">
+										Développeur web et mobile passionné, je poursuis mes études à l'ETNA
+										tout en travaillant en alternance et en menant des projets
+										entrepreneuriaux avec ambition. Curieux, créatif et orienté solution,
+										j'ai développé une solide expertise en React, Vue.js et Node.js, que
+										je mets au service de produits utiles et bien pensés, notamment dans
+										des environnements startup où réactivité et impact priment.
+									</p>
+								</div>
+							</div>
+						</div>
+
+						{/* Card 2 */}
+						<div className="flip-card h-[350px] w-full perspective-1000">
+							<div className="flip-card-inner relative w-full h-full transition-transform duration-700 transform-style-3d hover:rotate-y-180">
+								{/* Front */}
+								<div className="flip-card-front absolute w-full h-full backface-hidden bg-accent-100 rounded-xl shadow-lg p-6 flex flex-col justify-center">
+									<h3 className="text-xl font-bold text-accent-500 mb-3">
+										Créateur de Solutions
+									</h3>
+									<Icon
+										icon="mdi:lightbulb-on"
+										className="text-5xl text-accent-400 mb-4 self-center"
+									/>
+									<p className="text-center text-default-700">
+										Cliquez pour découvrir ma vision
+									</p>
+								</div>
+								{/* Back */}
+								<div className="flip-card-back absolute w-full h-full backface-hidden bg-white rounded-xl shadow-lg p-6 rotate-y-180 overflow-auto">
+									<p className="text-default-800 leading-relaxed">
+										Mon parcours m'a permis de concevoir des applications de A à Z, de
+										l'interface au backend, jusqu'à la mise en production. Plus que la
+										technique, c'est la valeur concrète que peut apporter un produit
+										numérique qui me motive : résoudre de vrais problèmes, proposer une
+										expérience engageante, et créer du sens pour les utilisateurs.
+									</p>
+								</div>
+							</div>
+						</div>
+
+						{/* Card 3 */}
+						<div className="flip-card h-[350px] w-full perspective-1000">
+							<div className="flip-card-inner relative w-full h-full transition-transform duration-700 transform-style-3d hover:rotate-y-180">
+								{/* Front */}
+								<div className="flip-card-front absolute w-full h-full backface-hidden bg-accent-100 rounded-xl shadow-lg p-6 flex flex-col justify-center">
+									<h3 className="text-xl font-bold text-accent-500 mb-3">
+										Entrepreneur Créatif
+									</h3>
+									<Icon
+										icon="mdi:rocket-launch"
+										className="text-5xl text-accent-400 mb-4 self-center"
+									/>
+									<p className="text-center text-default-700">
+										Cliquez pour explorer mes projets
+									</p>
+								</div>
+								{/* Back */}
+								<div className="flip-card-back absolute w-full h-full backface-hidden bg-white rounded-xl shadow-lg p-6 rotate-y-180 overflow-auto">
+									<p className="text-default-800 leading-relaxed">
+										Je m'intéresse particulièrement à l'innovation, à la gamification, et
+										à la croisée entre design, technologie et entrepreneuriat. C'est dans
+										cette logique que j'ai cofondé un projet axé sur le développement
+										personnel des jeunes adultes. Chaque projet est pour moi un terrain
+										d'apprentissage, de création et d'impact.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div className="relative h-[300px] w-[300px] md:h-[400px] md:w-[400px] flex-shrink-0 mt-12 md:mt-16">
+						<Image
+							src="/Raphael-Plassart.png"
+							alt="Raphael Plassart"
+							fill
+							className="object-cover rounded-lg shadow-lg"
+						/>
+					</div>
 				</div>
 			</div>
 

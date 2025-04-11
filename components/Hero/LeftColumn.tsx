@@ -58,7 +58,7 @@ const LeftColumn = () => {
 	};
 
 	return (
-		<div className="relative h-[300px] md:h-[600px] w-full flex items-center justify-center z-10">
+		<div className="relative h-[200px] xl:h-[500px] 2xl:h-[600px] w-11/12 mx-auto mb-10 xl:mb-0 xl:w-[500px] 2xl:w-[600px] flex items-center justify-center z-10">
 			<motion.div
 				className="w-full h-full relative"
 				initial={{ opacity: 0, scale: 0.8 }}
@@ -114,7 +114,7 @@ const LeftColumn = () => {
 									fill
 									className="object-cover object-center"
 								/>
-								<div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent p-6 flex flex-col justify-end">
+								<div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent p-6 flex flex-col justify-end">
 									<div className="flex items-center gap-x-3 mb-2">
 										<div className="w-10 h-10 rounded-full flex items-center justify-center bg-white/20 backdrop-blur-sm">
 											<Icon icon={card.icon} width={24} color={card.color} />

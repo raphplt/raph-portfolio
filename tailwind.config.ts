@@ -111,6 +111,17 @@ export default {
 					"linear-gradient(to bottom, #c6dff2, #fff7ed, #ffedd5, #fed7aa, #fdba74, #fb923c, #f97316, #ea580c)",
 				"gradient-neutral-flow":
 					"linear-gradient(to bottom, #ea580c, #ec754f, #ee8e7e, #efa69d, #f0bdba, #e2d3d5, #d1d5db, #9ca3af, #6b7280, #4b5563, #374151, #1f2937)",
+
+				"gradient-primary-soft":
+					"linear-gradient(to bottom, #f0f6ff, #e0edff, #c7ddff)",
+				"gradient-secondary-soft":
+					"linear-gradient(to bottom, #c7ddff, #f3f7fc, #e5eff8)",
+				"gradient-accent-soft":
+					"linear-gradient(to bottom, #e5eff8, #fff7ed, #ffedd5)",
+				"gradient-neutral-soft":
+					"linear-gradient(to bottom, #ffedd5, #f9fafb, #f3f4f6)",
+				"gradient-success-soft":
+					"linear-gradient(to bottom, #f3f4f6, #ecfdf5, #d1fae5)",
 			},
 		},
 	},
