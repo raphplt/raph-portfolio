@@ -27,7 +27,6 @@ const ListTechnos = () => {
 					color="default"
 					className="font-semibold"
 					startContent={<Icon icon={techno.icon} width={16} />}
-					variant="bordered"
 				>
 					{techno.name}
 				</Chip>

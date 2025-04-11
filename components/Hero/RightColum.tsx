@@ -118,11 +118,11 @@ const RightColum = ({ scrollYProgress }: { scrollYProgress: any }) => {
 					transition={{ delay: 1.6, duration: 0.5 }}
 				>
 					<Button
-						color="secondary"
-						className="relative overflow-hidden bg-gradient-to-r from-secondary-600 to-secondary-400 text-white shadow-lg 
+						color="primary"
+						className="relative overflow-hidden bg-gradient-to-r from-primary-600 to-primary-400 text-white shadow-lg 
                 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] 
                 before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent
-                hover:shadow-secondary-500/50 hover:shadow-xl transition-all duration-300
+                hover:shadow-primary-500/50 hover:shadow-xl transition-all duration-300
                 hover:translate-y-[-2px]"
 						startContent={
 							<motion.div
@@ -148,12 +148,12 @@ const RightColum = ({ scrollYProgress }: { scrollYProgress: any }) => {
 					transition={{ delay: 2.0, duration: 0.5 }}
 				>
 					<Button
-						color="secondary"
-						className="relative overflow-hidden bg-white text-secondary-600 border-2 border-secondary-400
+						color="primary"
+						className="relative overflow-hidden bg-white text-primary-600 border-2 border-primary-400
                 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] 
-                before:bg-gradient-to-r before:from-transparent before:via-secondary-100 before:to-transparent
-                hover:bg-gradient-to-r hover:from-secondary-600 hover:to-secondary-400 hover:text-white 
-                shadow-lg hover:shadow-secondary-500/50 hover:shadow-xl transition-all duration-300
+                before:bg-gradient-to-r before:from-transparent before:via-primary-100 before:to-transparent
+                hover:bg-gradient-to-r hover:from-primary-600 hover:to-primary-400 hover:text-white 
+                shadow-lg hover:shadow-primary-500/50 hover:shadow-xl transition-all duration-300
                 hover:translate-y-[-2px]"
 						startContent={
 							<motion.div whileHover={{ rotate: 360 }} transition={{ duration: 0.5 }}>
@@ -167,33 +167,6 @@ const RightColum = ({ scrollYProgress }: { scrollYProgress: any }) => {
 						Voir mes projets
 					</Button>
 				</motion.div>
-				{/* <div className="flex items-center gap-x-4 ml-1 mt-1">
-					<motion.a
-						href="https://github.com/raphplt"
-						target="_blank"
-						rel="noopener noreferrer"
-						className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors"
-						whileHover={{ scale: 1.2, rotate: 5 }}
-					>
-						<Icon icon="mdi:github" width={26} />
-					</motion.a>
-					<motion.a
-						href="https://www.linkedin.com/in/rapha%C3%ABl-plassart/"
-						target="_blank"
-						rel="noopener noreferrer"
-						className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors"
-						whileHover={{ scale: 1.2, rotate: -5 }}
-					>
-						<Icon icon="mdi:linkedin" width={26} />
-					</motion.a>
-					<motion.a
-						href="mailto:contact@raphaelplassart.com"
-						className="text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors"
-						whileHover={{ scale: 1.2, rotate: 5 }}
-					>
-						<Icon icon="mdi:email-outline" width={26} />
-					</motion.a>
-				</div> */}
 			</motion.div>
 		</motion.div>
 	);
