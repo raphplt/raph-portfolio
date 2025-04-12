@@ -73,7 +73,7 @@ const RightColum = ({ scrollYProgress }: { scrollYProgress: any }) => {
 			</div>
 
 			<motion.h3
-				className="text-xl md:text-3xl font-bold bg-gradient-to-r from-secondary-700 to-secondary-500 bg-clip-text text-transparent"
+				className="text-xl md:text-3xl font-bold bg-gradient-to-r from-primary-700 to-primary-500 bg-clip-text text-transparent"
 				custom={3}
 				initial="hidden"
 				animate="visible"

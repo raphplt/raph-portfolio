@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
 	Button,
 	Form,
@@ -9,7 +9,7 @@ import {
 	Textarea,
 } from "@heroui/react";
 import { Icon } from "@iconify/react/dist/iconify.js";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import toast, { Toaster } from "react-hot-toast";
 import { Mail } from "lucide-react";
 import { useForm, Controller } from "react-hook-form";
@@ -40,6 +40,20 @@ const Contact = () => {
 		"Question technique",
 		"Autre",
 	];
+
+	// Animation state
+	const [currentIcon, setCurrentIcon] = useState(0);
+	const icons = ["mdi:coffee", "mdi:help-circle", "mdi:file-document"];
+	const iconLabels = ["Un café", "Une question", "Un projet"];
+
+	// Switch icons every 2 seconds
+	useEffect(() => {
+		const interval = setInterval(() => {
+			setCurrentIcon((prev) => (prev + 1) % icons.length);
+		}, 2000);
+
+		return () => clearInterval(interval);
+	}, []);
 
 	const {
 		control,
@@ -102,12 +116,16 @@ const Contact = () => {
 		visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 	};
 
+	const iconVariants = {
+		initial: { opacity: 0, y: 10, scale: 0.8 },
+		animate: { opacity: 1, y: 0, scale: 1 },
+		exit: { opacity: 0, y: -10, scale: 0.8 },
+	};
+
 	return (
 		<div className="min-h-screen flex flex-col items-center justify-center bg-gradient-neutral-soft p-4">
-			{/* Toast container pour les notifications */}
 			<Toaster position="top-center" />
 
-			{/* Container du formulaire avec effet Glassmorphism */}
 			<motion.div
 				id="contact"
 				className="w-full max-w-2xl p-8 rounded-3xl backdrop-blur-md bg-white/30 border border-white/20 shadow-2xl"
@@ -115,12 +133,49 @@ const Contact = () => {
 				initial="hidden"
 				animate="visible"
 			>
-				<motion.h2
-					className="text-3xl md:text-4xl font-extrabold text-center text-umber mb-6"
+				<motion.div
+					className="flex flex-col items-center justify-center mb-8"
 					variants={childVariants}
 				>
-					Un projet, une question, un café ?
-				</motion.h2>
+					<div className="relative h-20 flex items-center justify-center mb-4">
+						<AnimatePresence mode="wait">
+							<motion.div
+								key={currentIcon}
+								className="absolute"
+								variants={iconVariants}
+								initial="initial"
+								animate="animate"
+								exit="exit"
+								transition={{ duration: 0.5 }}
+							>
+								<Icon icon={icons[currentIcon]} className="text-umber text-5xl" />
+							</motion.div>
+						</AnimatePresence>
+					</div>
+					<motion.h2
+						className="text-3xl md:text-4xl font-extrabold text-center text-umber"
+						variants={childVariants}
+					>
+						<span className="relative">
+							<AnimatePresence mode="wait">
+								<motion.span
+									key={currentIcon}
+									className="absolute left-0 right-0 text-center"
+									variants={iconVariants}
+									initial="initial"
+									animate="animate"
+									exit="exit"
+									transition={{ duration: 0.5 }}
+								>
+									{iconLabels[currentIcon]}
+								</motion.span>
+							</AnimatePresence>
+							<span className="opacity-0">Un placeholder</span>
+						</span>
+						{" ? Contactez-moi !"}
+					</motion.h2>
+				</motion.div>
+
 				<FormContext value={{}}>
 					<Form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-6">
 						<motion.div
