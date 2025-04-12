@@ -2,7 +2,6 @@
 import { Button } from "@heroui/react";
 import { motion, useTransform } from "framer-motion";
 import React from "react";
-import ListTechnos from "../ListTechnos";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import Link from "next/link";
 
