@@ -2,6 +2,7 @@ import React, { JSX } from "react";
 import Timeline from "./Timeline";
 import FlipCard from "./FlipCard";
 import { flipCardsData, timelineData } from "@/utils/data";
+import Title from "./ui/Title";
 
 export interface TimelineItem {
 	id: number;
@@ -17,9 +18,7 @@ const AboutMe = () => {
 			className="w-full px-4 flex flex-col items-center justify-center pt-20 xl:pb-40 2xl:pb-96 min-h-screen bg-gradient-secondary-soft"
 			id="about"
 		>
-			<h1 className="text-2xl lg:text-3xl 2xl:text-4xl font-bold text-center mb-20 text-default-800">
-				[ À propos de moi ]
-			</h1>
+			<Title title="Qui suis-je ?" />
 
 			<Timeline timelineData={timelineData} />
 

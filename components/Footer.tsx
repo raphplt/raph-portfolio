@@ -5,7 +5,7 @@ import React from "react";
 
 const Footer = () => {
 	return (
-		<footer className="bg-primary-900 text-white py-12 relative">
+		<footer className="bg-gray-950 text-white py-12 relative">
 			<div className="container mx-auto px-4">
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 					{/* Brand Section */}
@@ -13,7 +13,7 @@ const Footer = () => {
 						<h1 className="text-2xl font-bold">Raphaël Plassart</h1>
 						<Image
 							aria-hidden
-							src="/Logo.png"
+							src="/Logo_white.png"
 							alt="Logo"
 							width={60}
 							height={60}

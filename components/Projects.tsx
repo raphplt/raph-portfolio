@@ -3,6 +3,7 @@ import ProjectItem from "./ProjectItem";
 import { Card, CardBody, Chip, Input } from "@heroui/react";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { motion } from "framer-motion";
+import Title from "./ui/Title";
 
 const ProjectsList = [
 	{
@@ -132,16 +133,7 @@ const Projects = () => {
 				<div className="absolute bottom-1/3 right-0 w-96 h-96 bg-gradient-diagonal opacity-10 blur-3xl" />
 			</div>
 
-			<motion.h2
-				className="text-2xl lg:text-4xl 2xl:text-4xl font-bold text-center mb-10 text-default-800"
-				initial={{ y: 20, opacity: 0 }}
-				whileInView={{ y: 0, opacity: 1 }}
-				transition={{ duration: 0.5 }}
-				viewport={{ once: true }}
-			>
-				[ Mes projets ]
-				<div className="w-20 h-1 bg-gradient-accent mx-auto mt-2 rounded-full" />
-			</motion.h2>
+			<Title title="Mes projets" />
 
 			<Card className="lg:w-2/3 w-11/12 mx-auto backdrop-blur-md bg-white/50 border border-white/20 shadow-lg">
 				<CardBody className="p-6">
