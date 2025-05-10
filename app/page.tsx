@@ -1,25 +1,21 @@
-"use client";
-import React from "react";
-import AboutMe from "@/components/AboutMe";
-import Projects from "@/components/Projects";
-import Contact from "@/components/Contact";
-import { motion } from "framer-motion";
-import HeroSection from "@/components/HeroSection";
+import { DemoHeroGeometric } from "@/components/ui/demo";
+import { GlowingEffectDemo } from "@/components/ui/glowing-effect-demo";
+import { NavBarDemo } from "@/components/ui/navbar-demo";
+import ProjectsGrid from "@/components/ui/projects";
+import { TestimonialsSectionDemo } from "@/components/ui/testimonials-demo";
+import Timeline from "@/components/ui/timeline";
+import { Footerdemo } from "@/components/ui/footer-section";
 
-const Home = () => {
+export default function Home() {
 	return (
-		<motion.main
-			className="overflow-x-hidden"
-			initial={{ opacity: 0 }}
-			animate={{ opacity: 1 }}
-			transition={{ duration: 0.8 }}
-		>
-			<HeroSection />
-			<AboutMe />
-			<Projects />
-			<Contact />
-		</motion.main>
+		<div>
+			<NavBarDemo />
+			<DemoHeroGeometric />
+			<GlowingEffectDemo />
+			<Timeline />
+			<ProjectsGrid />
+			<TestimonialsSectionDemo />
+			<Footerdemo />
+		</div>
 	);
-};
-
-export default Home;
+}

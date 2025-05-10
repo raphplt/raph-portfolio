@@ -1,0 +1,23 @@
+import { HeroGeometric } from "@/components/ui/shape-landing-hero";
+import { Footerdemo } from "@/components/ui/footer-section";
+
+function DemoHeroGeometric() {
+	return (
+		<HeroGeometric
+			badge="Bonjour, je m'appelle"
+			title1="Raphael Plassart"
+			title2="Je crée des expériences web remarquables"
+			description="Développeur fullstack passionné par la création d'applications web et mobiles modernes, avec un focus sur la performance et l'expérience utilisateur."
+		/>
+	);
+}
+
+function Footer() {
+	return (
+		<div className="block">
+			<Footerdemo />
+		</div>
+	);
+}
+
+export { DemoHeroGeometric, Footer };
