@@ -1,33 +1,20 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import { Toaster } from "react-hot-toast";
+import { ThemeProvider } from "@/lib/context/theme-context";
 
-const inter = Inter({
-	subsets: ["latin"],
-	display: "swap",
-	variable: "--font-inter",
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-	title: "Raphaël Portfolio",
-	description: "Portfolio de Raphaël Plassart",
+	title: "Raphaël Plassart - Portfolio",
+	description: "Portfolio de Raphaël Plassart, développeur fullstack",
 };
 
-export default function RootLayout({
-	children,
-}: Readonly<{
-	children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
-		<html lang="fr" className={inter.variable}>
-			<body className="font-sans">
-				<Header />
-				{children}
-				<Footer />
-				<Toaster />
+		<html lang="fr" suppressHydrationWarning>
+			<body className={inter.className}>
+				<ThemeProvider>{children}</ThemeProvider>
 			</body>
 		</html>
 	);
