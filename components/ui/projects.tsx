@@ -128,20 +128,22 @@ export default function ProjectsGrid() {
 					</p>
 				</motion.div>
 
-				<div className="flex justify-center space-x-4 mb-8">
-					{categories.map((category) => (
-						<button
-							key={category}
-							onClick={() => setFilter(category)}
-							className={`px-4 py-2 rounded-full text-sm font-medium cursor-pointer transition-colors ${
-								filter === category
-									? "bg-white/[0.03] border border-white/[0.08] text-white/60"
-									: "bg-white/[0.03] border border-white/[0.08] text-white/40 hover:text-white/60"
-							}`}
-						>
-							{category}
-						</button>
-					))}
+				<div className="flex justify-center space-x-4 mb-8 overflow-x-auto pb-2 px-4 sm:px-0">
+					<div className="flex space-x-4 min-w-max">
+						{categories.map((category) => (
+							<button
+								key={category}
+								onClick={() => setFilter(category)}
+								className={`px-4 py-2 rounded-full text-sm font-medium cursor-pointer transition-colors whitespace-nowrap ${
+									filter === category
+										? "bg-white/[0.03] border border-white/[0.08] text-white/60"
+										: "bg-white/[0.03] border border-white/[0.08] text-white/40 hover:text-white/60"
+								}`}
+							>
+								{category}
+							</button>
+						))}
+					</div>
 				</div>
 
 				<motion.div

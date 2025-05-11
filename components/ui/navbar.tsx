@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
+import { useEffect, useState } from "react";
 
 const navItems = [
 	{ name: "Accueil", href: "#home", icon: Home },
@@ -21,11 +22,23 @@ export function NavbarMain() {
 		"projects",
 		"contact",
 	]);
+	const [isMobile, setIsMobile] = useState(false);
+
+	useEffect(() => {
+		const handleResize = () => {
+			setIsMobile(window.innerWidth < 768);
+		};
+
+		handleResize();
+		window.addEventListener("resize", handleResize);
+		return () => window.removeEventListener("resize", handleResize);
+	}, []);
 
 	return (
 		<nav className="fixed top-0 left-1/2 -translate-x-1/2 z-50 pt-6">
 			<div className="flex items-center gap-3 bg-background/5 border border-border backdrop-blur-lg py-1 px-1 rounded-full shadow-lg">
 				{navItems.map((item) => {
+					const Icon = item.icon;
 					const isActive = activeSection === item.href.replace("#", "");
 
 					return (
@@ -36,11 +49,24 @@ export function NavbarMain() {
 								"relative cursor-pointer text-sm font-semibold rounded-full transition-colors",
 								"text-foreground/80 hover:text-primary",
 								isActive && "bg-muted text-primary",
-								"px-6 py-2"
+								isMobile ? "px-3 py-2" : "px-6 py-2"
 							)}
 						>
-							<span className="transition-opacity duration-200 inline text-foreground">
+							<span
+								className={cn(
+									"transition-opacity duration-200",
+									isMobile ? "hidden" : "inline"
+								)}
+							>
 								{item.name}
+							</span>
+							<span
+								className={cn(
+									"transition-opacity duration-200",
+									isMobile ? "inline" : "hidden"
+								)}
+							>
+								<Icon size={18} strokeWidth={2.5} />
 							</span>
 							{isActive && (
 								<motion.div

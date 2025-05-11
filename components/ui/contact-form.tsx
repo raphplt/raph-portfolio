@@ -142,6 +142,8 @@ export function ContactForm() {
 	const [formData, setFormData] = useState({ name: "", email: "", message: "" });
 	const [isSubmitting, setIsSubmitting] = useState(false);
 
+	
+
 	const handleChange = (
 		e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
 	) => {
@@ -202,7 +204,7 @@ export function ContactForm() {
 		>
 			<div className="absolute inset-0 bg-gradient-to-br from-primary/[0.05] via-transparent to-secondary/[0.05] blur-3xl z-[-1]" />
 
-			<div className="absolute inset-0 overflow-hidden">
+			<div className="absolute inset-0 overflow-hidden hidden sm:block">
 				<ElegantShape
 					delay={0.3}
 					width={600}
@@ -282,12 +284,12 @@ export function ContactForm() {
 					>
 						<form
 							onSubmit={handleSubmit}
-							className="space-y-6 bg-background/50 p-8 rounded-2xl backdrop-blur-sm border border-border z-10"
+							className="space-y-4 sm:space-y-6 bg-background/50 p-4 sm:p-8 rounded-2xl backdrop-blur-sm border border-border z-10"
 						>
 							<div>
 								<label
 									htmlFor="name"
-									className="block text-sm font-medium text-muted-foreground mb-2"
+									className="block text-sm font-medium text-muted-foreground mb-1 sm:mb-2"
 								>
 									Nom
 								</label>
@@ -298,14 +300,14 @@ export function ContactForm() {
 									value={formData.name}
 									onChange={handleChange}
 									required
-									className="w-full px-4 py-3 rounded-lg bg-background/50 border border-border text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+									className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg bg-background/50 border border-border text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-sm sm:text-base"
 									placeholder="Votre nom"
 								/>
 							</div>
 							<div>
 								<label
 									htmlFor="email"
-									className="block text-sm font-medium text-muted-foreground mb-2"
+									className="block text-sm font-medium text-muted-foreground mb-1 sm:mb-2"
 								>
 									Email
 								</label>
@@ -316,14 +318,14 @@ export function ContactForm() {
 									value={formData.email}
 									onChange={handleChange}
 									required
-									className="w-full px-4 py-3 rounded-lg bg-background/50 border border-border text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+									className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg bg-background/50 border border-border text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-sm sm:text-base"
 									placeholder="votre@email.com"
 								/>
 							</div>
 							<div>
 								<label
 									htmlFor="message"
-									className="block text-sm font-medium text-muted-foreground mb-2"
+									className="block text-sm font-medium text-muted-foreground mb-1 sm:mb-2"
 								>
 									Message
 								</label>
@@ -333,8 +335,8 @@ export function ContactForm() {
 									value={formData.message}
 									onChange={handleChange}
 									required
-									rows={6}
-									className="w-full px-4 py-3 rounded-lg bg-background/50 border border-border text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"
+									rows={4}
+									className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg bg-background/50 border border-border text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none text-sm sm:text-base"
 									placeholder="Votre message..."
 								/>
 							</div>
@@ -344,7 +346,7 @@ export function ContactForm() {
 								type="submit"
 								disabled={isSubmitting}
 								className={cn(
-									"w-full py-3 px-6 rounded-lg bg-gradient-to-r from-primary via-foreground/90 to-secondary text-background font-medium transition-all duration-300",
+									"w-full py-2 sm:py-3 px-4 sm:px-6 rounded-lg bg-gradient-to-r from-primary via-foreground/90 to-secondary text-background font-medium transition-all duration-300 text-sm sm:text-base",
 									isSubmitting && "opacity-50 cursor-not-allowed"
 								)}
 							>
