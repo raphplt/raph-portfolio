@@ -5,10 +5,13 @@ import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 
-export function GlowingEffectDemo() {
+export function AboutMe() {
 	return (
-		<section className="relative min-h-screen w-full py-20 bg-[#030303]">
-			<div className="absolute inset-0 bg-gradient-to-br from-indigo-500/[0.05] via-transparent to-rose-500/[0.05] blur-3xl" />
+		<section
+			className="relative min-h-screen w-full py-20 bg-background "
+			id="about"
+		>
+			<div className="absolute inset-0 bg-gradient-to-br from-primary/[0.05] via-transparent to-secondary/[0.05] blur-3xl" />
 			<div className="relative z-10 container mx-auto">
 				<motion.div
 					className="text-center mb-12"
@@ -16,9 +19,9 @@ export function GlowingEffectDemo() {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.8 }}
 				>
-					<h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300">
+					<span className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-primary via-foreground/90 to-secondary">
 						Qui suis-je ?
-					</h2>
+					</span>
 					<p className="mt-4 text-lg text-white/40">
 						Découvrez mon approche et mes compétences
 					</p>
@@ -57,7 +60,7 @@ export function GlowingEffectDemo() {
 					/>
 				</ul>
 			</div>
-			<div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-[#030303]/80 pointer-events-none" />
+			<div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-[#030303]/80 " />
 		</section>
 	);
 }

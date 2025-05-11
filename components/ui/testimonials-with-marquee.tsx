@@ -25,14 +25,15 @@ export function TestimonialsSection({
 }: TestimonialsSectionProps) {
 	return (
 		<section
-			className={cn("relative min-h-screen w-full py-20 bg-[#030303]", className)}
+			id="testimonials"
+			className={cn("relative w-full py-24 bg-background", className)}
 		>
-			<div className="absolute inset-0 bg-gradient-to-br from-indigo-500/[0.05] via-transparent to-rose-500/[0.05] blur-3xl" />
+			<div className="absolute inset-0 bg-gradient-to-br from-primary/[0.05] via-transparent to-secondary/[0.05] blur-3xl " />
 			<div className="relative z-10 mx-auto flex max-w-container flex-col items-center gap-4 text-center sm:gap-16">
 				<div className="flex flex-col items-center gap-4 px-4 sm:gap-8">
-					<h2 className="max-w-[720px] text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300">
+					<span className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-primary via-foreground/90 to-secondary">
 						{title}
-					</h2>
+					</span>
 					<p className="text-md max-w-[600px] font-medium text-white/40 sm:text-xl">
 						{description}
 					</p>
@@ -49,11 +50,11 @@ export function TestimonialsSection({
 						</div>
 					</div>
 
-					<div className="pointer-events-none absolute inset-y-0 left-0 hidden w-1/3 bg-gradient-to-r from-[#030303] sm:block" />
-					<div className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/3 bg-gradient-to-l from-[#030303] sm:block" />
+					<div className=" absolute inset-y-0 left-0 hidden w-1/3 bg-gradient-to-r from-background sm:block" />
+					<div className=" absolute inset-y-0 right-0 hidden w-1/3 bg-gradient-to-l from-background sm:block" />
 				</div>
 			</div>
-			<div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-[#030303]/80 pointer-events-none" />
+			<div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/80 " />
 		</section>
 	);
 }

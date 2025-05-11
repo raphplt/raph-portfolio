@@ -7,10 +7,12 @@ import {
 	useTransform,
 	useSpring,
 	useInView,
+	MotionValue,
 } from "framer-motion";
 
 const timelineEvents = [
 	{
+		id: "etna-apae",
 		year: "2022-2023",
 		title: "ETNA - APAE",
 		description: "Formation en développement web et mobile",
@@ -18,6 +20,7 @@ const timelineEvents = [
 			"Formation intensive en développement web et mobile à l'ETNA, avec un focus sur les technologies modernes et les bonnes pratiques.",
 	},
 	{
+		id: "etna-bachelor",
 		year: "2023-2024",
 		title: "ETNA - Bachelor",
 		description: "Formation en développement fullstack",
@@ -25,13 +28,15 @@ const timelineEvents = [
 			"Formation approfondie en développement fullstack, couvrant le frontend, le backend et les bases de données.",
 	},
 	{
-		year: "2023-2024",
+		id: "etna-master",
+		year: "2025-2026",
 		title: "ETNA - Master",
 		description: "Formation en architecture logicielle",
 		details:
 			"Formation avancée en architecture logicielle, design patterns et bonnes pratiques de développement.",
 	},
 	{
+		id: "mes-allocs",
 		year: "2023-2024",
 		title: "Mes Allocs",
 		description: "Développeur fullstack",
@@ -39,6 +44,7 @@ const timelineEvents = [
 			"Développement d'applications web et mobiles pour des startups et des entreprises.",
 	},
 	{
+		id: "tkorp",
 		year: "2024-2025",
 		title: "Tkorp",
 		description: "Développeur fullstack",
@@ -46,6 +52,7 @@ const timelineEvents = [
 			"Développement d'applications web et mobiles pour des clients variés.",
 	},
 	{
+		id: "melios",
 		year: "2024-2025",
 		title: "Melios",
 		description: "Développeur fullstack",
@@ -54,7 +61,7 @@ const timelineEvents = [
 	},
 ];
 
-const FlowerIcon = ({ progress }: { progress: number }) => (
+const FlowerIcon = ({ progress }: { progress: MotionValue<number> }) => (
 	<svg
 		viewBox="0 0 24 24"
 		fill="none"
@@ -91,10 +98,11 @@ export default function Timeline() {
 
 	return (
 		<section
+			id="timeline"
 			ref={containerRef}
 			className="relative min-h-screen w-full py-20 bg-[#030303] overflow-hidden"
 		>
-			<div className="absolute inset-0 bg-gradient-to-br from-indigo-500/[0.05] via-transparent to-rose-500/[0.05] blur-3xl" />
+			<div className="absolute inset-0 bg-gradient-to-br from-indigo-500/[0.05] via-transparent to-rose-500/[0.05] blur-3xl " />
 			<div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<motion.div
 					className="text-center mb-12"
@@ -113,23 +121,21 @@ export default function Timeline() {
 				<div className="relative">
 					{/* Vertical line */}
 					<motion.div
-						className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-white/[0.08]"
+						className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-muted/10"
 						style={{ scaleY: scaleX }}
 					/>
 
 					{/* Flower icon */}
 					<motion.div
-						className="sticky top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 text-white/60"
+						className="sticky top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 text-muted-foreground/60"
 						style={{ y: useTransform(scrollYProgress, [0, 1], [0, 100]) }}
 					>
-						<FlowerIcon
-							progress={useTransform(scrollYProgress, [0, 1], [0.5, 1]) as any}
-						/>
+						<FlowerIcon progress={useTransform(scrollYProgress, [0, 1], [0.5, 1])} />
 					</motion.div>
 
 					{timelineEvents.map((event, index) => (
 						<TimelineEvent
-							key={event.year}
+							key={event.id}
 							event={event}
 							index={index}
 							isExpanded={expandedEvent === index}
@@ -138,7 +144,7 @@ export default function Timeline() {
 					))}
 				</div>
 			</div>
-			<div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-[#030303]/80 pointer-events-none" />
+			<div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/80 " />
 		</section>
 	);
 }

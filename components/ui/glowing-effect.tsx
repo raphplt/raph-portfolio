@@ -119,7 +119,7 @@ const GlowingEffect = memo(
 			<>
 				<div
 					className={cn(
-						"pointer-events-none absolute -inset-px hidden rounded-[inherit] border opacity-0 transition-opacity",
+						" absolute -inset-px hidden rounded-[inherit] border opacity-0 transition-opacity",
 						glow && "opacity-100",
 						variant === "white" && "border-white",
 						disabled && "!block"
@@ -157,7 +157,7 @@ const GlowingEffect = memo(
 						} as React.CSSProperties
 					}
 					className={cn(
-						"pointer-events-none absolute inset-0 rounded-[inherit] opacity-100 transition-opacity",
+						" absolute inset-0 rounded-[inherit] opacity-100 transition-opacity",
 						glow && "opacity-100",
 						blur > 0 && "blur-[var(--blur)] ",
 						className,

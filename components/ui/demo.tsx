@@ -1,7 +1,7 @@
 import { HeroGeometric } from "@/components/ui/shape-landing-hero";
-import { Footerdemo } from "@/components/ui/footer-section";
+import { MainFooter } from "./footer-section";
 
-function DemoHeroGeometric() {
+function MainHeroGeometric() {
 	return (
 		<HeroGeometric
 			badge="Bonjour, je m'appelle"
@@ -15,9 +15,9 @@ function DemoHeroGeometric() {
 function Footer() {
 	return (
 		<div className="block">
-			<Footerdemo />
+			<MainFooter />
 		</div>
 	);
 }
 
-export { DemoHeroGeometric, Footer };
+export { MainHeroGeometric, Footer };

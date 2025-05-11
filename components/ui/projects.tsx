@@ -3,43 +3,93 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 
 const projects = [
 	{
 		id: 1,
+		title: "Melios",
+		description:
+			"L'application de gestion de tâches ultime. Développez vos compétences et obtenez des récompenses.",
+		imageUrl: "/images/projects/Melios.png",
+		category: "Mobile",
+		url: "https://melios.me",
+		technologies: ["ReactNative", "Firebase", "Expo"],
+	},
+	{
+		id: 2,
 		title: "Penfolio",
-		description: "Le générateur de portfolio pour les développeurs.",
-		imageUrl: "/placeholder.svg?height=600&width=800",
+		description:
+			"Une plateforme de création de portfolios pour les étudiants et les professionnels.",
+		imageUrl: "/images/projects/Penfolio.png",
 		category: "Web",
 		technologies: ["NextJS", "TailwindCSS", "Vercel"],
 	},
 	{
-		id: 2,
+		id: 3,
 		title: "Novacoach",
-		description: "La plateforme de gestion pour les coachs.",
-		imageUrl: "/placeholder.svg?height=800&width=600",
+		description:
+			"La plateforme de gestion pour les coachs. Développez votre activité et gérez vos clients.",
+		imageUrl: "/images/projects/Novacoach.png",
 		category: "Web",
 		technologies: ["NextJS", "ExpressJS", "Vercel"],
 	},
 	{
-		id: 3,
+		id: 4,
 		title: "Raphotos",
-		description: "La galerie de mes plus belles photos",
-		imageUrl: "/placeholder.svg?height=600&width=800",
+		description: "La galerie de mes plus belles photos, triées par périodes.",
+		imageUrl: "/images/projects/Raphotos.png",
 		category: "Web",
 		technologies: ["NextJS", "TailwindCSS", "Vercel"],
 	},
 	{
-		id: 4,
-		title: "Melios",
-		description: "L'application de gestion de tâches ultime.",
-		imageUrl: "/placeholder.svg?height=800&width=600",
-		category: "Mobile",
-		technologies: ["ReactNative", "Firebase", "Expo"],
+		id: 5,
+		title: "Melios web",
+		description:
+			"Le site vitrine de Melios, qui contient un blog et des informations sur l'application.",
+		imageUrl: "/images/projects/Melios-Web.png",
+		category: "Web",
+		technologies: ["NextJS", "TailwindCSS", "Vercel"],
+	},
+	{
+		id: 6,
+		title: "Pokélab",
+		description:
+			"Une plateforme dédiée aux fans de Pokémon GO, avec des informations sur chaque Pokémon et un calculateur.",
+		imageUrl: "/images/projects/Pokélab.png",
+		category: "Web",
+		technologies: ["NextJS", "TailwindCSS", "Vercel"],
+	},
+	{
+		id: 7,
+		title: "Myriade",
+		description:
+			"Un moteur de recherche Open Source et respectueux de la vie privée.",
+		imageUrl: "/images/projects/Myriade.png",
+		category: "Web",
+		technologies: ["Python", "Svelte", "TypeScript"],
+	},
+	{
+		id: 8,
+		title: "Verifact",
+		description:
+			"Une plateforme de vérification de faits boostée à l'IA pour lutter contre la désinformation.",
+		imageUrl: "/images/projects/Verifact.png",
+		category: "Web",
+		technologies: ["TypeScript", "OpenAI", "NextJS"],
+	},
+	{
+		id: 9,
+		title: "Clear Mind",
+		description:
+			"Une extension Chrome pour vous aider à rester concentré en bloquant les sites distrayants.",
+		imageUrl: "/images/projects/Clear-Mind.png",
+		category: "Extension",
+		technologies: ["JavaScript", "Chrome Extension"],
 	},
 ];
 
-const categories = ["All", "Web", "Mobile"];
+const categories = ["All", "Web", "Mobile", "Extension"];
 
 export default function ProjectsGrid() {
 	const [filter, setFilter] = useState("All");
@@ -50,8 +100,11 @@ export default function ProjectsGrid() {
 			: projects.filter((project) => project.category === filter);
 
 	return (
-		<section className="relative min-h-screen w-full py-20 bg-[#030303]">
-			<div className="absolute inset-0 bg-gradient-to-br from-indigo-500/[0.05] via-transparent to-rose-500/[0.05] blur-3xl" />
+		<section
+			className="relative min-h-screen w-full py-20 bg-background"
+			id="projects"
+		>
+			<div className="absolute inset-0 bg-gradient-to-br from-primary/[0.05] via-transparent to-secondary/[0.05] blur-3xl" />
 			<div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<motion.div
 					className="text-center mb-12"
@@ -59,9 +112,9 @@ export default function ProjectsGrid() {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.8 }}
 				>
-					<h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300">
+					<span className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-primary via-foreground/90 to-secondary">
 						Mes Projets
-					</h2>
+					</span>
 					<p className="mt-4 text-lg text-white/40">
 						Découvrez mes réalisations en développement web et mobile
 					</p>
@@ -72,7 +125,7 @@ export default function ProjectsGrid() {
 						<button
 							key={category}
 							onClick={() => setFilter(category)}
-							className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+							className={`px-4 py-2 rounded-full text-sm font-medium cursor-pointer transition-colors ${
 								filter === category
 									? "bg-white/[0.03] border border-white/[0.08] text-white/60"
 									: "bg-white/[0.03] border border-white/[0.08] text-white/40 hover:text-white/60"
@@ -123,26 +176,13 @@ export default function ProjectsGrid() {
 											{project.category}
 										</div>
 										<a
-											href="#"
-											target="_blank"
+											href={project.url}
+											target={"_blank"}
 											rel="noopener noreferrer"
 											className="text-white/60 hover:text-white inline-flex items-center text-sm"
 										>
 											Voir le projet
-											<svg
-												className="w-4 h-4 ml-2"
-												fill="none"
-												stroke="currentColor"
-												viewBox="0 0 24 24"
-												xmlns="http://www.w3.org/2000/svg"
-											>
-												<path
-													strokeLinecap="round"
-													strokeLinejoin="round"
-													strokeWidth={2}
-													d="M14 5l7 7m0 0l-7 7m7-7H3"
-												/>
-											</svg>
+											<ArrowRight className="ml-1 w-4 h-4" />
 										</a>
 									</div>
 									<h3 className="text-xl font-semibold text-white mb-3">
@@ -164,7 +204,7 @@ export default function ProjectsGrid() {
 					</AnimatePresence>
 				</motion.div>
 			</div>
-			<div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-[#030303]/80 pointer-events-none" />
+			<div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-[#030303]/80 " />
 		</section>
 	);
 }
