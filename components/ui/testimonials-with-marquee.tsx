@@ -28,13 +28,13 @@ export function TestimonialsSection({
 			id="testimonials"
 			className={cn("relative w-full py-24 bg-background", className)}
 		>
-			<div className="absolute inset-0 bg-gradient-to-br from-primary/[0.05] via-transparent to-secondary/[0.05] blur-3xl " />
+			<div className="absolute inset-0 bg-gradient-to-br from-primary/[0.05] via-transparent to-secondary/[0.05] blur-3xl z-[-1]" />
 			<div className="relative z-10 mx-auto flex max-w-container flex-col items-center gap-4 text-center sm:gap-16">
 				<div className="flex flex-col items-center gap-4 px-4 sm:gap-8">
 					<span className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-primary via-foreground/90 to-secondary">
 						{title}
 					</span>
-					<p className="text-md max-w-[600px] font-medium text-white/40 sm:text-xl">
+					<p className="text-md max-w-[600px] font-medium text-muted-foreground sm:text-xl">
 						{description}
 					</p>
 				</div>
@@ -61,7 +61,7 @@ export function TestimonialsSection({
 
 function TestimonialCard({ author, text, href }: Testimonial) {
 	return (
-		<div className="flex flex-col gap-4 p-4 bg-white/[0.03] rounded-lg backdrop-blur-[2px] border border-white/[0.08] w-[350px]">
+		<div className="flex flex-col gap-4 p-4 bg-foreground/[0.03] rounded-lg backdrop-blur-[2px] border border-foreground/[0.08] w-[350px]">
 			<div className="flex items-center gap-4">
 				<img
 					src={author.avatar}
@@ -69,17 +69,17 @@ function TestimonialCard({ author, text, href }: Testimonial) {
 					className="w-12 h-12 rounded-full"
 				/>
 				<div>
-					<h3 className="font-semibold text-white">{author.name}</h3>
-					<p className="text-sm text-white/40">{author.handle}</p>
+					<h3 className="font-semibold text-foreground">{author.name}</h3>
+					<p className="text-sm text-foreground/40">{author.handle}</p>
 				</div>
 			</div>
-			<p className="text-white/60">{text}</p>
+			<p className="text-foreground/60">{text}</p>
 			{href && (
 				<a
 					href={href}
 					target="_blank"
 					rel="noopener noreferrer"
-					className="text-white/40 hover:text-white/60 text-sm"
+					className="text-foreground/40 hover:text-foreground/60 text-sm"
 				>
 					View on Twitter →
 				</a>

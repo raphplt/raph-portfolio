@@ -149,7 +149,7 @@ export default function ProjectsGrid() {
 								animate={{ opacity: 1 }}
 								exit={{ opacity: 0 }}
 								transition={{ duration: 0.5 }}
-								className={`bg-white/[0.03] rounded-3xl overflow-hidden hover-lift transition-all duration-300 ease-in-out border border-white/[0.08] backdrop-blur-[2px] 
+								className={`bg-white/[0.03] rounded-3xl overflow-hidden hover-lift transition-all duration-300 ease-in-out border border-foreground/[0.08] backdrop-blur-[2px] 
 									${index === 0 ? "sm:col-span-2 lg:col-span-2 lg:row-span-2" : ""}
 									${index === 1 ? "sm:col-span-1 lg:col-span-1 lg:row-span-1" : ""}
 								`}
@@ -164,35 +164,35 @@ export default function ProjectsGrid() {
 										className="object-cover transition-transform duration-300 ease-in-out hover:scale-105"
 									/>
 									<motion.div
-										className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-end justify-start p-6 opacity-0 transition-opacity duration-300"
+										className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/40 to-transparent flex items-end justify-start p-6 opacity-0 transition-opacity duration-300"
 										whileHover={{ opacity: 1 }}
 									>
-										<p className="text-white text-sm">{project.description}</p>
+										<p className="text-foreground text-sm">{project.description}</p>
 									</motion.div>
 								</div>
 								<div className="p-6">
 									<div className="flex items-center justify-between mb-2">
-										<div className="text-sm font-medium text-white/60">
+										<div className="text-sm font-medium text-foreground/60">
 											{project.category}
 										</div>
 										<a
 											href={project.url}
 											target={"_blank"}
 											rel="noopener noreferrer"
-											className="text-white/60 hover:text-white inline-flex items-center text-sm"
+											className="text-foreground/60 hover:text-foreground inline-flex items-center text-sm"
 										>
 											Voir le projet
 											<ArrowRight className="ml-1 w-4 h-4" />
 										</a>
 									</div>
-									<h3 className="text-xl font-semibold text-white mb-3">
+									<h3 className="text-xl font-semibold text-foreground mb-3">
 										{project.title}
 									</h3>
 									<div className="flex flex-wrap gap-2">
 										{project.technologies.map((tech) => (
 											<span
 												key={tech}
-												className="px-2 py-1 text-xs font-medium text-white/60 bg-white/[0.03] rounded-full"
+												className="px-2 py-1 text-xs font-medium text-foreground/60 bg-foreground/[0.03] rounded-full"
 											>
 												{tech}
 											</span>
@@ -204,7 +204,6 @@ export default function ProjectsGrid() {
 					</AnimatePresence>
 				</motion.div>
 			</div>
-			<div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-[#030303]/80 " />
 		</section>
 	);
 }

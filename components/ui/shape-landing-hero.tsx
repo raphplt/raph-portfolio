@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Circle } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useTheme } from "@/lib/context/theme-context";
 
 function ElegantShape({
 	className,
@@ -10,7 +11,7 @@ function ElegantShape({
 	width = 400,
 	height = 100,
 	rotate = 0,
-	gradient = "from-white/[0.08]",
+	gradient,
 }: {
 	className?: string;
 	delay?: number;
@@ -19,6 +20,10 @@ function ElegantShape({
 	rotate?: number;
 	gradient?: string;
 }) {
+	const { theme } = useTheme();
+	const effectiveGradient =
+		gradient || (theme === "dark" ? "from-primary/[0.15]" : "from-primary/40"); // plus visible en mode clair
+
 	return (
 		<motion.div
 			initial={{
@@ -60,7 +65,7 @@ function ElegantShape({
 					className={cn(
 						"absolute inset-0 rounded-full",
 						"bg-gradient-to-r to-transparent",
-						gradient,
+						effectiveGradient,
 						"backdrop-blur-[2px] border-2 border-white/[0.15]",
 						"shadow-[0_8px_32px_0_rgba(255,255,255,0.1)]",
 						"after:absolute after:inset-0 after:rounded-full",
@@ -83,6 +88,7 @@ function HeroGeometric({
 	title2?: string;
 	description?: string;
 }) {
+	const { theme } = useTheme();
 	const fadeUpVariants = {
 		hidden: { opacity: 0, y: 30 },
 		visible: (i: number) => ({
@@ -109,7 +115,7 @@ function HeroGeometric({
 					width={600}
 					height={140}
 					rotate={12}
-					gradient="from-primary/[0.15]"
+					gradient={theme === "dark" ? "from-primary/[0.15]" : "from-primary/80"}
 					className="left-[-10%] md:left-[-5%] top-[15%] md:top-[20%]"
 				/>
 
@@ -118,7 +124,7 @@ function HeroGeometric({
 					width={500}
 					height={120}
 					rotate={-15}
-					gradient="from-secondary/[0.15]"
+					gradient={theme === "dark" ? "from-secondary/[0.15]" : "from-secondary/70"}
 					className="right-[-5%] md:right-[0%] top-[70%] md:top-[75%]"
 				/>
 
@@ -127,7 +133,7 @@ function HeroGeometric({
 					width={300}
 					height={80}
 					rotate={-8}
-					gradient="from-accent/[0.15]"
+					gradient={theme === "dark" ? "from-accent/[0.15]" : "from-accent/60"}
 					className="left-[5%] md:left-[10%] bottom-[5%] md:bottom-[10%]"
 				/>
 
@@ -136,7 +142,7 @@ function HeroGeometric({
 					width={200}
 					height={60}
 					rotate={20}
-					gradient="from-primary/[0.15]"
+					gradient={theme === "dark" ? "from-primary/[0.15]" : "from-primary/70"}
 					className="right-[15%] md:right-[20%] top-[10%] md:top-[15%]"
 				/>
 
@@ -145,7 +151,7 @@ function HeroGeometric({
 					width={150}
 					height={40}
 					rotate={-25}
-					gradient="from-secondary/[0.15]"
+					gradient={theme === "dark" ? "from-secondary/[0.15]" : "from-secondary/60"}
 					className="left-[20%] md:left-[25%] top-[5%] md:top-[10%]"
 				/>
 			</div>
@@ -172,13 +178,23 @@ function HeroGeometric({
 						animate="visible"
 					>
 						<h1 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 md:mb-8 tracking-tight">
-							<span className="bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/80">
+							<span
+								className={cn(
+									"bg-clip-text text-transparent",
+									theme === "dark"
+										? "bg-gradient-to-b from-foreground to-foreground/80"
+										: "bg-gradient-to-b from-black to-zinc-700"
+								)}
+							>
 								{title1}
 							</span>
 							<br />
 							<span
 								className={cn(
-									"bg-clip-text text-transparent bg-gradient-to-r from-primary via-foreground/90 to-secondary"
+									"bg-clip-text text-transparent",
+									theme === "dark"
+										? "bg-gradient-to-r from-primary via-foreground/90 to-secondary"
+										: "bg-gradient-to-r from-yellow-400 via-orange-400 to-pink-400"
 								)}
 							>
 								{title2}

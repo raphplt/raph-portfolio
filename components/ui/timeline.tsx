@@ -98,23 +98,22 @@ export default function Timeline() {
 
 	return (
 		<section
+			className="relative min-h-screen w-full py-20 bg-background"
 			id="timeline"
-			ref={containerRef}
-			className="relative min-h-screen w-full py-20 bg-[#030303] overflow-hidden"
 		>
-			<div className="absolute inset-0 bg-gradient-to-br from-indigo-500/[0.05] via-transparent to-rose-500/[0.05] blur-3xl " />
-			<div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div className="absolute inset-0 bg-gradient-to-br from-primary/[0.05] via-transparent to-secondary/[0.05] blur-3xl z-[-1]" />
+			<div className="relative z-10 container mx-auto">
 				<motion.div
 					className="text-center mb-12"
 					initial={{ opacity: 0, y: 20 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.8 }}
 				>
-					<h2 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300">
-						Mon Parcours
-					</h2>
-					<p className="mt-4 text-lg text-white/40">
-						Découvrez mon parcours et mes expériences professionnelles
+					<span className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-primary via-foreground/90 to-secondary">
+						Mon parcours
+					</span>
+					<p className="mt-4 text-lg text-muted-foreground">
+						Découvrez mon expérience professionnelle
 					</p>
 				</motion.div>
 
@@ -144,7 +143,6 @@ export default function Timeline() {
 					))}
 				</div>
 			</div>
-			<div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/80 " />
 		</section>
 	);
 }
@@ -185,17 +183,19 @@ function TimelineEvent({
 				whileTap={{ scale: 0.95 }}
 				onClick={onToggle}
 			>
-				<div className="p-4 bg-white/[0.03] rounded-lg backdrop-blur-[2px] border border-white/[0.08]">
-					<span className="font-bold text-white/60">{event.year}</span>
-					<h3 className="text-lg font-semibold mb-1 text-white">{event.title}</h3>
-					<p className="text-white/40">{event.description}</p>
+				<div className="p-4 bg-background/5 rounded-lg backdrop-blur-[2px] border border-border">
+					<span className="font-bold text-muted-foreground">{event.year}</span>
+					<h3 className="text-lg font-semibold mb-1 text-foreground">
+						{event.title}
+					</h3>
+					<p className="text-muted-foreground">{event.description}</p>
 					<motion.div
 						initial={{ height: 0, opacity: 0 }}
 						animate={{ height: isExpanded ? "auto" : 0, opacity: isExpanded ? 1 : 0 }}
 						transition={{ duration: 0.3 }}
 						className="overflow-hidden"
 					>
-						<p className="mt-2 text-sm text-white/40">{event.details}</p>
+						<p className="mt-2 text-sm text-muted-foreground">{event.details}</p>
 					</motion.div>
 				</div>
 			</motion.div>

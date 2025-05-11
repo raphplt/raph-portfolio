@@ -344,7 +344,7 @@ export function ContactForm() {
 								type="submit"
 								disabled={isSubmitting}
 								className={cn(
-									"w-full py-3 px-6 rounded-lg bg-gradient-to-r from-primary via-foreground/90 to-secondary text-black font-medium transition-all duration-300",
+									"w-full py-3 px-6 rounded-lg bg-gradient-to-r from-primary via-foreground/90 to-secondary text-background font-medium transition-all duration-300",
 									isSubmitting && "opacity-50 cursor-not-allowed"
 								)}
 							>

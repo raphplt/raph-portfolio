@@ -5,6 +5,7 @@ import { useActiveSection } from "@/lib/hooks/useActiveSection";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 const navItems = [
 	{ name: "Accueil", href: "#home", icon: Home },
@@ -38,10 +39,7 @@ export function NavbarMain() {
 								"px-6 py-2"
 							)}
 						>
-							<span
-								className="transition-opacity duration-200 inline"
-								style={{ color: "white" }}
-							>
+							<span className="transition-opacity duration-200 inline text-foreground">
 								{item.name}
 							</span>
 							{isActive && (
@@ -65,6 +63,10 @@ export function NavbarMain() {
 						</Link>
 					);
 				})}
+				<div className="h-6 w-px bg-border mx-2" />
+				<div className="mr-2">
+					<ThemeToggle />
+				</div>
 			</div>
 		</nav>
 	);

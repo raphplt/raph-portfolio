@@ -3,36 +3,17 @@
 import * as React from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Switch } from "@/components/ui/switch";
-import {
-	Github,
-	Instagram,
-	Linkedin,
-	Mail,
-	Moon,
-	Send,
-	Sun,
-} from "lucide-react";
+import { Github, Instagram, Linkedin, Mail, Send } from "lucide-react";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 
 function MainFooter() {
-	const [isDarkMode, setIsDarkMode] = React.useState(true);
-	// const [isChatOpen, setIsChatOpen] = React.useState(false);
-
-	React.useEffect(() => {
-		if (isDarkMode) {
-			document.documentElement.classList.add("dark");
-		} else {
-			document.documentElement.classList.remove("dark");
-		}
-	}, [isDarkMode]);
-
 	return (
 		<footer className="relative border-t bg-background text-foreground transition-colors duration-300">
-			<div className="container mx-auto px-4 py-12 md:px-6 lg:px-8">
+			<div className="absolute inset-0 bg-gradient-to-br from-primary/[0.05] via-transparent to-secondary/[0.05] blur-3xl z-[-1]" />
+			<div className="container mx-auto px-4 py-12 relative z-10">
 				<div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
 					<div className="relative">
-						<h2 className="mb-4 text-2xl font-bold tracking-tight">
+						<h2 className="mb-4 text-2xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-primary via-foreground/90 to-secondary">
 							Rejoignez ma newsletter
 						</h2>
 						<p className="mb-6 text-muted-foreground text-sm">
@@ -137,18 +118,7 @@ function MainFooter() {
 								<span className="sr-only">Instagram</span>
 							</Button>
 						</div>
-						<div className="flex items-center space-x-2">
-							<Sun className="h-4 w-4" />
-							<Switch
-								id="dark-mode"
-								checked={isDarkMode}
-								onCheckedChange={setIsDarkMode}
-							/>
-							<Moon className="h-4 w-4" />
-							<Label htmlFor="dark-mode" className="sr-only">
-								Changer le thème
-							</Label>
-						</div>
+						<ThemeToggle />
 					</div>
 				</div>
 				<div className="mt-12 flex flex-col items-center justify-between gap-4 border-t pt-8 text-center md:flex-row">
