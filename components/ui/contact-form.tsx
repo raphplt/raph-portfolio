@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Circle } from "lucide-react";
 import { cn } from "@/lib/utils";
+import toast from "react-hot-toast";
 
 function ElegantShape({
 	className,
@@ -73,27 +74,112 @@ function ElegantShape({
 	);
 }
 
-export function ContactForm() {
-	const [formData, setFormData] = useState({
-		name: "",
-		email: "",
-		message: "",
-	});
+function ElegantDiamond({
+	className,
+	delay = 0,
+	size = 200,
+	rotate = 0,
+	gradient = "from-white/[0.08]",
+}: {
+	className?: string;
+	delay?: number;
+	size?: number;
+	rotate?: number;
+	gradient?: string;
+}) {
+	return (
+		<motion.div
+			initial={{
+				opacity: 0,
+				scale: 0.8,
+				rotate: rotate - 15,
+			}}
+			animate={{
+				opacity: 1,
+				scale: 1,
+				rotate: rotate,
+			}}
+			transition={{
+				duration: 2,
+				delay,
+				ease: [0.23, 0.86, 0.39, 0.96],
+			}}
+			className={cn("absolute", className)}
+		>
+			<motion.div
+				animate={{
+					rotate: [rotate, rotate + 360],
+					scale: [1, 1.1, 1],
+				}}
+				transition={{
+					duration: 20,
+					repeat: Number.POSITIVE_INFINITY,
+					ease: "linear",
+				}}
+				style={{
+					width: size,
+					height: size,
+				}}
+				className="relative"
+			>
+				<div
+					className={cn(
+						"absolute inset-0 rotate-45",
+						"bg-gradient-to-r to-transparent",
+						gradient,
+						"backdrop-blur-[2px] border-2 border-white/[0.15]",
+						"shadow-[0_8px_32px_0_rgba(255,255,255,0.1)]",
+						"after:absolute after:inset-0",
+						"after:bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.2),transparent_70%)]"
+					)}
+				/>
+			</motion.div>
+		</motion.div>
+	);
+}
 
-	const handleSubmit = async (e: React.FormEvent) => {
-		e.preventDefault();
-		// TODO: Implement form submission logic
-		console.log("Form submitted:", formData);
-	};
+export function ContactForm() {
+	const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+	const [isSubmitting, setIsSubmitting] = useState(false);
 
 	const handleChange = (
 		e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
 	) => {
 		const { name, value } = e.target;
-		setFormData((prev) => ({
-			...prev,
-			[name]: value,
-		}));
+		setFormData((prev) => ({ ...prev, [name]: value }));
+	};
+
+	const handleSubmit = async (e: React.FormEvent) => {
+		e.preventDefault();
+		// validation front
+		if (!formData.name || !formData.email || !formData.message) {
+			toast.error("Tous les champs sont requis");
+			return;
+		}
+		const emailRx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+		if (!emailRx.test(formData.email)) {
+			toast.error("Email invalide");
+			return;
+		}
+
+		setIsSubmitting(true);
+		try {
+			const res = await fetch("https://formspree.io/f/mrbpavdg", {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify(formData),
+			});
+			if (res.ok) {
+				toast.success("Message envoyé 🎉");
+				setFormData({ name: "", email: "", message: "" });
+			} else {
+				toast.error("Échec de l'envoi.");
+			}
+		} catch {
+			toast.error("Erreur réseau.");
+		} finally {
+			setIsSubmitting(false);
+		}
 	};
 
 	const fadeUpVariants = {
@@ -126,6 +212,14 @@ export function ContactForm() {
 					className="left-[-10%] md:left-[-5%] top-[15%] md:top-[20%]"
 				/>
 
+				<ElegantDiamond
+					delay={0.4}
+					size={300}
+					rotate={45}
+					gradient="from-accent/[0.15]"
+					className="right-[10%] md:right-[15%] top-[30%] md:top-[35%]"
+				/>
+
 				<ElegantShape
 					delay={0.5}
 					width={500}
@@ -135,6 +229,14 @@ export function ContactForm() {
 					className="right-[-5%] md:right-[0%] top-[70%] md:top-[75%]"
 				/>
 
+				<ElegantDiamond
+					delay={0.6}
+					size={200}
+					rotate={-30}
+					gradient="from-primary/[0.15]"
+					className="left-[15%] md:left-[20%] bottom-[20%] md:bottom-[25%]"
+				/>
+
 				<ElegantShape
 					delay={0.4}
 					width={300}
@@ -142,24 +244,6 @@ export function ContactForm() {
 					rotate={-8}
 					gradient="from-accent/[0.15]"
 					className="left-[5%] md:left-[10%] bottom-[5%] md:bottom-[10%]"
-				/>
-
-				<ElegantShape
-					delay={0.6}
-					width={200}
-					height={60}
-					rotate={20}
-					gradient="from-primary/[0.15]"
-					className="right-[15%] md:right-[20%] top-[10%] md:top-[15%]"
-				/>
-
-				<ElegantShape
-					delay={0.7}
-					width={150}
-					height={40}
-					rotate={-25}
-					gradient="from-secondary/[0.15]"
-					className="left-[20%] md:left-[25%] top-[5%] md:top-[10%]"
 				/>
 			</div>
 
@@ -183,20 +267,11 @@ export function ContactForm() {
 						variants={fadeUpVariants}
 						initial="hidden"
 						animate="visible"
+						className="pb-10"
 					>
-						<h2 className="text-4xl sm:text-6xl md:text-8xl font-bold mb-6 md:mb-8 tracking-tight">
-							<span className="bg-clip-text text-transparent bg-gradient-to-b from-foreground to-foreground/80">
-								Discutons de votre
-							</span>
-							<br />
-							<span
-								className={cn(
-									"bg-clip-text text-transparent bg-gradient-to-r from-primary via-foreground/90 to-secondary"
-								)}
-							>
-								prochain projet
-							</span>
-						</h2>
+						<span className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-primary via-foreground/90 to-secondary">
+							Discutons de votre prochain projet
+						</span>
 					</motion.div>
 
 					<motion.div
@@ -267,9 +342,13 @@ export function ContactForm() {
 								whileHover={{ scale: 1.02 }}
 								whileTap={{ scale: 0.98 }}
 								type="submit"
-								className="w-full py-3 cursor-pointer px-6 rounded-lg bg-gradient-to-r from-primary via-foreground/90 to-secondary text-white font-medium hover:from-primary/90 hover:to-secondary/90 transition-all duration-300"
+								disabled={isSubmitting}
+								className={cn(
+									"w-full py-3 px-6 rounded-lg bg-gradient-to-r from-primary via-foreground/90 to-secondary text-black font-medium transition-all duration-300",
+									isSubmitting && "opacity-50 cursor-not-allowed"
+								)}
 							>
-								Envoyer
+								{isSubmitting ? "Envoi..." : "Envoyer"}
 							</motion.button>
 						</form>
 					</motion.div>

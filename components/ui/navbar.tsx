@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import { NavBar } from "@/components/ui/tubelight-navbar";
 
-export function NavBarDemo() {
+export function NavbarMain() {
 	const navItems = [
 		{ name: "Accueil", url: "#", icon: Home },
 		{ name: "À propos", url: "#about", icon: User },
