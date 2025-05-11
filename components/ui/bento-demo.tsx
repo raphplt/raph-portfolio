@@ -1,6 +1,5 @@
 import {
 	Code2Icon,
-	GlobeIcon,
 	ImageIcon,
 	LightbulbIcon,
 	SearchIcon,

@@ -173,8 +173,8 @@ function TimelineEvent({
 		>
 			<div className="w-5/12" />
 			<div className="z-20">
-				<div className="flex items-center justify-center w-8 h-8 bg-white/[0.03] rounded-full border border-white/[0.08] backdrop-blur-[2px]">
-					<div className="w-3 h-3 bg-white/60 rounded-full" />
+				<div className="flex items-center justify-center w-8 h-8 bg-foreground/[0.03] rounded-full border border-foreground/[0.08] backdrop-blur-[2px]">
+					<div className="w-3 h-3 bg-foreground/60 rounded-full" />
 				</div>
 			</div>
 			<motion.div
