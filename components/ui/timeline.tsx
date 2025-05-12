@@ -164,41 +164,108 @@ function TimelineEvent({
 	return (
 		<motion.div
 			ref={ref}
-			className={`mb-8 flex justify-between items-center w-full ${
-				index % 2 === 0 ? "flex-row-reverse" : ""
-			} sm:flex-row sm:justify-center`}
+			className="mb-8 flex items-center w-full sm:justify-between"
 			initial={{ opacity: 0, y: 50 }}
 			animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
 			transition={{ duration: 0.8, delay: index * 0.1 }}
 		>
-			<div className="hidden sm:block sm:w-5/12" />
+			{/* Content for left side (when index is odd) */}
+			{index % 2 !== 0 ? (
+				<motion.div
+					className="hidden sm:block sm:w-5/12 cursor-pointer"
+					whileHover={{ scale: 1.05 }}
+					whileTap={{ scale: 0.95 }}
+					onClick={onToggle}
+				>
+					<div className="p-4 bg-background/5 rounded-lg backdrop-blur-[2px] border border-border">
+						<span className="font-bold text-muted-foreground">{event.year}</span>
+						<h3 className="text-lg font-semibold mb-1 text-foreground">
+							{event.title}
+						</h3>
+						<p className="text-muted-foreground">{event.description}</p>
+						<motion.div
+							initial={{ height: 0, opacity: 0 }}
+							animate={{
+								height: isExpanded ? "auto" : 0,
+								opacity: isExpanded ? 1 : 0,
+							}}
+							transition={{ duration: 0.3 }}
+							className="overflow-hidden"
+						>
+							<p className="mt-2 text-sm text-muted-foreground">{event.details}</p>
+						</motion.div>
+					</div>
+				</motion.div>
+			) : (
+				<div className="hidden sm:block sm:w-5/12" />
+			)}
+
+			{/* Center dot */}
 			<div className="z-20">
 				<div className="flex items-center justify-center w-8 h-8 bg-foreground/[0.03] rounded-full border border-foreground/[0.08] backdrop-blur-[2px]">
 					<div className="w-3 h-3 bg-foreground/60 rounded-full" />
 				</div>
 			</div>
-			<motion.div
-				className="w-full sm:w-5/12 cursor-pointer"
-				whileHover={{ scale: 1.05 }}
-				whileTap={{ scale: 0.95 }}
-				onClick={onToggle}
-			>
-				<div className="p-4 bg-background/5 rounded-lg backdrop-blur-[2px] border border-border">
-					<span className="font-bold text-muted-foreground">{event.year}</span>
-					<h3 className="text-lg font-semibold mb-1 text-foreground">
-						{event.title}
-					</h3>
-					<p className="text-muted-foreground">{event.description}</p>
-					<motion.div
-						initial={{ height: 0, opacity: 0 }}
-						animate={{ height: isExpanded ? "auto" : 0, opacity: isExpanded ? 1 : 0 }}
-						transition={{ duration: 0.3 }}
-						className="overflow-hidden"
-					>
-						<p className="mt-2 text-sm text-muted-foreground">{event.details}</p>
-					</motion.div>
-				</div>
-			</motion.div>
+
+			{/* Content for right side (when index is even) or mobile view */}
+			{index % 2 === 0 ? (
+				<motion.div
+					className="w-full sm:w-5/12 cursor-pointer"
+					whileHover={{ scale: 1.05 }}
+					whileTap={{ scale: 0.95 }}
+					onClick={onToggle}
+				>
+					<div className="p-4 bg-background/5 rounded-lg backdrop-blur-[2px] border border-border">
+						<span className="font-bold text-muted-foreground">{event.year}</span>
+						<h3 className="text-lg font-semibold mb-1 text-foreground">
+							{event.title}
+						</h3>
+						<p className="text-muted-foreground">{event.description}</p>
+						<motion.div
+							initial={{ height: 0, opacity: 0 }}
+							animate={{
+								height: isExpanded ? "auto" : 0,
+								opacity: isExpanded ? 1 : 0,
+							}}
+							transition={{ duration: 0.3 }}
+							className="overflow-hidden"
+						>
+							<p className="mt-2 text-sm text-muted-foreground">{event.details}</p>
+						</motion.div>
+					</div>
+				</motion.div>
+			) : (
+				<div className="hidden sm:block sm:w-5/12" />
+			)}
+
+			{/* Mobile view (always show content) */}
+			{index % 2 !== 0 && (
+				<motion.div
+					className="w-full sm:hidden cursor-pointer"
+					whileHover={{ scale: 1.05 }}
+					whileTap={{ scale: 0.95 }}
+					onClick={onToggle}
+				>
+					<div className="p-4 bg-background/5 rounded-lg backdrop-blur-[2px] border border-border">
+						<span className="font-bold text-muted-foreground">{event.year}</span>
+						<h3 className="text-lg font-semibold mb-1 text-foreground">
+							{event.title}
+						</h3>
+						<p className="text-muted-foreground">{event.description}</p>
+						<motion.div
+							initial={{ height: 0, opacity: 0 }}
+							animate={{
+								height: isExpanded ? "auto" : 0,
+								opacity: isExpanded ? 1 : 0,
+							}}
+							transition={{ duration: 0.3 }}
+							className="overflow-hidden"
+						>
+							<p className="mt-2 text-sm text-muted-foreground">{event.details}</p>
+						</motion.div>
+					</div>
+				</motion.div>
+			)}
 		</motion.div>
 	);
 }
