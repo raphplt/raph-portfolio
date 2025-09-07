@@ -1,6 +1,13 @@
 "use client";
 
-import { Home, User, Briefcase, MessageSquare } from "lucide-react";
+import {
+	Home,
+	User,
+	Briefcase,
+	MessageSquare,
+	FileText,
+	Clock,
+} from "lucide-react";
 import { useActiveSection } from "@/lib/hooks/useActiveSection";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
@@ -11,8 +18,8 @@ import { useEffect, useState } from "react";
 const navItems = [
 	{ name: "Accueil", href: "#home", icon: Home },
 	{ name: "À propos", href: "#about", icon: User },
-	{ name: "Parcours", href: "#timeline", icon: User },
-	{ name: "CV", href: "#cv", icon: User },
+	{ name: "Parcours", href: "#timeline", icon: Clock },
+	{ name: "CV", href: "#cv", icon: FileText },
 	{ name: "Projets", href: "#projects", icon: Briefcase },
 	{ name: "Contact", href: "#contact", icon: MessageSquare },
 ];
@@ -27,10 +34,12 @@ export function NavbarMain() {
 		"contact",
 	]);
 	const [isMobile, setIsMobile] = useState(false);
+	// const [isMenuOpen, setIsMenuOpen] = useState(false); // Reserved for future mobile menu
 
 	useEffect(() => {
 		const handleResize = () => {
 			setIsMobile(window.innerWidth < 768);
+			// Future mobile menu logic will go here
 		};
 
 		handleResize();
@@ -39,8 +48,12 @@ export function NavbarMain() {
 	}, []);
 
 	return (
-		<nav className="fixed top-0 left-1/2 -translate-x-1/2 z-50 pt-6">
-			<div className="flex items-center gap-3 bg-background/5 border border-border backdrop-blur-lg py-1 px-1 rounded-full shadow-lg">
+		<nav
+			className="fixed top-0 left-1/2 -translate-x-1/2 z-50 pt-4 sm:pt-6"
+			role="navigation"
+			aria-label="Navigation principale"
+		>
+			<div className="flex items-center gap-1 sm:gap-3 bg-background/5 border border-border backdrop-blur-lg py-1 px-1 rounded-full shadow-lg max-w-[95vw] overflow-x-auto">
 				{navItems.map((item) => {
 					const Icon = item.icon;
 					const isActive = activeSection === item.href.replace("#", "");
@@ -50,13 +63,14 @@ export function NavbarMain() {
 							key={item.name}
 							href={item.href}
 							className={cn(
-								"relative cursor-pointer text-sm font-semibold rounded-full transition-colors",
+								"relative cursor-pointer text-xs sm:text-sm font-semibold rounded-full transition-colors whitespace-nowrap",
 								"text-foreground/80 hover:text-primary",
 								isActive && "bg-muted text-primary",
-								isMobile ? "px-3 py-2" : "px-6 py-2"
+								isMobile ? "px-2 py-2" : "px-4 sm:px-6 py-2"
 							)}
 							aria-label={`Aller à la section ${item.name}`}
 							aria-current={isActive ? "page" : undefined}
+							role="menuitem"
 						>
 							<span
 								className={cn(

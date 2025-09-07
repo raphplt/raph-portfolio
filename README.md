@@ -13,14 +13,39 @@ Portfolio professionnel de Raphaël Plassart, développeur fullstack passionné 
 
 ## ✨ Fonctionnalités
 
-- 🌙 Mode sombre/clair
-- 📱 Design responsive
-- ⚡ Animations fluides
-- 🎨 Interface moderne
-- 📄 Section CV téléchargeable
-- 💬 Formulaire de contact fonctionnel
-- 🏆 Galerie de projets détaillée
-- 📜 Pages légales complètes
+### 🎨 Interface utilisateur
+- **Design moderne et responsive** avec Tailwind CSS
+- **Mode sombre/clair** avec persistance des préférences
+- **Animations fluides** avec Framer Motion
+- **Navigation sticky** avec indicateur de section active
+- **Timeline interactive** avec ligne dorée animée au scroll
+- **Bouton "Retour en haut"** avec animation
+
+### 📱 Responsive Design
+- **Mobile-first** avec breakpoints optimisés
+- **Navigation adaptative** (texte sur desktop, icônes sur mobile)
+- **Images optimisées** avec Next.js Image
+- **Lazy loading** pour les performances
+
+### 🔍 SEO & Accessibilité
+- **Métadonnées complètes** (Open Graph, Twitter Cards)
+- **Schema.org JSON-LD** pour les moteurs de recherche
+- **Sitemap.xml** automatique
+- **Robots.txt** optimisé
+- **Attributs ARIA** pour l'accessibilité
+- **Contrastes améliorés** pour la lisibilité
+
+### 📧 Formulaire de contact
+- **Validation front-end** robuste
+- **Intégration Formspree** pour l'envoi d'emails
+- **Messages d'erreur** détaillés
+- **États de chargement** avec animations
+
+### 🚀 Performances
+- **Images optimisées** avec placeholder blur
+- **Dynamic imports** pour le code splitting
+- **Lazy loading** des composants lourds
+- **Bundle optimisé** avec Next.js 15
 
 ## 🛠️ Installation et développement
 

@@ -117,19 +117,55 @@ export default function Timeline() {
 					</p>
 				</motion.div>
 
-				<div className="relative">
-					{/* Vertical line */}
+				<div className="relative" ref={containerRef}>
+					{/* Ligne de fond (subtile) */}
+					<div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-muted/20" />
+
+					{/* Ligne dorée animée */}
 					<motion.div
-						className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-muted/10"
-						style={{ scaleY: scaleX }}
+						className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-primary via-secondary to-primary rounded-full shadow-lg"
+						style={{
+							scaleY: scaleX,
+							boxShadow:
+								"0 0 20px rgba(255, 213, 128, 0.3), 0 0 40px rgba(255, 213, 128, 0.1)",
+						}}
 					/>
 
-					{/* Flower icon */}
+					{/* Effet de brillance qui suit le scroll */}
 					<motion.div
-						className="sticky top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 text-muted-foreground/60"
+						className="absolute left-1/2 transform -translate-x-1/2 w-2 h-8 bg-gradient-to-b from-transparent via-primary/60 to-transparent rounded-full blur-sm"
+						style={{
+							y: useTransform(
+								scrollYProgress,
+								[0, 1],
+								[0, typeof window !== "undefined" ? window.innerHeight - 32 : 800]
+							),
+							opacity: useTransform(scrollYProgress, [0, 0.1, 0.9, 1], [0, 1, 1, 0]),
+						}}
+					/>
+
+					{/* Icône centrale améliorée */}
+					<motion.div
+						className="sticky top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10"
 						style={{ y: useTransform(scrollYProgress, [0, 1], [0, 100]) }}
 					>
-						<FlowerIcon progress={useTransform(scrollYProgress, [0, 1], [0.5, 1])} />
+						<motion.div
+							className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center shadow-lg"
+							animate={{
+								boxShadow: [
+									"0 0 20px rgba(255, 213, 128, 0.4)",
+									"0 0 30px rgba(255, 213, 128, 0.6)",
+									"0 0 20px rgba(255, 213, 128, 0.4)",
+								],
+							}}
+							transition={{
+								duration: 2,
+								repeat: Infinity,
+								ease: "easeInOut",
+							}}
+						>
+							<FlowerIcon progress={useTransform(scrollYProgress, [0, 1], [0.5, 1])} />
+						</motion.div>
 					</motion.div>
 
 					{timelineEvents.map((event, index) => (
@@ -177,8 +213,8 @@ function TimelineEvent({
 					whileTap={{ scale: 0.95 }}
 					onClick={onToggle}
 				>
-					<div className="p-4 bg-background/5 rounded-lg backdrop-blur-[2px] border border-border">
-						<span className="font-bold text-muted-foreground">{event.year}</span>
+					<div className="p-4 bg-background/80 backdrop-blur-sm rounded-lg border border-primary/20 shadow-lg hover:shadow-primary/10 transition-all duration-300">
+						<span className="font-bold text-primary">{event.year}</span>
 						<h3 className="text-lg font-semibold mb-1 text-foreground">
 							{event.title}
 						</h3>
@@ -200,11 +236,26 @@ function TimelineEvent({
 				<div className="hidden sm:block sm:w-5/12" />
 			)}
 
-			{/* Center dot */}
+			{/* Center dot amélioré */}
 			<div className="z-20">
-				<div className="flex items-center justify-center w-8 h-8 bg-foreground/[0.03] rounded-full border border-foreground/[0.08] backdrop-blur-[2px]">
-					<div className="w-3 h-3 bg-foreground/60 rounded-full" />
-				</div>
+				<motion.div
+					className="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full border-2 border-primary/30 backdrop-blur-[2px] shadow-lg"
+					whileHover={{ scale: 1.1 }}
+					animate={{
+						boxShadow: [
+							"0 0 10px rgba(255, 213, 128, 0.3)",
+							"0 0 20px rgba(255, 213, 128, 0.5)",
+							"0 0 10px rgba(255, 213, 128, 0.3)",
+						],
+					}}
+					transition={{
+						duration: 3,
+						repeat: Infinity,
+						ease: "easeInOut",
+					}}
+				>
+					<div className="w-4 h-4 bg-gradient-to-br from-primary to-secondary rounded-full shadow-sm" />
+				</motion.div>
 			</div>
 
 			{/* Content for right side (when index is even) or mobile view */}
@@ -215,8 +266,8 @@ function TimelineEvent({
 					whileTap={{ scale: 0.95 }}
 					onClick={onToggle}
 				>
-					<div className="p-4 bg-background/5 rounded-lg backdrop-blur-[2px] border border-border">
-						<span className="font-bold text-muted-foreground">{event.year}</span>
+					<div className="p-4 bg-background/80 backdrop-blur-sm rounded-lg border border-primary/20 shadow-lg hover:shadow-primary/10 transition-all duration-300">
+						<span className="font-bold text-primary">{event.year}</span>
 						<h3 className="text-lg font-semibold mb-1 text-foreground">
 							{event.title}
 						</h3>
@@ -246,8 +297,8 @@ function TimelineEvent({
 					whileTap={{ scale: 0.95 }}
 					onClick={onToggle}
 				>
-					<div className="p-4 bg-background/5 rounded-lg backdrop-blur-[2px] border border-border">
-						<span className="font-bold text-muted-foreground">{event.year}</span>
+					<div className="p-4 bg-background/80 backdrop-blur-sm rounded-lg border border-primary/20 shadow-lg hover:shadow-primary/10 transition-all duration-300">
+						<span className="font-bold text-primary">{event.year}</span>
 						<h3 className="text-lg font-semibold mb-1 text-foreground">
 							{event.title}
 						</h3>

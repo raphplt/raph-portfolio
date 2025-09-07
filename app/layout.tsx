@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/lib/context/theme-context";
+import { generateJsonLd } from "@/lib/json-ld";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -63,9 +64,21 @@ export const metadata: Metadata = {
 	},
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+	children,
+}: {
+	children: React.ReactNode;
+}) {
+	const jsonLd = generateJsonLd();
+
 	return (
 		<html lang="fr" suppressHydrationWarning>
+			<head>
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+				/>
+			</head>
 			<body className={inter.className}>
 				<ThemeProvider>{children}</ThemeProvider>
 			</body>

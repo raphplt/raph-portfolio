@@ -135,15 +135,9 @@ function MainFooter() {
 						© {new Date().getFullYear()} Raphaël Plassart. Tous droits réservés.
 					</p>
 					<nav className="flex gap-4 text-sm">
-						<a href="/privacy" className="transition-colors hover:text-primary">
-							Politique de confidentialité
-						</a>
-						<a href="/terms" className="transition-colors hover:text-primary">
-							Conditions d&apos;utilisation
-						</a>
-						<a href="/legal" className="transition-colors hover:text-primary">
-							Mentions légales
-						</a>
+						<span className="text-muted-foreground">
+							Pages légales en cours de développement
+						</span>
 					</nav>
 				</div>
 			</div>

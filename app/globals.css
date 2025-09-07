@@ -58,7 +58,7 @@
   /* Ivoire rosé #FCE8D5 */
   --secondary-foreground: oklch(0.145 0 0);
   --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
+  --muted-foreground: oklch(0.45 0 0);
   --accent: oklch(0.87 0.10 83);
   --accent-foreground: oklch(0.145 0 0);
   --destructive: oklch(0.577 0.245 27.325);
@@ -101,7 +101,7 @@
   /* Or pâle en mode sombre */
   --secondary-foreground: oklch(0.145 0 0);
   --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
+  --muted-foreground: oklch(0.6 0 0);
   --accent: oklch(0.93 0.05 55);
   --accent-foreground: oklch(0.145 0 0);
   --destructive: oklch(0.704 0.191 22.216);
@@ -130,6 +130,68 @@
 @layer utilities {
   .max-w-container {
     max-width: var(--max-width-container);
+  }
+  
+  /* Smooth scrolling amélioré */
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+  
+  /* Focus visible amélioré */
+  .focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+  
+  /* Animations de chargement */
+  @keyframes pulse-slow {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  /* Hover effects */
+  .hover-lift {
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-2px);
+  }
+  
+  /* Amélioration des contrastes pour l'accessibilité */
+  .text-muted-foreground {
+    color: oklch(0.5 0 0);
+  }
+  
+  .dark .text-muted-foreground {
+    color: oklch(0.65 0 0);
+  }
+  
+  /* Amélioration des bordures */
+  .border-border {
+    border-color: oklch(0.2 0 0);
+  }
+  
+  .dark .border-border {
+    border-color: oklch(0.3 0 0);
+  }
+  
+  /* Amélioration des backgrounds */
+  .bg-muted {
+    background-color: oklch(0.95 0 0);
+  }
+  
+  .dark .bg-muted {
+    background-color: oklch(0.1 0 0);
   }
 }
 

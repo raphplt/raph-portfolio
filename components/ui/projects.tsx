@@ -80,6 +80,9 @@ export default function ProjectsGrid() {
 										fill
 										sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 										className="object-cover transition-transform duration-300 ease-in-out hover:scale-105"
+										priority={index < 3}
+										placeholder="blur"
+										blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
 									/>
 									<motion.div
 										className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/40 to-transparent flex items-end justify-start p-6 opacity-0 transition-opacity duration-300"

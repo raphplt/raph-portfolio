@@ -61,12 +61,13 @@ export function TestimonialsSection({
 
 function TestimonialCard({ author, text, href }: Testimonial) {
 	return (
-		<div className="flex flex-col gap-4 p-4 bg-foreground/[0.03] rounded-lg backdrop-blur-[2px] border border-foreground/[0.08] w-[350px]">
+		<div className="flex flex-col gap-4 p-4 bg-foreground/[0.03] rounded-lg backdrop-blur-[2px] border border-foreground/[0.08] w-[350px] hover-lift">
 			<div className="flex items-center gap-4">
 				<img
 					src={author.avatar}
 					alt={author.name}
 					className="w-12 h-12 rounded-full"
+					loading="lazy"
 				/>
 				<div>
 					<h3 className="font-semibold text-foreground">{author.name}</h3>
@@ -79,7 +80,7 @@ function TestimonialCard({ author, text, href }: Testimonial) {
 					href={href}
 					target="_blank"
 					rel="noopener noreferrer"
-					className="text-foreground/40 hover:text-foreground/60 text-sm"
+					className="text-foreground/40 hover:text-foreground/60 text-sm transition-colors"
 				>
 					Voir sur LinkedIn →
 				</a>

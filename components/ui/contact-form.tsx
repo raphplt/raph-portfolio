@@ -153,33 +153,54 @@ export function ContactForm() {
 
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault();
-		// validation front
-		if (!formData.name || !formData.email || !formData.message) {
-			toast.error("Tous les champs sont requis");
+
+		// Validation front-end améliorée
+		if (!formData.name.trim()) {
+			toast.error("Le nom est requis");
 			return;
 		}
+		if (!formData.email.trim()) {
+			toast.error("L'email est requis");
+			return;
+		}
+		if (!formData.message.trim()) {
+			toast.error("Le message est requis");
+			return;
+		}
+
 		const emailRx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 		if (!emailRx.test(formData.email)) {
-			toast.error("Email invalide");
+			toast.error("Format d'email invalide");
+			return;
+		}
+
+		if (formData.message.length < 10) {
+			toast.error("Le message doit contenir au moins 10 caractères");
 			return;
 		}
 
 		setIsSubmitting(true);
 		try {
-			const endpoint = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT || "";
+			const endpoint =
+				process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT ||
+				"https://formspree.io/f/mrbpavdg";
 			const res = await fetch(endpoint, {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify(formData),
+				body: JSON.stringify({
+					name: formData.name.trim(),
+					email: formData.email.trim(),
+					message: formData.message.trim(),
+				}),
 			});
 			if (res.ok) {
-				toast.success("Message envoyé 🎉");
+				toast.success("Message envoyé avec succès ! 🎉");
 				setFormData({ name: "", email: "", message: "" });
 			} else {
-				toast.error("Échec de l'envoi.");
+				toast.error("Échec de l'envoi. Veuillez réessayer.");
 			}
 		} catch {
-			toast.error("Erreur réseau.");
+			toast.error("Erreur réseau. Vérifiez votre connexion.");
 		} finally {
 			setIsSubmitting(false);
 		}
@@ -286,6 +307,8 @@ export function ContactForm() {
 						<form
 							onSubmit={handleSubmit}
 							className="space-y-4 sm:space-y-6 bg-background/50 p-4 sm:p-8 rounded-2xl backdrop-blur-sm border border-border z-10"
+							aria-label="Formulaire de contact"
+							role="form"
 						>
 							<div>
 								<label
@@ -301,7 +324,7 @@ export function ContactForm() {
 									value={formData.name}
 									onChange={handleChange}
 									required
-									className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg bg-background/50 border border-border text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-sm sm:text-base"
+									className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg bg-background/50 border border-border text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-sm sm:text-base hover:border-primary/50"
 									placeholder="Votre nom"
 								/>
 							</div>
@@ -319,7 +342,7 @@ export function ContactForm() {
 									value={formData.email}
 									onChange={handleChange}
 									required
-									className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg bg-background/50 border border-border text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-sm sm:text-base"
+									className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg bg-background/50 border border-border text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all text-sm sm:text-base hover:border-primary/50"
 									placeholder="votre@email.com"
 								/>
 							</div>
@@ -337,7 +360,7 @@ export function ContactForm() {
 									onChange={handleChange}
 									required
 									rows={4}
-									className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg bg-background/50 border border-border text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none text-sm sm:text-base"
+									className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-lg bg-background/50 border border-border text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none text-sm sm:text-base hover:border-primary/50"
 									placeholder="Votre message..."
 								/>
 							</div>

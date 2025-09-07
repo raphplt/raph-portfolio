@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://raphael-plassart.dev/sitemap.xml
+
+# Optimisations SEO
+Crawl-delay: 1
+
+# Blocage des fichiers sensibles
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /.env*
+Disallow: /node_modules/
