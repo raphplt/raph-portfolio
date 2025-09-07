@@ -39,11 +39,20 @@ function MainFooter() {
 					<div>
 						<h3 className="mb-4 text-lg font-semibold">Navigation</h3>
 						<nav className="space-y-2 text-sm">
-							<a href="#" className="block transition-colors hover:text-primary">
+							<a href="#home" className="block transition-colors hover:text-primary">
 								Accueil
 							</a>
 							<a href="#about" className="block transition-colors hover:text-primary">
 								À propos
+							</a>
+							<a
+								href="#timeline"
+								className="block transition-colors hover:text-primary"
+							>
+								Parcours
+							</a>
+							<a href="#cv" className="block transition-colors hover:text-primary">
+								CV
 							</a>
 							<a
 								href="#projects"
@@ -126,11 +135,14 @@ function MainFooter() {
 						© {new Date().getFullYear()} Raphaël Plassart. Tous droits réservés.
 					</p>
 					<nav className="flex gap-4 text-sm">
-						<a href="#" className="transition-colors hover:text-primary">
+						<a href="/privacy" className="transition-colors hover:text-primary">
 							Politique de confidentialité
 						</a>
-						<a href="#" className="transition-colors hover:text-primary">
+						<a href="/terms" className="transition-colors hover:text-primary">
 							Conditions d&apos;utilisation
+						</a>
+						<a href="/legal" className="transition-colors hover:text-primary">
+							Mentions légales
 						</a>
 					</nav>
 				</div>

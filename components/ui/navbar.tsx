@@ -11,6 +11,8 @@ import { useEffect, useState } from "react";
 const navItems = [
 	{ name: "Accueil", href: "#home", icon: Home },
 	{ name: "À propos", href: "#about", icon: User },
+	{ name: "Parcours", href: "#timeline", icon: User },
+	{ name: "CV", href: "#cv", icon: User },
 	{ name: "Projets", href: "#projects", icon: Briefcase },
 	{ name: "Contact", href: "#contact", icon: MessageSquare },
 ];
@@ -19,6 +21,8 @@ export function NavbarMain() {
 	const activeSection = useActiveSection([
 		"home",
 		"about",
+		"timeline",
+		"cv",
 		"projects",
 		"contact",
 	]);
@@ -51,6 +55,8 @@ export function NavbarMain() {
 								isActive && "bg-muted text-primary",
 								isMobile ? "px-3 py-2" : "px-6 py-2"
 							)}
+							aria-label={`Aller à la section ${item.name}`}
+							aria-current={isActive ? "page" : undefined}
 						>
 							<span
 								className={cn(

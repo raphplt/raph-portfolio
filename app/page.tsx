@@ -6,6 +6,7 @@ import { TestimonialsSectionDemo } from "@/components/ui/testimonials-demo";
 import Timeline from "@/components/ui/timeline";
 import { MainFooter } from "@/components/ui/footer-section";
 import { ContactForm } from "@/components/ui/contact-form";
+import { CVSection } from "@/components/ui/cv-section";
 
 export default function Home() {
 	return (
@@ -14,6 +15,7 @@ export default function Home() {
 			<MainHeroGeometric />
 			<AboutMe />
 			<Timeline />
+			<CVSection />
 			<ProjectsGrid />
 			<TestimonialsSectionDemo />
 			<ContactForm />

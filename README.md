@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio Raphaël Plassart
 
-## Getting Started
+Portfolio professionnel de Raphaël Plassart, développeur fullstack passionné par la création d'applications web et mobiles modernes.
 
-First, run the development server:
+## 🚀 Technologies utilisées
+
+- **Framework** : Next.js 15 avec App Router
+- **Langage** : TypeScript
+- **Styling** : Tailwind CSS
+- **Animations** : Framer Motion
+- **UI Components** : Radix UI
+- **Déploiement** : Vercel
+
+## ✨ Fonctionnalités
+
+- 🌙 Mode sombre/clair
+- 📱 Design responsive
+- ⚡ Animations fluides
+- 🎨 Interface moderne
+- 📄 Section CV téléchargeable
+- 💬 Formulaire de contact fonctionnel
+- 🏆 Galerie de projets détaillée
+- 📜 Pages légales complètes
+
+## 🛠️ Installation et développement
+
+### Prérequis
+
+- Node.js 18+ 
+- npm ou yarn
+
+### Installation
 
 ```bash
+# Cloner le repository
+git clone https://github.com/raphplt/raph-portfolio.git
+
+# Installer les dépendances
+npm install
+
+# Lancer le serveur de développement
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Le site sera accessible sur [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Scripts disponibles
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run dev      # Serveur de développement
+npm run build    # Build de production
+npm run start    # Serveur de production
+npm run lint     # Vérification ESLint
+npm run format   # Formatage Prettier
+```
 
-## Learn More
+## 📁 Structure du projet
 
-To learn more about Next.js, take a look at the following resources:
+```
+├── app/                 # Pages Next.js (App Router)
+├── components/          # Composants React
+│   └── ui/             # Composants UI réutilisables
+├── lib/                # Utilitaires et hooks
+├── public/             # Assets statiques
+└── styles/             # Styles globaux
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🎯 Sections du portfolio
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Accueil** : Présentation et hero section
+- **À propos** : Compétences et approche
+- **Parcours** : Timeline professionnelle
+- **CV** : Téléchargement du CV
+- **Projets** : Galerie de projets détaillée
+- **Témoignages** : Retours clients
+- **Contact** : Formulaire de contact
 
-## Deploy on Vercel
+## 📧 Contact
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Email** : raphael.plassart@gmail.com
+- **LinkedIn** : [raphaël-plassart](https://linkedin.com/in/raphaël-plassart)
+- **GitHub** : [raphplt](https://github.com/raphplt)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📄 Licence
+
+Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de détails.
+
+---
+
+Développé avec ❤️ par Raphaël Plassart

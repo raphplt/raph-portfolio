@@ -166,7 +166,8 @@ export function ContactForm() {
 
 		setIsSubmitting(true);
 		try {
-			const res = await fetch("https://formspree.io/f/mrbpavdg", {
+			const endpoint = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT || "";
+			const res = await fetch(endpoint, {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify(formData),
