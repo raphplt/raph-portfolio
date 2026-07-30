@@ -1,32 +1,18 @@
-import { MetadataRoute } from 'next'
+import type { MetadataRoute } from "next";
+import { localePath, locales } from "@/lib/content";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://raphael-plassart.dev'
-  
-  return [
-    {
-      url: baseUrl,
+  const baseUrl = "https://www.raphael-plassart.com";
+
+  return locales.map((locale) => ({
+      url: `${baseUrl}${localePath(locale)}`,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: "monthly",
       priority: 1,
-    },
-    {
-      url: `${baseUrl}/privacy`,
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/terms`,
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/legal`,
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.3,
-    },
-  ]
+      alternates: {
+        languages: Object.fromEntries(
+          locales.map((item) => [item, `${baseUrl}${localePath(item)}`]),
+        ),
+      },
+    }));
 }

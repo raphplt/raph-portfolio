@@ -1,46 +1,51 @@
 export function generateJsonLd() {
-  const jsonLd = {
+  return {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Raphaël Plassart",
-    "jobTitle": "Développeur Fullstack",
-    "description": "Développeur fullstack passionné par la création d'applications web et mobiles modernes",
-    "url": "https://raphael-plassart.dev",
-    "image": "https://raphael-plassart.dev/og-image.jpg",
-    "email": "raphael.plassart@gmail.com",
-    "address": {
+    name: "Raphaël Plassart",
+    jobTitle: "Full-stack Product Engineer",
+    description:
+      "Développeur full-stack spécialisé dans les produits web, mobile et desktop, de l’architecture à la production.",
+    url: "https://www.raphael-plassart.com",
+    email: "mailto:raphael.plassart@gmail.com",
+    address: {
       "@type": "PostalAddress",
-      "addressLocality": "Paris",
-      "addressCountry": "FR"
+      addressLocality: "Paris",
+      addressCountry: "FR",
     },
-    "alumniOf": {
+    alumniOf: {
       "@type": "EducationalOrganization",
-      "name": "ETNA - École des Technologies Numériques Avancées"
+      name: "ETNA - École des Technologies Numériques Avancées",
     },
-    "knowsAbout": [
+    knowsAbout: [
       "React",
       "Next.js",
       "TypeScript",
-      "Node.js",
       "React Native",
+      "NestJS",
+      "Rust",
+      "Tauri",
       "PostgreSQL",
-      "Firebase"
+      "MongoDB",
+      "Redis",
+      "Docker",
+      "Linux",
     ],
-    "sameAs": [
-      "https://linkedin.com/in/raphaël-plassart",
-      "https://github.com/raphplt"
+    sameAs: [
+      "https://www.linkedin.com/in/rapha%C3%ABl-plassart/",
+      "https://github.com/raphplt",
+      "https://github.com/QoreDB/QoreDB",
     ],
-    "worksFor": [
-      {
-        "@type": "Organization",
-        "name": "Melios"
-      },
-      {
-        "@type": "Organization", 
-        "name": "Tkorp"
-      }
-    ]
+    worksFor: {
+      "@type": "Organization",
+      name: "Tkorp",
+    },
+    owns: {
+      "@type": "SoftwareApplication",
+      name: "QoreDB",
+      applicationCategory: "DeveloperApplication",
+      operatingSystem: "macOS, Windows, Linux",
+      url: "https://www.qoredb.com",
+    },
   };
-
-  return jsonLd;
 }
