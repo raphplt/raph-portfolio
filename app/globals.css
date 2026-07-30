@@ -472,11 +472,7 @@ html[data-theme="dark"] .theme-moon {
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 1rem;
-  background:
-    linear-gradient(rgba(255, 255, 255, 0.032) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.032) 1px, transparent 1px),
-    #111312;
-  background-size: 32px 32px;
+  background: #111312;
   box-shadow:
     0 2rem 6rem rgba(0, 0, 0, 0.25),
     0 0 0 1px rgba(0, 0, 0, 0.3);
@@ -583,6 +579,11 @@ html[data-theme="dark"] .theme-moon {
   position: relative;
   aspect-ratio: 1.38;
   min-height: 26rem;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.032) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.032) 1px, transparent 1px),
+    #111312;
+  background-size: 32px 32px;
 }
 
 .system-links {
@@ -609,12 +610,12 @@ html[data-theme="dark"] .theme-moon {
 }
 
 .link-flow {
-  opacity: 0.55;
+  opacity: 0.68;
   stroke: #a8cc43;
   stroke-dasharray: 4 20;
   stroke-linecap: round;
   stroke-width: 1.6;
-  animation: flow 4s linear infinite;
+  animation: flow 2.8s linear infinite;
   transition:
     opacity 200ms ease,
     stroke 200ms ease,
@@ -676,11 +677,11 @@ html[data-theme="dark"] .theme-moon {
 }
 
 .packet-one {
-  animation: orbit 9s linear infinite;
+  animation: orbit 6s linear infinite;
 }
 
 .packet-two {
-  animation: orbit 13s linear infinite reverse;
+  animation: orbit 9s linear infinite reverse;
 }
 
 .system-map.is-paused .link-flow,
@@ -2791,6 +2792,36 @@ footer {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .system-map.is-motion-enabled:not(.is-paused) .link-flow {
+    animation-duration: 2.8s !important;
+    animation-iteration-count: infinite !important;
+  }
+
+  .system-map.is-motion-enabled:not(.is-paused) .orbit-one {
+    animation-duration: 22s !important;
+    animation-iteration-count: infinite !important;
+  }
+
+  .system-map.is-motion-enabled:not(.is-paused) .orbit-two {
+    animation-duration: 34s !important;
+    animation-iteration-count: infinite !important;
+  }
+
+  .system-map.is-motion-enabled:not(.is-paused) .orbit-three {
+    animation-duration: 46s !important;
+    animation-iteration-count: infinite !important;
+  }
+
+  .system-map.is-motion-enabled:not(.is-paused) .packet-one {
+    animation-duration: 6s !important;
+    animation-iteration-count: infinite !important;
+  }
+
+  .system-map.is-motion-enabled:not(.is-paused) .packet-two {
+    animation-duration: 9s !important;
+    animation-iteration-count: infinite !important;
   }
 }
 

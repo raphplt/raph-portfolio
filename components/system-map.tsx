@@ -1,7 +1,7 @@
 "use client";
 
 import { Maximize2, Minimize2, Pause, Play, X } from "lucide-react";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { SpaceArcade, type GameLabels } from "@/components/space-arcade";
 
@@ -93,6 +93,7 @@ function SystemPanel({
   active,
   expanded,
   labels,
+  motionOverride,
   paused,
   onActiveChange,
   onClose,
@@ -103,6 +104,7 @@ function SystemPanel({
   active: ActiveLayer;
   expanded: boolean;
   labels: MapLabels;
+  motionOverride: boolean;
   paused: boolean;
   onActiveChange: (layer: ActiveLayer) => void;
   onClose?: () => void;
@@ -114,7 +116,7 @@ function SystemPanel({
     <div
       className={`system-map${paused ? " is-paused" : ""}${
         expanded ? " is-expanded" : ""
-      }`}
+      }${motionOverride ? " is-motion-enabled" : ""}`}
       aria-label={labels.title}
     >
       <div className="system-bar">
@@ -255,7 +257,14 @@ export function SystemMap({ labels }: { labels: MapLabels }) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [active, setActive] = useState<ActiveLayer>(overview);
   const [paused, setPaused] = useState(false);
+  const [motionOverride, setMotionOverride] = useState(false);
   const [gameOpen, setGameOpen] = useState(false);
+
+  useEffect(() => {
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const frame = window.requestAnimationFrame(() => setPaused(true));
+    return () => window.cancelAnimationFrame(frame);
+  }, []);
 
   function openExpanded() {
     dialogRef.current?.showModal();
@@ -270,17 +279,23 @@ export function SystemMap({ labels }: { labels: MapLabels }) {
     setGameOpen(true);
   }
 
+  function changePaused(nextPaused: boolean) {
+    if (!nextPaused) setMotionOverride(true);
+    setPaused(nextPaused);
+  }
+
   return (
     <>
       <SystemPanel
         active={active}
         expanded={false}
         labels={labels}
+        motionOverride={motionOverride}
         paused={paused}
         onActiveChange={setActive}
         onExpand={openExpanded}
         onLaunchGame={launchGame}
-        onPauseChange={setPaused}
+        onPauseChange={changePaused}
       />
 
       <dialog
@@ -297,11 +312,12 @@ export function SystemMap({ labels }: { labels: MapLabels }) {
           active={active}
           expanded
           labels={labels}
+          motionOverride={motionOverride}
           paused={paused}
           onActiveChange={setActive}
           onClose={closeExpanded}
           onLaunchGame={launchGame}
-          onPauseChange={setPaused}
+          onPauseChange={changePaused}
         />
       </dialog>
 
