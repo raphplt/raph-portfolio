@@ -21,7 +21,7 @@
   --radius-sm: 0.7rem;
   --radius-md: 1.2rem;
   --radius-lg: 1.8rem;
-  --shell: min(1280px, calc(100vw - 3rem));
+  --shell: min(1440px, calc(100vw - 4rem));
 }
 
 html[data-theme="dark"] {
@@ -98,7 +98,7 @@ img {
   align-items: center;
   width: 100%;
   height: 5rem;
-  padding: 0 max(1.5rem, calc((100vw - 1280px) / 2));
+  padding: 0 max(2rem, calc((100vw - 1440px) / 2));
   border-bottom: 1px solid var(--line);
   background: var(--header-bg);
   backdrop-filter: blur(18px);
@@ -315,9 +315,9 @@ html[data-theme="dark"] .theme-moon {
 .hero {
   display: grid;
   min-height: calc(100svh - 5rem);
-  grid-template-columns: minmax(0, 1.05fr) minmax(28rem, 0.95fr);
+  grid-template-columns: minmax(0, 1.18fr) minmax(31rem, 0.82fr);
   align-items: center;
-  gap: clamp(3rem, 6vw, 7rem);
+  gap: clamp(3rem, 4vw, 5.5rem);
   padding-block: clamp(4rem, 9vh, 7rem);
 }
 
@@ -330,7 +330,7 @@ html[data-theme="dark"] .theme-moon {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 46rem;
+  max-width: 52rem;
   margin: 0 0 1.7rem;
   color: var(--copy);
   font-family: var(--font-mono), monospace;
@@ -353,9 +353,9 @@ html[data-theme="dark"] .theme-moon {
 }
 
 .hero h1 {
-  max-width: 48rem;
+  max-width: 52rem;
   margin: 0;
-  font-size: clamp(3.55rem, 6.1vw, 7.15rem);
+  font-size: clamp(3.55rem, 5.15vw, 6.35rem);
   font-weight: 760;
   letter-spacing: -0.068em;
   line-height: 0.91;
@@ -381,7 +381,7 @@ html[data-theme="dark"] .theme-moon {
 }
 
 .hero-intro {
-  max-width: 39rem;
+  max-width: 42rem;
   margin: 2.25rem 0 0;
   color: var(--copy);
   font-size: clamp(1rem, 1.5vw, 1.2rem);
@@ -463,6 +463,8 @@ html[data-theme="dark"] .theme-moon {
 }
 
 .hero-visual {
+  position: relative;
+  top: clamp(-2.5rem, -3vh, -1rem);
   min-width: 0;
 }
 
@@ -2385,6 +2387,7 @@ footer {
   }
 
   .hero-visual {
+    top: 0;
     max-width: 42rem;
   }
 
@@ -2455,7 +2458,8 @@ footer {
 
 @media (max-width: 680px) {
   .hero h1 {
-    font-size: clamp(3.3rem, 15.5vw, 5.3rem);
+    font-size: clamp(3rem, 13.2vw, 4.4rem);
+    line-height: 0.92;
   }
 
   .eyebrow span:last-child {
