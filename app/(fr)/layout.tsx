@@ -7,8 +7,8 @@ import { themeScript } from "@/lib/theme";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.raphael-plassart.com"),
   title: {
-    default: "Raphaël Plassart — Full-stack Product Engineer",
-    template: "%s — Raphaël Plassart",
+    default: "Raphaël Plassart - Full-stack Product Engineer",
+    template: "%s - Raphaël Plassart",
   },
   description:
     "Développeur full-stack à Paris. Je conçois et livre des produits web, mobile et desktop, de l’architecture à la production. Créateur de QoreDB.",
