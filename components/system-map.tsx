@@ -162,6 +162,7 @@ function SystemPanel({
         <svg
           className="system-links"
           viewBox="0 0 600 430"
+          preserveAspectRatio="none"
           fill="none"
           aria-hidden="true"
         >

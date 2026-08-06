@@ -577,8 +577,9 @@ html[data-theme="dark"] .theme-moon {
 
 .system-canvas {
   position: relative;
+  width: 100%;
   aspect-ratio: 1.38;
-  min-height: 26rem;
+  min-width: 0;
   background:
     linear-gradient(rgba(255, 255, 255, 0.032) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.032) 1px, transparent 1px),
@@ -591,6 +592,12 @@ html[data-theme="dark"] .theme-moon {
   inset: 0;
   width: 100%;
   height: 100%;
+}
+
+/* le viewBox est étiré sur le canvas (preserveAspectRatio="none") pour rester
+   aligné avec les noeuds positionnés en %, sans déformer les traits */
+.system-links * {
+  vector-effect: non-scaling-stroke;
 }
 
 .topology-hull {
@@ -947,7 +954,9 @@ html[data-theme="dark"] .theme-moon {
 }
 
 .system-dialog {
-  width: min(74rem, calc(100vw - 2rem));
+  /* la largeur est aussi bornée par la hauteur dispo pour que le canvas
+     (aspect-ratio 1.8) tienne dans la fenêtre sans être rogné */
+  width: min(74rem, calc(100vw - 2rem), calc((100svh - 15rem) * 1.8));
   max-width: none;
   max-height: calc(100svh - 2rem);
   padding: 0;
@@ -978,7 +987,6 @@ html[data-theme="dark"] .theme-moon {
 }
 
 .system-dialog .system-canvas {
-  min-height: min(61svh, 42rem);
   aspect-ratio: 1.8;
 }
 
@@ -2328,6 +2336,66 @@ footer {
   }
 }
 
+/* Petits laptops (13"-14", fenêtres réduites) : on resserre l'échelle
+   typographique et on rééquilibre le hero pour laisser respirer la carte. */
+@media (min-width: 901px) and (max-width: 1600px) {
+  .hero {
+    grid-template-columns: minmax(0, 1.08fr) minmax(26rem, 0.92fr);
+    gap: clamp(2.5rem, 3.4vw, 3.75rem);
+  }
+
+  .hero h1 {
+    font-size: clamp(3rem, 4.5vw, 4.5rem);
+  }
+
+  .hero-intro {
+    margin-top: 1.9rem;
+    font-size: clamp(0.95rem, 1.25vw, 1.1rem);
+  }
+
+  .hero-actions {
+    margin-top: 1.9rem;
+  }
+
+  .hero-footnote {
+    margin-top: 2.5rem;
+  }
+
+  .section-heading {
+    gap: clamp(2rem, 5vw, 5rem);
+    margin-bottom: clamp(3rem, 5.5vw, 4.5rem);
+  }
+
+  .section-heading h2 {
+    font-size: clamp(2.5rem, 4.6vw, 4.6rem);
+  }
+
+  .about-layout blockquote {
+    font-size: clamp(2.1rem, 3.9vw, 3.9rem);
+  }
+
+  .contact h2 {
+    font-size: clamp(3rem, 6.6vw, 7rem);
+  }
+
+  .contact-inner {
+    padding-block: clamp(4.5rem, 8vw, 7rem);
+  }
+
+  .expertise-card {
+    min-height: 19rem;
+  }
+
+  .expertise-card h3 {
+    margin-top: 4rem;
+    font-size: 1.6rem;
+  }
+
+  .expertise-card > p {
+    min-height: 4.2rem;
+  }
+}
+
 @media (max-width: 1120px) {
   .hero {
     grid-template-columns: minmax(0, 1fr) minmax(23rem, 0.8fr);
@@ -2336,10 +2404,6 @@ footer {
 
   .hero h1 {
     font-size: clamp(3.5rem, 6vw, 5.5rem);
-  }
-
-  .system-canvas {
-    min-height: 22rem;
   }
 
   .system-node {
@@ -2356,6 +2420,42 @@ footer {
 
   .expertise-card h3 {
     margin-top: 4rem;
+  }
+}
+
+/* Écrans peu hauts (laptops 13"-14") : le hero doit tenir dans la fenêtre
+   sans que le pied de section soit coupé. */
+@media (min-width: 901px) and (max-height: 900px) {
+  .hero {
+    padding-block: clamp(2.5rem, 5.5vh, 4.5rem);
+  }
+
+  .hero h1 {
+    font-size: clamp(2.8rem, 4.1vw, 4.2rem);
+  }
+
+  .hero-intro {
+    margin-top: 1.6rem;
+  }
+
+  .hero-actions {
+    margin-top: 1.7rem;
+  }
+
+  .hero-footnote {
+    margin-top: 2rem;
+  }
+
+  .section-pad {
+    padding-block: clamp(4.5rem, 8vw, 7.5rem);
+  }
+
+  .about-layout {
+    padding-block: 3rem;
+  }
+
+  .stack-console {
+    margin-top: 3rem;
   }
 }
 
