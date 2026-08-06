@@ -202,9 +202,9 @@ const fr: PortfolioContent = {
   hero: {
     role: "FULL-STACK PRODUCT ENGINEER",
     location: "PARIS · FRANCE",
-    before: "Je transforme des systèmes",
-    accent: "complexes",
-    after: "en produits simples à utiliser.",
+    before: "Je transforme des systèmes complexes en produits",
+    accent: "simples",
+    after: "à utiliser.",
     intro:
       "Web, mobile, desktop et infrastructure. Je conçois des produits de bout en bout, du premier schéma jusqu’à la production.",
     projects: "Voir mes projets",
@@ -419,9 +419,9 @@ const en: PortfolioContent = {
   hero: {
     role: "FULL-STACK PRODUCT ENGINEER",
     location: "PARIS · FRANCE",
-    before: "I turn",
-    accent: "complex",
-    after: "systems into products that feel simple.",
+    before: "I turn complex systems into products that feel",
+    accent: "simple",
+    after: "to use.",
     intro:
       "Web, mobile, desktop and infrastructure. I build products end to end, from the first schema to production.",
     projects: "View my work",
@@ -635,9 +635,9 @@ const es: PortfolioContent = {
   hero: {
     role: "FULL-STACK PRODUCT ENGINEER",
     location: "PARÍS · FRANCIA",
-    before: "Transformo sistemas",
-    accent: "complejos",
-    after: "en productos fáciles de usar.",
+    before: "Transformo sistemas complejos en productos",
+    accent: "fáciles",
+    after: "de usar.",
     intro:
       "Web, móvil, escritorio e infraestructura. Construyo productos de principio a fin, desde el primer esquema hasta producción.",
     projects: "Ver mis proyectos",
@@ -852,9 +852,9 @@ const de: PortfolioContent = {
   hero: {
     role: "FULL-STACK PRODUCT ENGINEER",
     location: "PARIS · FRANKREICH",
-    before: "Ich verwandle",
-    accent: "komplexe",
-    after: "Systeme in einfach nutzbare Produkte.",
+    before: "Ich verwandle komplexe Systeme in",
+    accent: "einfach",
+    after: "nutzbare Produkte.",
     intro:
       "Web, Mobile, Desktop und Infrastruktur. Ich entwickle Produkte durchgängig – vom ersten Schema bis zur Produktion.",
     projects: "Projekte ansehen",

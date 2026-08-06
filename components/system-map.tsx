@@ -200,7 +200,6 @@ function SystemPanel({
         >
           <span className="center-kicker">PRODUCT CORE</span>
           <strong>RP</strong>
-          <span>END → END</span>
         </button>
 
         {nodes.map((node) => (
@@ -219,14 +218,6 @@ function SystemPanel({
           </button>
         ))}
 
-        <div className="system-readout readout-left" aria-hidden="true">
-          <span>INGRESS</span>
-          <strong>01</strong>
-        </div>
-        <div className="system-readout readout-right" aria-hidden="true">
-          <span>DELIVERY</span>
-          <strong>06</strong>
-        </div>
       </div>
 
       <div className="system-inspector" key={active.id} aria-live="polite">
@@ -245,11 +236,6 @@ function SystemPanel({
         </span>
       </div>
 
-      <div className="system-log" aria-hidden="true">
-        <span>&gt; architecture validated</span>
-        <span>&gt; quality gates passed</span>
-        <span className="log-cursor">_</span>
-      </div>
     </div>
   );
 }
