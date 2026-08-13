@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Raphaël Plassart">
   <rect width="64" height="64" fill="#100e0c"/>
-  <path d="M10 8L23 8L23 56L10 56Z" fill="#e9e5dc"/>
-  <path d="M23 8L54 8L54 38L23 38L23 28L41 28L41 18L23 18Z" fill="#e9e5dc"/>
-  <path d="M32 38L45 38L54 56L41 56Z" fill="#ff3b00"/>
+  <path d="M13 8L26 8L26 56L13 56Z" fill="#e9e5dc"/>
+  <path d="M26 8L51 8L51 38L26 38L26 30L38 30L38 17L26 17Z" fill="#e9e5dc"/>
+  <path d="M32 38L44 38L52 56L40 56Z" fill="#ff3b00"/>
 </svg>
