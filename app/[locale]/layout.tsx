@@ -2,9 +2,9 @@ import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
 import "../globals.css";
 import { generateJsonLd } from "@/lib/json-ld";
-import { geist, geistMono } from "@/lib/fonts";
+import { fontVariables } from "@/lib/fonts";
 import { isLocale } from "@/lib/content";
-import { themeScript } from "@/lib/theme";
+import { noScriptStyles, themeScript } from "@/lib/theme";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.raphael-plassart.com"),
@@ -12,8 +12,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f2f0e9" },
-    { media: "(prefers-color-scheme: dark)", color: "#101110" },
+    { media: "(prefers-color-scheme: light)", color: "#e9e5dc" },
+    { media: "(prefers-color-scheme: dark)", color: "#0b0a09" },
   ],
   colorScheme: "light dark",
 };
@@ -33,8 +33,11 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body className={`${geist.variable} ${geistMono.variable}`}>
+      <body className={fontVariables}>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <noscript>
+          <style dangerouslySetInnerHTML={{ __html: noScriptStyles }} />
+        </noscript>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
