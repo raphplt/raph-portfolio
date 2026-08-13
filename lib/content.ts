@@ -283,7 +283,7 @@ const fr: PortfolioContent = {
   },
   ticker: [
     "QOREDB",
-    "10 000 TÉLÉCHARGEMENTS",
+    "15 000 TÉLÉCHARGEMENTS",
     "RUST",
     "TAURI",
     "TYPESCRIPT",
@@ -305,7 +305,7 @@ const fr: PortfolioContent = {
       "Un produit fini, ce n’est pas un produit qui compile. C’est un produit dont il n’y a plus rien à dire.",
   },
   stats: [
-    { value: "10 000+", label: "téléchargements QoreDB" },
+    { value: "15 000+", label: "téléchargements QoreDB" },
     { value: "60+", label: "dépôts publics" },
     { value: "4", label: "surfaces maîtrisées" },
     { value: "3+", label: "années en production" },
@@ -331,7 +331,7 @@ const fr: PortfolioContent = {
       "Un éditeur de requêtes qui répond avant qu’on ait relâché la touche",
     ],
     metricLabel: "AUJOURD’HUI",
-    metricValue: "10 000+",
+    metricValue: "15 000+",
     metricCaption: "téléchargements en quelques mois",
     selectedLabel: "AUTRES PRODUITS LIVRÉS",
     projects: [
@@ -423,8 +423,7 @@ const fr: PortfolioContent = {
     index: "05 / APPROCHE",
     title: "Le perfectionnisme, rendu utile.",
     lead: "Pas la quête d’un code abstraitement parfait. Une exigence concrète : comprendre le problème avant de l’attaquer, et livrer quelque chose dont on peut encore être fier six mois plus tard.",
-    quote:
-      "Je n’appelle pas fini ce qui fonctionne seulement sur ma machine.",
+    quote: "Je n’appelle pas fini ce qui fonctionne seulement sur ma machine.",
     principles: [
       {
         title: "Penser système",
@@ -473,7 +472,10 @@ const fr: PortfolioContent = {
   },
   contact: {
     index: "06 / LA SUITE",
-    lines: ["VOUS AVEZ UN PRODUIT *ambitieux*.", "CONSTRUISONS-LE *correctement*."],
+    lines: [
+      "VOUS AVEZ UN PRODUIT *ambitieux*.",
+      "CONSTRUISONS-LE *correctement*.",
+    ],
     lead: "Je cherche une équipe exigeante, des sujets entiers, et des gens qui n’ont pas peur de refaire une fois que le problème est mieux compris.",
     emailLabel: "Écrivez-moi",
     cvLabel: "Curriculum vitae",
@@ -694,7 +696,9 @@ const en: PortfolioContent = {
       },
       { text: "An experimental search engine, written in Python." },
       { text: "A data site for Pokémon GO, built with Svelte." },
-      { text: "A comparison tool to settle it once and for all: was it worth it?" },
+      {
+        text: "A comparison tool to settle it once and for all: was it worth it?",
+      },
       {
         text: "My photography site. The only project where the subject is not code.",
       },
@@ -852,7 +856,7 @@ const es: PortfolioContent = {
   },
   ticker: [
     "QOREDB",
-    "10 000 DESCARGAS",
+    "15 000 DESCARGAS",
     "RUST",
     "TAURI",
     "TYPESCRIPT",
@@ -874,7 +878,7 @@ const es: PortfolioContent = {
       "Un producto terminado no es un producto que compila. Es un producto del que ya no queda nada que decir.",
   },
   stats: [
-    { value: "10 000+", label: "descargas de QoreDB" },
+    { value: "15 000+", label: "descargas de QoreDB" },
     { value: "60+", label: "repositorios públicos" },
     { value: "4", label: "superficies dominadas" },
     { value: "3+", label: "años en producción" },
@@ -900,7 +904,7 @@ const es: PortfolioContent = {
       "Un editor de consultas que responde antes de soltar la tecla",
     ],
     metricLabel: "HOY",
-    metricValue: "10 000+",
+    metricValue: "15 000+",
     metricCaption: "descargas en pocos meses",
     selectedLabel: "OTROS PRODUCTOS ENTREGADOS",
     projects: [
@@ -1134,7 +1138,7 @@ const de: PortfolioContent = {
   },
   ticker: [
     "QOREDB",
-    "10 000 DOWNLOADS",
+    "15 000 DOWNLOADS",
     "RUST",
     "TAURI",
     "TYPESCRIPT",
@@ -1156,7 +1160,7 @@ const de: PortfolioContent = {
       "Ein fertiges Produkt ist kein Produkt, das kompiliert. Es ist ein Produkt, zu dem nichts mehr zu sagen bleibt.",
   },
   stats: [
-    { value: "10 000+", label: "QoreDB-Downloads" },
+    { value: "15 000+", label: "QoreDB-Downloads" },
     { value: "60+", label: "öffentliche Repositories" },
     { value: "4", label: "beherrschte Ebenen" },
     { value: "3+", label: "Jahre in der Produktion" },
@@ -1182,7 +1186,7 @@ const de: PortfolioContent = {
       "Ein Abfrage-Editor, der antwortet, bevor die Taste losgelassen ist",
     ],
     metricLabel: "HEUTE",
-    metricValue: "10 000+",
+    metricValue: "15 000+",
     metricCaption: "Downloads in wenigen Monaten",
     selectedLabel: "WEITERE GELIEFERTE PRODUKTE",
     projects: [
