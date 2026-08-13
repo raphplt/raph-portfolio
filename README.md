@@ -1,4 +1,4 @@
-# Portfolio — Raphaël Plassart
+# Portfolio Raphaël Plassart
 
 Portfolio personnel de Raphaël Plassart, full-stack product engineer et
 créateur de [QoreDB](https://github.com/QoreDB/QoreDB).

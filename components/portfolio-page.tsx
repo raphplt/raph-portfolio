@@ -113,15 +113,26 @@ export function PortfolioPage({ locale }: { locale: Locale }) {
                     {copy.work.status}
                   </span>
                 </span>
-                <a
-                  className="link"
-                  href="https://github.com/QoreDB/QoreDB"
-                  rel="noreferrer"
-                  target="_blank"
-                >
-                  {copy.work.source}
-                  <ArrowUpRight size={14} strokeWidth={2} />
-                </a>
+                <span className="right">
+                  <a
+                    className="link"
+                    href="https://qoredb.com/"
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    {copy.work.visit}
+                    <ArrowUpRight size={14} strokeWidth={2} />
+                  </a>
+                  <a
+                    className="link"
+                    href="https://github.com/QoreDB/QoreDB"
+                    rel="noreferrer"
+                    target="_blank"
+                  >
+                    {copy.work.source}
+                    <ArrowUpRight size={14} strokeWidth={2} />
+                  </a>
+                </span>
               </Reveal>
 
               <Reveal className="featured-head">

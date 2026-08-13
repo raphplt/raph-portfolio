@@ -202,7 +202,7 @@ export const skillStacks = [
 
 const fr: PortfolioContent = {
   meta: {
-    title: "Raphaël Plassart — Full-stack Product Engineer",
+    title: "Raphaël Plassart · Full-stack Product Engineer",
     description:
       "Développeur full-stack à Paris. Je conçois et livre des produits web, mobile et desktop, de l’architecture à la production. Créateur de QoreDB.",
     ogDescription:
@@ -229,10 +229,10 @@ const fr: PortfolioContent = {
     progress: "Progression de lecture",
   },
   game: {
-    title: "RP // CORE RUNNER",
+    title: "RP / CORE RUNNER",
     subtitle: "Transmission arcade interceptée",
     intro:
-      "Récupère les noyaux verts, évite les météores et tiens le plus longtemps possible.",
+      "Récupère les noyaux orange, évite les météores et tiens le plus longtemps possible.",
     start: "Lancer la mission",
     close: "Quitter le jeu",
     pause: "Mettre en pause",
@@ -272,13 +272,13 @@ const fr: PortfolioContent = {
     lines: ["JE CONSTRUIS", "LES OUTILS *que*", "*je voulais* UTILISER."],
     role: "FULL-STACK PRODUCT ENGINEER",
     place: "PARIS · 48.8566° N",
-    lead: "Web, mobile, desktop, infrastructure. Je prends les sujets en entier — du premier schéma jusqu’au jour où ça tourne pour de vrai, avec de vrais utilisateurs dessus.",
+    lead: "Web, mobile, desktop, infrastructure. Je prends les sujets en entier, du premier schéma jusqu’au jour où ça tourne pour de vrai, avec de vrais utilisateurs dessus.",
     ctaWork: "Voir les projets",
     ctaContact: "Me contacter",
     cv: "Télécharger le CV",
     scroll: "Défiler",
     statusLabel: "Statut",
-    status: "Disponible — novembre 2026",
+    status: "Disponible en novembre 2026",
     localTime: "Heure locale",
   },
   ticker: [
@@ -299,7 +299,7 @@ const fr: PortfolioContent = {
     paragraphs: [
       "La plupart des logiciels que j’utilise tous les jours sont corrects. Rarement mieux. Pendant longtemps, j’ai attendu que quelqu’un les répare. Puis **j’ai arrêté d’attendre**.",
       "QoreDB est né d’un agacement précis : un client de base de données lent, hostile, et qui me laissait vider une table de production sans jamais me demander si j’étais sûr. Dix mille téléchargements plus tard, **l’agacement était visiblement partagé**.",
-      "C’est à peu près comme ça que je travaille. Je pars d’une gêne concrète, je remonte jusqu’à la cause, et je ne lâche pas avant que **le problème ait disparu** — pas seulement qu’il soit contourné.",
+      "C’est à peu près comme ça que je travaille. Je pars d’une gêne concrète, je remonte jusqu’à la cause, et je ne lâche pas avant que **le problème ait disparu**, pas seulement qu’il soit contourné.",
     ],
     quote:
       "Un produit fini, ce n’est pas un produit qui compile. C’est un produit dont il n’y a plus rien à dire.",
@@ -313,7 +313,7 @@ const fr: PortfolioContent = {
   work: {
     index: "02 / PROJETS",
     title: "Du code qui a fini par servir à quelqu’un.",
-    lead: "Une sélection courte. Chacun de ces produits est parti d’un problème que j’avais pour de bon, et chacun a fini en production — avec de vrais utilisateurs, et de vrais bugs à vingt-trois heures.",
+    lead: "Une sélection courte. Chacun de ces produits est parti d’un problème que j’avais pour de bon, et chacun a fini en production, avec de vrais utilisateurs et de vrais bugs à vingt-trois heures.",
     featuredLabel: "PROJET PHARE",
     status: "Open source · actif",
     visit: "Voir le site",
@@ -443,27 +443,27 @@ const fr: PortfolioContent = {
       "Du développement web à la construction d’un produit desktop open source.",
     journey: [
       {
-        date: "2022 — 2024",
+        date: "2022-2024",
         title: "ETNA · Bachelor informatique",
         text: "Socle d’ingénierie, apprentissage par projets, et la découverte que livrer est un métier à part entière.",
       },
       {
-        date: "2023 — 2024",
+        date: "2023-2024",
         title: "Mes Allocs · Développeur full-stack",
         text: "Produit web, back-office, travail en équipe et premiers vrais utilisateurs derrière le code.",
       },
       {
-        date: "2024 — auj.",
+        date: "depuis 2024",
         title: "Tkorp · Développeur full-stack & mobile",
         text: "Pulse, du prototype à la production et au Play Store. Le passage du « ça marche » au « ça tient ».",
       },
       {
-        date: "2025 — 2026",
+        date: "2025-2026",
         title: "ETNA · Master of Science informatique",
         text: "Architecture logicielle et pilotage de projets complexes, en parallèle de l’alternance.",
       },
       {
-        date: "2026 — auj.",
+        date: "depuis 2026",
         title: "QoreDB · Fondateur & ingénieur",
         text: "Un produit desktop open source en Rust et Tauri. Ma première réponse complète à un problème que j’avais.",
       },
@@ -485,7 +485,7 @@ const fr: PortfolioContent = {
   },
   footer: {
     note: "Conçu et développé à Paris.",
-    built: "Next.js, CSS écrit à la main, aucun template.",
+    built: "Archivo, Instrument Serif, Geist Mono. Un seul fichier CSS.",
     rights: "Tous droits réservés",
     top: "Haut de page",
   },
@@ -493,7 +493,7 @@ const fr: PortfolioContent = {
 
 const en: PortfolioContent = {
   meta: {
-    title: "Raphaël Plassart — Full-stack Product Engineer",
+    title: "Raphaël Plassart · Full-stack Product Engineer",
     description:
       "Full-stack developer in Paris. I design and ship web, mobile and desktop products, from architecture to production. Creator of QoreDB.",
     ogDescription:
@@ -520,10 +520,10 @@ const en: PortfolioContent = {
     progress: "Reading progress",
   },
   game: {
-    title: "RP // CORE RUNNER",
+    title: "RP / CORE RUNNER",
     subtitle: "Arcade transmission intercepted",
     intro:
-      "Collect green cores, dodge meteors and survive as long as possible.",
+      "Collect the orange cores, dodge meteors and survive as long as possible.",
     start: "Launch mission",
     close: "Quit game",
     pause: "Pause",
@@ -563,13 +563,13 @@ const en: PortfolioContent = {
     lines: ["I BUILD THE", "TOOLS *I wished*", "*existed.*"],
     role: "FULL-STACK PRODUCT ENGINEER",
     place: "PARIS · 48.8566° N",
-    lead: "Web, mobile, desktop, infrastructure. I take subjects whole — from the first schema to the day it runs for real, with real users on it.",
+    lead: "Web, mobile, desktop, infrastructure. I take subjects whole, from the first schema to the day it runs for real, with real users on it.",
     ctaWork: "See the work",
     ctaContact: "Get in touch",
     cv: "Download résumé",
     scroll: "Scroll",
     statusLabel: "Status",
-    status: "Available — November 2026",
+    status: "Available from November 2026",
     localTime: "Local time",
   },
   ticker: [
@@ -590,7 +590,7 @@ const en: PortfolioContent = {
     paragraphs: [
       "Most of the software I use every day is fine. Rarely better than that. For a long time I waited for someone to fix it. Then **I stopped waiting**.",
       "QoreDB came out of one very specific irritation: a database client that was slow, hostile, and perfectly happy to let me wipe a production table without ever asking if I was sure. Ten thousand downloads later, **the irritation was clearly shared**.",
-      "That is roughly how I work. I start from a concrete annoyance, trace it back to its cause, and refuse to let go until **the problem is gone** — not merely worked around.",
+      "That is roughly how I work. I start from a concrete annoyance, trace it back to its cause, and refuse to let go until **the problem is gone**, not merely worked around.",
     ],
     quote:
       "A finished product is not a product that compiles. It is a product there is nothing left to say about.",
@@ -604,7 +604,7 @@ const en: PortfolioContent = {
   work: {
     index: "02 / WORK",
     title: "Code that ended up being useful to someone.",
-    lead: "A short selection. Each of these products started from a problem I genuinely had, and each one shipped — with real users, and real bugs at eleven at night.",
+    lead: "A short selection. Each of these products started from a problem I genuinely had, and each one shipped with real users, and real bugs at eleven at night.",
     featuredLabel: "FEATURED",
     status: "Open source · active",
     visit: "Visit the site",
@@ -728,27 +728,27 @@ const en: PortfolioContent = {
       "From web development to building an open-source desktop product.",
     journey: [
       {
-        date: "2022 — 2024",
+        date: "2022-2024",
         title: "ETNA · Bachelor in computer science",
         text: "Engineering foundations, project-based learning, and the discovery that shipping is a craft of its own.",
       },
       {
-        date: "2023 — 2024",
+        date: "2023-2024",
         title: "Mes Allocs · Full-stack developer",
         text: "Web product, back office, teamwork, and the first real users sitting behind the code.",
       },
       {
-        date: "2024 — now",
+        date: "since 2024",
         title: "Tkorp · Full-stack & mobile developer",
         text: "Pulse, from prototype to production and the Play Store. The move from “it works” to “it holds”.",
       },
       {
-        date: "2025 — 2026",
+        date: "2025-2026",
         title: "ETNA · Master of Science in computer science",
         text: "Software architecture and complex project management, alongside the apprenticeship.",
       },
       {
-        date: "2026 — now",
+        date: "since 2026",
         title: "QoreDB · Founder & engineer",
         text: "An open-source desktop product in Rust and Tauri. My first complete answer to a problem I had.",
       },
@@ -767,7 +767,7 @@ const en: PortfolioContent = {
   },
   footer: {
     note: "Designed and built in Paris.",
-    built: "Next.js, hand-written CSS, no template.",
+    built: "Archivo, Instrument Serif, Geist Mono. One single CSS file.",
     rights: "All rights reserved",
     top: "Back to top",
   },
@@ -775,7 +775,7 @@ const en: PortfolioContent = {
 
 const es: PortfolioContent = {
   meta: {
-    title: "Raphaël Plassart — Full-stack Product Engineer",
+    title: "Raphaël Plassart · Full-stack Product Engineer",
     description:
       "Desarrollador full-stack en París. Diseño y entrego productos web, móviles y de escritorio, de la arquitectura a la producción. Creador de QoreDB.",
     ogDescription:
@@ -802,10 +802,10 @@ const es: PortfolioContent = {
     progress: "Progreso de lectura",
   },
   game: {
-    title: "RP // CORE RUNNER",
+    title: "RP / CORE RUNNER",
     subtitle: "Transmisión arcade interceptada",
     intro:
-      "Recoge los núcleos verdes, esquiva los meteoros y aguanta el mayor tiempo posible.",
+      "Recoge los núcleos naranjas, esquiva los meteoros y aguanta el mayor tiempo posible.",
     start: "Lanzar la misión",
     close: "Salir del juego",
     pause: "Pausar",
@@ -845,13 +845,13 @@ const es: PortfolioContent = {
     lines: ["CONSTRUYO LAS", "*herramientas que*", "QUERÍA *usar*."],
     role: "FULL-STACK PRODUCT ENGINEER",
     place: "PARÍS · 48.8566° N",
-    lead: "Web, móvil, escritorio, infraestructura. Asumo los temas enteros — desde el primer esquema hasta el día en que funciona de verdad, con usuarios reales encima.",
+    lead: "Web, móvil, escritorio, infraestructura. Asumo los temas enteros, desde el primer esquema hasta el día en que funciona de verdad, con usuarios reales encima.",
     ctaWork: "Ver los proyectos",
     ctaContact: "Contactarme",
     cv: "Descargar el CV",
     scroll: "Desplazar",
     statusLabel: "Estado",
-    status: "Disponible — noviembre de 2026",
+    status: "Disponible desde noviembre de 2026",
     localTime: "Hora local",
   },
   ticker: [
@@ -872,7 +872,7 @@ const es: PortfolioContent = {
     paragraphs: [
       "La mayoría del software que uso a diario es correcto. Rara vez algo más. Durante mucho tiempo esperé a que alguien lo arreglara. Después **dejé de esperar**.",
       "QoreDB nació de una molestia muy concreta: un cliente de base de datos lento, hostil, y encantado de dejarme vaciar una tabla de producción sin preguntarme nunca si estaba seguro. Diez mil descargas después, **la molestia era claramente compartida**.",
-      "Así es más o menos como trabajo. Parto de una incomodidad concreta, remonto hasta su causa y no suelto hasta que **el problema desaparece** — no solo hasta que queda esquivado.",
+      "Así es más o menos como trabajo. Parto de una incomodidad concreta, remonto hasta su causa y no suelto hasta que **el problema desaparece**, no solo hasta que queda esquivado.",
     ],
     quote:
       "Un producto terminado no es un producto que compila. Es un producto del que ya no queda nada que decir.",
@@ -886,7 +886,7 @@ const es: PortfolioContent = {
   work: {
     index: "02 / PROYECTOS",
     title: "Código que acabó sirviéndole a alguien.",
-    lead: "Una selección corta. Cada uno de estos productos partió de un problema que yo tenía de verdad, y cada uno acabó en producción — con usuarios reales y errores reales a las once de la noche.",
+    lead: "Una selección corta. Cada uno de estos productos partió de un problema que yo tenía de verdad, y cada uno acabó en producción, con usuarios reales y errores reales a las once de la noche.",
     featuredLabel: "PROYECTO DESTACADO",
     status: "Código abierto · activo",
     visit: "Ver el sitio",
@@ -1010,27 +1010,27 @@ const es: PortfolioContent = {
       "Del desarrollo web a la construcción de un producto de escritorio de código abierto.",
     journey: [
       {
-        date: "2022 — 2024",
+        date: "2022-2024",
         title: "ETNA · Grado en informática",
         text: "Base de ingeniería, aprendizaje por proyectos, y el descubrimiento de que entregar es un oficio en sí mismo.",
       },
       {
-        date: "2023 — 2024",
+        date: "2023-2024",
         title: "Mes Allocs · Desarrollador full-stack",
         text: "Producto web, back-office, trabajo en equipo y los primeros usuarios reales detrás del código.",
       },
       {
-        date: "2024 — hoy",
+        date: "desde 2024",
         title: "Tkorp · Desarrollador full-stack y móvil",
         text: "Pulse, del prototipo a la producción y a la Play Store. El paso de «funciona» a «aguanta».",
       },
       {
-        date: "2025 — 2026",
+        date: "2025-2026",
         title: "ETNA · Máster en informática",
         text: "Arquitectura de software y gestión de proyectos complejos, en paralelo a la alternancia.",
       },
       {
-        date: "2026 — hoy",
+        date: "desde 2026",
         title: "QoreDB · Fundador e ingeniero",
         text: "Un producto de escritorio de código abierto en Rust y Tauri. Mi primera respuesta completa a un problema que tenía.",
       },
@@ -1049,7 +1049,7 @@ const es: PortfolioContent = {
   },
   footer: {
     note: "Diseñado y desarrollado en París.",
-    built: "Next.js, CSS escrito a mano, sin plantilla.",
+    built: "Archivo, Instrument Serif, Geist Mono. Un único archivo CSS.",
     rights: "Todos los derechos reservados",
     top: "Volver arriba",
   },
@@ -1057,7 +1057,7 @@ const es: PortfolioContent = {
 
 const de: PortfolioContent = {
   meta: {
-    title: "Raphaël Plassart — Full-stack Product Engineer",
+    title: "Raphaël Plassart · Full-stack Product Engineer",
     description:
       "Full-Stack-Entwickler in Paris. Ich konzipiere und liefere Web-, Mobil- und Desktop-Produkte, von der Architektur bis in die Produktion. Schöpfer von QoreDB.",
     ogDescription:
@@ -1084,10 +1084,10 @@ const de: PortfolioContent = {
     progress: "Lesefortschritt",
   },
   game: {
-    title: "RP // CORE RUNNER",
+    title: "RP / CORE RUNNER",
     subtitle: "Arcade-Übertragung abgefangen",
     intro:
-      "Sammle die grünen Kerne, weiche den Meteoren aus und halte so lange wie möglich durch.",
+      "Sammle die orangen Kerne, weiche den Meteoren aus und halte so lange wie möglich durch.",
     start: "Mission starten",
     close: "Spiel verlassen",
     pause: "Pausieren",
@@ -1127,13 +1127,13 @@ const de: PortfolioContent = {
     lines: ["ICH BAUE DIE", "*Werkzeuge, die ich*", "BRAUCHTE."],
     role: "FULL-STACK PRODUCT ENGINEER",
     place: "PARIS · 48,8566° N",
-    lead: "Web, Mobil, Desktop, Infrastruktur. Ich übernehme Themen ganz — vom ersten Schema bis zu dem Tag, an dem es wirklich läuft, mit echten Nutzenden darauf.",
+    lead: "Web, Mobil, Desktop, Infrastruktur. Ich übernehme Themen ganz, vom ersten Schema bis zu dem Tag, an dem es wirklich läuft, mit echten Nutzenden darauf.",
     ctaWork: "Projekte ansehen",
     ctaContact: "Kontakt aufnehmen",
     cv: "Lebenslauf herunterladen",
     scroll: "Scrollen",
     statusLabel: "Status",
-    status: "Verfügbar — November 2026",
+    status: "Verfügbar ab November 2026",
     localTime: "Ortszeit",
   },
   ticker: [
@@ -1154,7 +1154,7 @@ const de: PortfolioContent = {
     paragraphs: [
       "Die meiste Software, die ich täglich benutze, ist in Ordnung. Selten mehr. Lange habe ich darauf gewartet, dass jemand sie repariert. Dann **habe ich aufgehört zu warten**.",
       "QoreDB entstand aus einem sehr konkreten Ärgernis: ein Datenbank-Client, der langsam und unwirsch war und mich eine Produktionstabelle leeren ließ, ohne je zu fragen, ob ich sicher sei. Zehntausend Downloads später war **der Ärger offensichtlich geteilt**.",
-      "Ungefähr so arbeite ich. Ich beginne bei einem konkreten Unbehagen, gehe zurück bis zur Ursache und lasse nicht los, bevor **das Problem verschwunden ist** — nicht bloß umgangen.",
+      "Ungefähr so arbeite ich. Ich beginne bei einem konkreten Unbehagen, gehe zurück bis zur Ursache und lasse nicht los, bevor **das Problem verschwunden ist**, nicht bloß umgangen.",
     ],
     quote:
       "Ein fertiges Produkt ist kein Produkt, das kompiliert. Es ist ein Produkt, zu dem nichts mehr zu sagen bleibt.",
@@ -1168,7 +1168,7 @@ const de: PortfolioContent = {
   work: {
     index: "02 / PROJEKTE",
     title: "Code, der am Ende jemandem genützt hat.",
-    lead: "Eine kurze Auswahl. Jedes dieser Produkte begann mit einem Problem, das ich wirklich hatte, und jedes ging in Produktion — mit echten Nutzenden und echten Fehlern um dreiundzwanzig Uhr.",
+    lead: "Eine kurze Auswahl. Jedes dieser Produkte begann mit einem Problem, das ich wirklich hatte, und jedes ging in Produktion, mit echten Nutzenden und echten Fehlern um dreiundzwanzig Uhr.",
     featuredLabel: "HAUPTPROJEKT",
     status: "Open Source · aktiv",
     visit: "Website ansehen",
@@ -1178,7 +1178,7 @@ const de: PortfolioContent = {
       "Ein Local-first-Datenbank-Client, der SQL und NoSQL in einer Oberfläche vereint, die man nicht schließen möchte.",
     challengeLabel: "DAS PROBLEM",
     challenge:
-      "Die vorhandenen Werkzeuge sind mächtig und unwirsch. Die Macht behalten, die Unwirschheit wegwerfen — ohne das Produkt in ein Spielzeug für Anfänger zu verwandeln.",
+      "Die vorhandenen Werkzeuge sind mächtig und unwirsch. Die Macht behalten, die Unwirschheit wegwerfen, ohne das Produkt in ein Spielzeug für Anfänger zu verwandeln.",
     buildLabel: "WAS ICH GEBAUT HABE",
     build: [
       "Ein Rust-Kern, eine Tauri-Hülle, fünfzehn Treiber hinter einer einzigen Oberfläche",
@@ -1292,27 +1292,27 @@ const de: PortfolioContent = {
       "Von der Webentwicklung zum Bau eines quelloffenen Desktop-Produkts.",
     journey: [
       {
-        date: "2022 — 2024",
+        date: "2022-2024",
         title: "ETNA · Bachelor Informatik",
         text: "Ingenieurgrundlagen, projektbasiertes Lernen und die Entdeckung, dass Ausliefern ein eigenes Handwerk ist.",
       },
       {
-        date: "2023 — 2024",
+        date: "2023-2024",
         title: "Mes Allocs · Full-Stack-Entwickler",
         text: "Webprodukt, Backoffice, Teamarbeit und die ersten echten Nutzenden hinter dem Code.",
       },
       {
-        date: "2024 — heute",
+        date: "seit 2024",
         title: "Tkorp · Full-Stack- & Mobile-Entwickler",
         text: "Pulse, vom Prototyp bis in die Produktion und in den Play Store. Der Schritt von „es läuft“ zu „es hält“.",
       },
       {
-        date: "2025 — 2026",
+        date: "2025-2026",
         title: "ETNA · Master of Science Informatik",
         text: "Softwarearchitektur und Steuerung komplexer Projekte, parallel zur dualen Ausbildung.",
       },
       {
-        date: "2026 — heute",
+        date: "seit 2026",
         title: "QoreDB · Gründer & Ingenieur",
         text: "Ein quelloffenes Desktop-Produkt in Rust und Tauri. Meine erste vollständige Antwort auf ein Problem, das ich hatte.",
       },
@@ -1331,7 +1331,7 @@ const de: PortfolioContent = {
   },
   footer: {
     note: "In Paris entworfen und entwickelt.",
-    built: "Next.js, handgeschriebenes CSS, kein Template.",
+    built: "Archivo, Instrument Serif, Geist Mono. Eine einzige CSS-Datei.",
     rights: "Alle Rechte vorbehalten",
     top: "Nach oben",
   },

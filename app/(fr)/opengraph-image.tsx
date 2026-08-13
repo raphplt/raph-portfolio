@@ -4,7 +4,7 @@ import {
 } from "@/components/portfolio-og-image";
 
 export const alt =
-  "Raphaël Plassart — Full-stack Product Engineer, créateur de QoreDB";
+  "Raphaël Plassart · Full-stack Product Engineer, créateur de QoreDB";
 export const size = ogSize;
 export const contentType = "image/png";
 

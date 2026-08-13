@@ -42,14 +42,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "fr_FR",
     url: "/",
-    title: "Raphaël Plassart — Full-stack Product Engineer",
+    title: "Raphaël Plassart · Full-stack Product Engineer",
     description:
       "Je construis les outils que je voulais utiliser. Web, mobile, desktop, infrastructure.",
     siteName: "Raphaël Plassart",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Raphaël Plassart — Full-stack Product Engineer",
+    title: "Raphaël Plassart · Full-stack Product Engineer",
     description:
       "Je construis les outils que je voulais utiliser. Web, mobile, desktop, infrastructure.",
   },

@@ -6,7 +6,7 @@ import {
 import { isLocale } from "@/lib/content";
 
 export const alt =
-  "Raphaël Plassart — Full-stack Product Engineer, creator of QoreDB";
+  "Raphaël Plassart · Full-stack Product Engineer, creator of QoreDB";
 export const size = ogSize;
 export const contentType = "image/png";
 

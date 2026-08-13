@@ -56,6 +56,12 @@ const WIDTH = 960;
 const HEIGHT = 560;
 const PLAYER_Y = HEIGHT - 64;
 
+const INK = "#0b0a09";
+const INK_2 = "#16130f";
+const PAPER = "#e9e5dc";
+const ACCENT = "#ff4a1a";
+const GRID_LINE = "rgba(233, 229, 220, 0.045)";
+
 function createStars(): Star[] {
   return Array.from({ length: 85 }, () => ({
     x: Math.random() * WIDTH,
@@ -277,8 +283,8 @@ export function SpaceArcade({
       ctx.translate(x, PLAYER_Y);
       const flame = 17 + Math.sin(time / 55) * 5;
       const flameGradient = ctx.createLinearGradient(0, 12, 0, 12 + flame);
-      flameGradient.addColorStop(0, "#c8ff2e");
-      flameGradient.addColorStop(1, "rgba(255, 92, 53, 0)");
+      flameGradient.addColorStop(0, ACCENT);
+      flameGradient.addColorStop(1, "rgba(255, 74, 26, 0)");
       ctx.fillStyle = flameGradient;
       ctx.beginPath();
       ctx.moveTo(-7, 12);
@@ -287,11 +293,11 @@ export function SpaceArcade({
       ctx.closePath();
       ctx.fill();
 
-      ctx.fillStyle = "#e9ece5";
-      ctx.strokeStyle = "#c8ff2e";
-      ctx.lineWidth = 2;
-      ctx.shadowColor = "rgba(200, 255, 46, 0.55)";
-      ctx.shadowBlur = 14;
+      ctx.fillStyle = PAPER;
+      ctx.strokeStyle = ACCENT;
+      ctx.lineWidth = 1.5;
+      ctx.shadowColor = "rgba(255, 74, 26, 0.35)";
+      ctx.shadowBlur = 12;
       ctx.beginPath();
       ctx.moveTo(0, -22);
       ctx.lineTo(18, 15);
@@ -304,7 +310,7 @@ export function SpaceArcade({
       ctx.stroke();
 
       ctx.shadowBlur = 0;
-      ctx.fillStyle = "#111312";
+      ctx.fillStyle = INK;
       ctx.beginPath();
       ctx.arc(0, -3, 4.5, 0, Math.PI * 2);
       ctx.fill();
@@ -319,11 +325,11 @@ export function SpaceArcade({
       ctx.save();
       ctx.translate(object.x, object.y);
       ctx.rotate(object.rotation);
-      ctx.fillStyle = "#4e3931";
-      ctx.strokeStyle = "#ff5c35";
-      ctx.lineWidth = 2;
-      ctx.shadowColor = "rgba(255, 92, 53, 0.38)";
-      ctx.shadowBlur = 11;
+      ctx.fillStyle = INK_2;
+      ctx.strokeStyle = "rgba(233, 229, 220, 0.55)";
+      ctx.lineWidth = 1.5;
+      ctx.shadowColor = "rgba(233, 229, 220, 0.18)";
+      ctx.shadowBlur = 8;
       ctx.beginPath();
       const points = 9;
       for (let index = 0; index < points; index += 1) {
@@ -337,7 +343,8 @@ export function SpaceArcade({
       ctx.closePath();
       ctx.fill();
       ctx.stroke();
-      ctx.fillStyle = "rgba(10, 12, 11, 0.45)";
+      ctx.shadowBlur = 0;
+      ctx.fillStyle = "rgba(233, 229, 220, 0.16)";
       ctx.beginPath();
       ctx.arc(-object.radius * 0.22, -object.radius * 0.1, 3.5, 0, Math.PI * 2);
       ctx.fill();
@@ -348,11 +355,11 @@ export function SpaceArcade({
       ctx.save();
       ctx.translate(object.x, object.y);
       ctx.rotate(object.rotation);
-      ctx.strokeStyle = "#c8ff2e";
-      ctx.fillStyle = "rgba(200, 255, 46, 0.18)";
-      ctx.lineWidth = 2;
-      ctx.shadowColor = "#c8ff2e";
-      ctx.shadowBlur = 18;
+      ctx.strokeStyle = ACCENT;
+      ctx.fillStyle = "rgba(255, 74, 26, 0.18)";
+      ctx.lineWidth = 1.5;
+      ctx.shadowColor = ACCENT;
+      ctx.shadowBlur = 16;
       ctx.beginPath();
       for (let index = 0; index < 6; index += 1) {
         const angle = (index / 6) * Math.PI * 2 - Math.PI / 2;
@@ -364,7 +371,8 @@ export function SpaceArcade({
       ctx.closePath();
       ctx.fill();
       ctx.stroke();
-      ctx.fillStyle = "#c8ff2e";
+      ctx.shadowBlur = 0;
+      ctx.fillStyle = ACCENT;
       ctx.beginPath();
       ctx.arc(0, 0, 3.5, 0, Math.PI * 2);
       ctx.fill();
@@ -382,13 +390,13 @@ export function SpaceArcade({
         HEIGHT / 2,
         WIDTH * 0.7,
       );
-      background.addColorStop(0, "#101a10");
-      background.addColorStop(0.52, "#090d0b");
-      background.addColorStop(1, "#050706");
+      background.addColorStop(0, "#1c1917");
+      background.addColorStop(0.52, "#100e0c");
+      background.addColorStop(1, INK);
       ctx.fillStyle = background;
       ctx.fillRect(0, 0, WIDTH, HEIGHT);
 
-      ctx.strokeStyle = "rgba(200, 255, 46, 0.035)";
+      ctx.strokeStyle = GRID_LINE;
       ctx.lineWidth = 1;
       for (let x = 0; x <= WIDTH; x += 48) {
         ctx.beginPath();
@@ -405,7 +413,7 @@ export function SpaceArcade({
 
       for (const star of starsRef.current) {
         ctx.globalAlpha = star.alpha;
-        ctx.fillStyle = "#efffe1";
+        ctx.fillStyle = PAPER;
         ctx.fillRect(star.x, star.y, star.size, star.size);
       }
       ctx.globalAlpha = 1;
@@ -418,7 +426,7 @@ export function SpaceArcade({
       drawShip(ctx, time);
 
       if (invulnerableRef.current > 0) {
-        ctx.fillStyle = `rgba(255, 92, 53, ${Math.min(
+        ctx.fillStyle = `rgba(255, 74, 26, ${Math.min(
           0.12,
           invulnerableRef.current * 0.08,
         )})`;
@@ -688,7 +696,7 @@ export function SpaceArcade({
 
           {phase === "paused" && (
             <div className="arcade-overlay arcade-overlay-compact">
-              <span className="arcade-kicker">SYSTEM // PAUSED</span>
+              <span className="arcade-kicker">SYSTEM / PAUSE</span>
               <button type="button" onClick={togglePause}>
                 <Play size={15} fill="currentColor" />
                 {labels.resume}
@@ -698,7 +706,7 @@ export function SpaceArcade({
 
           {phase === "gameover" && (
             <div className="arcade-overlay arcade-gameover">
-              <span className="arcade-kicker">MISSION // COMPLETE</span>
+              <span className="arcade-kicker">RUN / TERMINATED</span>
               <h2>{labels.gameOver}</h2>
               <p className="arcade-final-score">
                 {labels.finalScore}
@@ -765,10 +773,10 @@ export function SpaceArcade({
               >
                 <X size={16} />
               </button>
-              <span className="arcade-kicker">GLOBAL // TOP 10</span>
+              <span className="arcade-kicker">GLOBAL / TOP 10</span>
               <h2>{labels.leaderboard}</h2>
               {leaderboardStatus === "loading" ? (
-                <p className="arcade-leaderboard-message">LOADING…</p>
+                <p className="arcade-leaderboard-message">LOADING...</p>
               ) : leaderboardStatus === "error" ? (
                 <p className="arcade-leaderboard-message">
                   {labels.leaderboardUnavailable}
