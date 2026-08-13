@@ -272,7 +272,7 @@ const fr: PortfolioContent = {
     lines: ["JE CONSTRUIS", "LES OUTILS *que*", "*je voulais* UTILISER."],
     role: "FULL-STACK PRODUCT ENGINEER",
     place: "PARIS · 48.8566° N",
-    lead: "Web, mobile, desktop, infrastructure. Je prends les sujets en entier, du premier schéma jusqu’au jour où ça tourne pour de vrai, avec de vrais utilisateurs dessus.",
+    lead: "Web, mobile, desktop, infrastructure. Je prends les sujets en entier, du premier schéma jusqu’à la mise en production et aux semaines qui suivent.",
     ctaWork: "Voir les projets",
     ctaContact: "Me contacter",
     cv: "Télécharger le CV",
@@ -297,38 +297,37 @@ const fr: PortfolioContent = {
     index: "01 / MANIFESTE",
     title: "Je n’ai jamais su m’arrêter à « ça marche ».",
     paragraphs: [
-      "La plupart des logiciels que j’utilise tous les jours sont corrects. Rarement mieux. Pendant longtemps, j’ai attendu que quelqu’un les répare. Puis **j’ai arrêté d’attendre**.",
-      "QoreDB est né d’un agacement précis : un client de base de données lent, hostile, et qui me laissait vider une table de production sans jamais me demander si j’étais sûr. Dix mille téléchargements plus tard, **l’agacement était visiblement partagé**.",
-      "C’est à peu près comme ça que je travaille. Je pars d’une gêne concrète, je remonte jusqu’à la cause, et je ne lâche pas avant que **le problème ait disparu**, pas seulement qu’il soit contourné.",
+      "La plupart des logiciels que j’utilise tous les jours sont corrects. Rarement mieux. Pendant des années, j’ai supposé que quelqu’un finirait par s’en occuper.",
+      "QoreDB est né d’un agacement précis : un client de base de données lent, hostile, et qui me laissait vider une table de production sans jamais me demander si j’étais sûr. Depuis, le compteur de téléchargements m’a confirmé que **l’agacement était partagé**.",
+      "C’est à peu près comme ça que je travaille : je pars d’une gêne concrète et je remonte jusqu’à la cause. Ça me prend plus de temps que prévu, presque à chaque fois.",
     ],
-    quote:
-      "Un produit fini, ce n’est pas un produit qui compile. C’est un produit dont il n’y a plus rien à dire.",
+    quote: "Un produit fini, c’est un produit dont il n’y a plus rien à dire.",
   },
   stats: [
     { value: "15 000+", label: "téléchargements QoreDB" },
     { value: "60+", label: "dépôts publics" },
-    { value: "4", label: "surfaces maîtrisées" },
+    { value: "4", label: "plateformes livrées" },
     { value: "3+", label: "années en production" },
   ],
   work: {
     index: "02 / PROJETS",
     title: "Du code qui a fini par servir à quelqu’un.",
-    lead: "Une sélection courte. Chacun de ces produits est parti d’un problème que j’avais pour de bon, et chacun a fini en production, avec de vrais utilisateurs et de vrais bugs à vingt-trois heures.",
+    lead: "Une sélection courte. Chacun de ces produits est parti d’un problème que j’avais vraiment, et chacun est allé jusqu’en production, avec des utilisateurs et des tickets à traiter.",
     featuredLabel: "PROJET PHARE",
     status: "Open source · actif",
     visit: "Voir le site",
     source: "Voir le code",
     kicker: "FONDATEUR · PRODUIT · INGÉNIERIE",
     tagline:
-      "Un client de base de données local-first qui réunit SQL et NoSQL dans une interface qu’on n’a pas envie de fermer.",
+      "Un client de base de données local-first qui réunit SQL et NoSQL dans la même fenêtre.",
     challengeLabel: "LE PROBLÈME",
     challenge:
-      "Les outils existants sont puissants et hostiles. Il fallait garder la puissance et jeter l’hostilité, sans transformer le produit en jouet pour débutants.",
+      "Les outils existants sont puissants et pénibles. La difficulté, c’était de rendre le mien confortable sans le rendre bête : les gens qui ouvrent un client SQL savent ce qu’ils font.",
     buildLabel: "CE QUE J’AI CONSTRUIT",
     build: [
-      "Un cœur Rust, une coquille Tauri, quinze drivers derrière une seule interface",
+      "Un cœur Rust, une coquille Tauri, 15 drivers derrière une seule interface",
       "Un coffre chiffré et des garde-fous explicites sur les bases de production",
-      "Un éditeur de requêtes qui répond avant qu’on ait relâché la touche",
+      "Un éditeur de requêtes rapide, avec l’autocomplétion branchée sur le schéma réel",
     ],
     metricLabel: "AUJOURD’HUI",
     metricValue: "15 000+",
@@ -344,13 +343,13 @@ const fr: PortfolioContent = {
       {
         type: "SaaS · Full-stack",
         description:
-          "Votre activité GitHub traduite en publications LinkedIn qu’on n’a pas honte de poster. Génération, édition, planification.",
+          "Votre activité GitHub transformée en publications LinkedIn présentables. Rédaction, édition, planification.",
         proof: "NestJS · Redis",
       },
       {
         type: "Web · Lead technique",
         description:
-          "Un écosystème pour joueurs de cartes : tournois, marketplace et analyse assistée par IA. Mené à cinq, livré en ligne.",
+          "Un écosystème pour joueurs de cartes : tournois, marketplace et analyse assistée par IA. Livré en ligne.",
         proof: "Équipe de 5",
       },
     ],
@@ -362,23 +361,23 @@ const fr: PortfolioContent = {
   skills: {
     index: "03 / SAVOIR-FAIRE",
     title: "Full-stack, au sens propre.",
-    lead: "Je ne collectionne pas les technologies. Je les relie jusqu’à ce que l’ensemble tienne debout sans moi.",
+    lead: "J’apprends une technologie quand un projet en a besoin, et je m’arrête quand l’ensemble tient debout sans moi.",
     items: [
       {
         title: "Interfaces",
-        text: "Le pixel compte, le temps de réponse davantage. Des interfaces rapides, accessibles, qui ne facturent pas leur complexité à l’utilisateur.",
+        text: "Le pixel compte, mais un écran qui répond tout de suite compte plus. C’est aussi la première chose qu’on sacrifie quand le planning se resserre.",
       },
       {
         title: "Mobile",
-        text: "De l’idée au store. Publier une application, c’est quarante pour cent de code et soixante pour cent de tout le reste. Je fais aussi les soixante.",
+        text: "De l’idée au store. Le code est la partie facile ; ce sont les certificats, les revues et les captures d’écran qui font traîner une sortie. Je fais aussi cette partie-là.",
       },
       {
         title: "Desktop & systèmes",
-        text: "Rust quand la performance n’est pas négociable. Des binaires natifs qui ont fini de démarrer avant qu’on ait cligné des yeux.",
+        text: "Rust quand la performance compte vraiment : des binaires natifs, un démarrage instantané, et de la mémoire qui reste raisonnable.",
       },
       {
         title: "Backend & production",
-        text: "Des API, des données, des pipelines. Et surtout : le jour où ça casse, savoir pourquoi en trois minutes.",
+        text: "Des API, des données, des pipelines. Et des logs qui servent à quelque chose le jour où ça casse.",
       },
     ],
     stackLabel: "STACK",
@@ -390,11 +389,11 @@ const fr: PortfolioContent = {
     lead: "Ce que je construis quand personne ne l’a demandé. Certains ont trouvé leurs utilisateurs, les autres m’ont appris quelque chose.",
     gameKicker: "PIÈCE JOUABLE",
     gameText:
-      "Un arcade en canvas écrit un dimanche après-midi. Classement mondial en PostgreSQL, parce qu’il fallait bien une excuse pour brancher une base.",
+      "Un arcade en canvas, écrit pour le plaisir. Le classement est en PostgreSQL, parce qu’il fallait bien une excuse pour brancher une base.",
     gamePlay: "Lancer le jeu",
     items: [
       {
-        text: "Un générateur de portfolios qui agrège GitHub, LinkedIn et Behance. Deux cents portfolios créés.",
+        text: "Un générateur de portfolios qui agrège GitHub, LinkedIn et Behance. 200 portfolios créés.",
       },
       {
         text: "Une plateforme de vérification de faits assistée par IA.",
@@ -421,21 +420,22 @@ const fr: PortfolioContent = {
   },
   about: {
     index: "05 / APPROCHE",
-    title: "Le perfectionnisme, rendu utile.",
-    lead: "Pas la quête d’un code abstraitement parfait. Une exigence concrète : comprendre le problème avant de l’attaquer, et livrer quelque chose dont on peut encore être fier six mois plus tard.",
-    quote: "Je n’appelle pas fini ce qui fonctionne seulement sur ma machine.",
+    title: "Ce que je fais quand le code marche déjà.",
+    lead: "Je passe plus de temps à comprendre le problème qu’à écrire la solution. Ça se voit six mois plus tard, le jour où il faut y revenir.",
+    quote:
+      "La moitié du travail commence le jour où quelqu’un d’autre l’installe.",
     principles: [
       {
         title: "Penser système",
-        text: "Interface, architecture et exploitation sont le même sujet. Les séparer, c’est simplement reporter le problème.",
+        text: "L’interface, l’architecture et l’infra racontent le même produit. Quand je les traite séparément, je le paie plus tard.",
       },
       {
         title: "Construire pour le réel",
-        text: "La sécurité, les erreurs et les cas limites font partie du produit. Pas de la finition.",
+        text: "Les erreurs, les cas limites et la sécurité sont dans le produit dès le premier jour. Les ajouter à la fin coûte toujours plus cher.",
       },
       {
         title: "Polir l’essentiel",
-        text: "La précision se voit surtout dans les détails que l’utilisateur n’a plus besoin de remarquer.",
+        text: "Les détails qui comptent sont ceux que personne ne remarque : un état de chargement, un message d’erreur clair, un raccourci clavier qui tombe juste.",
       },
     ],
     journeyLabel: "PARCOURS",
@@ -445,7 +445,7 @@ const fr: PortfolioContent = {
       {
         date: "2022-2024",
         title: "ETNA · Bachelor informatique",
-        text: "Socle d’ingénierie, apprentissage par projets, et la découverte que livrer est un métier à part entière.",
+        text: "Socle d’ingénierie et apprentissage par projets, avec des rendus à date fixe.",
       },
       {
         date: "2023-2024",
@@ -465,7 +465,7 @@ const fr: PortfolioContent = {
       {
         date: "depuis 2026",
         title: "QoreDB · Fondateur & ingénieur",
-        text: "Un produit desktop open source en Rust et Tauri. Ma première réponse complète à un problème que j’avais.",
+        text: "Un produit desktop open source en Rust et Tauri. Le premier problème que j’ai réglé pour de bon au lieu de le contourner.",
       },
     ],
     now: "En cours",
@@ -476,7 +476,7 @@ const fr: PortfolioContent = {
       "VOUS AVEZ UN PRODUIT *ambitieux*.",
       "CONSTRUISONS-LE *correctement*.",
     ],
-    lead: "Je cherche une équipe exigeante, des sujets entiers, et des gens qui n’ont pas peur de refaire une fois que le problème est mieux compris.",
+    lead: "Je cherche une équipe exigeante et des sujets qu’on me laisse traiter en entier. Et des gens prêts à refaire une fois qu’on a compris le problème.",
     emailLabel: "Écrivez-moi",
     cvLabel: "Curriculum vitae",
     location: "Paris · France · Remote",
@@ -563,7 +563,7 @@ const en: PortfolioContent = {
     lines: ["I BUILD THE", "TOOLS *I wished*", "*existed.*"],
     role: "FULL-STACK PRODUCT ENGINEER",
     place: "PARIS · 48.8566° N",
-    lead: "Web, mobile, desktop, infrastructure. I take subjects whole, from the first schema to the day it runs for real, with real users on it.",
+    lead: "Web, mobile, desktop, infrastructure. I take projects end to end, from the first schema to the deployment and the weeks that follow.",
     ctaWork: "See the work",
     ctaContact: "Get in touch",
     cv: "Download résumé",
@@ -574,7 +574,7 @@ const en: PortfolioContent = {
   },
   ticker: [
     "QOREDB",
-    "10,000 DOWNLOADS",
+    "15,000 DOWNLOADS",
     "RUST",
     "TAURI",
     "TYPESCRIPT",
@@ -588,41 +588,41 @@ const en: PortfolioContent = {
     index: "01 / MANIFESTO",
     title: "I never learned to stop at “it works”.",
     paragraphs: [
-      "Most of the software I use every day is fine. Rarely better than that. For a long time I waited for someone to fix it. Then **I stopped waiting**.",
-      "QoreDB came out of one very specific irritation: a database client that was slow, hostile, and perfectly happy to let me wipe a production table without ever asking if I was sure. Ten thousand downloads later, **the irritation was clearly shared**.",
-      "That is roughly how I work. I start from a concrete annoyance, trace it back to its cause, and refuse to let go until **the problem is gone**, not merely worked around.",
+      "Most of the software I use every day is fine. Rarely better than that. For years I assumed someone would eventually get around to fixing it.",
+      "QoreDB came out of one very specific irritation: a database client that was slow, hostile, and perfectly happy to let me wipe a production table without ever asking if I was sure. The download counter has since confirmed that **the irritation was shared**.",
+      "That is roughly how I work: I start from a concrete annoyance and trace it back to its cause. It takes longer than I planned, just about every time.",
     ],
     quote:
-      "A finished product is not a product that compiles. It is a product there is nothing left to say about.",
+      "A finished product is a product there is nothing left to say about.",
   },
   stats: [
-    { value: "10,000+", label: "QoreDB downloads" },
+    { value: "15,000+", label: "QoreDB downloads" },
     { value: "60+", label: "public repositories" },
-    { value: "4", label: "surfaces mastered" },
+    { value: "4", label: "platforms shipped" },
     { value: "3+", label: "years in production" },
   ],
   work: {
     index: "02 / WORK",
     title: "Code that ended up being useful to someone.",
-    lead: "A short selection. Each of these products started from a problem I genuinely had, and each one shipped with real users, and real bugs at eleven at night.",
+    lead: "A short selection. Each of these products started from a problem I genuinely had, and each one made it to production, with users and a backlog of tickets.",
     featuredLabel: "FEATURED",
     status: "Open source · active",
     visit: "Visit the site",
     source: "View the code",
     kicker: "FOUNDER · PRODUCT · ENGINEERING",
     tagline:
-      "A local-first database client that brings SQL and NoSQL together in an interface you have no urge to close.",
+      "A local-first database client that brings SQL and NoSQL together in the same window.",
     challengeLabel: "THE PROBLEM",
     challenge:
-      "Existing tools are powerful and hostile. The point was to keep the power and drop the hostility, without turning the product into a toy for beginners.",
+      "Existing tools are powerful and tedious. The hard part was making mine comfortable without making it dumb: people who open a SQL client know what they are doing.",
     buildLabel: "WHAT I BUILT",
     build: [
-      "A Rust core, a Tauri shell, fifteen drivers behind a single interface",
+      "A Rust core, a Tauri shell, 15 drivers behind a single interface",
       "An encrypted vault and explicit guardrails on production databases",
-      "A query editor that answers before you have released the key",
+      "A fast query editor, with autocompletion wired to the actual schema",
     ],
     metricLabel: "TODAY",
-    metricValue: "10,000+",
+    metricValue: "15,000+",
     metricCaption: "downloads in a few months",
     selectedLabel: "OTHER SHIPPED PRODUCTS",
     projects: [
@@ -635,13 +635,13 @@ const en: PortfolioContent = {
       {
         type: "SaaS · Full-stack",
         description:
-          "Your GitHub activity turned into LinkedIn posts you are not embarrassed to publish. Generation, editing, scheduling.",
+          "Your GitHub activity turned into LinkedIn posts that hold up. Writing, editing, scheduling.",
         proof: "NestJS · Redis",
       },
       {
         type: "Web · Tech lead",
         description:
-          "An ecosystem for card-game players: tournaments, marketplace and AI-assisted analysis. Led with a team of five, shipped online.",
+          "An ecosystem for card-game players: tournaments, marketplace and AI-assisted analysis. Shipped online.",
         proof: "Team of 5",
       },
     ],
@@ -653,23 +653,23 @@ const en: PortfolioContent = {
   skills: {
     index: "03 / CRAFT",
     title: "Full-stack, in the literal sense.",
-    lead: "I do not collect technologies. I connect them until the whole thing stands up without me.",
+    lead: "I pick up a technology when a project needs it, and I stop when the whole thing stands up without me.",
     items: [
       {
         title: "Interfaces",
-        text: "Pixels matter, response time matters more. Fast, accessible interfaces that do not bill their complexity to the user.",
+        text: "Pixels matter, but a screen that answers immediately matters more. It is also the first thing to go when the schedule tightens.",
       },
       {
         title: "Mobile",
-        text: "From idea to store. Shipping an app is forty percent code and sixty percent everything else. I do the sixty too.",
+        text: "From idea to store. The code is the easy part; it is the certificates, the reviews and the screenshots that drag a release out. I do that part too.",
       },
       {
         title: "Desktop & systems",
-        text: "Rust when performance is not negotiable. Native binaries that finish launching before you have finished blinking.",
+        text: "Rust when performance genuinely matters: native binaries, instant startup, and memory use that stays reasonable.",
       },
       {
         title: "Backend & production",
-        text: "APIs, data, pipelines. And above all: when it breaks, knowing why within three minutes.",
+        text: "APIs, data, pipelines. And logs that are actually useful on the day it breaks.",
       },
     ],
     stackLabel: "STACK",
@@ -681,11 +681,11 @@ const en: PortfolioContent = {
     lead: "What I build when nobody asked for it. Some found their users, the others taught me something.",
     gameKicker: "PLAYABLE PIECE",
     gameText:
-      "A canvas arcade written on a Sunday afternoon. Global leaderboard on PostgreSQL, because I needed an excuse to plug in a database.",
+      "A canvas arcade, written for the fun of it. The leaderboard runs on PostgreSQL, because I needed an excuse to plug in a database.",
     gamePlay: "Launch the game",
     items: [
       {
-        text: "A portfolio generator that aggregates GitHub, LinkedIn and Behance. Two hundred portfolios created.",
+        text: "A portfolio generator that aggregates GitHub, LinkedIn and Behance. 200 portfolios created.",
       },
       { text: "An AI-assisted fact-checking platform." },
       {
@@ -706,21 +706,21 @@ const en: PortfolioContent = {
   },
   about: {
     index: "05 / APPROACH",
-    title: "Perfectionism, made useful.",
-    lead: "Not the pursuit of abstractly perfect code. A concrete standard: understand the problem before attacking it, and ship something you can still be proud of six months later.",
-    quote: "I do not call finished what only works on my machine.",
+    title: "What I do once the code already works.",
+    lead: "I spend more time understanding the problem than writing the solution. It shows six months later, on the day someone has to go back into it.",
+    quote: "Half the work starts the day someone else installs it.",
     principles: [
       {
         title: "Think in systems",
-        text: "Interface, architecture and operations are the same subject. Separating them only postpones the problem.",
+        text: "Interface, architecture and infrastructure describe the same product. When I treat them separately, I pay for it later.",
       },
       {
         title: "Build for the real world",
-        text: "Security, errors and edge cases are part of the product. Not part of the polish.",
+        text: "Errors, edge cases and security are in the product from day one. Adding them at the end always costs more.",
       },
       {
         title: "Polish what matters",
-        text: "Precision shows mostly in the details the user no longer needs to notice.",
+        text: "The details that matter are the ones nobody notices: a loading state, a clear error message, a keyboard shortcut that lands where you expect.",
       },
     ],
     journeyLabel: "JOURNEY",
@@ -730,7 +730,7 @@ const en: PortfolioContent = {
       {
         date: "2022-2024",
         title: "ETNA · Bachelor in computer science",
-        text: "Engineering foundations, project-based learning, and the discovery that shipping is a craft of its own.",
+        text: "Engineering foundations and project-based learning, with hard deadlines.",
       },
       {
         date: "2023-2024",
@@ -750,7 +750,7 @@ const en: PortfolioContent = {
       {
         date: "since 2026",
         title: "QoreDB · Founder & engineer",
-        text: "An open-source desktop product in Rust and Tauri. My first complete answer to a problem I had.",
+        text: "An open-source desktop product in Rust and Tauri. The first problem I fixed for good instead of working around it.",
       },
     ],
     now: "Ongoing",
@@ -758,7 +758,7 @@ const en: PortfolioContent = {
   contact: {
     index: "06 / WHAT'S NEXT",
     lines: ["YOU HAVE AN *ambitious* PRODUCT.", "LET'S BUILD IT *properly*."],
-    lead: "I am looking for a demanding team, whole subjects, and people who are not afraid to redo something once the problem is better understood.",
+    lead: "I am looking for a demanding team and subjects I get to handle end to end. And people willing to redo something once we understand the problem.",
     emailLabel: "Write to me",
     cvLabel: "Résumé",
     location: "Paris · France · Remote",
@@ -845,7 +845,7 @@ const es: PortfolioContent = {
     lines: ["CONSTRUYO LAS", "*herramientas que*", "QUERÍA *usar*."],
     role: "FULL-STACK PRODUCT ENGINEER",
     place: "PARÍS · 48.8566° N",
-    lead: "Web, móvil, escritorio, infraestructura. Asumo los temas enteros, desde el primer esquema hasta el día en que funciona de verdad, con usuarios reales encima.",
+    lead: "Web, móvil, escritorio, infraestructura. Asumo los proyectos de principio a fin, desde el primer esquema hasta la puesta en producción y las semanas siguientes.",
     ctaWork: "Ver los proyectos",
     ctaContact: "Contactarme",
     cv: "Descargar el CV",
@@ -870,38 +870,38 @@ const es: PortfolioContent = {
     index: "01 / MANIFIESTO",
     title: "Nunca supe conformarme con «funciona».",
     paragraphs: [
-      "La mayoría del software que uso a diario es correcto. Rara vez algo más. Durante mucho tiempo esperé a que alguien lo arreglara. Después **dejé de esperar**.",
-      "QoreDB nació de una molestia muy concreta: un cliente de base de datos lento, hostil, y encantado de dejarme vaciar una tabla de producción sin preguntarme nunca si estaba seguro. Diez mil descargas después, **la molestia era claramente compartida**.",
-      "Así es más o menos como trabajo. Parto de una incomodidad concreta, remonto hasta su causa y no suelto hasta que **el problema desaparece**, no solo hasta que queda esquivado.",
+      "La mayoría del software que uso a diario es correcto. Rara vez algo más. Durante años di por hecho que alguien acabaría por arreglarlo.",
+      "QoreDB nació de una molestia muy concreta: un cliente de base de datos lento, hostil, y encantado de dejarme vaciar una tabla de producción sin preguntarme nunca si estaba seguro. Desde entonces, el contador de descargas me ha confirmado que **la molestia era compartida**.",
+      "Así es más o menos como trabajo: parto de una incomodidad concreta y remonto hasta su causa. Me lleva más tiempo del previsto, casi siempre.",
     ],
     quote:
-      "Un producto terminado no es un producto que compila. Es un producto del que ya no queda nada que decir.",
+      "Un producto terminado es un producto del que ya no queda nada que decir.",
   },
   stats: [
     { value: "15 000+", label: "descargas de QoreDB" },
     { value: "60+", label: "repositorios públicos" },
-    { value: "4", label: "superficies dominadas" },
+    { value: "4", label: "plataformas entregadas" },
     { value: "3+", label: "años en producción" },
   ],
   work: {
     index: "02 / PROYECTOS",
     title: "Código que acabó sirviéndole a alguien.",
-    lead: "Una selección corta. Cada uno de estos productos partió de un problema que yo tenía de verdad, y cada uno acabó en producción, con usuarios reales y errores reales a las once de la noche.",
+    lead: "Una selección corta. Cada uno de estos productos partió de un problema que yo tenía de verdad, y cada uno llegó a producción, con usuarios y tickets que atender.",
     featuredLabel: "PROYECTO DESTACADO",
     status: "Código abierto · activo",
     visit: "Ver el sitio",
     source: "Ver el código",
     kicker: "FUNDADOR · PRODUCTO · INGENIERÍA",
     tagline:
-      "Un cliente de base de datos local-first que reúne SQL y NoSQL en una interfaz que no dan ganas de cerrar.",
+      "Un cliente de base de datos local-first que reúne SQL y NoSQL en la misma ventana.",
     challengeLabel: "EL PROBLEMA",
     challenge:
-      "Las herramientas existentes son potentes y hostiles. Había que conservar la potencia y tirar la hostilidad, sin convertir el producto en un juguete para principiantes.",
+      "Las herramientas existentes son potentes y pesadas. Lo difícil era hacer la mía cómoda sin volverla tonta: quien abre un cliente SQL sabe lo que hace.",
     buildLabel: "LO QUE CONSTRUÍ",
     build: [
-      "Un núcleo en Rust, una carcasa Tauri, quince drivers tras una sola interfaz",
+      "Un núcleo en Rust, una carcasa Tauri, 15 drivers tras una sola interfaz",
       "Una bóveda cifrada y protecciones explícitas sobre las bases de producción",
-      "Un editor de consultas que responde antes de soltar la tecla",
+      "Un editor de consultas rápido, con autocompletado conectado al esquema real",
     ],
     metricLabel: "HOY",
     metricValue: "15 000+",
@@ -917,13 +917,13 @@ const es: PortfolioContent = {
       {
         type: "SaaS · Full-stack",
         description:
-          "Tu actividad de GitHub convertida en publicaciones de LinkedIn que no da vergüenza publicar. Generación, edición, planificación.",
+          "Tu actividad de GitHub convertida en publicaciones de LinkedIn presentables. Redacción, edición, planificación.",
         proof: "NestJS · Redis",
       },
       {
         type: "Web · Líder técnico",
         description:
-          "Un ecosistema para jugadores de cartas: torneos, marketplace y análisis asistido por IA. Dirigido en equipo de cinco, publicado en línea.",
+          "Un ecosistema para jugadores de cartas: torneos, marketplace y análisis asistido por IA. Publicado en línea.",
         proof: "Equipo de 5",
       },
     ],
@@ -935,23 +935,23 @@ const es: PortfolioContent = {
   skills: {
     index: "03 / OFICIO",
     title: "Full-stack, en sentido literal.",
-    lead: "No colecciono tecnologías. Las conecto hasta que el conjunto se sostiene sin mí.",
+    lead: "Aprendo una tecnología cuando un proyecto la necesita, y paro cuando el conjunto se sostiene sin mí.",
     items: [
       {
         title: "Interfaces",
-        text: "El píxel cuenta, el tiempo de respuesta más aún. Interfaces rápidas, accesibles, que no le cobran su complejidad al usuario.",
+        text: "El píxel cuenta, pero una pantalla que responde al instante cuenta más. Y es lo primero que se sacrifica cuando aprieta el calendario.",
       },
       {
         title: "Móvil",
-        text: "De la idea a la tienda. Publicar una aplicación es cuarenta por ciento de código y sesenta por ciento de todo lo demás. También hago el sesenta.",
+        text: "De la idea a la tienda. El código es la parte fácil; son los certificados, las revisiones y las capturas las que alargan un lanzamiento. Esa parte también la hago yo.",
       },
       {
         title: "Escritorio y sistemas",
-        text: "Rust cuando el rendimiento no es negociable. Binarios nativos que terminan de arrancar antes de que hayas parpadeado.",
+        text: "Rust cuando el rendimiento importa de verdad: binarios nativos, arranque instantáneo y un consumo de memoria razonable.",
       },
       {
         title: "Backend y producción",
-        text: "APIs, datos, pipelines. Y sobre todo: el día que se rompe, saber por qué en tres minutos.",
+        text: "APIs, datos, pipelines. Y logs que sirven de algo el día que se rompe.",
       },
     ],
     stackLabel: "STACK",
@@ -963,11 +963,11 @@ const es: PortfolioContent = {
     lead: "Lo que construyo cuando nadie lo ha pedido. Algunos encontraron sus usuarios, los demás me enseñaron algo.",
     gameKicker: "PIEZA JUGABLE",
     gameText:
-      "Un arcade en canvas escrito un domingo por la tarde. Clasificación mundial en PostgreSQL, porque hacía falta una excusa para enchufar una base de datos.",
+      "Un arcade en canvas, escrito por gusto. La clasificación va en PostgreSQL, porque hacía falta una excusa para enchufar una base de datos.",
     gamePlay: "Lanzar el juego",
     items: [
       {
-        text: "Un generador de portfolios que agrega GitHub, LinkedIn y Behance. Doscientos portfolios creados.",
+        text: "Un generador de portfolios que agrega GitHub, LinkedIn y Behance. 200 portfolios creados.",
       },
       { text: "Una plataforma de verificación de hechos asistida por IA." },
       {
@@ -988,21 +988,22 @@ const es: PortfolioContent = {
   },
   about: {
     index: "05 / ENFOQUE",
-    title: "El perfeccionismo, vuelto útil.",
-    lead: "No la búsqueda de un código abstractamente perfecto. Una exigencia concreta: entender el problema antes de atacarlo, y entregar algo de lo que seguir estando orgulloso seis meses después.",
-    quote: "No llamo terminado a lo que solo funciona en mi máquina.",
+    title: "Lo que hago cuando el código ya funciona.",
+    lead: "Paso más tiempo entendiendo el problema que escribiendo la solución. Se nota seis meses después, el día en que hay que volver a meterse dentro.",
+    quote:
+      "La mitad del trabajo empieza el día en que otra persona lo instala.",
     principles: [
       {
         title: "Pensar en sistemas",
-        text: "Interfaz, arquitectura y explotación son el mismo tema. Separarlos solo aplaza el problema.",
+        text: "La interfaz, la arquitectura y la infra cuentan el mismo producto. Cuando los trato por separado, lo pago más tarde.",
       },
       {
         title: "Construir para lo real",
-        text: "La seguridad, los errores y los casos límite forman parte del producto. No del acabado.",
+        text: "Los errores, los casos límite y la seguridad están en el producto desde el primer día. Añadirlos al final siempre sale más caro.",
       },
       {
         title: "Pulir lo esencial",
-        text: "La precisión se nota sobre todo en los detalles que el usuario ya no necesita percibir.",
+        text: "Los detalles que cuentan son los que nadie nota: un estado de carga, un mensaje de error claro, un atajo de teclado que cae donde debe.",
       },
     ],
     journeyLabel: "TRAYECTORIA",
@@ -1012,7 +1013,7 @@ const es: PortfolioContent = {
       {
         date: "2022-2024",
         title: "ETNA · Grado en informática",
-        text: "Base de ingeniería, aprendizaje por proyectos, y el descubrimiento de que entregar es un oficio en sí mismo.",
+        text: "Base de ingeniería y aprendizaje por proyectos, con entregas a fecha fija.",
       },
       {
         date: "2023-2024",
@@ -1032,7 +1033,7 @@ const es: PortfolioContent = {
       {
         date: "desde 2026",
         title: "QoreDB · Fundador e ingeniero",
-        text: "Un producto de escritorio de código abierto en Rust y Tauri. Mi primera respuesta completa a un problema que tenía.",
+        text: "Un producto de escritorio de código abierto en Rust y Tauri. El primer problema que resolví de verdad en vez de esquivarlo.",
       },
     ],
     now: "En curso",
@@ -1040,7 +1041,7 @@ const es: PortfolioContent = {
   contact: {
     index: "06 / LO QUE SIGUE",
     lines: ["TIENES UN PRODUCTO *ambicioso*.", "CONSTRUYÁMOSLO *bien*."],
-    lead: "Busco un equipo exigente, temas enteros, y personas que no tengan miedo de rehacer algo una vez que el problema se entiende mejor.",
+    lead: "Busco un equipo exigente y temas que me dejen llevar de principio a fin. Y gente dispuesta a rehacer algo cuando el problema ya se entiende.",
     emailLabel: "Escríbeme",
     cvLabel: "Currículum",
     location: "París · Francia · Remoto",
@@ -1127,7 +1128,7 @@ const de: PortfolioContent = {
     lines: ["ICH BAUE DIE", "*Werkzeuge, die ich*", "BRAUCHTE."],
     role: "FULL-STACK PRODUCT ENGINEER",
     place: "PARIS · 48,8566° N",
-    lead: "Web, Mobil, Desktop, Infrastruktur. Ich übernehme Themen ganz, vom ersten Schema bis zu dem Tag, an dem es wirklich läuft, mit echten Nutzenden darauf.",
+    lead: "Web, Mobil, Desktop, Infrastruktur. Ich übernehme Projekte von Anfang bis Ende, vom ersten Schema bis zum Produktivgang und den Wochen danach.",
     ctaWork: "Projekte ansehen",
     ctaContact: "Kontakt aufnehmen",
     cv: "Lebenslauf herunterladen",
@@ -1152,38 +1153,38 @@ const de: PortfolioContent = {
     index: "01 / MANIFEST",
     title: "Bei „es funktioniert“ konnte ich nie aufhören.",
     paragraphs: [
-      "Die meiste Software, die ich täglich benutze, ist in Ordnung. Selten mehr. Lange habe ich darauf gewartet, dass jemand sie repariert. Dann **habe ich aufgehört zu warten**.",
-      "QoreDB entstand aus einem sehr konkreten Ärgernis: ein Datenbank-Client, der langsam und unwirsch war und mich eine Produktionstabelle leeren ließ, ohne je zu fragen, ob ich sicher sei. Zehntausend Downloads später war **der Ärger offensichtlich geteilt**.",
-      "Ungefähr so arbeite ich. Ich beginne bei einem konkreten Unbehagen, gehe zurück bis zur Ursache und lasse nicht los, bevor **das Problem verschwunden ist**, nicht bloß umgangen.",
+      "Die meiste Software, die ich täglich benutze, ist in Ordnung. Selten mehr. Jahrelang bin ich davon ausgegangen, dass sich irgendwann jemand darum kümmert.",
+      "QoreDB entstand aus einem sehr konkreten Ärgernis: ein Datenbank-Client, der langsam und unwirsch war und mich eine Produktionstabelle leeren ließ, ohne je zu fragen, ob ich sicher sei. Der Download-Zähler hat mir seitdem bestätigt, dass **viele denselben Ärger hatten**.",
+      "Ungefähr so arbeite ich: Ich beginne bei einem konkreten Unbehagen und gehe zurück bis zur Ursache. Es dauert jedes Mal länger als geplant.",
     ],
     quote:
-      "Ein fertiges Produkt ist kein Produkt, das kompiliert. Es ist ein Produkt, zu dem nichts mehr zu sagen bleibt.",
+      "Ein fertiges Produkt ist ein Produkt, zu dem nichts mehr zu sagen bleibt.",
   },
   stats: [
     { value: "15 000+", label: "QoreDB-Downloads" },
     { value: "60+", label: "öffentliche Repositories" },
-    { value: "4", label: "beherrschte Ebenen" },
+    { value: "4", label: "ausgelieferte Plattformen" },
     { value: "3+", label: "Jahre in der Produktion" },
   ],
   work: {
     index: "02 / PROJEKTE",
     title: "Code, der am Ende jemandem genützt hat.",
-    lead: "Eine kurze Auswahl. Jedes dieser Produkte begann mit einem Problem, das ich wirklich hatte, und jedes ging in Produktion, mit echten Nutzenden und echten Fehlern um dreiundzwanzig Uhr.",
+    lead: "Eine kurze Auswahl. Jedes dieser Produkte begann mit einem Problem, das ich wirklich hatte, und jedes ging in Produktion, mit Nutzenden und offenen Tickets.",
     featuredLabel: "HAUPTPROJEKT",
     status: "Open Source · aktiv",
     visit: "Website ansehen",
     source: "Code ansehen",
     kicker: "GRÜNDER · PRODUKT · ENGINEERING",
     tagline:
-      "Ein Local-first-Datenbank-Client, der SQL und NoSQL in einer Oberfläche vereint, die man nicht schließen möchte.",
+      "Ein Local-first-Datenbank-Client, der SQL und NoSQL in einem Fenster vereint.",
     challengeLabel: "DAS PROBLEM",
     challenge:
-      "Die vorhandenen Werkzeuge sind mächtig und unwirsch. Die Macht behalten, die Unwirschheit wegwerfen, ohne das Produkt in ein Spielzeug für Anfänger zu verwandeln.",
+      "Die vorhandenen Werkzeuge sind mächtig und mühsam. Schwierig war, meines bequem zu machen, ohne es dumm zu machen: Wer einen SQL-Client öffnet, weiß, was er tut.",
     buildLabel: "WAS ICH GEBAUT HABE",
     build: [
-      "Ein Rust-Kern, eine Tauri-Hülle, fünfzehn Treiber hinter einer einzigen Oberfläche",
+      "Ein Rust-Kern, eine Tauri-Hülle, 15 Treiber hinter einer einzigen Oberfläche",
       "Ein verschlüsselter Tresor und ausdrückliche Schutzgeländer für Produktionsdatenbanken",
-      "Ein Abfrage-Editor, der antwortet, bevor die Taste losgelassen ist",
+      "Ein schneller Abfrage-Editor, dessen Autovervollständigung am echten Schema hängt",
     ],
     metricLabel: "HEUTE",
     metricValue: "15 000+",
@@ -1199,13 +1200,13 @@ const de: PortfolioContent = {
       {
         type: "SaaS · Full-stack",
         description:
-          "Deine GitHub-Aktivität, übersetzt in LinkedIn-Beiträge, die man ohne Scham veröffentlicht. Erzeugung, Bearbeitung, Planung.",
+          "Deine GitHub-Aktivität, übersetzt in vorzeigbare LinkedIn-Beiträge. Schreiben, Bearbeiten, Planen.",
         proof: "NestJS · Redis",
       },
       {
         type: "Web · Technische Leitung",
         description:
-          "Ein Ökosystem für Kartenspielende: Turniere, Marktplatz und KI-gestützte Analyse. Im Fünferteam geführt, online geliefert.",
+          "Ein Ökosystem für Kartenspielende: Turniere, Marktplatz und KI-gestützte Analyse. Online geliefert.",
         proof: "Team aus 5",
       },
     ],
@@ -1217,23 +1218,23 @@ const de: PortfolioContent = {
   skills: {
     index: "03 / HANDWERK",
     title: "Full-stack, im wörtlichen Sinn.",
-    lead: "Ich sammle keine Technologien. Ich verbinde sie, bis das Ganze ohne mich steht.",
+    lead: "Ich lerne eine Technologie, wenn ein Projekt sie braucht, und höre auf, wenn das Ganze ohne mich steht.",
     items: [
       {
         title: "Oberflächen",
-        text: "Das Pixel zählt, die Antwortzeit mehr. Schnelle, zugängliche Oberflächen, die ihre Komplexität nicht den Nutzenden in Rechnung stellen.",
+        text: "Das Pixel zählt, aber ein Bildschirm, der sofort antwortet, zählt mehr. Und genau daran wird zuerst gespart, wenn der Zeitplan eng wird.",
       },
       {
         title: "Mobil",
-        text: "Von der Idee bis in den Store. Eine App zu veröffentlichen sind vierzig Prozent Code und sechzig Prozent alles andere. Die sechzig mache ich auch.",
+        text: "Von der Idee bis in den Store. Der Code ist der einfache Teil; es sind die Zertifikate, die Reviews und die Screenshots, die ein Release in die Länge ziehen. Den Teil mache ich auch.",
       },
       {
         title: "Desktop & Systeme",
-        text: "Rust, wenn Leistung nicht verhandelbar ist. Native Binaries, die fertig gestartet sind, bevor man geblinzelt hat.",
+        text: "Rust, wenn Leistung wirklich zählt: native Binaries, sofortiger Start und ein Speicherverbrauch, der im Rahmen bleibt.",
       },
       {
         title: "Backend & Produktion",
-        text: "APIs, Daten, Pipelines. Und vor allem: an dem Tag, an dem es bricht, in drei Minuten wissen, warum.",
+        text: "APIs, Daten, Pipelines. Und Logs, die an dem Tag etwas taugen, an dem es bricht.",
       },
     ],
     stackLabel: "STACK",
@@ -1245,11 +1246,11 @@ const de: PortfolioContent = {
     lead: "Was ich baue, wenn niemand danach gefragt hat. Einige haben ihre Nutzenden gefunden, die anderen haben mir etwas beigebracht.",
     gameKicker: "SPIELBARES STÜCK",
     gameText:
-      "Ein Canvas-Arcade, an einem Sonntagnachmittag geschrieben. Weltweite Rangliste auf PostgreSQL, weil es einen Vorwand brauchte, eine Datenbank anzuschließen.",
+      "Ein Canvas-Arcade, aus Spaß geschrieben. Die Rangliste läuft auf PostgreSQL, weil es einen Vorwand brauchte, eine Datenbank anzuschließen.",
     gamePlay: "Spiel starten",
     items: [
       {
-        text: "Ein Portfolio-Generator, der GitHub, LinkedIn und Behance zusammenführt. Zweihundert erstellte Portfolios.",
+        text: "Ein Portfolio-Generator, der GitHub, LinkedIn und Behance zusammenführt. 200 erstellte Portfolios.",
       },
       { text: "Eine KI-gestützte Plattform zur Faktenprüfung." },
       {
@@ -1270,21 +1271,22 @@ const de: PortfolioContent = {
   },
   about: {
     index: "05 / HALTUNG",
-    title: "Perfektionismus, nutzbar gemacht.",
-    lead: "Nicht die Suche nach abstrakt perfektem Code. Ein konkreter Anspruch: das Problem verstehen, bevor man es angeht, und etwas liefern, auf das man auch sechs Monate später noch stolz sein kann.",
-    quote: "Fertig nenne ich nicht, was nur auf meinem Rechner läuft.",
+    title: "Was ich mache, wenn der Code schon läuft.",
+    lead: "Ich verbringe mehr Zeit damit, das Problem zu verstehen, als die Lösung zu schreiben. Es zeigt sich sechs Monate später, wenn jemand wieder hineinmuss.",
+    quote:
+      "Die Hälfte der Arbeit beginnt an dem Tag, an dem jemand anderes es installiert.",
     principles: [
       {
         title: "In Systemen denken",
-        text: "Oberfläche, Architektur und Betrieb sind dasselbe Thema. Sie zu trennen verschiebt das Problem nur.",
+        text: "Oberfläche, Architektur und Betrieb erzählen dasselbe Produkt. Wenn ich sie getrennt behandle, zahle ich später dafür.",
       },
       {
         title: "Für die Wirklichkeit bauen",
-        text: "Sicherheit, Fehler und Randfälle gehören zum Produkt. Nicht zum Feinschliff.",
+        text: "Fehler, Randfälle und Sicherheit stecken vom ersten Tag an im Produkt. Sie am Ende nachzurüsten kostet immer mehr.",
       },
       {
         title: "Das Wesentliche polieren",
-        text: "Präzision zeigt sich vor allem in den Details, die Nutzende nicht mehr bemerken müssen.",
+        text: "Die Details, die zählen, bemerkt niemand: ein Ladezustand, eine klare Fehlermeldung, ein Tastenkürzel, das dort liegt, wo man es sucht.",
       },
     ],
     journeyLabel: "WERDEGANG",
@@ -1294,7 +1296,7 @@ const de: PortfolioContent = {
       {
         date: "2022-2024",
         title: "ETNA · Bachelor Informatik",
-        text: "Ingenieurgrundlagen, projektbasiertes Lernen und die Entdeckung, dass Ausliefern ein eigenes Handwerk ist.",
+        text: "Ingenieurgrundlagen und projektbasiertes Lernen, mit festen Abgabeterminen.",
       },
       {
         date: "2023-2024",
@@ -1314,7 +1316,7 @@ const de: PortfolioContent = {
       {
         date: "seit 2026",
         title: "QoreDB · Gründer & Ingenieur",
-        text: "Ein quelloffenes Desktop-Produkt in Rust und Tauri. Meine erste vollständige Antwort auf ein Problem, das ich hatte.",
+        text: "Ein quelloffenes Desktop-Produkt in Rust und Tauri. Das erste Problem, das ich wirklich gelöst habe, statt es zu umgehen.",
       },
     ],
     now: "Laufend",
@@ -1322,7 +1324,7 @@ const de: PortfolioContent = {
   contact: {
     index: "06 / WIE ES WEITERGEHT",
     lines: ["SIE HABEN EIN *ehrgeiziges* PRODUKT.", "BAUEN WIR ES *richtig*."],
-    lead: "Ich suche ein anspruchsvolles Team, ganze Themen und Menschen, die keine Angst davor haben, etwas neu zu machen, sobald das Problem besser verstanden ist.",
+    lead: "Ich suche ein anspruchsvolles Team und Themen, die ich ganz übernehmen darf. Und Menschen, die etwas neu machen, sobald das Problem klar ist.",
     emailLabel: "Schreiben Sie mir",
     cvLabel: "Lebenslauf",
     location: "Paris · Frankreich · Remote",
