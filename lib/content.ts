@@ -131,7 +131,7 @@ export type PortfolioContent = {
     metricValue: string;
     metricCaption: string;
     selectedLabel: string;
-    projects: [Project, Project, Project];
+    projects: [Project, Project, Project, Project];
     archiveText: string;
     archiveLink: string;
     view: string;
@@ -351,6 +351,12 @@ const fr: PortfolioContent = {
         description:
           "Un écosystème pour joueurs de cartes : tournois, marketplace et analyse assistée par IA. Livré en ligne.",
         proof: "Équipe de 5",
+      },
+      {
+        type: "Web · Temps réel",
+        description:
+          "Le second écran du ZEvent : cagnottes en direct, donation goals à portée et alertes quand un palier approche. Tenu pendant les 77 heures de l’édition.",
+        proof: "Cloudflare Workers",
       },
     ],
     archiveText:
@@ -644,6 +650,12 @@ const en: PortfolioContent = {
           "An ecosystem for card-game players: tournaments, marketplace and AI-assisted analysis. Shipped online.",
         proof: "Team of 5",
       },
+      {
+        type: "Web · Real time",
+        description:
+          "The ZEvent second screen: live donation totals, goals within reach and alerts when a milestone is closing in. Held up across the 77 hours of the event.",
+        proof: "Cloudflare Workers",
+      },
     ],
     archiveText:
       "Plus roughly sixty other repositories: search engines, extensions, games, APIs and experiments abandoned with dignity.",
@@ -925,6 +937,12 @@ const es: PortfolioContent = {
         description:
           "Un ecosistema para jugadores de cartas: torneos, marketplace y análisis asistido por IA. Publicado en línea.",
         proof: "Equipo de 5",
+      },
+      {
+        type: "Web · Tiempo real",
+        description:
+          "La segunda pantalla del ZEvent: donaciones en directo, goals al alcance y alertas cuando se acerca un hito. Aguantó las 77 horas del evento.",
+        proof: "Cloudflare Workers",
       },
     ],
     archiveText:
@@ -1208,6 +1226,12 @@ const de: PortfolioContent = {
         description:
           "Ein Ökosystem für Kartenspielende: Turniere, Marktplatz und KI-gestützte Analyse. Online geliefert.",
         proof: "Team aus 5",
+      },
+      {
+        type: "Web · Echtzeit",
+        description:
+          "Der Second Screen des ZEvent: Spenden in Echtzeit, erreichbare Goals und Alerts, wenn ein Meilenstein näher rückt. Hielt die 77 Stunden der Edition durch.",
+        proof: "Cloudflare Workers",
       },
     ],
     archiveText:

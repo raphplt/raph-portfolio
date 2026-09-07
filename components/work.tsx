@@ -42,6 +42,13 @@ export const projectAssets: ProjectAsset[] = [
     image: "/images/projects/TCGNexus.png",
     stack: ["Next.js", "NestJS", "Python"],
   },
+  {
+    name: "ZEvent Radar",
+    href: "https://zgoals.xyz/",
+    year: "2026",
+    image: "/images/projects/ZEventRadar.png",
+    stack: ["React", "Cloudflare Workers", "PWA"],
+  },
 ];
 
 export function WorkList({ copy }: { copy: PortfolioContent }) {
