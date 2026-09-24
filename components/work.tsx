@@ -41,7 +41,6 @@ function CaseCard({
         <h3 className="display">{asset.name}</h3>
         <p>{text.description}</p>
         <span className="case-card-foot">
-          <span className="proof mono">{text.proof}</span>
           <span className="link mono">
             {copy.work.readCase}
             <ArrowRight size={14} strokeWidth={2} />

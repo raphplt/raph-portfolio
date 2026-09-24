@@ -126,7 +126,7 @@ export type PortfolioContent = {
     source: string;
     readCase: string;
     casesLabel: string;
-    cases: Record<"pulse" | "tcg-nexus", ProjectCopy>;
+    cases: Record<"pulse" | "tcg-nexus", { type: string; description: string }>;
     shippedLabel: string;
     shipped: Record<ShippedSlug, ProjectCopy>;
     archiveText: string;
@@ -310,13 +310,11 @@ const fr: PortfolioContent = {
         type: "SaaS B2B · Tkorp",
         description:
           "Une plateforme de gestion de flottes de casques VR, menée du POC à la V1 en production, puis reprise entièrement après une réorganisation de l’équipe.",
-        proof: "50+ utilisateurs réguliers",
       },
       "tcg-nexus": {
         type: "Web & mobile · Lead technique",
         description:
           "Une plateforme pour les joueurs de Pokémon TCG : marketplace, tournois, collections, decks et scan de cartes depuis le mobile.",
-        proof: "Équipe de 5",
       },
     },
     shippedLabel: "Autres produits livrés",
@@ -606,13 +604,11 @@ const en: PortfolioContent = {
         type: "B2B SaaS · Tkorp",
         description:
           "A platform for managing fleets of VR headsets, taken from proof of concept to a V1 in production, then taken over entirely after the team was reorganised.",
-        proof: "50+ regular users",
       },
       "tcg-nexus": {
         type: "Web & mobile · Tech lead",
         description:
           "A platform for Pokémon TCG players: marketplace, tournaments, collections, decks and card scanning from a phone.",
-        proof: "Team of 5",
       },
     },
     shippedLabel: "Other shipped products",
@@ -897,13 +893,11 @@ const es: PortfolioContent = {
         type: "SaaS B2B · Tkorp",
         description:
           "Una plataforma de gestión de flotas de visores de RV, llevada de la prueba de concepto a una V1 en producción, y asumida por completo tras una reorganización del equipo.",
-        proof: "50+ usuarios habituales",
       },
       "tcg-nexus": {
         type: "Web y móvil · Líder técnico",
         description:
           "Una plataforma para jugadores de Pokémon TCG: marketplace, torneos, colecciones, mazos y escaneo de cartas desde el móvil.",
-        proof: "Equipo de 5",
       },
     },
     shippedLabel: "Otros productos entregados",
@@ -1189,13 +1183,11 @@ const de: PortfolioContent = {
         type: "B2B-SaaS · Tkorp",
         description:
           "Eine Plattform zur Verwaltung von VR-Headset-Flotten, vom Proof of Concept bis zur V1 in Produktion geführt und nach einer Umstrukturierung des Teams vollständig übernommen.",
-        proof: "50+ regelmäßig Nutzende",
       },
       "tcg-nexus": {
         type: "Web & Mobil · Technische Leitung",
         description:
           "Eine Plattform für Pokémon-TCG-Spielende: Marktplatz, Turniere, Sammlungen, Decks und Karten-Scan per Smartphone.",
-        proof: "Team aus 5",
       },
     },
     shippedLabel: "Weitere gelieferte Produkte",
