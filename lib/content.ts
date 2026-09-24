@@ -282,7 +282,7 @@ const fr: PortfolioContent = {
   work: {
     label: "Projets",
     title: "Du code qui a fini par servir à quelqu’un.",
-    lead: "Une sélection courte. Chacun de ces produits est allé jusqu’en production, avec des utilisateurs et des tickets à traiter.",
+    lead: "Quelques-uns de mes projets, tous allés jusqu’en production, avec de vrais utilisateurs et des tickets à traiter.",
     featured: {
       kicker: "Fondateur · produit · ingénierie",
       status: "Open source · actif",
@@ -576,7 +576,7 @@ const en: PortfolioContent = {
   work: {
     label: "Work",
     title: "Code that ended up being useful to someone.",
-    lead: "A short selection. Each of these products made it to production, with users and a backlog of tickets.",
+    lead: "A few of my projects, all of which made it to production, with real users and tickets to handle.",
     featured: {
       kicker: "Founder · product · engineering",
       status: "Open source · active",
@@ -865,7 +865,7 @@ const es: PortfolioContent = {
   work: {
     label: "Proyectos",
     title: "Código que acabó sirviéndole a alguien.",
-    lead: "Una selección corta. Cada uno de estos productos llegó a producción, con usuarios y tickets que atender.",
+    lead: "Algunos de mis proyectos, todos llevados hasta producción, con usuarios reales y tickets que atender.",
     featured: {
       kicker: "Fundador · producto · ingeniería",
       status: "Código abierto · activo",
@@ -1155,7 +1155,7 @@ const de: PortfolioContent = {
   work: {
     label: "Projekte",
     title: "Code, der am Ende jemandem genützt hat.",
-    lead: "Eine kurze Auswahl. Jedes dieser Produkte ging in Produktion, mit Nutzenden und offenen Tickets.",
+    lead: "Einige meiner Projekte, alle bis in die Produktion gebracht, mit echten Nutzenden und offenen Tickets.",
     featured: {
       kicker: "Gründer · Produkt · Engineering",
       status: "Open Source · aktiv",
