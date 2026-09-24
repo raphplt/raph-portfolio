@@ -12,10 +12,6 @@ export const themeScript = `
 
       const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
       root.dataset.motion = reduce ? "off" : "on";
-
-      if (reduce || sessionStorage.getItem("rp-boot") === "1") {
-        root.dataset.boot = "done";
-      }
     } catch (_) {}
   })();
 `;
@@ -26,6 +22,6 @@ export const noScriptStyles = `
     opacity: 1 !important;
     transform: none !important;
   }
-  .boot { display: none !important; }
-  .grain, .cursor-dot, .cursor-ring { display: none !important; }
+  .contact-title .line > span { transform: none !important; }
+  .grain { display: none !important; }
 `;

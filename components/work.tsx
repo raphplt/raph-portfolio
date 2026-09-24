@@ -1,136 +1,116 @@
-"use client";
-
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { Reveal } from "@/components/anim";
+import { caseStudies, caseStudyPath } from "@/lib/case-studies";
+import type { Locale, PortfolioContent } from "@/lib/content";
 import {
-  AnimatePresence,
-  motion,
-  useMotionValue,
-  useReducedMotion,
-  useSpring,
-} from "motion/react";
-import { useState } from "react";
-import type { PortfolioContent } from "@/lib/content";
+  caseStudyAssets,
+  shippedProjects,
+  type CaseStudySlug,
+} from "@/lib/projects";
 
-export type ProjectAsset = {
-  name: string;
-  href: string;
-  year: string;
-  image: string;
-  stack: string[];
-};
-
-export const projectAssets: ProjectAsset[] = [
-  {
-    name: "Melios",
-    href: "https://raphplt.github.io/melios-web/",
-    year: "2024",
-    image: "/images/projects/Melios.png",
-    stack: ["React Native", "Expo", "Firebase"],
-  },
-  {
-    name: "Quori",
-    href: "https://github.com/raphplt/quori",
-    year: "2025",
-    image: "/images/projects/Quori.png",
-    stack: ["Next.js", "NestJS", "PostgreSQL"],
-  },
-  {
-    name: "TCG Nexus",
-    href: "https://tcg-nexus.org/",
-    year: "2025",
-    image: "/images/projects/TCGNexus.png",
-    stack: ["Next.js", "NestJS", "Python"],
-  },
-  {
-    name: "ZEvent Radar",
-    href: "https://zgoals.xyz/",
-    year: "2026",
-    image: "/images/projects/ZEventRadar.png",
-    stack: ["React", "Cloudflare Workers", "PWA"],
-  },
-];
-
-export function WorkList({ copy }: { copy: PortfolioContent }) {
-  const reduceMotion = useReducedMotion();
-  const [hovered, setHovered] = useState<number | null>(null);
-
-  const pointerX = useMotionValue(0);
-  const pointerY = useMotionValue(0);
-  const spring = { damping: 26, stiffness: 220, mass: 0.55 };
-  const x = useSpring(pointerX, spring);
-  const y = useSpring(pointerY, spring);
-
-  const projects = projectAssets.map((asset, index) => ({
-    ...asset,
-    ...copy.work.projects[index],
-  }));
+function CaseCard({
+  slug,
+  copy,
+  locale,
+}: {
+  slug: "pulse" | "tcg-nexus";
+  copy: PortfolioContent;
+  locale: Locale;
+}) {
+  const asset = caseStudyAssets[slug];
+  const text = copy.work.cases[slug];
+  const study = caseStudies[slug][locale];
 
   return (
-    <>
-      <div
-        className="work-list"
-        onPointerMove={(event) => {
-          pointerX.set(event.clientX + 28);
-          pointerY.set(event.clientY - 110);
-        }}
-        onPointerLeave={() => setHovered(null)}
-      >
-        {projects.map((project, index) => (
-          <a
-            className="work-row"
-            data-cursor="label"
-            data-cursor-label={copy.work.view}
-            href={project.href}
-            key={project.name}
-            onPointerEnter={() => setHovered(index)}
-            rel="noreferrer"
-            target="_blank"
-          >
-            <div className="work-row-inner">
-              <span className="num">
-                {String(index + 2).padStart(2, "0")} / {project.year}
-              </span>
-              <h3 className="display">
-                {project.name}
-                <ArrowUpRight size={30} strokeWidth={2.2} />
-              </h3>
-              <span className="type">{project.type}</span>
-              <p className="desc">{project.description}</p>
-              <span className="proof">{project.proof}</span>
-              <span className="stack">
-                {project.stack.map((item) => (
-                  <span key={item}>{item}</span>
-                ))}
-              </span>
-            </div>
-          </a>
-        ))}
+    <Link className="case-card" href={caseStudyPath(locale, slug)}>
+      <div className="plate">
+        <Image
+          alt={study.coverAlt}
+          height={asset.cover.height}
+          sizes="(max-width: 60rem) 94vw, 48vw"
+          src={asset.cover.src}
+          width={asset.cover.width}
+        />
       </div>
+      <div className="case-card-body">
+        <span className="kicker mono">
+          {text.type} · {asset.year}
+        </span>
+        <h3 className="display">{asset.name}</h3>
+        <p>{text.description}</p>
+        <span className="case-card-foot">
+          <span className="proof mono">{text.proof}</span>
+          <span className="link mono">
+            {copy.work.readCase}
+            <ArrowRight size={14} strokeWidth={2} />
+          </span>
+        </span>
+      </div>
+    </Link>
+  );
+}
 
-      {!reduceMotion && (
-        <AnimatePresence>
-          {hovered !== null && (
-            <motion.div
-              animate={{ opacity: 1, scale: 1 }}
-              aria-hidden="true"
-              className="hover-preview"
-              exit={{ opacity: 0, scale: 0.94 }}
-              initial={{ opacity: 0, scale: 0.94 }}
-              style={{ x, y }}
-              transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
+export function CaseStudyCards({
+  copy,
+  locale,
+}: {
+  copy: PortfolioContent;
+  locale: Locale;
+}) {
+  const slugs: Exclude<CaseStudySlug, "qoredb">[] = ["pulse", "tcg-nexus"];
+
+  return (
+    <div className="case-grid">
+      {slugs.map((slug, index) => (
+        <Reveal delay={index * 0.08} key={slug}>
+          <CaseCard copy={copy} locale={locale} slug={slug} />
+        </Reveal>
+      ))}
+    </div>
+  );
+}
+
+export function ShippedGrid({ copy }: { copy: PortfolioContent }) {
+  return (
+    <div className="shipped-grid">
+      {shippedProjects.map((project, index) => {
+        const text = copy.work.shipped[project.slug];
+
+        return (
+          <Reveal delay={index * 0.06} key={project.slug}>
+            <a
+              className="shipped-card"
+              href={project.href}
+              rel="noreferrer"
+              target="_blank"
             >
-              <Image
-                alt=""
-                height={480}
-                sizes="22rem"
-                src={projects[hovered].image}
-                width={640}
-              />
-            </motion.div>
-          )}
-        </AnimatePresence>
-      )}
-    </>
+              <div className="plate">
+                <Image
+                  alt={`${copy.aria.projectPreview} ${project.name}`}
+                  height={project.image.height}
+                  sizes="(max-width: 48rem) 94vw, (max-width: 72rem) 48vw, 31vw"
+                  src={project.image.src}
+                  width={project.image.width}
+                />
+              </div>
+              <span className="kicker mono">
+                {text.type} · {project.year}
+              </span>
+              <h3>
+                {project.name}
+                <ArrowUpRight size={18} strokeWidth={2} />
+              </h3>
+              <p>{text.description}</p>
+              <span className="shipped-foot mono">
+                <span className="proof">{text.proof}</span>
+                <span>{project.stack.join(" · ")}</span>
+              </span>
+            </a>
+          </Reveal>
+        );
+      })}
+    </div>
   );
 }

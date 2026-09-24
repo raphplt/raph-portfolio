@@ -1,3 +1,5 @@
+import type { LabSlug, ShippedSlug } from "@/lib/projects";
+
 export const locales = ["fr", "en", "es", "de"] as const;
 export type Locale = (typeof locales)[number];
 
@@ -13,24 +15,34 @@ type Card = {
   text: string;
 };
 
-type Project = {
+type ProjectCopy = {
   type: string;
   description: string;
   proof: string;
 };
 
-type LabItem = {
-  text: string;
+export type Job = {
+  period: string;
+  company: string;
+  place: string;
+  role: string;
+  points: string[];
+  stack: string;
+  caseStudy?: "pulse";
 };
 
-type JourneyItem = {
-  date: string;
+type Degree = {
+  period: string;
   title: string;
-  text: string;
+  school: string;
 };
 
 export type PortfolioContent = {
-  meta: { title: string; description: string; ogDescription: string };
+  meta: {
+    title: string;
+    description: string;
+    ogDescription: string;
+  };
   aria: {
     skip: string;
     top: string;
@@ -39,17 +51,12 @@ export type PortfolioContent = {
     openMenu: string;
     closeMenu: string;
     github: string;
-    linkedin: string;
-    email: string;
     language: string;
     theme: string;
-    proof: string;
     qoreImage: string;
     qoreTech: string;
     discover: string;
     projectPreview: string;
-    ticker: string;
-    progress: string;
   };
   game: {
     title: string;
@@ -78,134 +85,134 @@ export type PortfolioContent = {
     savingScore: string;
     saveScoreError: string;
   };
-  boot: { role: string; enter: string };
   nav: {
-    manifesto: string;
     work: string;
+    experience: string;
     skills: string;
+    approach: string;
     lab: string;
-    about: string;
     contact: string;
   };
   hero: {
     lines: [string, string, string];
     role: string;
-    place: string;
+    base: string;
     lead: string;
     ctaWork: string;
     ctaContact: string;
     cv: string;
-    scroll: string;
     statusLabel: string;
     status: string;
-    localTime: string;
+    lookingLabel: string;
+    looking: string;
   };
-  ticker: string[];
-  manifesto: {
-    index: string;
-    title: string;
-    paragraphs: [string, string, string];
-    quote: string;
-  };
-  stats: [
-    { value: string; label: string },
-    { value: string; label: string },
-    { value: string; label: string },
-    { value: string; label: string },
-  ];
   work: {
-    index: string;
+    label: string;
     title: string;
     lead: string;
-    featuredLabel: string;
-    status: string;
+    featured: {
+      kicker: string;
+      status: string;
+      tagline: string;
+      challengeLabel: string;
+      challenge: string;
+      buildLabel: string;
+      build: [string, string, string];
+      metricLabel: string;
+      metricValue: string;
+      metricCaption: string;
+    };
     visit: string;
     source: string;
-    kicker: string;
-    tagline: string;
-    challengeLabel: string;
-    challenge: string;
-    buildLabel: string;
-    build: [string, string, string];
-    metricLabel: string;
-    metricValue: string;
-    metricCaption: string;
-    selectedLabel: string;
-    projects: [Project, Project, Project, Project];
+    readCase: string;
+    casesLabel: string;
+    cases: Record<"pulse" | "tcg-nexus", ProjectCopy>;
+    shippedLabel: string;
+    shipped: Record<ShippedSlug, ProjectCopy>;
     archiveText: string;
     archiveLink: string;
-    view: string;
+  };
+  experience: {
+    label: string;
+    title: string;
+    lead: string;
+    jobs: Job[];
+    readCase: string;
+    educationLabel: string;
+    education: Degree[];
+    cv: string;
   };
   skills: {
-    index: string;
+    label: string;
     title: string;
     lead: string;
     items: [Card, Card, Card, Card];
-    stackLabel: string;
-    console: [string, string, string, string];
+  };
+  approach: {
+    label: string;
+    title: string;
+    paragraphs: [string, string, string];
+    quote: string;
+    principles: [Card, Card, Card];
   };
   lab: {
-    index: string;
+    label: string;
     title: string;
     lead: string;
     gameKicker: string;
     gameText: string;
     gamePlay: string;
-    items: [
-      LabItem,
-      LabItem,
-      LabItem,
-      LabItem,
-      LabItem,
-      LabItem,
-      LabItem,
-      LabItem,
-    ];
-  };
-  about: {
-    index: string;
-    title: string;
-    lead: string;
-    quote: string;
-    principles: [Card, Card, Card];
-    journeyLabel: string;
-    journeyTitle: string;
-    journey: [JourneyItem, JourneyItem, JourneyItem, JourneyItem, JourneyItem];
-    now: string;
+    items: Record<LabSlug, string>;
   };
   contact: {
-    index: string;
-    lines: [string, string];
+    label: string;
+    lines: [string, string, string];
     lead: string;
     emailLabel: string;
     cvLabel: string;
+    locationLabel: string;
     location: string;
+    statusLabel: string;
     availability: string;
-    social: string;
     atlas: { label: string; text: string; cta: string };
   };
-  footer: { note: string; built: string; rights: string; top: string };
+  footer: {
+    note: string;
+    personal: string;
+    rights: string;
+    top: string;
+    legal: string;
+    privacy: string;
+  };
+  caseStudy: {
+    back: string;
+    kicker: string;
+    role: string;
+    period: string;
+    team: string;
+    stack: string;
+    visit: string;
+    source: string;
+    next: string;
+    privateNote: string;
+    contactTitle: string;
+    contactText: string;
+    contactCta: string;
+  };
 };
-
-export const consoleStack = [
-  "React · Next.js · TypeScript · TanStack · Tailwind · Motion",
-  "NestJS · Node.js · Rust · REST · GraphQL · WebSockets",
-  "PostgreSQL · MongoDB · Redis · SQLite · MySQL · Prisma",
-  "Docker · GitHub Actions · Linux · VPS · Cloudflare · Vercel",
-] as const;
 
 export const skillStacks = [
   "React · Next.js · TypeScript · Tailwind · Motion",
-  "React Native · Expo · Firebase · EAS",
+  "React Native · Expo · EAS · Play Store",
   "Rust · Tauri · SQLx · Linux",
-  "NestJS · PostgreSQL · Redis · Docker · CI/CD",
+  "NestJS · Node.js · Symfony · PostgreSQL · MySQL · Redis · Docker",
 ] as const;
 
 const fr: PortfolioContent = {
   meta: {
     title: "Raphaël Plassart · Full-stack Product Engineer",
     description:
-      "Développeur full-stack à Paris. Je conçois et livre des produits web, mobile et desktop, de l’architecture à la production. Créateur de QoreDB.",
+      "Développeur full-stack à Paris, trois ans en startup. J’ai mené Pulse, un SaaS B2B, du POC à la production, et je construis QoreDB, un client de bases de données open source en Rust. Disponible en novembre 2026.",
     ogDescription:
       "Je construis les outils que je voulais utiliser. Web, mobile, desktop, infrastructure.",
   },
@@ -217,17 +224,12 @@ const fr: PortfolioContent = {
     openMenu: "Ouvrir le menu",
     closeMenu: "Fermer le menu",
     github: "Profil GitHub de Raphaël",
-    linkedin: "Profil LinkedIn de Raphaël",
-    email: "Envoyer un email à Raphaël",
     language: "Choisir la langue",
     theme: "Changer de thème",
-    proof: "Quelques repères",
-    qoreImage: "Table de données et explorateur de schéma dans QoreDB",
+    qoreImage: "Éditeur SQL et grille de résultats dans QoreDB",
     qoreTech: "Technologies QoreDB",
     discover: "Découvrir",
     projectPreview: "Aperçu du projet",
-    ticker: "Bandeau défilant",
-    progress: "Progression de lecture",
   },
   game: {
     title: "RP / CORE RUNNER",
@@ -257,116 +259,141 @@ const fr: PortfolioContent = {
     savingScore: "Enregistrement…",
     saveScoreError: "Impossible d’enregistrer ce score",
   },
-  boot: {
-    role: "FULL-STACK PRODUCT ENGINEER",
-    enter: "Entrer",
-  },
   nav: {
-    manifesto: "Manifeste",
     work: "Projets",
+    experience: "Parcours",
     skills: "Savoir-faire",
-    lab: "Laboratoire",
-    about: "Approche",
+    approach: "Approche",
+    lab: "Labo",
     contact: "Contact",
   },
   hero: {
     lines: ["JE CONSTRUIS", "LES OUTILS *que*", "*je voulais* UTILISER."],
-    role: "FULL-STACK PRODUCT ENGINEER",
-    place: "PARIS · 48.8566° N",
-    lead: "Web, mobile, desktop, infrastructure. Je prends les sujets en entier, du premier schéma jusqu’à la mise en production et aux semaines qui suivent.",
+    role: "Full-stack product engineer",
+    base: "Paris · remote possible",
+    lead: "Développeur full-stack, trois ans en startup. J’ai mené **Pulse**, un SaaS B2B, du POC à la production, et je construis **QoreDB**, un client de bases de données open source en Rust.",
     ctaWork: "Voir les projets",
     ctaContact: "Me contacter",
     cv: "Télécharger le CV",
-    scroll: "Défiler",
-    statusLabel: "Statut",
-    status: "Disponible en novembre 2026",
-    localTime: "Heure locale",
+    statusLabel: "Disponibilité",
+    status: "Novembre 2026",
+    lookingLabel: "Je cherche",
+    looking: "Mon prochain poste, dans une équipe produit",
   },
-  ticker: [
-    "QOREDB",
-    "15 000 TÉLÉCHARGEMENTS",
-    "RUST",
-    "TAURI",
-    "TYPESCRIPT",
-    "REACT NATIVE",
-    "NESTJS",
-    "POSTGRESQL",
-    "OPEN SOURCE",
-    "PARIS",
-  ],
-  manifesto: {
-    index: "01 / MANIFESTE",
-    title: "Je n’ai jamais su m’arrêter à « ça marche ».",
-    paragraphs: [
-      "La plupart des logiciels que j’utilise tous les jours sont corrects. Rarement mieux. Pendant des années, j’ai supposé que quelqu’un finirait par s’en occuper.",
-      "QoreDB est né d’un agacement précis : un client de base de données lent, hostile, et qui me laissait vider une table de production sans jamais me demander si j’étais sûr. Depuis, le compteur de téléchargements m’a confirmé que **l’agacement était partagé**.",
-      "C’est à peu près comme ça que je travaille : je pars d’une gêne concrète et je remonte jusqu’à la cause. Ça me prend plus de temps que prévu, presque à chaque fois.",
-    ],
-    quote: "Un produit fini, c’est un produit dont il n’y a plus rien à dire.",
-  },
-  stats: [
-    { value: "15 000+", label: "téléchargements QoreDB" },
-    { value: "60+", label: "dépôts publics" },
-    { value: "4", label: "plateformes livrées" },
-    { value: "3+", label: "années en production" },
-  ],
   work: {
-    index: "02 / PROJETS",
+    label: "Projets",
     title: "Du code qui a fini par servir à quelqu’un.",
-    lead: "Une sélection courte. Chacun de ces produits est parti d’un problème que j’avais vraiment, et chacun est allé jusqu’en production, avec des utilisateurs et des tickets à traiter.",
-    featuredLabel: "PROJET PHARE",
-    status: "Open source · actif",
+    lead: "Une sélection courte. Chacun de ces produits est allé jusqu’en production, avec des utilisateurs et des tickets à traiter.",
+    featured: {
+      kicker: "Fondateur · produit · ingénierie",
+      status: "Open source · actif",
+      tagline:
+        "Un client de bases de données local-first qui réunit SQL et NoSQL dans la même fenêtre.",
+      challengeLabel: "Le problème",
+      challenge:
+        "Les outils existants sont puissants et pénibles. La difficulté, c’était de rendre le mien confortable sans le rendre bête : les gens qui ouvrent un client SQL savent ce qu’ils font.",
+      buildLabel: "Ce que j’ai construit",
+      build: [
+        "Un cœur Rust et une coquille Tauri : 34 bases de données derrière une seule interface",
+        "Des identifiants dans le trousseau du système et des garde-fous explicites sur les bases de production",
+        "Un éditeur de requêtes rapide, avec l’autocomplétion branchée sur le schéma réel",
+      ],
+      metricLabel: "Aujourd’hui",
+      metricValue: "15 000+",
+      metricCaption: "téléchargements en huit mois",
+    },
     visit: "Voir le site",
     source: "Voir le code",
-    kicker: "FONDATEUR · PRODUIT · INGÉNIERIE",
-    tagline:
-      "Un client de base de données local-first qui réunit SQL et NoSQL dans la même fenêtre.",
-    challengeLabel: "LE PROBLÈME",
-    challenge:
-      "Les outils existants sont puissants et pénibles. La difficulté, c’était de rendre le mien confortable sans le rendre bête : les gens qui ouvrent un client SQL savent ce qu’ils font.",
-    buildLabel: "CE QUE J’AI CONSTRUIT",
-    build: [
-      "Un cœur Rust, une coquille Tauri, 15 drivers derrière une seule interface",
-      "Un coffre chiffré et des garde-fous explicites sur les bases de production",
-      "Un éditeur de requêtes rapide, avec l’autocomplétion branchée sur le schéma réel",
-    ],
-    metricLabel: "AUJOURD’HUI",
-    metricValue: "15 000+",
-    metricCaption: "téléchargements en quelques mois",
-    selectedLabel: "AUTRES PRODUITS LIVRÉS",
-    projects: [
-      {
+    readCase: "Lire l’étude de cas",
+    casesLabel: "Études de cas",
+    cases: {
+      pulse: {
+        type: "SaaS B2B · Tkorp",
+        description:
+          "Une plateforme de gestion de flottes de casques VR, menée du POC à la V1 en production, puis reprise entièrement après une réorganisation de l’équipe.",
+        proof: "50+ utilisateurs réguliers",
+      },
+      "tcg-nexus": {
+        type: "Web & mobile · Lead technique",
+        description:
+          "Une plateforme pour les joueurs de Pokémon TCG : marketplace, tournois, collections, decks et scan de cartes depuis le mobile.",
+        proof: "Équipe de 5",
+      },
+    },
+    shippedLabel: "Autres produits livrés",
+    shipped: {
+      melios: {
         type: "Mobile · Cofondateur",
         description:
-          "Une application de développement personnel gamifiée, pensée pour tenir plus de trois jours. Cofondée, menée du concept jusqu’aux stores.",
+          "Une application de développement personnel gamifiée, incubée à l’ESSEC et publiée sur l’App Store et le Play Store.",
         proof: "150+ bêta-testeurs",
       },
-      {
+      "zevent-radar": {
+        type: "Web · Temps réel",
+        description:
+          "Le second écran du ZEvent : cagnottes en direct, donation goals à portée et alertes quand un palier approche. Tenu pendant les 77 heures de l’édition.",
+        proof: "Cloudflare Workers",
+      },
+      quori: {
         type: "SaaS · Full-stack",
         description:
           "Votre activité GitHub transformée en publications LinkedIn présentables. Rédaction, édition, planification.",
         proof: "NestJS · Redis",
       },
+    },
+    archiveText:
+      "Et une soixantaine d’autres dépôts : moteurs de recherche, extensions, jeux, APIs et expérimentations abandonnées avec dignité.",
+    archiveLink: "Ouvrir l’archive GitHub",
+  },
+  experience: {
+    label: "Parcours",
+    title: "Trois ans en startup, du POC à la production.",
+    lead: "En alternance avec l’ETNA, dans des équipes où l’on m’a confié des produits entiers plutôt que des tickets isolés.",
+    jobs: [
       {
-        type: "Web · Lead technique",
-        description:
-          "Un écosystème pour joueurs de cartes : tournois, marketplace et analyse assistée par IA. Livré en ligne.",
-        proof: "Équipe de 5",
+        period: "Janv. 2024 — aujourd’hui",
+        company: "Tkorp",
+        place: "Clichy",
+        role: "Développeur full-stack, mobile & desktop",
+        points: [
+          "Conception et développement de Pulse, plateforme SaaS B2B de gestion de flottes de casques VR, du POC à la V1 en production.",
+          "Reprise de toute la plateforme après une réorganisation de l’équipe : architecture, back, front, mobile et déploiement.",
+          "Application mobile publiée sur le Play Store ; plateforme adoptée par plusieurs clients, avec plus de 50 utilisateurs réguliers.",
+        ],
+        stack: "Turborepo · NestJS · Next.js · Expo · Tauri · Symfony · MySQL · Docker",
+        caseStudy: "pulse",
       },
       {
-        type: "Web · Temps réel",
-        description:
-          "Le second écran du ZEvent : cagnottes en direct, donation goals à portée et alertes quand un palier approche. Tenu pendant les 77 heures de l’édition.",
-        proof: "Cloudflare Workers",
+        period: "Mars 2023 — janv. 2024",
+        company: "Mes Allocs",
+        place: "Paris",
+        role: "Développeur full-stack",
+        points: [
+          "Maintenance et modernisation du back-office de gestion des aides : plus de 1 800 aides, un million d’utilisateurs par an.",
+          "API Express.js et MongoDB, tests unitaires et automatisation.",
+          "Sites internationaux (Italie, Espagne, Portugal) en Nuxt.js et WordPress, dans une équipe de quatre développeurs avec un prestataire externe.",
+        ],
+        stack: "Express.js · MongoDB · Nuxt.js · WordPress",
       },
     ],
-    archiveText:
-      "Et une soixantaine d’autres dépôts : moteurs de recherche, extensions, jeux, APIs et expérimentations abandonnées avec dignité.",
-    archiveLink: "Ouvrir l’archive GitHub",
-    view: "Voir",
+    readCase: "Étude de cas Pulse",
+    educationLabel: "Formation",
+    education: [
+      {
+        period: "2025 — 2026",
+        title: "Master of Science, architecte de systèmes d’information",
+        school: "ETNA · Ivry-sur-Seine",
+      },
+      {
+        period: "2022 — 2025",
+        title: "Bachelor, concepteur de projets SI",
+        school: "ETNA · Ivry-sur-Seine",
+      },
+    ],
+    cv: "Télécharger le CV",
   },
   skills: {
-    index: "03 / SAVOIR-FAIRE",
+    label: "Savoir-faire",
     title: "Full-stack, au sens propre.",
     lead: "J’apprends une technologie quand un projet en a besoin, et je m’arrête quand l’ensemble tient debout sans moi.",
     items: [
@@ -376,59 +403,26 @@ const fr: PortfolioContent = {
       },
       {
         title: "Mobile",
-        text: "De l’idée au store. Le code est la partie facile ; ce sont les certificats, les revues et les captures d’écran qui font traîner une sortie. Je fais aussi cette partie-là.",
+        text: "De l’idée au store. Le code est la partie facile ; ce sont les certificats, les revues et les captures d’écran qui font traîner une sortie. Je fais aussi cette partie-là.",
       },
       {
         title: "Desktop & systèmes",
-        text: "Rust quand la performance compte vraiment : des binaires natifs, un démarrage instantané, et de la mémoire qui reste raisonnable.",
+        text: "Rust quand la performance compte vraiment : des binaires natifs, un démarrage instantané, et de la mémoire qui reste raisonnable.",
       },
       {
         title: "Backend & production",
         text: "Des API, des données, des pipelines. Et des logs qui servent à quelque chose le jour où ça casse.",
       },
     ],
-    stackLabel: "STACK",
-    console: ["frontend", "backend", "données", "livraison"],
   },
-  lab: {
-    index: "04 / LABORATOIRE",
-    title: "Le reste du temps.",
-    lead: "Ce que je construis quand personne ne l’a demandé. Certains ont trouvé leurs utilisateurs, les autres m’ont appris quelque chose.",
-    gameKicker: "PIÈCE JOUABLE",
-    gameText:
-      "Un arcade en canvas, écrit pour le plaisir. Le classement est en PostgreSQL, parce qu’il fallait bien une excuse pour brancher une base.",
-    gamePlay: "Lancer le jeu",
-    items: [
-      {
-        text: "Un générateur de portfolios qui agrège GitHub, LinkedIn et Behance. 200 portfolios créés.",
-      },
-      {
-        text: "Une plateforme de vérification de faits assistée par IA.",
-      },
-      {
-        text: "Une extension navigateur qui bloque les sites distrayants et compte le temps regagné.",
-      },
-      {
-        text: "Une plateforme coach–client : programmes de sport, exercices, suivi et messagerie.",
-      },
-      {
-        text: "Un moteur de recherche expérimental, écrit en Python.",
-      },
-      {
-        text: "Un site de données pour Pokémon GO, construit en Svelte.",
-      },
-      {
-        text: "Un comparateur pour trancher une bonne fois : est-ce que ça valait le coup ?",
-      },
-      {
-        text: "Mon site de photographie. Le seul projet où le sujet n’est pas du code.",
-      },
+  approach: {
+    label: "Approche",
+    title: "Je n’ai jamais su m’arrêter à « ça marche ».",
+    paragraphs: [
+      "La plupart des logiciels que j’utilise tous les jours sont corrects. Rarement mieux. Pendant des années, j’ai supposé que quelqu’un finirait par s’en occuper.",
+      "QoreDB est né d’un agacement précis : un client de base de données lent, hostile, et qui me laissait vider une table de production sans jamais me demander si j’étais sûr. Depuis, le compteur de téléchargements m’a confirmé que **l’agacement était partagé**.",
+      "C’est à peu près comme ça que je travaille : je pars d’une gêne concrète et je remonte jusqu’à la cause. Ça me prend plus de temps que prévu, presque à chaque fois.",
     ],
-  },
-  about: {
-    index: "05 / APPROCHE",
-    title: "Ce que je fais quand le code marche déjà.",
-    lead: "Je passe plus de temps à comprendre le problème qu’à écrire la solution. Ça se voit six mois plus tard, le jour où il faut y revenir.",
     quote:
       "La moitié du travail commence le jour où quelqu’un d’autre l’installe.",
     principles: [
@@ -442,64 +436,73 @@ const fr: PortfolioContent = {
       },
       {
         title: "Polir l’essentiel",
-        text: "Les détails qui comptent sont ceux que personne ne remarque : un état de chargement, un message d’erreur clair, un raccourci clavier qui tombe juste.",
+        text: "Les détails qui comptent sont ceux que personne ne remarque : un état de chargement, un message d’erreur clair, un raccourci clavier qui tombe juste.",
       },
     ],
-    journeyLabel: "PARCOURS",
-    journeyTitle:
-      "Du développement web à la construction d’un produit desktop open source.",
-    journey: [
-      {
-        date: "2022-2024",
-        title: "ETNA · Bachelor informatique",
-        text: "Socle d’ingénierie et apprentissage par projets, avec des rendus à date fixe.",
-      },
-      {
-        date: "2023-2024",
-        title: "Mes Allocs · Développeur full-stack",
-        text: "Produit web, back-office, travail en équipe et premiers vrais utilisateurs derrière le code.",
-      },
-      {
-        date: "depuis 2024",
-        title: "Tkorp · Développeur full-stack & mobile",
-        text: "Pulse, du prototype à la production et au Play Store. Le passage du « ça marche » au « ça tient ».",
-      },
-      {
-        date: "2025-2026",
-        title: "ETNA · Master of Science informatique",
-        text: "Architecture logicielle et pilotage de projets complexes, en parallèle de l’alternance.",
-      },
-      {
-        date: "depuis 2026",
-        title: "QoreDB · Fondateur & ingénieur",
-        text: "Un produit desktop open source en Rust et Tauri. Le premier problème que j’ai réglé pour de bon au lieu de le contourner.",
-      },
-    ],
-    now: "En cours",
+  },
+  lab: {
+    label: "Labo",
+    title: "Le reste du temps.",
+    lead: "Ce que je construis quand personne ne l’a demandé. Certains ont trouvé leurs utilisateurs, les autres m’ont appris quelque chose.",
+    gameKicker: "Pièce jouable",
+    gameText:
+      "Un arcade en canvas, écrit pour le plaisir. Le classement est en PostgreSQL, parce qu’il fallait bien une excuse pour brancher une base.",
+    gamePlay: "Lancer le jeu",
+    items: {
+      penfolio:
+        "Un générateur de portfolios qui agrège GitHub, LinkedIn et Behance. 200 portfolios créés.",
+      myriade: "Un moteur de recherche expérimental, écrit en Python.",
+      "clear-mind":
+        "Une extension navigateur qui bloque les sites distrayants et compte le temps regagné.",
+      raphotos:
+        "Mon site de photographie. Le seul projet où le sujet n’est pas du code.",
+    },
   },
   contact: {
-    index: "06 / LA SUITE",
+    label: "Contact",
     lines: [
-      "VOUS AVEZ UN PRODUIT *ambitieux*.",
-      "CONSTRUISONS-LE *correctement*.",
+      "VOTRE ÉQUIPE CONSTRUIT",
+      "UN PRODUIT *exigeant* ?",
+      "PARLONS-EN.",
     ],
-    lead: "Je cherche une équipe exigeante et des sujets qu’on me laisse traiter en entier. Et des gens prêts à refaire une fois qu’on a compris le problème.",
+    lead: "Je cherche mon prochain poste à partir de novembre 2026 : une équipe produit, des sujets qu’on me laisse traiter en entier, et des gens prêts à refaire une fois qu’on a compris le problème.",
     emailLabel: "Écrivez-moi",
     cvLabel: "Curriculum vitae",
-    location: "Paris · France · Remote",
-    availability: "Disponible à partir de novembre 2026",
-    social: "Ailleurs",
+    locationLabel: "Basé à",
+    location: "Paris · remote possible",
+    statusLabel: "Disponibilité",
+    availability: "À partir de novembre 2026",
     atlas: {
       label: "Côté freelance",
-      text: "Un site pour votre activité ? C’est le rôle d’*Atlas*, mon studio freelance : des sites rapides et bien référencés pour les artisans, les TPE et les indépendants.",
+      text: "Un site pour votre activité ? C’est le rôle d’*Atlas*, mon studio freelance : des sites rapides et bien référencés pour les artisans, les TPE et les indépendants.",
       cta: "Découvrir Atlas",
     },
   },
   footer: {
     note: "Conçu et développé à Paris.",
-    built: "Archivo, Instrument Serif, Geist Mono. Un seul fichier CSS.",
+    personal:
+      "Hors de l’écran : du vélo, de la randonnée, de la photo et pas mal de cinéma.",
     rights: "Tous droits réservés",
     top: "Haut de page",
+    legal: "Mentions légales",
+    privacy: "Confidentialité",
+  },
+  caseStudy: {
+    back: "Tous les projets",
+    kicker: "Étude de cas",
+    role: "Rôle",
+    period: "Période",
+    team: "Équipe",
+    stack: "Stack",
+    visit: "Voir le site",
+    source: "Voir le code",
+    next: "Étude suivante",
+    privateNote:
+      "Produit client : le code n’est pas public.",
+    contactTitle: "Un poste qui ressemble à ça ?",
+    contactText:
+      "Je suis disponible à partir de novembre 2026. Le plus simple est de m’écrire.",
+    contactCta: "M’écrire",
   },
 };
 
@@ -507,7 +510,7 @@ const en: PortfolioContent = {
   meta: {
     title: "Raphaël Plassart · Full-stack Product Engineer",
     description:
-      "Full-stack developer in Paris. I design and ship web, mobile and desktop products, from architecture to production. Creator of QoreDB.",
+      "Full-stack developer in Paris, three years in startups. I took Pulse, a B2B SaaS, from proof of concept to production, and I build QoreDB, an open-source database client in Rust. Available from November 2026.",
     ogDescription:
       "I build the tools I wanted to use. Web, mobile, desktop, infrastructure.",
   },
@@ -519,17 +522,12 @@ const en: PortfolioContent = {
     openMenu: "Open menu",
     closeMenu: "Close menu",
     github: "Raphaël's GitHub profile",
-    linkedin: "Raphaël's LinkedIn profile",
-    email: "Email Raphaël",
     language: "Choose language",
     theme: "Change theme",
-    proof: "Key figures",
-    qoreImage: "Data table and schema explorer in QoreDB",
+    qoreImage: "SQL editor and result grid in QoreDB",
     qoreTech: "QoreDB technologies",
     discover: "Discover",
     projectPreview: "Project preview",
-    ticker: "Scrolling banner",
-    progress: "Reading progress",
   },
   game: {
     title: "RP / CORE RUNNER",
@@ -559,117 +557,141 @@ const en: PortfolioContent = {
     savingScore: "Saving…",
     saveScoreError: "Unable to save this score",
   },
-  boot: {
-    role: "FULL-STACK PRODUCT ENGINEER",
-    enter: "Enter",
-  },
   nav: {
-    manifesto: "Manifesto",
     work: "Work",
+    experience: "Experience",
     skills: "Craft",
+    approach: "Approach",
     lab: "Lab",
-    about: "Approach",
     contact: "Contact",
   },
   hero: {
     lines: ["I BUILD THE", "TOOLS *I wished*", "*existed.*"],
-    role: "FULL-STACK PRODUCT ENGINEER",
-    place: "PARIS · 48.8566° N",
-    lead: "Web, mobile, desktop, infrastructure. I take projects end to end, from the first schema to the deployment and the weeks that follow.",
+    role: "Full-stack product engineer",
+    base: "Paris · open to remote",
+    lead: "Full-stack developer, three years in startups. I took **Pulse**, a B2B SaaS, from proof of concept to production, and I build **QoreDB**, an open-source database client written in Rust.",
     ctaWork: "See the work",
     ctaContact: "Get in touch",
     cv: "Download résumé",
-    scroll: "Scroll",
-    statusLabel: "Status",
-    status: "Available from November 2026",
-    localTime: "Local time",
+    statusLabel: "Available",
+    status: "November 2026",
+    lookingLabel: "Looking for",
+    looking: "My next role, on a product team",
   },
-  ticker: [
-    "QOREDB",
-    "15,000 DOWNLOADS",
-    "RUST",
-    "TAURI",
-    "TYPESCRIPT",
-    "REACT NATIVE",
-    "NESTJS",
-    "POSTGRESQL",
-    "OPEN SOURCE",
-    "PARIS",
-  ],
-  manifesto: {
-    index: "01 / MANIFESTO",
-    title: "I never learned to stop at “it works”.",
-    paragraphs: [
-      "Most of the software I use every day is fine. Rarely better than that. For years I assumed someone would eventually get around to fixing it.",
-      "QoreDB came out of one very specific irritation: a database client that was slow, hostile, and perfectly happy to let me wipe a production table without ever asking if I was sure. The download counter has since confirmed that **the irritation was shared**.",
-      "That is roughly how I work: I start from a concrete annoyance and trace it back to its cause. It takes longer than I planned, just about every time.",
-    ],
-    quote:
-      "A finished product is a product there is nothing left to say about.",
-  },
-  stats: [
-    { value: "15,000+", label: "QoreDB downloads" },
-    { value: "60+", label: "public repositories" },
-    { value: "4", label: "platforms shipped" },
-    { value: "3+", label: "years in production" },
-  ],
   work: {
-    index: "02 / WORK",
+    label: "Work",
     title: "Code that ended up being useful to someone.",
-    lead: "A short selection. Each of these products started from a problem I genuinely had, and each one made it to production, with users and a backlog of tickets.",
-    featuredLabel: "FEATURED",
-    status: "Open source · active",
+    lead: "A short selection. Each of these products made it to production, with users and a backlog of tickets.",
+    featured: {
+      kicker: "Founder · product · engineering",
+      status: "Open source · active",
+      tagline:
+        "A local-first database client that brings SQL and NoSQL together in the same window.",
+      challengeLabel: "The problem",
+      challenge:
+        "Existing tools are powerful and tedious. The hard part was making mine comfortable without making it dumb: people who open a SQL client know what they are doing.",
+      buildLabel: "What I built",
+      build: [
+        "A Rust core and a Tauri shell: 34 databases behind a single interface",
+        "Credentials kept in the system keychain, and explicit guardrails on production databases",
+        "A fast query editor, with autocompletion wired to the actual schema",
+      ],
+      metricLabel: "Today",
+      metricValue: "15,000+",
+      metricCaption: "downloads in eight months",
+    },
     visit: "Visit the site",
     source: "View the code",
-    kicker: "FOUNDER · PRODUCT · ENGINEERING",
-    tagline:
-      "A local-first database client that brings SQL and NoSQL together in the same window.",
-    challengeLabel: "THE PROBLEM",
-    challenge:
-      "Existing tools are powerful and tedious. The hard part was making mine comfortable without making it dumb: people who open a SQL client know what they are doing.",
-    buildLabel: "WHAT I BUILT",
-    build: [
-      "A Rust core, a Tauri shell, 15 drivers behind a single interface",
-      "An encrypted vault and explicit guardrails on production databases",
-      "A fast query editor, with autocompletion wired to the actual schema",
-    ],
-    metricLabel: "TODAY",
-    metricValue: "15,000+",
-    metricCaption: "downloads in a few months",
-    selectedLabel: "OTHER SHIPPED PRODUCTS",
-    projects: [
-      {
-        type: "Mobile · Co-founder",
+    readCase: "Read the case study",
+    casesLabel: "Case studies",
+    cases: {
+      pulse: {
+        type: "B2B SaaS · Tkorp",
         description:
-          "A gamified personal-development app designed to survive past day three. Co-founded and taken from concept to the stores.",
-        proof: "150+ beta testers",
+          "A platform for managing fleets of VR headsets, taken from proof of concept to a V1 in production, then taken over entirely after the team was reorganised.",
+        proof: "50+ regular users",
       },
-      {
-        type: "SaaS · Full-stack",
+      "tcg-nexus": {
+        type: "Web & mobile · Tech lead",
         description:
-          "Your GitHub activity turned into LinkedIn posts that hold up. Writing, editing, scheduling.",
-        proof: "NestJS · Redis",
-      },
-      {
-        type: "Web · Tech lead",
-        description:
-          "An ecosystem for card-game players: tournaments, marketplace and AI-assisted analysis. Shipped online.",
+          "A platform for Pokémon TCG players: marketplace, tournaments, collections, decks and card scanning from a phone.",
         proof: "Team of 5",
       },
-      {
+    },
+    shippedLabel: "Other shipped products",
+    shipped: {
+      melios: {
+        type: "Mobile · Co-founder",
+        description:
+          "A gamified personal-development app, incubated at ESSEC and published on the App Store and Google Play.",
+        proof: "150+ beta testers",
+      },
+      "zevent-radar": {
         type: "Web · Real time",
         description:
           "The ZEvent second screen: live donation totals, goals within reach and alerts when a milestone is closing in. Held up across the 77 hours of the event.",
         proof: "Cloudflare Workers",
       },
-    ],
+      quori: {
+        type: "SaaS · Full-stack",
+        description:
+          "Your GitHub activity turned into LinkedIn posts that hold up. Writing, editing, scheduling.",
+        proof: "NestJS · Redis",
+      },
+    },
     archiveText:
       "Plus roughly sixty other repositories: search engines, extensions, games, APIs and experiments abandoned with dignity.",
     archiveLink: "Open the GitHub archive",
-    view: "View",
+  },
+  experience: {
+    label: "Experience",
+    title: "Three years in startups, from proof of concept to production.",
+    lead: "Work-study alongside ETNA, on teams that trusted me with whole products rather than isolated tickets.",
+    jobs: [
+      {
+        period: "Jan 2024 — present",
+        company: "Tkorp",
+        place: "Clichy, France",
+        role: "Full-stack, mobile & desktop developer",
+        points: [
+          "Designed and built Pulse, a B2B SaaS for managing VR headset fleets, from proof of concept to a V1 in production.",
+          "Took over the whole platform after the team was reorganised: architecture, back end, front end, mobile and deployment.",
+          "Mobile app published on Google Play; platform adopted by several clients, with 50+ regular users.",
+        ],
+        stack: "Turborepo · NestJS · Next.js · Expo · Tauri · Symfony · MySQL · Docker",
+        caseStudy: "pulse",
+      },
+      {
+        period: "Mar 2023 — Jan 2024",
+        company: "Mes Allocs",
+        place: "Paris, France",
+        role: "Full-stack developer",
+        points: [
+          "Maintained and modernised the back office for social benefits: 1,800+ benefits, one million users a year.",
+          "Express.js and MongoDB API, unit tests and automation.",
+          "International sites (Italy, Spain, Portugal) in Nuxt.js and WordPress, on a team of four developers alongside an external agency.",
+        ],
+        stack: "Express.js · MongoDB · Nuxt.js · WordPress",
+      },
+    ],
+    readCase: "Pulse case study",
+    educationLabel: "Education",
+    education: [
+      {
+        period: "2025 — 2026",
+        title: "Master of Science, information systems architect",
+        school: "ETNA · Ivry-sur-Seine",
+      },
+      {
+        period: "2022 — 2025",
+        title: "Bachelor, information systems project design",
+        school: "ETNA · Ivry-sur-Seine",
+      },
+    ],
+    cv: "Download résumé",
   },
   skills: {
-    index: "03 / CRAFT",
+    label: "Craft",
     title: "Full-stack, in the literal sense.",
     lead: "I pick up a technology when a project needs it, and I stop when the whole thing stands up without me.",
     items: [
@@ -690,42 +712,15 @@ const en: PortfolioContent = {
         text: "APIs, data, pipelines. And logs that are actually useful on the day it breaks.",
       },
     ],
-    stackLabel: "STACK",
-    console: ["frontend", "backend", "data", "delivery"],
   },
-  lab: {
-    index: "04 / LAB",
-    title: "The rest of the time.",
-    lead: "What I build when nobody asked for it. Some found their users, the others taught me something.",
-    gameKicker: "PLAYABLE PIECE",
-    gameText:
-      "A canvas arcade, written for the fun of it. The leaderboard runs on PostgreSQL, because I needed an excuse to plug in a database.",
-    gamePlay: "Launch the game",
-    items: [
-      {
-        text: "A portfolio generator that aggregates GitHub, LinkedIn and Behance. 200 portfolios created.",
-      },
-      { text: "An AI-assisted fact-checking platform." },
-      {
-        text: "A browser extension that blocks distracting sites and counts the time you win back.",
-      },
-      {
-        text: "A coach-to-client platform: training programmes, exercises, tracking and messaging.",
-      },
-      { text: "An experimental search engine, written in Python." },
-      { text: "A data site for Pokémon GO, built with Svelte." },
-      {
-        text: "A comparison tool to settle it once and for all: was it worth it?",
-      },
-      {
-        text: "My photography site. The only project where the subject is not code.",
-      },
+  approach: {
+    label: "Approach",
+    title: "I never learned to stop at “it works”.",
+    paragraphs: [
+      "Most of the software I use every day is fine. Rarely better than that. For years I assumed someone would eventually get around to fixing it.",
+      "QoreDB came out of one very specific irritation: a database client that was slow, hostile, and perfectly happy to let me wipe a production table without ever asking if I was sure. The download counter has since confirmed that **the irritation was shared**.",
+      "That is roughly how I work: I start from a concrete annoyance and trace it back to its cause. It takes longer than I planned, just about every time.",
     ],
-  },
-  about: {
-    index: "05 / APPROACH",
-    title: "What I do once the code already works.",
-    lead: "I spend more time understanding the problem than writing the solution. It shows six months later, on the day someone has to go back into it.",
     quote: "Half the work starts the day someone else installs it.",
     principles: [
       {
@@ -741,47 +736,35 @@ const en: PortfolioContent = {
         text: "The details that matter are the ones nobody notices: a loading state, a clear error message, a keyboard shortcut that lands where you expect.",
       },
     ],
-    journeyLabel: "JOURNEY",
-    journeyTitle:
-      "From web development to building an open-source desktop product.",
-    journey: [
-      {
-        date: "2022-2024",
-        title: "ETNA · Bachelor in computer science",
-        text: "Engineering foundations and project-based learning, with hard deadlines.",
-      },
-      {
-        date: "2023-2024",
-        title: "Mes Allocs · Full-stack developer",
-        text: "Web product, back office, teamwork, and the first real users sitting behind the code.",
-      },
-      {
-        date: "since 2024",
-        title: "Tkorp · Full-stack & mobile developer",
-        text: "Pulse, from prototype to production and the Play Store. The move from “it works” to “it holds”.",
-      },
-      {
-        date: "2025-2026",
-        title: "ETNA · Master of Science in computer science",
-        text: "Software architecture and complex project management, alongside the apprenticeship.",
-      },
-      {
-        date: "since 2026",
-        title: "QoreDB · Founder & engineer",
-        text: "An open-source desktop product in Rust and Tauri. The first problem I fixed for good instead of working around it.",
-      },
-    ],
-    now: "Ongoing",
+  },
+  lab: {
+    label: "Lab",
+    title: "The rest of the time.",
+    lead: "What I build when nobody asked for it. Some found their users, the others taught me something.",
+    gameKicker: "Playable piece",
+    gameText:
+      "A canvas arcade, written for the fun of it. The leaderboard runs on PostgreSQL, because I needed an excuse to plug in a database.",
+    gamePlay: "Launch the game",
+    items: {
+      penfolio:
+        "A portfolio generator that aggregates GitHub, LinkedIn and Behance. 200 portfolios created.",
+      myriade: "An experimental search engine, written in Python.",
+      "clear-mind":
+        "A browser extension that blocks distracting sites and counts the time you win back.",
+      raphotos:
+        "My photography site. The only project where the subject is not code.",
+    },
   },
   contact: {
-    index: "06 / WHAT'S NEXT",
-    lines: ["YOU HAVE AN *ambitious* PRODUCT.", "LET'S BUILD IT *properly*."],
-    lead: "I am looking for a demanding team and subjects I get to handle end to end. And people willing to redo something once we understand the problem.",
+    label: "Contact",
+    lines: ["YOUR TEAM IS BUILDING", "A *demanding* PRODUCT?", "LET’S TALK."],
+    lead: "I am looking for my next role from November 2026: a product team, subjects I get to handle end to end, and people willing to redo something once we understand the problem.",
     emailLabel: "Write to me",
     cvLabel: "Résumé",
-    location: "Paris · France · Remote",
-    availability: "Available from November 2026",
-    social: "Elsewhere",
+    locationLabel: "Based in",
+    location: "Paris · open to remote",
+    statusLabel: "Available",
+    availability: "From November 2026",
     atlas: {
       label: "Freelance work",
       text: "Need a website for your business? That’s what *Atlas*, my freelance studio, is for: fast, well-ranked websites for craftspeople, small businesses and independents.",
@@ -790,9 +773,29 @@ const en: PortfolioContent = {
   },
   footer: {
     note: "Designed and built in Paris.",
-    built: "Archivo, Instrument Serif, Geist Mono. One single CSS file.",
+    personal:
+      "Away from the screen: cycling, hiking, photography and a fair amount of cinema.",
     rights: "All rights reserved",
     top: "Back to top",
+    legal: "Legal notice",
+    privacy: "Privacy",
+  },
+  caseStudy: {
+    back: "All projects",
+    kicker: "Case study",
+    role: "Role",
+    period: "Period",
+    team: "Team",
+    stack: "Stack",
+    visit: "Visit the site",
+    source: "View the code",
+    next: "Next case study",
+    privateNote:
+      "Client product: the code is not public.",
+    contactTitle: "A role that looks like this?",
+    contactText:
+      "I am available from November 2026. The simplest way is to write to me.",
+    contactCta: "Write to me",
   },
 };
 
@@ -800,7 +803,7 @@ const es: PortfolioContent = {
   meta: {
     title: "Raphaël Plassart · Full-stack Product Engineer",
     description:
-      "Desarrollador full-stack en París. Diseño y entrego productos web, móviles y de escritorio, de la arquitectura a la producción. Creador de QoreDB.",
+      "Desarrollador full-stack en París, tres años en startups. Llevé Pulse, un SaaS B2B, de la prueba de concepto a producción, y construyo QoreDB, un cliente de bases de datos de código abierto en Rust. Disponible en noviembre de 2026.",
     ogDescription:
       "Construyo las herramientas que quería usar. Web, móvil, escritorio, infraestructura.",
   },
@@ -812,17 +815,12 @@ const es: PortfolioContent = {
     openMenu: "Abrir el menú",
     closeMenu: "Cerrar el menú",
     github: "Perfil de GitHub de Raphaël",
-    linkedin: "Perfil de LinkedIn de Raphaël",
-    email: "Escribir a Raphaël",
     language: "Elegir idioma",
     theme: "Cambiar de tema",
-    proof: "Cifras clave",
-    qoreImage: "Tabla de datos y explorador de esquemas en QoreDB",
+    qoreImage: "Editor SQL y tabla de resultados en QoreDB",
     qoreTech: "Tecnologías de QoreDB",
     discover: "Descubrir",
     projectPreview: "Vista previa del proyecto",
-    ticker: "Banda deslizante",
-    progress: "Progreso de lectura",
   },
   game: {
     title: "RP / CORE RUNNER",
@@ -852,117 +850,141 @@ const es: PortfolioContent = {
     savingScore: "Guardando…",
     saveScoreError: "No se puede guardar esta puntuación",
   },
-  boot: {
-    role: "FULL-STACK PRODUCT ENGINEER",
-    enter: "Entrar",
-  },
   nav: {
-    manifesto: "Manifiesto",
     work: "Proyectos",
+    experience: "Trayectoria",
     skills: "Oficio",
+    approach: "Enfoque",
     lab: "Laboratorio",
-    about: "Enfoque",
     contact: "Contacto",
   },
   hero: {
     lines: ["CONSTRUYO LAS", "*herramientas que*", "QUERÍA *usar*."],
-    role: "FULL-STACK PRODUCT ENGINEER",
-    place: "PARÍS · 48.8566° N",
-    lead: "Web, móvil, escritorio, infraestructura. Asumo los proyectos de principio a fin, desde el primer esquema hasta la puesta en producción y las semanas siguientes.",
+    role: "Full-stack product engineer",
+    base: "París · remoto posible",
+    lead: "Desarrollador full-stack, tres años en startups. Llevé **Pulse**, un SaaS B2B, de la prueba de concepto a producción, y construyo **QoreDB**, un cliente de bases de datos de código abierto en Rust.",
     ctaWork: "Ver los proyectos",
     ctaContact: "Contactarme",
     cv: "Descargar el CV",
-    scroll: "Desplazar",
-    statusLabel: "Estado",
-    status: "Disponible desde noviembre de 2026",
-    localTime: "Hora local",
+    statusLabel: "Disponible",
+    status: "Noviembre de 2026",
+    lookingLabel: "Busco",
+    looking: "Mi próximo puesto, en un equipo de producto",
   },
-  ticker: [
-    "QOREDB",
-    "15 000 DESCARGAS",
-    "RUST",
-    "TAURI",
-    "TYPESCRIPT",
-    "REACT NATIVE",
-    "NESTJS",
-    "POSTGRESQL",
-    "CÓDIGO ABIERTO",
-    "PARÍS",
-  ],
-  manifesto: {
-    index: "01 / MANIFIESTO",
-    title: "Nunca supe conformarme con «funciona».",
-    paragraphs: [
-      "La mayoría del software que uso a diario es correcto. Rara vez algo más. Durante años di por hecho que alguien acabaría por arreglarlo.",
-      "QoreDB nació de una molestia muy concreta: un cliente de base de datos lento, hostil, y encantado de dejarme vaciar una tabla de producción sin preguntarme nunca si estaba seguro. Desde entonces, el contador de descargas me ha confirmado que **la molestia era compartida**.",
-      "Así es más o menos como trabajo: parto de una incomodidad concreta y remonto hasta su causa. Me lleva más tiempo del previsto, casi siempre.",
-    ],
-    quote:
-      "Un producto terminado es un producto del que ya no queda nada que decir.",
-  },
-  stats: [
-    { value: "15 000+", label: "descargas de QoreDB" },
-    { value: "60+", label: "repositorios públicos" },
-    { value: "4", label: "plataformas entregadas" },
-    { value: "3+", label: "años en producción" },
-  ],
   work: {
-    index: "02 / PROYECTOS",
+    label: "Proyectos",
     title: "Código que acabó sirviéndole a alguien.",
-    lead: "Una selección corta. Cada uno de estos productos partió de un problema que yo tenía de verdad, y cada uno llegó a producción, con usuarios y tickets que atender.",
-    featuredLabel: "PROYECTO DESTACADO",
-    status: "Código abierto · activo",
+    lead: "Una selección corta. Cada uno de estos productos llegó a producción, con usuarios y tickets que atender.",
+    featured: {
+      kicker: "Fundador · producto · ingeniería",
+      status: "Código abierto · activo",
+      tagline:
+        "Un cliente de base de datos local-first que reúne SQL y NoSQL en la misma ventana.",
+      challengeLabel: "El problema",
+      challenge:
+        "Las herramientas existentes son potentes y pesadas. Lo difícil era hacer la mía cómoda sin volverla tonta: quien abre un cliente SQL sabe lo que hace.",
+      buildLabel: "Lo que construí",
+      build: [
+        "Un núcleo en Rust y una carcasa Tauri: 34 bases de datos tras una sola interfaz",
+        "Credenciales guardadas en el llavero del sistema y protecciones explícitas sobre las bases de producción",
+        "Un editor de consultas rápido, con autocompletado conectado al esquema real",
+      ],
+      metricLabel: "Hoy",
+      metricValue: "15 000+",
+      metricCaption: "descargas en ocho meses",
+    },
     visit: "Ver el sitio",
     source: "Ver el código",
-    kicker: "FUNDADOR · PRODUCTO · INGENIERÍA",
-    tagline:
-      "Un cliente de base de datos local-first que reúne SQL y NoSQL en la misma ventana.",
-    challengeLabel: "EL PROBLEMA",
-    challenge:
-      "Las herramientas existentes son potentes y pesadas. Lo difícil era hacer la mía cómoda sin volverla tonta: quien abre un cliente SQL sabe lo que hace.",
-    buildLabel: "LO QUE CONSTRUÍ",
-    build: [
-      "Un núcleo en Rust, una carcasa Tauri, 15 drivers tras una sola interfaz",
-      "Una bóveda cifrada y protecciones explícitas sobre las bases de producción",
-      "Un editor de consultas rápido, con autocompletado conectado al esquema real",
-    ],
-    metricLabel: "HOY",
-    metricValue: "15 000+",
-    metricCaption: "descargas en pocos meses",
-    selectedLabel: "OTROS PRODUCTOS ENTREGADOS",
-    projects: [
-      {
-        type: "Móvil · Cofundador",
+    readCase: "Leer el caso de estudio",
+    casesLabel: "Casos de estudio",
+    cases: {
+      pulse: {
+        type: "SaaS B2B · Tkorp",
         description:
-          "Una aplicación de desarrollo personal gamificada, pensada para durar más de tres días. Cofundada y llevada del concepto a las tiendas.",
-        proof: "150+ beta-testers",
+          "Una plataforma de gestión de flotas de visores de RV, llevada de la prueba de concepto a una V1 en producción, y asumida por completo tras una reorganización del equipo.",
+        proof: "50+ usuarios habituales",
       },
-      {
-        type: "SaaS · Full-stack",
+      "tcg-nexus": {
+        type: "Web y móvil · Líder técnico",
         description:
-          "Tu actividad de GitHub convertida en publicaciones de LinkedIn presentables. Redacción, edición, planificación.",
-        proof: "NestJS · Redis",
-      },
-      {
-        type: "Web · Líder técnico",
-        description:
-          "Un ecosistema para jugadores de cartas: torneos, marketplace y análisis asistido por IA. Publicado en línea.",
+          "Una plataforma para jugadores de Pokémon TCG: marketplace, torneos, colecciones, mazos y escaneo de cartas desde el móvil.",
         proof: "Equipo de 5",
       },
-      {
+    },
+    shippedLabel: "Otros productos entregados",
+    shipped: {
+      melios: {
+        type: "Móvil · Cofundador",
+        description:
+          "Una aplicación de desarrollo personal gamificada, incubada en ESSEC y publicada en la App Store y Google Play.",
+        proof: "150+ beta-testers",
+      },
+      "zevent-radar": {
         type: "Web · Tiempo real",
         description:
           "La segunda pantalla del ZEvent: donaciones en directo, goals al alcance y alertas cuando se acerca un hito. Aguantó las 77 horas del evento.",
         proof: "Cloudflare Workers",
       },
-    ],
+      quori: {
+        type: "SaaS · Full-stack",
+        description:
+          "Tu actividad de GitHub convertida en publicaciones de LinkedIn presentables. Redacción, edición, planificación.",
+        proof: "NestJS · Redis",
+      },
+    },
     archiveText:
       "Y unos sesenta repositorios más: motores de búsqueda, extensiones, juegos, APIs y experimentos abandonados con dignidad.",
     archiveLink: "Abrir el archivo de GitHub",
-    view: "Ver",
+  },
+  experience: {
+    label: "Trayectoria",
+    title: "Tres años en startups, de la prueba de concepto a producción.",
+    lead: "En alternancia con la ETNA, en equipos que me confiaron productos enteros en lugar de tickets sueltos.",
+    jobs: [
+      {
+        period: "Ene. 2024 — hoy",
+        company: "Tkorp",
+        place: "Clichy, Francia",
+        role: "Desarrollador full-stack, móvil y escritorio",
+        points: [
+          "Diseño y desarrollo de Pulse, un SaaS B2B de gestión de flotas de visores de RV, de la prueba de concepto a una V1 en producción.",
+          "Asumí toda la plataforma tras una reorganización del equipo: arquitectura, back, front, móvil y despliegue.",
+          "Aplicación móvil publicada en Google Play; plataforma adoptada por varios clientes, con más de 50 usuarios habituales.",
+        ],
+        stack: "Turborepo · NestJS · Next.js · Expo · Tauri · Symfony · MySQL · Docker",
+        caseStudy: "pulse",
+      },
+      {
+        period: "Mar. 2023 — ene. 2024",
+        company: "Mes Allocs",
+        place: "París, Francia",
+        role: "Desarrollador full-stack",
+        points: [
+          "Mantenimiento y modernización del back-office de gestión de ayudas: más de 1 800 ayudas, un millón de usuarios al año.",
+          "API en Express.js y MongoDB, pruebas unitarias y automatización.",
+          "Sitios internacionales (Italia, España, Portugal) en Nuxt.js y WordPress, en un equipo de cuatro desarrolladores con un proveedor externo.",
+        ],
+        stack: "Express.js · MongoDB · Nuxt.js · WordPress",
+      },
+    ],
+    readCase: "Caso de estudio Pulse",
+    educationLabel: "Formación",
+    education: [
+      {
+        period: "2025 — 2026",
+        title: "Master of Science, arquitecto de sistemas de información",
+        school: "ETNA · Ivry-sur-Seine",
+      },
+      {
+        period: "2022 — 2025",
+        title: "Grado, diseño de proyectos de sistemas de información",
+        school: "ETNA · Ivry-sur-Seine",
+      },
+    ],
+    cv: "Descargar el CV",
   },
   skills: {
-    index: "03 / OFICIO",
+    label: "Oficio",
     title: "Full-stack, en sentido literal.",
     lead: "Aprendo una tecnología cuando un proyecto la necesita, y paro cuando el conjunto se sostiene sin mí.",
     items: [
@@ -983,42 +1005,15 @@ const es: PortfolioContent = {
         text: "APIs, datos, pipelines. Y logs que sirven de algo el día que se rompe.",
       },
     ],
-    stackLabel: "STACK",
-    console: ["frontend", "backend", "datos", "entrega"],
   },
-  lab: {
-    index: "04 / LABORATORIO",
-    title: "El resto del tiempo.",
-    lead: "Lo que construyo cuando nadie lo ha pedido. Algunos encontraron sus usuarios, los demás me enseñaron algo.",
-    gameKicker: "PIEZA JUGABLE",
-    gameText:
-      "Un arcade en canvas, escrito por gusto. La clasificación va en PostgreSQL, porque hacía falta una excusa para enchufar una base de datos.",
-    gamePlay: "Lanzar el juego",
-    items: [
-      {
-        text: "Un generador de portfolios que agrega GitHub, LinkedIn y Behance. 200 portfolios creados.",
-      },
-      { text: "Una plataforma de verificación de hechos asistida por IA." },
-      {
-        text: "Una extensión de navegador que bloquea los sitios que distraen y cuenta el tiempo recuperado.",
-      },
-      {
-        text: "Una plataforma entrenador–cliente: programas deportivos, ejercicios, seguimiento y mensajería.",
-      },
-      { text: "Un motor de búsqueda experimental, escrito en Python." },
-      { text: "Un sitio de datos para Pokémon GO, construido con Svelte." },
-      {
-        text: "Un comparador para zanjarlo de una vez: ¿merecía la pena?",
-      },
-      {
-        text: "Mi sitio de fotografía. El único proyecto donde el tema no es código.",
-      },
+  approach: {
+    label: "Enfoque",
+    title: "Nunca supe conformarme con «funciona».",
+    paragraphs: [
+      "La mayoría del software que uso a diario es correcto. Rara vez algo más. Durante años di por hecho que alguien acabaría por arreglarlo.",
+      "QoreDB nació de una molestia muy concreta: un cliente de base de datos lento, hostil, y encantado de dejarme vaciar una tabla de producción sin preguntarme nunca si estaba seguro. Desde entonces, el contador de descargas me ha confirmado que **la molestia era compartida**.",
+      "Así es más o menos como trabajo: parto de una incomodidad concreta y remonto hasta su causa. Me lleva más tiempo del previsto, casi siempre.",
     ],
-  },
-  about: {
-    index: "05 / ENFOQUE",
-    title: "Lo que hago cuando el código ya funciona.",
-    lead: "Paso más tiempo entendiendo el problema que escribiendo la solución. Se nota seis meses después, el día en que hay que volver a meterse dentro.",
     quote:
       "La mitad del trabajo empieza el día en que otra persona lo instala.",
     principles: [
@@ -1035,47 +1030,35 @@ const es: PortfolioContent = {
         text: "Los detalles que cuentan son los que nadie nota: un estado de carga, un mensaje de error claro, un atajo de teclado que cae donde debe.",
       },
     ],
-    journeyLabel: "TRAYECTORIA",
-    journeyTitle:
-      "Del desarrollo web a la construcción de un producto de escritorio de código abierto.",
-    journey: [
-      {
-        date: "2022-2024",
-        title: "ETNA · Grado en informática",
-        text: "Base de ingeniería y aprendizaje por proyectos, con entregas a fecha fija.",
-      },
-      {
-        date: "2023-2024",
-        title: "Mes Allocs · Desarrollador full-stack",
-        text: "Producto web, back-office, trabajo en equipo y los primeros usuarios reales detrás del código.",
-      },
-      {
-        date: "desde 2024",
-        title: "Tkorp · Desarrollador full-stack y móvil",
-        text: "Pulse, del prototipo a la producción y a la Play Store. El paso de «funciona» a «aguanta».",
-      },
-      {
-        date: "2025-2026",
-        title: "ETNA · Máster en informática",
-        text: "Arquitectura de software y gestión de proyectos complejos, en paralelo a la alternancia.",
-      },
-      {
-        date: "desde 2026",
-        title: "QoreDB · Fundador e ingeniero",
-        text: "Un producto de escritorio de código abierto en Rust y Tauri. El primer problema que resolví de verdad en vez de esquivarlo.",
-      },
-    ],
-    now: "En curso",
+  },
+  lab: {
+    label: "Laboratorio",
+    title: "El resto del tiempo.",
+    lead: "Lo que construyo cuando nadie lo ha pedido. Algunos encontraron sus usuarios, los demás me enseñaron algo.",
+    gameKicker: "Pieza jugable",
+    gameText:
+      "Un arcade en canvas, escrito por gusto. La clasificación va en PostgreSQL, porque hacía falta una excusa para enchufar una base de datos.",
+    gamePlay: "Lanzar el juego",
+    items: {
+      penfolio:
+        "Un generador de portfolios que agrega GitHub, LinkedIn y Behance. 200 portfolios creados.",
+      myriade: "Un motor de búsqueda experimental, escrito en Python.",
+      "clear-mind":
+        "Una extensión de navegador que bloquea los sitios que distraen y cuenta el tiempo recuperado.",
+      raphotos:
+        "Mi sitio de fotografía. El único proyecto donde el tema no es código.",
+    },
   },
   contact: {
-    index: "06 / LO QUE SIGUE",
-    lines: ["TIENES UN PRODUCTO *ambicioso*.", "CONSTRUYÁMOSLO *bien*."],
-    lead: "Busco un equipo exigente y temas que me dejen llevar de principio a fin. Y gente dispuesta a rehacer algo cuando el problema ya se entiende.",
+    label: "Contacto",
+    lines: ["¿TU EQUIPO CONSTRUYE", "UN PRODUCTO *exigente*?", "HABLEMOS."],
+    lead: "Busco mi próximo puesto a partir de noviembre de 2026: un equipo de producto, temas que me dejen llevar de principio a fin, y gente dispuesta a rehacer algo cuando el problema ya se entiende.",
     emailLabel: "Escríbeme",
     cvLabel: "Currículum",
-    location: "París · Francia · Remoto",
-    availability: "Disponible a partir de noviembre de 2026",
-    social: "En otros sitios",
+    locationLabel: "Desde",
+    location: "París · remoto posible",
+    statusLabel: "Disponible",
+    availability: "A partir de noviembre de 2026",
     atlas: {
       label: "Trabajo freelance",
       text: "¿Necesitas una web para tu negocio? Para eso está *Atlas*, mi estudio freelance: sitios rápidos y bien posicionados para artesanos, pequeñas empresas e independientes.",
@@ -1084,9 +1067,29 @@ const es: PortfolioContent = {
   },
   footer: {
     note: "Diseñado y desarrollado en París.",
-    built: "Archivo, Instrument Serif, Geist Mono. Un único archivo CSS.",
+    personal:
+      "Lejos de la pantalla: bici, senderismo, fotografía y bastante cine.",
     rights: "Todos los derechos reservados",
     top: "Volver arriba",
+    legal: "Aviso legal",
+    privacy: "Privacidad",
+  },
+  caseStudy: {
+    back: "Todos los proyectos",
+    kicker: "Caso de estudio",
+    role: "Rol",
+    period: "Periodo",
+    team: "Equipo",
+    stack: "Stack",
+    visit: "Ver el sitio",
+    source: "Ver el código",
+    next: "Siguiente caso",
+    privateNote:
+      "Producto de cliente: el código no es público.",
+    contactTitle: "¿Un puesto que se parezca a esto?",
+    contactText:
+      "Estoy disponible a partir de noviembre de 2026. Lo más sencillo es escribirme.",
+    contactCta: "Escribirme",
   },
 };
 
@@ -1094,7 +1097,7 @@ const de: PortfolioContent = {
   meta: {
     title: "Raphaël Plassart · Full-stack Product Engineer",
     description:
-      "Full-Stack-Entwickler in Paris. Ich konzipiere und liefere Web-, Mobil- und Desktop-Produkte, von der Architektur bis in die Produktion. Schöpfer von QoreDB.",
+      "Full-Stack-Entwickler in Paris, drei Jahre in Startups. Ich habe Pulse, ein B2B-SaaS, vom Proof of Concept bis in die Produktion geführt und baue QoreDB, einen quelloffenen Datenbank-Client in Rust. Verfügbar ab November 2026.",
     ogDescription:
       "Ich baue die Werkzeuge, die ich benutzen wollte. Web, Mobil, Desktop, Infrastruktur.",
   },
@@ -1106,17 +1109,12 @@ const de: PortfolioContent = {
     openMenu: "Menü öffnen",
     closeMenu: "Menü schließen",
     github: "GitHub-Profil von Raphaël",
-    linkedin: "LinkedIn-Profil von Raphaël",
-    email: "Raphaël eine E-Mail schreiben",
     language: "Sprache wählen",
     theme: "Design wechseln",
-    proof: "Kennzahlen",
-    qoreImage: "Datentabelle und Schema-Explorer in QoreDB",
+    qoreImage: "SQL-Editor und Ergebnistabelle in QoreDB",
     qoreTech: "QoreDB-Technologien",
     discover: "Entdecken",
     projectPreview: "Projektvorschau",
-    ticker: "Laufband",
-    progress: "Lesefortschritt",
   },
   game: {
     title: "RP / CORE RUNNER",
@@ -1146,117 +1144,141 @@ const de: PortfolioContent = {
     savingScore: "Wird gespeichert…",
     saveScoreError: "Diese Punktzahl kann nicht gespeichert werden",
   },
-  boot: {
-    role: "FULL-STACK PRODUCT ENGINEER",
-    enter: "Eintreten",
-  },
   nav: {
-    manifesto: "Manifest",
     work: "Projekte",
+    experience: "Werdegang",
     skills: "Handwerk",
+    approach: "Haltung",
     lab: "Labor",
-    about: "Haltung",
     contact: "Kontakt",
   },
   hero: {
     lines: ["ICH BAUE DIE", "*Werkzeuge, die ich*", "BRAUCHTE."],
-    role: "FULL-STACK PRODUCT ENGINEER",
-    place: "PARIS · 48,8566° N",
-    lead: "Web, Mobil, Desktop, Infrastruktur. Ich übernehme Projekte von Anfang bis Ende, vom ersten Schema bis zum Produktivgang und den Wochen danach.",
+    role: "Full-stack product engineer",
+    base: "Paris · Remote möglich",
+    lead: "Full-Stack-Entwickler, drei Jahre in Startups. Ich habe **Pulse**, ein B2B-SaaS, vom Proof of Concept bis in die Produktion geführt und baue **QoreDB**, einen quelloffenen Datenbank-Client in Rust.",
     ctaWork: "Projekte ansehen",
     ctaContact: "Kontakt aufnehmen",
     cv: "Lebenslauf herunterladen",
-    scroll: "Scrollen",
-    statusLabel: "Status",
-    status: "Verfügbar ab November 2026",
-    localTime: "Ortszeit",
+    statusLabel: "Verfügbar",
+    status: "November 2026",
+    lookingLabel: "Ich suche",
+    looking: "Meine nächste Stelle in einem Produktteam",
   },
-  ticker: [
-    "QOREDB",
-    "15 000 DOWNLOADS",
-    "RUST",
-    "TAURI",
-    "TYPESCRIPT",
-    "REACT NATIVE",
-    "NESTJS",
-    "POSTGRESQL",
-    "OPEN SOURCE",
-    "PARIS",
-  ],
-  manifesto: {
-    index: "01 / MANIFEST",
-    title: "Bei „es funktioniert“ konnte ich nie aufhören.",
-    paragraphs: [
-      "Die meiste Software, die ich täglich benutze, ist in Ordnung. Selten mehr. Jahrelang bin ich davon ausgegangen, dass sich irgendwann jemand darum kümmert.",
-      "QoreDB entstand aus einem sehr konkreten Ärgernis: ein Datenbank-Client, der langsam und unwirsch war und mich eine Produktionstabelle leeren ließ, ohne je zu fragen, ob ich sicher sei. Der Download-Zähler hat mir seitdem bestätigt, dass **viele denselben Ärger hatten**.",
-      "Ungefähr so arbeite ich: Ich beginne bei einem konkreten Unbehagen und gehe zurück bis zur Ursache. Es dauert jedes Mal länger als geplant.",
-    ],
-    quote:
-      "Ein fertiges Produkt ist ein Produkt, zu dem nichts mehr zu sagen bleibt.",
-  },
-  stats: [
-    { value: "15 000+", label: "QoreDB-Downloads" },
-    { value: "60+", label: "öffentliche Repositories" },
-    { value: "4", label: "ausgelieferte Plattformen" },
-    { value: "3+", label: "Jahre in der Produktion" },
-  ],
   work: {
-    index: "02 / PROJEKTE",
+    label: "Projekte",
     title: "Code, der am Ende jemandem genützt hat.",
-    lead: "Eine kurze Auswahl. Jedes dieser Produkte begann mit einem Problem, das ich wirklich hatte, und jedes ging in Produktion, mit Nutzenden und offenen Tickets.",
-    featuredLabel: "HAUPTPROJEKT",
-    status: "Open Source · aktiv",
+    lead: "Eine kurze Auswahl. Jedes dieser Produkte ging in Produktion, mit Nutzenden und offenen Tickets.",
+    featured: {
+      kicker: "Gründer · Produkt · Engineering",
+      status: "Open Source · aktiv",
+      tagline:
+        "Ein Local-first-Datenbank-Client, der SQL und NoSQL in einem Fenster vereint.",
+      challengeLabel: "Das Problem",
+      challenge:
+        "Die vorhandenen Werkzeuge sind mächtig und mühsam. Schwierig war, meines bequem zu machen, ohne es dumm zu machen: Wer einen SQL-Client öffnet, weiß, was er tut.",
+      buildLabel: "Was ich gebaut habe",
+      build: [
+        "Ein Rust-Kern und eine Tauri-Hülle: 34 Datenbanken hinter einer einzigen Oberfläche",
+        "Zugangsdaten im Schlüsselbund des Systems und ausdrückliche Schutzgeländer für Produktionsdatenbanken",
+        "Ein schneller Abfrage-Editor, dessen Autovervollständigung am echten Schema hängt",
+      ],
+      metricLabel: "Heute",
+      metricValue: "15 000+",
+      metricCaption: "Downloads in acht Monaten",
+    },
     visit: "Website ansehen",
     source: "Code ansehen",
-    kicker: "GRÜNDER · PRODUKT · ENGINEERING",
-    tagline:
-      "Ein Local-first-Datenbank-Client, der SQL und NoSQL in einem Fenster vereint.",
-    challengeLabel: "DAS PROBLEM",
-    challenge:
-      "Die vorhandenen Werkzeuge sind mächtig und mühsam. Schwierig war, meines bequem zu machen, ohne es dumm zu machen: Wer einen SQL-Client öffnet, weiß, was er tut.",
-    buildLabel: "WAS ICH GEBAUT HABE",
-    build: [
-      "Ein Rust-Kern, eine Tauri-Hülle, 15 Treiber hinter einer einzigen Oberfläche",
-      "Ein verschlüsselter Tresor und ausdrückliche Schutzgeländer für Produktionsdatenbanken",
-      "Ein schneller Abfrage-Editor, dessen Autovervollständigung am echten Schema hängt",
-    ],
-    metricLabel: "HEUTE",
-    metricValue: "15 000+",
-    metricCaption: "Downloads in wenigen Monaten",
-    selectedLabel: "WEITERE GELIEFERTE PRODUKTE",
-    projects: [
-      {
-        type: "Mobil · Mitgründer",
+    readCase: "Fallstudie lesen",
+    casesLabel: "Fallstudien",
+    cases: {
+      pulse: {
+        type: "B2B-SaaS · Tkorp",
         description:
-          "Eine spielerische App zur Persönlichkeitsentwicklung, gebaut, um länger als drei Tage zu überleben. Mitgegründet und vom Konzept bis in die Stores geführt.",
-        proof: "150+ Beta-Tester",
+          "Eine Plattform zur Verwaltung von VR-Headset-Flotten, vom Proof of Concept bis zur V1 in Produktion geführt und nach einer Umstrukturierung des Teams vollständig übernommen.",
+        proof: "50+ regelmäßig Nutzende",
       },
-      {
-        type: "SaaS · Full-stack",
+      "tcg-nexus": {
+        type: "Web & Mobil · Technische Leitung",
         description:
-          "Deine GitHub-Aktivität, übersetzt in vorzeigbare LinkedIn-Beiträge. Schreiben, Bearbeiten, Planen.",
-        proof: "NestJS · Redis",
-      },
-      {
-        type: "Web · Technische Leitung",
-        description:
-          "Ein Ökosystem für Kartenspielende: Turniere, Marktplatz und KI-gestützte Analyse. Online geliefert.",
+          "Eine Plattform für Pokémon-TCG-Spielende: Marktplatz, Turniere, Sammlungen, Decks und Karten-Scan per Smartphone.",
         proof: "Team aus 5",
       },
-      {
+    },
+    shippedLabel: "Weitere gelieferte Produkte",
+    shipped: {
+      melios: {
+        type: "Mobil · Mitgründer",
+        description:
+          "Eine spielerische App zur Persönlichkeitsentwicklung, an der ESSEC inkubiert und im App Store und bei Google Play veröffentlicht.",
+        proof: "150+ Beta-Tester",
+      },
+      "zevent-radar": {
         type: "Web · Echtzeit",
         description:
           "Der Second Screen des ZEvent: Spenden in Echtzeit, erreichbare Goals und Alerts, wenn ein Meilenstein näher rückt. Hielt die 77 Stunden der Edition durch.",
         proof: "Cloudflare Workers",
       },
-    ],
+      quori: {
+        type: "SaaS · Full-stack",
+        description:
+          "Deine GitHub-Aktivität, übersetzt in vorzeigbare LinkedIn-Beiträge. Schreiben, Bearbeiten, Planen.",
+        proof: "NestJS · Redis",
+      },
+    },
     archiveText:
       "Und rund sechzig weitere Repositories: Suchmaschinen, Erweiterungen, Spiele, APIs und würdevoll aufgegebene Experimente.",
     archiveLink: "GitHub-Archiv öffnen",
-    view: "Ansehen",
+  },
+  experience: {
+    label: "Werdegang",
+    title: "Drei Jahre in Startups, vom Proof of Concept bis in die Produktion.",
+    lead: "Dual an der ETNA, in Teams, die mir ganze Produkte anvertraut haben statt einzelner Tickets.",
+    jobs: [
+      {
+        period: "Jan. 2024 — heute",
+        company: "Tkorp",
+        place: "Clichy, Frankreich",
+        role: "Full-Stack-, Mobile- & Desktop-Entwickler",
+        points: [
+          "Konzeption und Entwicklung von Pulse, einem B2B-SaaS zur Verwaltung von VR-Headset-Flotten, vom Proof of Concept bis zur V1 in Produktion.",
+          "Übernahme der gesamten Plattform nach einer Umstrukturierung des Teams: Architektur, Backend, Frontend, Mobil und Deployment.",
+          "Mobile App bei Google Play veröffentlicht; Plattform von mehreren Kunden eingesetzt, mit über 50 regelmäßig Nutzenden.",
+        ],
+        stack: "Turborepo · NestJS · Next.js · Expo · Tauri · Symfony · MySQL · Docker",
+        caseStudy: "pulse",
+      },
+      {
+        period: "März 2023 — Jan. 2024",
+        company: "Mes Allocs",
+        place: "Paris, Frankreich",
+        role: "Full-Stack-Entwickler",
+        points: [
+          "Wartung und Modernisierung des Backoffice für Sozialleistungen: über 1 800 Leistungen, eine Million Nutzende pro Jahr.",
+          "API mit Express.js und MongoDB, Unit-Tests und Automatisierung.",
+          "Internationale Websites (Italien, Spanien, Portugal) mit Nuxt.js und WordPress, in einem Team aus vier Entwicklern mit einer externen Agentur.",
+        ],
+        stack: "Express.js · MongoDB · Nuxt.js · WordPress",
+      },
+    ],
+    readCase: "Fallstudie Pulse",
+    educationLabel: "Ausbildung",
+    education: [
+      {
+        period: "2025 — 2026",
+        title: "Master of Science, Architekt für Informationssysteme",
+        school: "ETNA · Ivry-sur-Seine",
+      },
+      {
+        period: "2022 — 2025",
+        title: "Bachelor, Konzeption von IT-Projekten",
+        school: "ETNA · Ivry-sur-Seine",
+      },
+    ],
+    cv: "Lebenslauf herunterladen",
   },
   skills: {
-    index: "03 / HANDWERK",
+    label: "Handwerk",
     title: "Full-stack, im wörtlichen Sinn.",
     lead: "Ich lerne eine Technologie, wenn ein Projekt sie braucht, und höre auf, wenn das Ganze ohne mich steht.",
     items: [
@@ -1277,42 +1299,15 @@ const de: PortfolioContent = {
         text: "APIs, Daten, Pipelines. Und Logs, die an dem Tag etwas taugen, an dem es bricht.",
       },
     ],
-    stackLabel: "STACK",
-    console: ["Frontend", "Backend", "Daten", "Auslieferung"],
   },
-  lab: {
-    index: "04 / LABOR",
-    title: "Die übrige Zeit.",
-    lead: "Was ich baue, wenn niemand danach gefragt hat. Einige haben ihre Nutzenden gefunden, die anderen haben mir etwas beigebracht.",
-    gameKicker: "SPIELBARES STÜCK",
-    gameText:
-      "Ein Canvas-Arcade, aus Spaß geschrieben. Die Rangliste läuft auf PostgreSQL, weil es einen Vorwand brauchte, eine Datenbank anzuschließen.",
-    gamePlay: "Spiel starten",
-    items: [
-      {
-        text: "Ein Portfolio-Generator, der GitHub, LinkedIn und Behance zusammenführt. 200 erstellte Portfolios.",
-      },
-      { text: "Eine KI-gestützte Plattform zur Faktenprüfung." },
-      {
-        text: "Eine Browser-Erweiterung, die ablenkende Seiten blockiert und die zurückgewonnene Zeit zählt.",
-      },
-      {
-        text: "Eine Coach-Kunden-Plattform: Trainingspläne, Übungen, Verfolgung und Nachrichten.",
-      },
-      { text: "Eine experimentelle Suchmaschine, in Python geschrieben." },
-      { text: "Eine Datenseite für Pokémon GO, mit Svelte gebaut." },
-      {
-        text: "Ein Vergleichswerkzeug, um es ein für alle Mal zu klären: Hat es sich gelohnt?",
-      },
-      {
-        text: "Meine Fotografie-Website. Das einzige Projekt, dessen Gegenstand kein Code ist.",
-      },
+  approach: {
+    label: "Haltung",
+    title: "Bei „es funktioniert“ konnte ich nie aufhören.",
+    paragraphs: [
+      "Die meiste Software, die ich täglich benutze, ist in Ordnung. Selten mehr. Jahrelang bin ich davon ausgegangen, dass sich irgendwann jemand darum kümmert.",
+      "QoreDB entstand aus einem sehr konkreten Ärgernis: ein Datenbank-Client, der langsam und unwirsch war und mich eine Produktionstabelle leeren ließ, ohne je zu fragen, ob ich sicher sei. Der Download-Zähler hat mir seitdem bestätigt, dass **viele denselben Ärger hatten**.",
+      "Ungefähr so arbeite ich: Ich beginne bei einem konkreten Unbehagen und gehe zurück bis zur Ursache. Es dauert jedes Mal länger als geplant.",
     ],
-  },
-  about: {
-    index: "05 / HALTUNG",
-    title: "Was ich mache, wenn der Code schon läuft.",
-    lead: "Ich verbringe mehr Zeit damit, das Problem zu verstehen, als die Lösung zu schreiben. Es zeigt sich sechs Monate später, wenn jemand wieder hineinmuss.",
     quote:
       "Die Hälfte der Arbeit beginnt an dem Tag, an dem jemand anderes es installiert.",
     principles: [
@@ -1329,47 +1324,39 @@ const de: PortfolioContent = {
         text: "Die Details, die zählen, bemerkt niemand: ein Ladezustand, eine klare Fehlermeldung, ein Tastenkürzel, das dort liegt, wo man es sucht.",
       },
     ],
-    journeyLabel: "WERDEGANG",
-    journeyTitle:
-      "Von der Webentwicklung zum Bau eines quelloffenen Desktop-Produkts.",
-    journey: [
-      {
-        date: "2022-2024",
-        title: "ETNA · Bachelor Informatik",
-        text: "Ingenieurgrundlagen und projektbasiertes Lernen, mit festen Abgabeterminen.",
-      },
-      {
-        date: "2023-2024",
-        title: "Mes Allocs · Full-Stack-Entwickler",
-        text: "Webprodukt, Backoffice, Teamarbeit und die ersten echten Nutzenden hinter dem Code.",
-      },
-      {
-        date: "seit 2024",
-        title: "Tkorp · Full-Stack- & Mobile-Entwickler",
-        text: "Pulse, vom Prototyp bis in die Produktion und in den Play Store. Der Schritt von „es läuft“ zu „es hält“.",
-      },
-      {
-        date: "2025-2026",
-        title: "ETNA · Master of Science Informatik",
-        text: "Softwarearchitektur und Steuerung komplexer Projekte, parallel zur dualen Ausbildung.",
-      },
-      {
-        date: "seit 2026",
-        title: "QoreDB · Gründer & Ingenieur",
-        text: "Ein quelloffenes Desktop-Produkt in Rust und Tauri. Das erste Problem, das ich wirklich gelöst habe, statt es zu umgehen.",
-      },
-    ],
-    now: "Laufend",
+  },
+  lab: {
+    label: "Labor",
+    title: "Die übrige Zeit.",
+    lead: "Was ich baue, wenn niemand danach gefragt hat. Einige haben ihre Nutzenden gefunden, die anderen haben mir etwas beigebracht.",
+    gameKicker: "Spielbares Stück",
+    gameText:
+      "Ein Canvas-Arcade, aus Spaß geschrieben. Die Rangliste läuft auf PostgreSQL, weil es einen Vorwand brauchte, eine Datenbank anzuschließen.",
+    gamePlay: "Spiel starten",
+    items: {
+      penfolio:
+        "Ein Portfolio-Generator, der GitHub, LinkedIn und Behance zusammenführt. 200 erstellte Portfolios.",
+      myriade: "Eine experimentelle Suchmaschine, in Python geschrieben.",
+      "clear-mind":
+        "Eine Browser-Erweiterung, die ablenkende Seiten blockiert und die zurückgewonnene Zeit zählt.",
+      raphotos:
+        "Meine Fotografie-Website. Das einzige Projekt, dessen Gegenstand kein Code ist.",
+    },
   },
   contact: {
-    index: "06 / WIE ES WEITERGEHT",
-    lines: ["SIE HABEN EIN *ehrgeiziges* PRODUKT.", "BAUEN WIR ES *richtig*."],
-    lead: "Ich suche ein anspruchsvolles Team und Themen, die ich ganz übernehmen darf. Und Menschen, die etwas neu machen, sobald das Problem klar ist.",
-    emailLabel: "Schreiben Sie mir",
+    label: "Kontakt",
+    lines: [
+      "IHR TEAM BAUT",
+      "EIN *anspruchsvolles* PRODUKT?",
+      "SPRECHEN WIR.",
+    ],
+    lead: "Ich suche ab November 2026 meine nächste Stelle: ein Produktteam, Themen, die ich von Anfang bis Ende verantworten darf, und Menschen, die bereit sind, etwas neu zu bauen, sobald das Problem verstanden ist.",
+    emailLabel: "Schreib mir",
     cvLabel: "Lebenslauf",
-    location: "Paris · Frankreich · Remote",
-    availability: "Verfügbar ab November 2026",
-    social: "Anderswo",
+    locationLabel: "Standort",
+    location: "Paris · Remote möglich",
+    statusLabel: "Verfügbar",
+    availability: "Ab November 2026",
     atlas: {
       label: "Freelance",
       text: "Sie brauchen eine Website für Ihr Unternehmen? Dafür gibt es *Atlas*, mein Freelance-Studio: schnelle, gut auffindbare Websites für Handwerk, kleine Betriebe und Selbstständige.",
@@ -1377,10 +1364,30 @@ const de: PortfolioContent = {
     },
   },
   footer: {
-    note: "In Paris entworfen und entwickelt.",
-    built: "Archivo, Instrument Serif, Geist Mono. Eine einzige CSS-Datei.",
+    note: "Entworfen und entwickelt in Paris.",
+    personal:
+      "Abseits des Bildschirms: Radfahren, Wandern, Fotografie und ziemlich viel Kino.",
     rights: "Alle Rechte vorbehalten",
     top: "Nach oben",
+    legal: "Impressum",
+    privacy: "Datenschutz",
+  },
+  caseStudy: {
+    back: "Alle Projekte",
+    kicker: "Fallstudie",
+    role: "Rolle",
+    period: "Zeitraum",
+    team: "Team",
+    stack: "Stack",
+    visit: "Website ansehen",
+    source: "Code ansehen",
+    next: "Nächste Fallstudie",
+    privateNote:
+      "Kundenprodukt: Der Code ist nicht öffentlich.",
+    contactTitle: "Eine Stelle, die so aussieht?",
+    contactText:
+      "Ich bin ab November 2026 verfügbar. Am einfachsten schreibst du mir.",
+    contactCta: "Schreib mir",
   },
 };
 

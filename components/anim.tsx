@@ -12,7 +12,6 @@ import {
   useVelocity,
 } from "motion/react";
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { useAppReady } from "@/components/chrome";
 import { renderAccented } from "@/lib/rich-text";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
@@ -109,20 +108,16 @@ export function MaskedHeadline({
   as: Tag = "h2",
   lines,
   className,
-  waitForReady = false,
   delay = 0,
 }: {
   as?: "h1" | "h2";
   lines: readonly string[];
   className?: string;
-  waitForReady?: boolean;
   delay?: number;
 }) {
   const reduceMotion = useReducedMotion();
-  const ready = useAppReady();
   const containerRef = useRef<HTMLHeadingElement>(null);
-  const inView = useInView(containerRef, { once: true, margin: "-10% 0px" });
-  const active = waitForReady ? ready : inView;
+  const active = useInView(containerRef, { once: true, margin: "-10% 0px" });
 
   if (reduceMotion) {
     return (
@@ -274,38 +269,6 @@ export function Marquee({
     <div className={className}>
       <motion.div className={trackClassName} style={{ x }}>
         {children}
-        {children}
-      </motion.div>
-    </div>
-  );
-}
-
-export function Parallax({
-  children,
-  className,
-  amount = 12,
-}: {
-  children: ReactNode;
-  className?: string;
-  amount?: number;
-}) {
-  const reduceMotion = useReducedMotion();
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-  const y = useTransform(
-    scrollYProgress,
-    [0, 1],
-    [`-${amount}%`, `${amount}%`],
-  );
-
-  return (
-    <div className={className} ref={ref}>
-      <motion.div
-        style={{ height: "100%", y: reduceMotion ? 0 : y }}
-      >
         {children}
       </motion.div>
     </div>

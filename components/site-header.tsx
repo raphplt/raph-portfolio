@@ -5,6 +5,7 @@ import { ArrowUpRight, Menu, Moon, Sun, X } from "lucide-react";
 import { AnimatePresence, motion, useScroll } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import { GitHubIcon, LinkedInIcon } from "@/components/brand-icons";
+import { EMAIL, GITHUB_URL, LINKEDIN_URL } from "@/lib/projects";
 import {
   languageNames,
   localePath,
@@ -13,14 +14,14 @@ import {
   type PortfolioContent,
 } from "@/lib/content";
 
-export type NavSection = { id: string; label: string; index: string };
+// `href` vaut "#id" sur l'accueil et "/#id" (ou "/en#id"…) depuis une étude de cas.
+export type NavSection = { id: string; label: string; href: string };
 
 function ThemeToggle({ label }: { label: string }) {
   return (
     <button
       aria-label={label}
       className="icon-btn theme-toggle"
-      data-cursor="none"
       onClick={() => {
         const root = document.documentElement;
         const next = root.dataset.theme === "dark" ? "light" : "dark";
@@ -39,7 +40,15 @@ function ThemeToggle({ label }: { label: string }) {
   );
 }
 
-function LanguageMenu({ locale, label }: { locale: Locale; label: string }) {
+function LanguageMenu({
+  locale,
+  label,
+  alternates,
+}: {
+  locale: Locale;
+  label: string;
+  alternates?: Record<Locale, string>;
+}) {
   const ref = useRef<HTMLDetailsElement>(null);
 
   useEffect(() => {
@@ -68,14 +77,14 @@ function LanguageMenu({ locale, label }: { locale: Locale; label: string }) {
 
   return (
     <details className="lang" ref={ref}>
-      <summary aria-label={label} data-cursor="none" title={label}>
+      <summary aria-label={label} title={label}>
         {locale.toUpperCase()}
       </summary>
       <div>
         {locales.map((item) => (
           <Link
             aria-current={item === locale ? "page" : undefined}
-            href={localePath(item)}
+            href={alternates?.[item] ?? localePath(item)}
             hrefLang={item}
             key={item}
             lang={item}
@@ -93,10 +102,12 @@ export function SiteHeader({
   copy,
   locale,
   sections,
+  alternates,
 }: {
   copy: PortfolioContent;
   locale: Locale;
   sections: NavSection[];
+  alternates?: Record<Locale, string>;
 }) {
   const { scrollYProgress } = useScroll();
   const [stuck, setStuck] = useState(false);
@@ -169,8 +180,7 @@ export function SiteHeader({
           <a
             aria-label={copy.aria.top}
             className="brand"
-            data-cursor="none"
-            href="#top"
+            href={alternates ? localePath(locale) : "#top"}
           >
             <span className="brand-short">RP</span>
             <span className="brand-full">Raphaël Plassart</span>
@@ -181,9 +191,7 @@ export function SiteHeader({
             {sections.map((section) => (
               <a
                 aria-current={active === section.id ? "true" : undefined}
-                data-cursor="none"
-                data-index={section.index}
-                href={`#${section.id}`}
+                href={section.href}
                 key={section.id}
               >
                 {section.label}
@@ -192,13 +200,16 @@ export function SiteHeader({
           </nav>
 
           <div className="header-actions">
-            <LanguageMenu label={copy.aria.language} locale={locale} />
+            <LanguageMenu
+              alternates={alternates}
+              label={copy.aria.language}
+              locale={locale}
+            />
             <ThemeToggle label={copy.aria.theme} />
             <a
               aria-label={copy.aria.github}
               className="icon-btn"
-              data-cursor="none"
-              href="https://github.com/raphplt"
+              href={GITHUB_URL}
               rel="noreferrer"
               target="_blank"
             >
@@ -208,7 +219,6 @@ export function SiteHeader({
               aria-expanded={menuOpen}
               aria-label={copy.aria.openMenu}
               className="menu-btn"
-              data-cursor="none"
               onClick={() => setMenuOpen(true)}
               type="button"
             >
@@ -253,7 +263,7 @@ export function SiteHeader({
                 <motion.a
                   animate={{ opacity: 1, y: 0 }}
                   className="display"
-                  href={`#${section.id}`}
+                  href={section.href}
                   initial={{ opacity: 0, y: 24 }}
                   key={section.id}
                   onClick={() => setMenuOpen(false)}
@@ -264,7 +274,6 @@ export function SiteHeader({
                   }}
                 >
                   {section.label}
-                  <span>{section.index}</span>
                 </motion.a>
               ))}
             </nav>
@@ -273,7 +282,7 @@ export function SiteHeader({
               <span className="mono">{copy.contact.availability}</span>
               <div className="footer-links">
                 <a
-                  href="https://github.com/raphplt"
+                  href={GITHUB_URL}
                   rel="noreferrer"
                   target="_blank"
                 >
@@ -281,14 +290,14 @@ export function SiteHeader({
                   GitHub
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/rapha%C3%ABl-plassart/"
+                  href={LINKEDIN_URL}
                   rel="noreferrer"
                   target="_blank"
                 >
                   <LinkedInIcon size={15} />
                   LinkedIn
                 </a>
-                <a href="mailto:contact@raphael-plassart.com">
+                <a href={`mailto:${EMAIL}`}>
                   Email
                   <ArrowUpRight size={14} />
                 </a>
