@@ -395,7 +395,7 @@ const fr: PortfolioContent = {
   skills: {
     label: "Savoir-faire",
     title: "Full-stack, au sens propre.",
-    lead: "J’apprends une technologie quand un projet en a besoin, et je m’arrête quand l’ensemble tient debout sans moi.",
+    lead: "Web, mobile, desktop, back-end : j’ai livré sur les quatre, ce qui me permet de suivre une fonctionnalité de l’interface jusqu’à la base de données.",
     items: [
       {
         title: "Interfaces",
@@ -693,7 +693,7 @@ const en: PortfolioContent = {
   skills: {
     label: "Craft",
     title: "Full-stack, in the literal sense.",
-    lead: "I pick up a technology when a project needs it, and I stop when the whole thing stands up without me.",
+    lead: "Web, mobile, desktop, back end: I have shipped on all four, which lets me follow a feature from the interface down to the database.",
     items: [
       {
         title: "Interfaces",
@@ -986,7 +986,7 @@ const es: PortfolioContent = {
   skills: {
     label: "Oficio",
     title: "Full-stack, en sentido literal.",
-    lead: "Aprendo una tecnología cuando un proyecto la necesita, y paro cuando el conjunto se sostiene sin mí.",
+    lead: "Web, móvil, escritorio, back-end: he entregado en los cuatro, así que puedo seguir una funcionalidad desde la interfaz hasta la base de datos.",
     items: [
       {
         title: "Interfaces",
@@ -1280,7 +1280,7 @@ const de: PortfolioContent = {
   skills: {
     label: "Handwerk",
     title: "Full-stack, im wörtlichen Sinn.",
-    lead: "Ich lerne eine Technologie, wenn ein Projekt sie braucht, und höre auf, wenn das Ganze ohne mich steht.",
+    lead: "Web, Mobil, Desktop, Backend: Ich habe auf allen vier geliefert und kann eine Funktion so von der Oberfläche bis zur Datenbank begleiten.",
     items: [
       {
         title: "Oberflächen",
