@@ -118,18 +118,16 @@ export function CaseStudyPage({
         </header>
 
         <div className="shell">
-          {asset.cover && (
-            <div className="case-cover plate rise" style={delay(340)}>
-              <Image
-                alt={study.coverAlt}
-                height={asset.cover.height}
-                priority
-                sizes="(max-width: 100rem) 94vw, 1560px"
-                src={asset.cover.src}
-                width={asset.cover.width}
-              />
-            </div>
-          )}
+          <div className="case-cover plate rise" style={delay(340)}>
+            <Image
+              alt={study.coverAlt}
+              height={asset.cover.height}
+              priority
+              sizes="(max-width: 100rem) 94vw, 1560px"
+              src={asset.cover.src}
+              width={asset.cover.width}
+            />
+          </div>
 
           <dl className="case-facts">
             {study.facts.map((fact, index) => (
@@ -140,7 +138,7 @@ export function CaseStudyPage({
             ))}
           </dl>
 
-          {!asset.cover && (
+          {!asset.links.some((link) => link.kind === "source") && (
             <Reveal>
               <p className="case-note">{labels.privateNote}</p>
             </Reveal>

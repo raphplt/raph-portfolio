@@ -13,7 +13,7 @@ export type CaseStudyAsset = {
   slug: CaseStudySlug;
   name: string;
   year: string;
-  cover: Visual | null;
+  cover: Visual;
   links: { href: string; kind: "site" | "source" }[];
   stack: string[];
   gallery: Visual[];
@@ -51,9 +51,13 @@ export const caseStudyAssets: Record<CaseStudySlug, CaseStudyAsset> = {
     slug: "pulse",
     name: "Pulse",
     year: "2024",
-    // Produit client : pas de capture publique, la couverture est typographique.
-    cover: null,
-    links: [],
+    cover: {
+      src: "/images/projects/pulse.png",
+      width: 3000,
+      height: 1810,
+    },
+    // Produit client : le site est public, le code ne l'est pas.
+    links: [{ href: "https://pulse-xr.com/", kind: "site" }],
     stack: [
       "Turborepo",
       "NestJS",
@@ -71,9 +75,9 @@ export const caseStudyAssets: Record<CaseStudySlug, CaseStudyAsset> = {
     name: "TCG Nexus",
     year: "2025",
     cover: {
-      src: "/images/projects/TCGNexus.png",
-      width: 1675,
-      height: 1088,
+      src: "/images/projects/tcg-nexus.png",
+      width: 2996,
+      height: 1816,
     },
     links: [
       { href: "https://tcg-nexus.org/", kind: "site" },

@@ -275,38 +275,6 @@ export function Marquee({
   );
 }
 
-export function Parallax({
-  children,
-  className,
-  amount = 12,
-}: {
-  children: ReactNode;
-  className?: string;
-  amount?: number;
-}) {
-  const reduceMotion = useReducedMotion();
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-  const y = useTransform(
-    scrollYProgress,
-    [0, 1],
-    [`-${amount}%`, `${amount}%`],
-  );
-
-  return (
-    <div className={className} ref={ref}>
-      <motion.div
-        style={{ height: "100%", y: reduceMotion ? 0 : y }}
-      >
-        {children}
-      </motion.div>
-    </div>
-  );
-}
-
 export function Highlighted({
   text,
   className,

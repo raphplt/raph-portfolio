@@ -236,13 +236,14 @@ export const caseStudies: Record<CaseStudySlug, Record<Locale, CaseStudyCopy>> =
   pulse: {
     fr: {
       tagline:
-        "Une plateforme SaaS B2B pour gérer des parcs de réalité virtuelle, menée du POC à la production.",
+        "Une plateforme SaaS B2B pour piloter des flottes de casques de réalité virtuelle, menée du POC à la production.",
       summary:
         "Arrivé chez Tkorp en alternance pour construire Pulse à partir d’un POC, j’ai livré la V1, puis repris seul l’ensemble de la plateforme après une réorganisation de l’équipe.",
       role: "Développeur full-stack, mobile & desktop",
       period: "Depuis janvier 2024",
       team: "En équipe, puis seul responsable technique",
-      coverAlt: "",
+      coverAlt:
+        "Le tableau de bord de Pulse : état du parc de casques, bibliothèque de contenus et liste des appareils",
       facts: [
         { value: "POC → V1", label: "mise en production" },
         { value: "50+", label: "utilisateurs réguliers" },
@@ -252,14 +253,14 @@ export const caseStudies: Record<CaseStudySlug, Record<Locale, CaseStudyCopy>> =
         {
           title: "Le contexte",
           paragraphs: [
-            "Pulse est une plateforme SaaS B2B destinée aux exploitants de parcs de réalité virtuelle. Je suis arrivé chez Tkorp en janvier 2024, en alternance, pour la concevoir et la développer à partir d’un POC.",
-            "Le travail couvrait aussi une base historique en Symfony et PHP.",
+            "Des entreprises, des établissements scolaires et des structures médico-sociales utilisent des dizaines de casques de réalité virtuelle. Pulse leur permet de piloter cette flotte depuis une seule interface : déployer des contenus, suivre l’usage et l’état des appareils, les organiser par groupes et gérer les droits.",
+            "Je suis arrivé chez Tkorp en janvier 2024, en alternance, pour concevoir et développer la plateforme à partir d’un POC. Le travail couvrait aussi une base historique en Symfony et PHP.",
           ],
         },
         {
           title: "Ce que j’ai construit",
           items: [
-            "Une architecture en monorepo Turborepo : une API NestJS, un front Next.js, une application mobile Expo et une application desktop Tauri.",
+            "Une architecture en monorepo Turborepo : une API NestJS, un tableau de bord Next.js, une application mobile Expo et une application desktop Tauri.",
             "La V1 en production à partir du POC, en parallèle de la base historique.",
             "Une chaîne de livraison avec Docker et GitHub Actions, sur une base MySQL, et une application mobile publiée sur le Play Store.",
           ],
@@ -274,7 +275,7 @@ export const caseStudies: Record<CaseStudySlug, Record<Locale, CaseStudyCopy>> =
         {
           title: "Aujourd’hui",
           paragraphs: [
-            "La plateforme est adoptée par plusieurs clients et compte plus de 50 utilisateurs réguliers.",
+            "Pulse est adoptée par plusieurs clients et compte plus de 50 utilisateurs réguliers. Le site public cite notamment BMW, MBDA et DomusVi parmi ses références.",
           ],
         },
       ],
@@ -282,13 +283,14 @@ export const caseStudies: Record<CaseStudySlug, Record<Locale, CaseStudyCopy>> =
     },
     en: {
       tagline:
-        "A B2B SaaS platform for managing virtual-reality venues, taken from proof of concept to production.",
+        "A B2B SaaS platform for running fleets of virtual-reality headsets, taken from proof of concept to production.",
       summary:
         "I joined Tkorp on a work-study contract to build Pulse from a proof of concept, shipped the V1, then took over the whole platform on my own after the team was reorganised.",
       role: "Full-stack, mobile & desktop developer",
       period: "Since January 2024",
       team: "On a team, then sole technical owner",
-      coverAlt: "",
+      coverAlt:
+        "The Pulse dashboard: headset fleet health, content library and device list",
       facts: [
         { value: "PoC → V1", label: "shipped to production" },
         { value: "50+", label: "regular users" },
@@ -298,14 +300,14 @@ export const caseStudies: Record<CaseStudySlug, Record<Locale, CaseStudyCopy>> =
         {
           title: "Context",
           paragraphs: [
-            "Pulse is a B2B SaaS platform for operators of virtual-reality venues. I joined Tkorp in January 2024, on a work-study contract, to design and build it from a proof of concept.",
-            "The work also covered a legacy Symfony and PHP codebase.",
+            "Companies, schools and care facilities run dozens of virtual-reality headsets. Pulse lets them manage that fleet from a single interface: deploy content, track usage and device health, organise headsets into groups and manage permissions.",
+            "I joined Tkorp in January 2024, on a work-study contract, to design and build the platform from a proof of concept. The work also covered a legacy Symfony and PHP codebase.",
           ],
         },
         {
           title: "What I built",
           items: [
-            "A Turborepo monorepo architecture: a NestJS API, a Next.js front end, an Expo mobile app and a Tauri desktop app.",
+            "A Turborepo monorepo architecture: a NestJS API, a Next.js dashboard, an Expo mobile app and a Tauri desktop app.",
             "The V1 in production, grown out of the proof of concept, alongside the legacy codebase.",
             "A delivery pipeline with Docker and GitHub Actions on a MySQL database, and a mobile app published on Google Play.",
           ],
@@ -320,7 +322,7 @@ export const caseStudies: Record<CaseStudySlug, Record<Locale, CaseStudyCopy>> =
         {
           title: "Today",
           paragraphs: [
-            "The platform has been adopted by several clients and has more than 50 regular users.",
+            "Pulse has been adopted by several clients and has more than 50 regular users. Its public website lists BMW, MBDA and DomusVi among its references.",
           ],
         },
       ],
@@ -328,13 +330,14 @@ export const caseStudies: Record<CaseStudySlug, Record<Locale, CaseStudyCopy>> =
     },
     es: {
       tagline:
-        "Una plataforma SaaS B2B para gestionar parques de realidad virtual, llevada de la prueba de concepto a producción.",
+        "Una plataforma SaaS B2B para gestionar flotas de visores de realidad virtual, llevada de la prueba de concepto a producción.",
       summary:
         "Llegué a Tkorp en alternancia para construir Pulse a partir de una prueba de concepto, entregué la V1 y después asumí en solitario toda la plataforma tras una reorganización del equipo.",
       role: "Desarrollador full-stack, móvil y escritorio",
       period: "Desde enero de 2024",
       team: "En equipo, después único responsable técnico",
-      coverAlt: "",
+      coverAlt:
+        "El panel de Pulse: estado de la flota de visores, biblioteca de contenidos y lista de dispositivos",
       facts: [
         { value: "PoC → V1", label: "puesta en producción" },
         { value: "50+", label: "usuarios habituales" },
@@ -344,14 +347,14 @@ export const caseStudies: Record<CaseStudySlug, Record<Locale, CaseStudyCopy>> =
         {
           title: "El contexto",
           paragraphs: [
-            "Pulse es una plataforma SaaS B2B para operadores de parques de realidad virtual. Llegué a Tkorp en enero de 2024, en alternancia, para diseñarla y desarrollarla a partir de una prueba de concepto.",
-            "El trabajo también abarcaba una base histórica en Symfony y PHP.",
+            "Empresas, centros educativos y residencias usan decenas de visores de realidad virtual. Pulse les permite gestionar esa flota desde una sola interfaz: desplegar contenidos, seguir el uso y el estado de los dispositivos, organizarlos por grupos y gestionar los permisos.",
+            "Llegué a Tkorp en enero de 2024, en alternancia, para diseñar y desarrollar la plataforma a partir de una prueba de concepto. El trabajo también abarcaba una base histórica en Symfony y PHP.",
           ],
         },
         {
           title: "Lo que construí",
           items: [
-            "Una arquitectura en monorepo Turborepo: una API NestJS, un front en Next.js, una aplicación móvil Expo y una aplicación de escritorio Tauri.",
+            "Una arquitectura en monorepo Turborepo: una API NestJS, un panel en Next.js, una aplicación móvil Expo y una aplicación de escritorio Tauri.",
             "La V1 en producción a partir de la prueba de concepto, en paralelo a la base histórica.",
             "Una cadena de entrega con Docker y GitHub Actions sobre MySQL, y una aplicación móvil publicada en Google Play.",
           ],
@@ -366,7 +369,7 @@ export const caseStudies: Record<CaseStudySlug, Record<Locale, CaseStudyCopy>> =
         {
           title: "Hoy",
           paragraphs: [
-            "La plataforma la usan varios clientes y cuenta con más de 50 usuarios habituales.",
+            "Varios clientes usan Pulse, que cuenta con más de 50 usuarios habituales. Su sitio público cita BMW, MBDA y DomusVi entre sus referencias.",
           ],
         },
       ],
@@ -374,13 +377,14 @@ export const caseStudies: Record<CaseStudySlug, Record<Locale, CaseStudyCopy>> =
     },
     de: {
       tagline:
-        "Eine B2B-SaaS-Plattform zur Verwaltung von Virtual-Reality-Parks, vom Proof of Concept bis in die Produktion geführt.",
+        "Eine B2B-SaaS-Plattform zur Steuerung von VR-Headset-Flotten, vom Proof of Concept bis in die Produktion geführt.",
       summary:
         "Ich kam als dualer Student zu Tkorp, um Pulse aus einem Proof of Concept aufzubauen, habe die V1 ausgeliefert und nach einer Umstrukturierung des Teams die gesamte Plattform allein übernommen.",
       role: "Full-Stack-, Mobile- & Desktop-Entwickler",
       period: "Seit Januar 2024",
       team: "Im Team, dann allein technisch verantwortlich",
-      coverAlt: "",
+      coverAlt:
+        "Das Pulse-Dashboard: Zustand der Headset-Flotte, Inhaltsbibliothek und Geräteliste",
       facts: [
         { value: "PoC → V1", label: "in Produktion gebracht" },
         { value: "50+", label: "regelmäßig Nutzende" },
@@ -390,14 +394,14 @@ export const caseStudies: Record<CaseStudySlug, Record<Locale, CaseStudyCopy>> =
         {
           title: "Der Kontext",
           paragraphs: [
-            "Pulse ist eine B2B-SaaS-Plattform für Betreiber von Virtual-Reality-Parks. Ich kam im Januar 2024 im dualen Studium zu Tkorp, um sie aus einem Proof of Concept heraus zu konzipieren und zu entwickeln.",
-            "Die Arbeit umfasste auch eine gewachsene Codebasis in Symfony und PHP.",
+            "Unternehmen, Schulen und Pflegeeinrichtungen betreiben Dutzende VR-Headsets. Mit Pulse steuern sie diese Flotte über eine einzige Oberfläche: Inhalte ausrollen, Nutzung und Gerätezustand verfolgen, Headsets in Gruppen organisieren und Rechte verwalten.",
+            "Ich kam im Januar 2024 im dualen Studium zu Tkorp, um die Plattform aus einem Proof of Concept heraus zu konzipieren und zu entwickeln. Die Arbeit umfasste auch eine gewachsene Codebasis in Symfony und PHP.",
           ],
         },
         {
           title: "Was ich gebaut habe",
           items: [
-            "Eine Monorepo-Architektur mit Turborepo: eine NestJS-API, ein Next.js-Frontend, eine Expo-App für Mobilgeräte und eine Tauri-Desktop-App.",
+            "Eine Monorepo-Architektur mit Turborepo: eine NestJS-API, ein Next.js-Dashboard, eine Expo-App für Mobilgeräte und eine Tauri-Desktop-App.",
             "Die V1 in Produktion, aus dem Proof of Concept heraus, parallel zur alten Codebasis.",
             "Eine Auslieferungskette mit Docker und GitHub Actions auf MySQL, und eine bei Google Play veröffentlichte mobile App.",
           ],
@@ -412,7 +416,7 @@ export const caseStudies: Record<CaseStudySlug, Record<Locale, CaseStudyCopy>> =
         {
           title: "Heute",
           paragraphs: [
-            "Die Plattform wird von mehreren Kunden eingesetzt und hat über 50 regelmäßig Nutzende.",
+            "Pulse wird von mehreren Kunden eingesetzt und hat über 50 regelmäßig Nutzende. Die öffentliche Website nennt unter anderem BMW, MBDA und DomusVi als Referenzen.",
           ],
         },
       ],

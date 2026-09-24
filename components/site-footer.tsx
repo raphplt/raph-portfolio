@@ -1,6 +1,8 @@
+import Link from "next/link";
 import { ArrowUp, ArrowUpRight, Mail } from "lucide-react";
 import { GitHubIcon, LinkedInIcon } from "@/components/brand-icons";
 import type { Locale, PortfolioContent } from "@/lib/content";
+import { legalPath } from "@/lib/legal";
 import { ATLAS_URL, EMAIL, GITHUB_URL, LINKEDIN_URL } from "@/lib/projects";
 
 // Atlas existe en FR, EN et IT : les autres langues du portfolio pointent vers l'anglais.
@@ -20,7 +22,7 @@ export function SiteFooter({
       <div className="shell footer-inner">
         <p className="footer-note">
           <b>{copy.footer.note}</b>
-          {copy.footer.built}
+          {copy.footer.personal}
         </p>
 
         <div className="footer-links">
@@ -43,9 +45,15 @@ export function SiteFooter({
         </div>
 
         <div className="footer-meta mono">
-          <span>
-            © {new Date().getFullYear()} Raphaël Plassart ·{" "}
-            {copy.footer.rights}
+          <span className="footer-legal">
+            <span>
+              © {new Date().getFullYear()} Raphaël Plassart ·{" "}
+              {copy.footer.rights}
+            </span>
+            <Link href={legalPath(locale, "legal")}>{copy.footer.legal}</Link>
+            <Link href={legalPath(locale, "privacy")}>
+              {copy.footer.privacy}
+            </Link>
           </span>
           <a className="link" href="#top">
             {copy.footer.top}

@@ -6,7 +6,6 @@ import {
   Highlighted,
   Marquee,
   MaskedHeadline,
-  Parallax,
   Reveal,
 } from "@/components/anim";
 import { GitHubIcon, LinkedInIcon } from "@/components/brand-icons";
@@ -97,70 +96,69 @@ export function PortfolioPage({ locale }: { locale: Locale }) {
                 </span>
               </Reveal>
 
-              <Reveal className="featured-head">
-                <h3 className="display">QoreDB</h3>
-                <p className="tagline">{featured.tagline}</p>
-              </Reveal>
-
-              <Reveal delay={0.06}>
-                <Link
-                  aria-label={`${copy.work.readCase} · QoreDB`}
-                  className="featured-media"
-                  href={caseStudyPath(locale, "qoredb")}
-                >
-                  <Parallax amount={4}>
-                    {qoredb.cover && (
-                      <Image
-                        alt={copy.aria.qoreImage}
-                        height={qoredb.cover.height}
-                        priority
-                        sizes="(max-width: 60rem) 94vw, 1500px"
-                        src={qoredb.cover.src}
-                        width={qoredb.cover.width}
-                      />
-                    )}
-                  </Parallax>
-                </Link>
-              </Reveal>
-
-              <div className="featured-grid">
-                <Reveal>
-                  <h4>{featured.challengeLabel}</h4>
-                  <p>{featured.challenge}</p>
+              {/* Texte à gauche, capture à droite qui reste visible pendant la lecture. */}
+              <div className="featured-layout">
+                <Reveal className="featured-head">
+                  <h3 className="display">QoreDB</h3>
+                  <p className="tagline">{featured.tagline}</p>
                 </Reveal>
-                <Reveal delay={0.06}>
-                  <h4>{featured.buildLabel}</h4>
-                  <ul>
-                    {featured.build.map((item) => (
-                      <li key={item}>{item}</li>
+
+                <Reveal className="featured-visual" delay={0.06}>
+                  <Link
+                    aria-label={`${copy.work.readCase} · QoreDB`}
+                    className="featured-media"
+                    href={caseStudyPath(locale, "qoredb")}
+                  >
+                    <Image
+                      alt={copy.aria.qoreImage}
+                      height={qoredb.cover.height}
+                      priority
+                      sizes="(max-width: 64rem) 94vw, 60vw"
+                      src={qoredb.cover.src}
+                      width={qoredb.cover.width}
+                    />
+                  </Link>
+                </Reveal>
+
+                <div className="featured-points">
+                  <Reveal>
+                    <h4>{featured.challengeLabel}</h4>
+                    <p>{featured.challenge}</p>
+                  </Reveal>
+                  <Reveal>
+                    <h4>{featured.buildLabel}</h4>
+                    <ul>
+                      {featured.build.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  </Reveal>
+                  <Reveal className="featured-metric">
+                    <h4>{featured.metricLabel}</h4>
+                    <strong className="metric">
+                      <Counter value={featured.metricValue} />
+                    </strong>
+                    <p>{featured.metricCaption}</p>
+                  </Reveal>
+                </div>
+
+                <Reveal className="featured-foot">
+                  <div className="tags" aria-label={copy.aria.qoreTech}>
+                    {qoredb.stack.map((tag) => (
+                      <span key={tag}>{tag}</span>
                     ))}
-                  </ul>
-                </Reveal>
-                <Reveal delay={0.12}>
-                  <h4>{featured.metricLabel}</h4>
-                  <strong className="metric">
-                    <Counter value={featured.metricValue} />
-                  </strong>
-                  <p>{featured.metricCaption}</p>
+                  </div>
+                  <Link
+                    className="btn btn-solid"
+                    href={caseStudyPath(locale, "qoredb")}
+                  >
+                    <span>
+                      {copy.work.readCase}
+                      <ArrowRight size={15} strokeWidth={2} />
+                    </span>
+                  </Link>
                 </Reveal>
               </div>
-
-              <Reveal className="featured-foot">
-                <div className="tags" aria-label={copy.aria.qoreTech}>
-                  {qoredb.stack.map((tag) => (
-                    <span key={tag}>{tag}</span>
-                  ))}
-                </div>
-                <Link
-                  className="btn btn-solid"
-                  href={caseStudyPath(locale, "qoredb")}
-                >
-                  <span>
-                    {copy.work.readCase}
-                    <ArrowRight size={15} strokeWidth={2} />
-                  </span>
-                </Link>
-              </Reveal>
             </div>
 
             <Reveal>

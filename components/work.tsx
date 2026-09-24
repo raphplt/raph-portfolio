@@ -10,29 +10,6 @@ import {
   type CaseStudySlug,
 } from "@/lib/projects";
 
-// Couverture typographique pour les projets sans capture publique (produit client).
-export function TypeCover({
-  name,
-  lines,
-}: {
-  name: string;
-  lines: string[];
-}) {
-  return (
-    <div className="type-cover" aria-hidden="true">
-      <span className="type-cover-name display">
-        {name}
-        <i />
-      </span>
-      <span className="type-cover-lines mono">
-        {lines.map((line) => (
-          <span key={line}>{line}</span>
-        ))}
-      </span>
-    </div>
-  );
-}
-
 function CaseCard({
   slug,
   copy,
@@ -49,20 +26,13 @@ function CaseCard({
   return (
     <Link className="case-card" href={caseStudyPath(locale, slug)}>
       <div className="plate">
-        {asset.cover ? (
-          <Image
-            alt={study.coverAlt}
-            height={asset.cover.height}
-            sizes="(max-width: 60rem) 94vw, 48vw"
-            src={asset.cover.src}
-            width={asset.cover.width}
-          />
-        ) : (
-          <TypeCover
-            lines={study.facts.map((fact) => `${fact.value} · ${fact.label}`)}
-            name={asset.name}
-          />
-        )}
+        <Image
+          alt={study.coverAlt}
+          height={asset.cover.height}
+          sizes="(max-width: 60rem) 94vw, 48vw"
+          src={asset.cover.src}
+          width={asset.cover.width}
+        />
       </div>
       <div className="case-card-body">
         <span className="kicker mono">

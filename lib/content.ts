@@ -176,7 +176,14 @@ export type PortfolioContent = {
     availability: string;
     atlas: { label: string; text: string; cta: string };
   };
-  footer: { note: string; built: string; rights: string; top: string };
+  footer: {
+    note: string;
+    personal: string;
+    rights: string;
+    top: string;
+    legal: string;
+    privacy: string;
+  };
   caseStudy: {
     back: string;
     kicker: string;
@@ -303,7 +310,7 @@ const fr: PortfolioContent = {
       pulse: {
         type: "SaaS B2B · Tkorp",
         description:
-          "Une plateforme de gestion de parcs de réalité virtuelle, menée du POC à la V1 en production, puis reprise entièrement après une réorganisation de l’équipe.",
+          "Une plateforme de gestion de flottes de casques VR, menée du POC à la V1 en production, puis reprise entièrement après une réorganisation de l’équipe.",
         proof: "50+ utilisateurs réguliers",
       },
       "tcg-nexus": {
@@ -349,7 +356,7 @@ const fr: PortfolioContent = {
         place: "Clichy",
         role: "Développeur full-stack, mobile & desktop",
         points: [
-          "Conception et développement de Pulse, plateforme SaaS B2B de gestion de parcs VR, du POC à la V1 en production.",
+          "Conception et développement de Pulse, plateforme SaaS B2B de gestion de flottes de casques VR, du POC à la V1 en production.",
           "Reprise de toute la plateforme après une réorganisation de l’équipe : architecture, back, front, mobile et déploiement.",
           "Application mobile publiée sur le Play Store ; plateforme adoptée par plusieurs clients, avec plus de 50 utilisateurs réguliers.",
         ],
@@ -473,9 +480,12 @@ const fr: PortfolioContent = {
   },
   footer: {
     note: "Conçu et développé à Paris.",
-    built: "Archivo, Instrument Serif, Geist Mono. Un seul fichier CSS.",
+    personal:
+      "Hors de l’écran : du vélo, de la randonnée, de la photo et pas mal de cinéma.",
     rights: "Tous droits réservés",
     top: "Haut de page",
+    legal: "Mentions légales",
+    privacy: "Confidentialité",
   },
   caseStudy: {
     back: "Tous les projets",
@@ -488,7 +498,7 @@ const fr: PortfolioContent = {
     source: "Voir le code",
     next: "Étude suivante",
     privateNote:
-      "Produit client : le code et les écrans ne sont pas publics, cette page s’en tient donc aux faits.",
+      "Produit client : le code n’est pas public.",
     contactTitle: "Un poste qui ressemble à ça ?",
     contactText:
       "Je suis disponible à partir de novembre 2026. Le plus simple est de m’écrire.",
@@ -598,7 +608,7 @@ const en: PortfolioContent = {
       pulse: {
         type: "B2B SaaS · Tkorp",
         description:
-          "A platform for managing virtual-reality venues, taken from proof of concept to a V1 in production, then taken over entirely after the team was reorganised.",
+          "A platform for managing fleets of VR headsets, taken from proof of concept to a V1 in production, then taken over entirely after the team was reorganised.",
         proof: "50+ regular users",
       },
       "tcg-nexus": {
@@ -644,7 +654,7 @@ const en: PortfolioContent = {
         place: "Clichy, France",
         role: "Full-stack, mobile & desktop developer",
         points: [
-          "Designed and built Pulse, a B2B SaaS for managing VR venues, from proof of concept to a V1 in production.",
+          "Designed and built Pulse, a B2B SaaS for managing VR headset fleets, from proof of concept to a V1 in production.",
           "Took over the whole platform after the team was reorganised: architecture, back end, front end, mobile and deployment.",
           "Mobile app published on Google Play; platform adopted by several clients, with 50+ regular users.",
         ],
@@ -763,9 +773,12 @@ const en: PortfolioContent = {
   },
   footer: {
     note: "Designed and built in Paris.",
-    built: "Archivo, Instrument Serif, Geist Mono. One single CSS file.",
+    personal:
+      "Away from the screen: cycling, hiking, photography and a fair amount of cinema.",
     rights: "All rights reserved",
     top: "Back to top",
+    legal: "Legal notice",
+    privacy: "Privacy",
   },
   caseStudy: {
     back: "All projects",
@@ -778,7 +791,7 @@ const en: PortfolioContent = {
     source: "View the code",
     next: "Next case study",
     privateNote:
-      "Client product: the code and screens are not public, so this page sticks to the facts.",
+      "Client product: the code is not public.",
     contactTitle: "A role that looks like this?",
     contactText:
       "I am available from November 2026. The simplest way is to write to me.",
@@ -888,7 +901,7 @@ const es: PortfolioContent = {
       pulse: {
         type: "SaaS B2B · Tkorp",
         description:
-          "Una plataforma de gestión de parques de realidad virtual, llevada de la prueba de concepto a una V1 en producción, y asumida por completo tras una reorganización del equipo.",
+          "Una plataforma de gestión de flotas de visores de RV, llevada de la prueba de concepto a una V1 en producción, y asumida por completo tras una reorganización del equipo.",
         proof: "50+ usuarios habituales",
       },
       "tcg-nexus": {
@@ -934,7 +947,7 @@ const es: PortfolioContent = {
         place: "Clichy, Francia",
         role: "Desarrollador full-stack, móvil y escritorio",
         points: [
-          "Diseño y desarrollo de Pulse, un SaaS B2B de gestión de parques de RV, de la prueba de concepto a una V1 en producción.",
+          "Diseño y desarrollo de Pulse, un SaaS B2B de gestión de flotas de visores de RV, de la prueba de concepto a una V1 en producción.",
           "Asumí toda la plataforma tras una reorganización del equipo: arquitectura, back, front, móvil y despliegue.",
           "Aplicación móvil publicada en Google Play; plataforma adoptada por varios clientes, con más de 50 usuarios habituales.",
         ],
@@ -1054,9 +1067,12 @@ const es: PortfolioContent = {
   },
   footer: {
     note: "Diseñado y desarrollado en París.",
-    built: "Archivo, Instrument Serif, Geist Mono. Un único archivo CSS.",
+    personal:
+      "Lejos de la pantalla: bici, senderismo, fotografía y bastante cine.",
     rights: "Todos los derechos reservados",
     top: "Volver arriba",
+    legal: "Aviso legal",
+    privacy: "Privacidad",
   },
   caseStudy: {
     back: "Todos los proyectos",
@@ -1069,7 +1085,7 @@ const es: PortfolioContent = {
     source: "Ver el código",
     next: "Siguiente caso",
     privateNote:
-      "Producto de cliente: el código y las pantallas no son públicos, así que esta página se ciñe a los hechos.",
+      "Producto de cliente: el código no es público.",
     contactTitle: "¿Un puesto que se parezca a esto?",
     contactText:
       "Estoy disponible a partir de noviembre de 2026. Lo más sencillo es escribirme.",
@@ -1179,7 +1195,7 @@ const de: PortfolioContent = {
       pulse: {
         type: "B2B-SaaS · Tkorp",
         description:
-          "Eine Plattform zur Verwaltung von Virtual-Reality-Parks, vom Proof of Concept bis zur V1 in Produktion geführt und nach einer Umstrukturierung des Teams vollständig übernommen.",
+          "Eine Plattform zur Verwaltung von VR-Headset-Flotten, vom Proof of Concept bis zur V1 in Produktion geführt und nach einer Umstrukturierung des Teams vollständig übernommen.",
         proof: "50+ regelmäßig Nutzende",
       },
       "tcg-nexus": {
@@ -1225,7 +1241,7 @@ const de: PortfolioContent = {
         place: "Clichy, Frankreich",
         role: "Full-Stack-, Mobile- & Desktop-Entwickler",
         points: [
-          "Konzeption und Entwicklung von Pulse, einem B2B-SaaS zur Verwaltung von VR-Parks, vom Proof of Concept bis zur V1 in Produktion.",
+          "Konzeption und Entwicklung von Pulse, einem B2B-SaaS zur Verwaltung von VR-Headset-Flotten, vom Proof of Concept bis zur V1 in Produktion.",
           "Übernahme der gesamten Plattform nach einer Umstrukturierung des Teams: Architektur, Backend, Frontend, Mobil und Deployment.",
           "Mobile App bei Google Play veröffentlicht; Plattform von mehreren Kunden eingesetzt, mit über 50 regelmäßig Nutzenden.",
         ],
@@ -1349,9 +1365,12 @@ const de: PortfolioContent = {
   },
   footer: {
     note: "Entworfen und entwickelt in Paris.",
-    built: "Archivo, Instrument Serif, Geist Mono. Eine einzige CSS-Datei.",
+    personal:
+      "Abseits des Bildschirms: Radfahren, Wandern, Fotografie und ziemlich viel Kino.",
     rights: "Alle Rechte vorbehalten",
     top: "Nach oben",
+    legal: "Impressum",
+    privacy: "Datenschutz",
   },
   caseStudy: {
     back: "Alle Projekte",
@@ -1364,7 +1383,7 @@ const de: PortfolioContent = {
     source: "Code ansehen",
     next: "Nächste Fallstudie",
     privateNote:
-      "Kundenprodukt: Code und Bildschirme sind nicht öffentlich, deshalb hält sich diese Seite an die Fakten.",
+      "Kundenprodukt: Der Code ist nicht öffentlich.",
     contactTitle: "Eine Stelle, die so aussieht?",
     contactText:
       "Ich bin ab November 2026 verfügbar. Am einfachsten schreibst du mir.",
