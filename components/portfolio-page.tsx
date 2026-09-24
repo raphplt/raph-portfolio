@@ -8,6 +8,7 @@ import {
   MaskedHeadline,
   Reveal,
 } from "@/components/anim";
+import { AsciiIcon, type AsciiIconName } from "@/components/ascii-icon";
 import { GitHubIcon, LinkedInIcon } from "@/components/brand-icons";
 import { SiteChrome } from "@/components/chrome";
 import { Hero } from "@/components/hero";
@@ -26,6 +27,10 @@ import {
 import { renderAccented } from "@/lib/rich-text";
 
 const qoredb = caseStudyAssets.qoredb;
+
+// Même ordre que copy.skills.items et copy.approach.principles.
+const skillIcons: AsciiIconName[] = ["interface", "mobile", "terminal", "server"];
+const principleIcons: AsciiIconName[] = ["system", "guard", "polish"];
 
 export function homeSections(locale: Locale, prefix = ""): NavSection[] {
   const nav = content[locale].nav;
@@ -262,6 +267,7 @@ export function PortfolioPage({ locale }: { locale: Locale }) {
             <div className="skill-list">
               {copy.skills.items.map((item, index) => (
                 <Reveal className="skill-row" key={item.title}>
+                  <AsciiIcon name={skillIcons[index]} />
                   <h3 className="display">{item.title}</h3>
                   <p>{item.text}</p>
                   <span className="stack">{skillStacks[index]}</span>
@@ -289,8 +295,9 @@ export function PortfolioPage({ locale }: { locale: Locale }) {
             </Reveal>
 
             <div className="principles">
-              {copy.approach.principles.map((principle) => (
+              {copy.approach.principles.map((principle, index) => (
                 <Reveal as="article" key={principle.title}>
+                  <AsciiIcon name={principleIcons[index]} />
                   <h3>{principle.title}</h3>
                   <p>{principle.text}</p>
                 </Reveal>

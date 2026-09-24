@@ -1239,7 +1239,7 @@ html[data-theme="dark"] .lab-game-visual {
 
 @media (min-width: 64rem) {
     .skill-row {
-        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr) minmax(0, 0.8fr);
+        grid-template-columns: 8.5rem minmax(0, 0.9fr) minmax(0, 1.1fr) minmax(0, 0.8fr);
     }
 }
 
@@ -3150,4 +3150,49 @@ a:focus-visible .plate img {
 .footer-legal a:hover,
 .footer-legal a:focus-visible {
     color: var(--accent);
+}
+
+/* Icônes ASCII des listes (savoir-faire, principes) */
+.ascii-icon {
+    margin: 0;
+    color: var(--ink-3);
+    font-family: var(--font-mono), monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0;
+    line-height: 1.15;
+    user-select: none;
+    white-space: pre;
+}
+
+.ascii-icon b {
+    color: var(--accent);
+    font-weight: 500;
+}
+
+.ascii-blink {
+    animation: ascii-blink 1.6s steps(1, end) infinite;
+}
+
+@keyframes ascii-blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.skill-row .ascii-icon {
+    transition: color 400ms var(--ease);
+}
+
+.skill-row:hover .ascii-icon {
+    color: var(--ink);
+}
+
+.principles article {
+    align-items: start;
+    column-gap: 1.4rem;
+    grid-template-columns: 6.5rem minmax(0, 1fr);
+}
+
+.principles article .ascii-icon {
+    grid-row: span 2;
 }

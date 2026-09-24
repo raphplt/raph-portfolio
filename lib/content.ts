@@ -178,7 +178,6 @@ export type PortfolioContent = {
   };
   footer: {
     note: string;
-    personal: string;
     rights: string;
     top: string;
     legal: string;
@@ -480,8 +479,6 @@ const fr: PortfolioContent = {
   },
   footer: {
     note: "Conçu et développé à Paris.",
-    personal:
-      "Hors de l’écran : du vélo, de la randonnée, de la photo et pas mal de cinéma.",
     rights: "Tous droits réservés",
     top: "Haut de page",
     legal: "Mentions légales",
@@ -773,8 +770,6 @@ const en: PortfolioContent = {
   },
   footer: {
     note: "Designed and built in Paris.",
-    personal:
-      "Away from the screen: cycling, hiking, photography and a fair amount of cinema.",
     rights: "All rights reserved",
     top: "Back to top",
     legal: "Legal notice",
@@ -1067,8 +1062,6 @@ const es: PortfolioContent = {
   },
   footer: {
     note: "Diseñado y desarrollado en París.",
-    personal:
-      "Lejos de la pantalla: bici, senderismo, fotografía y bastante cine.",
     rights: "Todos los derechos reservados",
     top: "Volver arriba",
     legal: "Aviso legal",
@@ -1365,8 +1358,6 @@ const de: PortfolioContent = {
   },
   footer: {
     note: "Entworfen und entwickelt in Paris.",
-    personal:
-      "Abseits des Bildschirms: Radfahren, Wandern, Fotografie und ziemlich viel Kino.",
     rights: "Alle Rechte vorbehalten",
     top: "Nach oben",
     legal: "Impressum",

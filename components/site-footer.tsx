@@ -22,7 +22,6 @@ export function SiteFooter({
       <div className="shell footer-inner">
         <p className="footer-note">
           <b>{copy.footer.note}</b>
-          {copy.footer.personal}
         </p>
 
         <div className="footer-links">
