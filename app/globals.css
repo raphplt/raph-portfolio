@@ -915,6 +915,9 @@ html[data-theme="dark"] .theme-toggle .moon {
     position: relative;
     display: flex;
     min-height: 100svh;
+    /* Le champ ASCII déborde volontairement à droite : on le coupe ici pour
+       qu'il n'élargisse pas la page sur mobile. */
+    overflow-x: clip;
     flex-direction: column;
     justify-content: flex-end;
     padding-top: 7rem;
@@ -2223,6 +2226,95 @@ html[data-theme="dark"] .contact-socials a {
 @media (min-width: 60rem) {
     .contact-body {
         grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+    }
+}
+
+.contact-atlas {
+    display: grid;
+    align-items: center;
+    gap: 1rem clamp(2rem, 4vw, 3.5rem);
+    margin-top: clamp(2.5rem, 5vw, 4rem);
+    padding-top: clamp(1.5rem, 3vw, 2.5rem);
+    border-top: 1px solid rgba(255, 253, 248, 0.18);
+}
+
+html[data-theme="dark"] .contact-atlas {
+    border-top-color: var(--line);
+}
+
+.contact-atlas-text {
+    max-width: 52ch;
+    color: rgba(255, 253, 248, 0.72);
+    font-size: var(--step-1);
+    line-height: 1.45;
+    text-wrap: pretty;
+}
+
+html[data-theme="dark"] .contact-atlas-text {
+    color: var(--ink-2);
+}
+
+.contact-atlas-text .serif {
+    color: var(--accent);
+    font-size: 1.12em;
+}
+
+.contact-atlas-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1rem 1.2rem;
+    border: 1px solid rgba(255, 253, 248, 0.24);
+    font-family: var(--font-sans), sans-serif;
+    font-stretch: 80%;
+    font-size: clamp(1.05rem, 2vw, 1.4rem);
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    transition:
+        background-color 300ms var(--ease),
+        border-color 300ms var(--ease),
+        color 300ms var(--ease);
+}
+
+html[data-theme="dark"] .contact-atlas-link {
+    border-color: var(--line-strong);
+}
+
+.contact-atlas-link span {
+    display: grid;
+    gap: 0.35rem;
+}
+
+.contact-atlas-link small {
+    font-family: var(--font-mono), monospace;
+    font-size: 0.62rem;
+    font-stretch: normal;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    opacity: 0.6;
+    text-transform: none;
+}
+
+.contact-atlas-link svg {
+    flex: none;
+    transition: transform 400ms var(--ease);
+}
+
+.contact-atlas-link:hover {
+    border-color: var(--accent);
+    background: var(--accent);
+    color: var(--accent-ink);
+}
+
+.contact-atlas-link:hover svg {
+    transform: translate(0.2rem, -0.2rem);
+}
+
+@media (min-width: 60rem) {
+    .contact-atlas {
+        grid-template-columns: 9rem minmax(0, 1fr) auto;
     }
 }
 

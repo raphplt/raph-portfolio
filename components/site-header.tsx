@@ -288,7 +288,7 @@ export function SiteHeader({
                   <LinkedInIcon size={15} />
                   LinkedIn
                 </a>
-                <a href="mailto:raphael.plassart@gmail.com">
+                <a href="mailto:contact@raphael-plassart.com">
                   Email
                   <ArrowUpRight size={14} />
                 </a>

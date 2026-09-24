@@ -182,6 +182,7 @@ export type PortfolioContent = {
     location: string;
     availability: string;
     social: string;
+    atlas: { label: string; text: string; cta: string };
   };
   footer: { note: string; built: string; rights: string; top: string };
 };
@@ -488,6 +489,11 @@ const fr: PortfolioContent = {
     location: "Paris · France · Remote",
     availability: "Disponible à partir de novembre 2026",
     social: "Ailleurs",
+    atlas: {
+      label: "Côté freelance",
+      text: "Un site pour votre activité ? C’est le rôle d’*Atlas*, mon studio freelance : des sites rapides et bien référencés pour les artisans, les TPE et les indépendants.",
+      cta: "Découvrir Atlas",
+    },
   },
   footer: {
     note: "Conçu et développé à Paris.",
@@ -776,6 +782,11 @@ const en: PortfolioContent = {
     location: "Paris · France · Remote",
     availability: "Available from November 2026",
     social: "Elsewhere",
+    atlas: {
+      label: "Freelance work",
+      text: "Need a website for your business? That’s what *Atlas*, my freelance studio, is for: fast, well-ranked websites for craftspeople, small businesses and independents.",
+      cta: "Visit Atlas",
+    },
   },
   footer: {
     note: "Designed and built in Paris.",
@@ -1065,6 +1076,11 @@ const es: PortfolioContent = {
     location: "París · Francia · Remoto",
     availability: "Disponible a partir de noviembre de 2026",
     social: "En otros sitios",
+    atlas: {
+      label: "Trabajo freelance",
+      text: "¿Necesitas una web para tu negocio? Para eso está *Atlas*, mi estudio freelance: sitios rápidos y bien posicionados para artesanos, pequeñas empresas e independientes.",
+      cta: "Descubrir Atlas",
+    },
   },
   footer: {
     note: "Diseñado y desarrollado en París.",
@@ -1354,6 +1370,11 @@ const de: PortfolioContent = {
     location: "Paris · Frankreich · Remote",
     availability: "Verfügbar ab November 2026",
     social: "Anderswo",
+    atlas: {
+      label: "Freelance",
+      text: "Sie brauchen eine Website für Ihr Unternehmen? Dafür gibt es *Atlas*, mein Freelance-Studio: schnelle, gut auffindbare Websites für Handwerk, kleine Betriebe und Selbstständige.",
+      cta: "Atlas entdecken",
+    },
   },
   footer: {
     note: "In Paris entworfen und entwickelt.",

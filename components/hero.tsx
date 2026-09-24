@@ -88,7 +88,7 @@ export function Hero({
               <a
                 className="btn"
                 data-cursor="none"
-                href="mailto:raphael.plassart@gmail.com"
+                href="mailto:contact@raphael-plassart.com"
               >
                 <span>
                   {copy.hero.ctaContact}

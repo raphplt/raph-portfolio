@@ -7,7 +7,7 @@ export function generateJsonLd() {
     description:
       "Développeur full-stack spécialisé dans les produits web, mobile et desktop, de l’architecture à la production.",
     url: "https://www.raphael-plassart.com",
-    email: "mailto:raphael.plassart@gmail.com",
+    email: "mailto:contact@raphael-plassart.com",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Paris",

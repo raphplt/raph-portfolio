@@ -15,6 +15,7 @@ import { Lab } from "@/components/lab";
 import { SiteHeader, type NavSection } from "@/components/site-header";
 import { WorkList } from "@/components/work";
 import { consoleStack, content, skillStacks, type Locale } from "@/lib/content";
+import { renderAccented } from "@/lib/rich-text";
 
 const QORE_TAGS = [
   "Rust",
@@ -26,6 +27,11 @@ const QORE_TAGS = [
   "Redis",
   "Docker",
 ];
+
+// Atlas existe en FR, EN et IT : les autres langues du portfolio pointent vers l'anglais.
+const ATLAS_URL = "https://atlas.raphael-plassart.com";
+const atlasUrl = (locale: Locale) =>
+  locale === "fr" ? ATLAS_URL : `${ATLAS_URL}/en`;
 
 export function PortfolioPage({ locale }: { locale: Locale }) {
   const copy = content[locale];
@@ -343,10 +349,10 @@ export function PortfolioPage({ locale }: { locale: Locale }) {
                   className="contact-email"
                   data-cursor="label"
                   data-cursor-label={copy.contact.emailLabel}
-                  href="mailto:raphael.plassart@gmail.com"
+                  href="mailto:contact@raphael-plassart.com"
                   style={{ marginTop: "clamp(1.5rem, 3vw, 2.5rem)" }}
                 >
-                  raphael.plassart@gmail.com
+                  contact@raphael-plassart.com
                   <ArrowUpRight size={26} strokeWidth={2} />
                 </a>
               </Reveal>
@@ -390,6 +396,27 @@ export function PortfolioPage({ locale }: { locale: Locale }) {
                 </div>
               </Reveal>
             </div>
+
+            <Reveal className="contact-atlas">
+              <p className="mono">{copy.contact.atlas.label}</p>
+              <p className="contact-atlas-text">
+                {renderAccented(copy.contact.atlas.text)}
+              </p>
+              <a
+                className="contact-atlas-link"
+                data-cursor="label"
+                data-cursor-label="Atlas"
+                href={atlasUrl(locale)}
+                rel="noopener"
+                target="_blank"
+              >
+                <span>
+                  {copy.contact.atlas.cta}
+                  <small>atlas.raphael-plassart.com</small>
+                </span>
+                <ArrowUpRight size={22} strokeWidth={2} />
+              </a>
+            </Reveal>
           </div>
 
           <Marquee className="contact-marquee" baseVelocity={1.6}>
@@ -421,9 +448,13 @@ export function PortfolioPage({ locale }: { locale: Locale }) {
               <LinkedInIcon size={15} />
               LinkedIn
             </a>
-            <a href="mailto:raphael.plassart@gmail.com">
+            <a href="mailto:contact@raphael-plassart.com">
               <Mail size={15} strokeWidth={1.8} />
               Email
+            </a>
+            <a href={atlasUrl(locale)} rel="noopener" target="_blank">
+              <ArrowUpRight size={15} strokeWidth={1.8} />
+              Atlas
             </a>
           </div>
 
