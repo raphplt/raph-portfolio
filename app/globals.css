@@ -975,7 +975,9 @@ html[data-theme="dark"] .ascii-field {
 .hero > .shell {
     position: relative;
     z-index: 1;
-    margin-top: auto;
+    /* Centré plutôt que collé en bas : sur les grands écrans, le titre ne
+       tombe plus en bas de page (sans effet quand le contenu remplit l'écran). */
+    margin-block: auto;
 }
 
 .ascii-field canvas,
