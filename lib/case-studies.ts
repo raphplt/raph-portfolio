@@ -275,7 +275,7 @@ export const caseStudies: Record<CaseStudySlug, Record<Locale, CaseStudyCopy>> =
         {
           title: "Aujourd’hui",
           paragraphs: [
-            "Pulse est adoptée par plusieurs clients et compte plus de 50 utilisateurs réguliers. Le site public cite notamment BMW, MBDA et DomusVi parmi ses références.",
+            "Pulse est adoptée par plusieurs clients et compte plus de 50 utilisateurs réguliers.",
           ],
         },
       ],
@@ -322,7 +322,7 @@ export const caseStudies: Record<CaseStudySlug, Record<Locale, CaseStudyCopy>> =
         {
           title: "Today",
           paragraphs: [
-            "Pulse has been adopted by several clients and has more than 50 regular users. Its public website lists BMW, MBDA and DomusVi among its references.",
+            "Pulse has been adopted by several clients and has more than 50 regular users.",
           ],
         },
       ],
@@ -369,7 +369,7 @@ export const caseStudies: Record<CaseStudySlug, Record<Locale, CaseStudyCopy>> =
         {
           title: "Hoy",
           paragraphs: [
-            "Varios clientes usan Pulse, que cuenta con más de 50 usuarios habituales. Su sitio público cita BMW, MBDA y DomusVi entre sus referencias.",
+            "Varios clientes usan Pulse, que cuenta con más de 50 usuarios habituales.",
           ],
         },
       ],
@@ -416,7 +416,7 @@ export const caseStudies: Record<CaseStudySlug, Record<Locale, CaseStudyCopy>> =
         {
           title: "Heute",
           paragraphs: [
-            "Pulse wird von mehreren Kunden eingesetzt und hat über 50 regelmäßig Nutzende. Die öffentliche Website nennt unter anderem BMW, MBDA und DomusVi als Referenzen.",
+            "Pulse wird von mehreren Kunden eingesetzt und hat über 50 regelmäßig Nutzende.",
           ],
         },
       ],
