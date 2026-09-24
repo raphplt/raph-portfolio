@@ -10,15 +10,13 @@ très large, grille de composition visible, grain, accent unique orange et
 contrepoint serif italique. Les animations sont orchestrées avec Motion et un
 défilement lissé par Lenis, et respectent toutes `prefers-reduced-motion`.
 
-Pièces signature :
+Pièces signature, volontairement peu nombreuses :
 
-- rideau d'ouverture chiffré, joué une seule fois par session ;
 - champ ASCII en canvas qui respire et se creuse sous le curseur ;
-- curseur personnalisé à trois états (repos, lien, étiquette) ;
-- bandeau défilant dont la vitesse et le sens suivent le défilement ;
-- aperçu de projet qui suit le curseur sur la liste des réalisations ;
-- surlignage des mots-clés à l'entrée du manifeste dans le viewport ;
-- compteurs animés et révélations en cascade.
+- mini-jeu Core Runner jouable depuis le Labo ;
+- surlignage des mots-clés à l'entrée du texte d'approche dans le viewport ;
+- visuels du Labo en bichromie orange, en couleur au survol ;
+- entrées du hero et des études de cas en CSS pur, sans attendre le JS.
 
 ## Stack
 
@@ -39,14 +37,17 @@ Le rendu principal reste statique.
 
 | Fichier | Rôle |
 | --- | --- |
-| `lib/content.ts` | Tout le contenu éditorial, typé, dans les quatre langues |
-| `lib/rich-text.tsx` | Rendu des segments `*accentués*` en serif italique |
+| `lib/content.ts` | Contenu de l'accueil, typé, dans les quatre langues |
+| `lib/case-studies.ts` | Études de cas (QoreDB, Pulse, TCG Nexus), dans les quatre langues |
+| `lib/projects.ts` | Données non traduites : liens, visuels, stacks |
+| `lib/rich-text.tsx` | Rendu des segments `*accentués*` (serif italique) et `**gras**` |
 | `lib/fonts.ts` | Chargement des trois familles et variables CSS |
-| `lib/theme.ts` | Script d'amorçage (thème, mouvement, rideau) et repli sans JS |
-| `components/chrome.tsx` | Grain, grille, curseur, rideau, Lenis, contexte « prêt » |
+| `lib/theme.ts` | Script d'amorçage (thème, mouvement) et repli sans JS |
+| `components/chrome.tsx` | Grain, grille et défilement Lenis |
 | `components/anim.tsx` | Primitives : révélation, titre masqué, compteur, bandeau, parallaxe |
 | `components/ascii-field.tsx` | Champ ASCII en canvas 2D |
-| `components/portfolio-page.tsx` | Composition de la page (composant serveur) |
+| `components/portfolio-page.tsx` | Composition de l'accueil (composant serveur) |
+| `components/case-study-page.tsx` | Gabarit des études de cas |
 
 ## Routes
 
@@ -54,6 +55,8 @@ Le rendu principal reste statique.
 - `/en` : anglais
 - `/es` : espagnol
 - `/de` : allemand
+- `/projets/[slug]` : études de cas en français
+- `/[locale]/projects/[slug]` : études de cas dans les autres langues
 
 Chaque version possède sa langue de document, ses métadonnées, ses liens
 `hreflang` et son image Open Graph localisée.

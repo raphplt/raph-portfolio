@@ -5,7 +5,7 @@ export function generateJsonLd() {
     name: "Raphaël Plassart",
     jobTitle: "Full-stack Product Engineer",
     description:
-      "Développeur full-stack spécialisé dans les produits web, mobile et desktop, de l’architecture à la production.",
+      "Développeur full-stack, trois ans en startup : Pulse, un SaaS B2B mené du POC à la production, et QoreDB, un client de bases de données open source en Rust.",
     url: "https://www.raphael-plassart.com",
     email: "mailto:contact@raphael-plassart.com",
     address: {

@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { ArrowUpRight, FileText, Mail, MapPin } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, ArrowUpRight, FileText, MapPin } from "lucide-react";
 import {
   Counter,
   Highlighted,
@@ -12,100 +13,59 @@ import { GitHubIcon, LinkedInIcon } from "@/components/brand-icons";
 import { SiteChrome } from "@/components/chrome";
 import { Hero } from "@/components/hero";
 import { Lab } from "@/components/lab";
+import { SiteFooter, atlasUrl } from "@/components/site-footer";
 import { SiteHeader, type NavSection } from "@/components/site-header";
-import { WorkList } from "@/components/work";
-import { consoleStack, content, skillStacks, type Locale } from "@/lib/content";
+import { CaseStudyCards, ShippedGrid } from "@/components/work";
+import { caseStudyPath } from "@/lib/case-studies";
+import { content, skillStacks, type Locale } from "@/lib/content";
+import {
+  EMAIL,
+  GITHUB_URL,
+  LINKEDIN_URL,
+  caseStudyAssets,
+} from "@/lib/projects";
 import { renderAccented } from "@/lib/rich-text";
 
-const QORE_TAGS = [
-  "Rust",
-  "Tauri",
-  "React 19",
-  "TypeScript",
-  "SQLx",
-  "MongoDB",
-  "Redis",
-  "Docker",
-];
+const qoredb = caseStudyAssets.qoredb;
 
-// Atlas existe en FR, EN et IT : les autres langues du portfolio pointent vers l'anglais.
-const ATLAS_URL = "https://atlas.raphael-plassart.com";
-const atlasUrl = (locale: Locale) =>
-  locale === "fr" ? ATLAS_URL : `${ATLAS_URL}/en`;
+export function homeSections(locale: Locale, prefix = ""): NavSection[] {
+  const nav = content[locale].nav;
+
+  return (
+    [
+      ["work", nav.work],
+      ["experience", nav.experience],
+      ["skills", nav.skills],
+      ["approach", nav.approach],
+      ["lab", nav.lab],
+      ["contact", nav.contact],
+    ] as const
+  ).map(([id, label]) => ({ id, label, href: `${prefix}#${id}` }));
+}
 
 export function PortfolioPage({ locale }: { locale: Locale }) {
   const copy = content[locale];
-
-  const sections: NavSection[] = [
-    { id: "manifesto", label: copy.nav.manifesto, index: "01" },
-    { id: "work", label: copy.nav.work, index: "02" },
-    { id: "skills", label: copy.nav.skills, index: "03" },
-    { id: "lab", label: copy.nav.lab, index: "04" },
-    { id: "about", label: copy.nav.about, index: "05" },
-    { id: "contact", label: copy.nav.contact, index: "06" },
-  ];
+  const featured = copy.work.featured;
 
   return (
-    <SiteChrome bootLabels={copy.boot}>
+    <SiteChrome>
       <a className="skip-link" href="#main">
         {copy.aria.skip}
       </a>
 
-      <SiteHeader copy={copy} locale={locale} sections={sections} />
+      <SiteHeader
+        copy={copy}
+        locale={locale}
+        sections={homeSections(locale)}
+      />
 
       <main id="main">
-        <Hero copy={copy} locale={locale} />
-
-        <Marquee
-          className="ticker"
-          trackClassName="ticker-track"
-          baseVelocity={2.2}
-        >
-          {copy.ticker.map((word, index) => (
-            <span key={`${word}-${index}`}>{word}</span>
-          ))}
-        </Marquee>
-
-        <section className="section manifesto" id="manifesto">
-          <div className="shell manifesto-inner">
-            <Reveal className="manifesto-title">
-              <p className="mono index" style={{ color: "var(--ink-3)" }}>
-                {copy.manifesto.index}
-              </p>
-              <h2 className="display" style={{ marginTop: "1.2rem" }}>
-                {copy.manifesto.title}
-              </h2>
-            </Reveal>
-
-            <Reveal className="manifesto-body" delay={0.08}>
-              {copy.manifesto.paragraphs.map((paragraph, index) => (
-                <Highlighted key={index} text={paragraph} />
-              ))}
-            </Reveal>
-
-            <Reveal className="pull-quote" delay={0.12}>
-              « {copy.manifesto.quote} »
-            </Reveal>
-          </div>
-        </section>
-
-        <div className="shell">
-          <section aria-label={copy.aria.proof} className="stats">
-            {copy.stats.map((stat) => (
-              <div key={stat.label}>
-                <strong>
-                  <Counter value={stat.value} />
-                </strong>
-                <span>{stat.label}</span>
-              </div>
-            ))}
-          </section>
-        </div>
+        <Hero copy={copy} />
 
         <section className="section" id="work">
           <div className="shell">
             <Reveal className="section-head">
-              <p className="mono index">{copy.work.index}</p>
+              <p className="mono index">{copy.work.label}</p>
               <h2 className="display">{copy.work.title}</h2>
               <p className="lead">{copy.work.lead}</p>
             </Reveal>
@@ -113,106 +73,111 @@ export function PortfolioPage({ locale }: { locale: Locale }) {
             <div className="featured">
               <Reveal className="featured-top mono">
                 <span className="left">
-                  <span>{copy.work.featuredLabel} / 001</span>
+                  <span>{featured.kicker}</span>
                   <span className="status">
                     <i className="pulse" />
-                    {copy.work.status}
+                    {featured.status}
                   </span>
                 </span>
                 <span className="right">
-                  <a
-                    className="link"
-                    href="https://qoredb.com/"
-                    rel="noreferrer"
-                    target="_blank"
-                  >
-                    {copy.work.visit}
-                    <ArrowUpRight size={14} strokeWidth={2} />
-                  </a>
-                  <a
-                    className="link"
-                    href="https://github.com/QoreDB/QoreDB"
-                    rel="noreferrer"
-                    target="_blank"
-                  >
-                    {copy.work.source}
-                    <ArrowUpRight size={14} strokeWidth={2} />
-                  </a>
+                  {qoredb.links.map((link) => (
+                    <a
+                      className="link"
+                      href={link.href}
+                      key={link.href}
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      {link.kind === "site"
+                        ? copy.work.visit
+                        : copy.work.source}
+                      <ArrowUpRight size={14} strokeWidth={2} />
+                    </a>
+                  ))}
                 </span>
               </Reveal>
 
               <Reveal className="featured-head">
-                <div>
-                  <p className="kicker mono">{copy.work.kicker}</p>
-                  <h3 className="display">QoreDB</h3>
-                </div>
-                <p className="tagline">{copy.work.tagline}</p>
+                <h3 className="display">QoreDB</h3>
+                <p className="tagline">{featured.tagline}</p>
               </Reveal>
 
               <Reveal delay={0.06}>
-                <Parallax amount={7} className="featured-media">
-                  <Image
-                    alt={copy.aria.qoreImage}
-                    height={946}
-                    priority
-                    sizes="(max-width: 60rem) 94vw, 1500px"
-                    src="/images/projects/qoredb-query.png"
-                    unoptimized
-                    width={1436}
-                  />
-                </Parallax>
+                <Link
+                  aria-label={`${copy.work.readCase} · QoreDB`}
+                  className="featured-media"
+                  href={caseStudyPath(locale, "qoredb")}
+                >
+                  <Parallax amount={4}>
+                    {qoredb.cover && (
+                      <Image
+                        alt={copy.aria.qoreImage}
+                        height={qoredb.cover.height}
+                        priority
+                        sizes="(max-width: 60rem) 94vw, 1500px"
+                        src={qoredb.cover.src}
+                        width={qoredb.cover.width}
+                      />
+                    )}
+                  </Parallax>
+                </Link>
               </Reveal>
 
               <div className="featured-grid">
                 <Reveal>
-                  <h4>{copy.work.challengeLabel}</h4>
-                  <p>{copy.work.challenge}</p>
+                  <h4>{featured.challengeLabel}</h4>
+                  <p>{featured.challenge}</p>
                 </Reveal>
                 <Reveal delay={0.06}>
-                  <h4>{copy.work.buildLabel}</h4>
+                  <h4>{featured.buildLabel}</h4>
                   <ul>
-                    {copy.work.build.map((item) => (
+                    {featured.build.map((item) => (
                       <li key={item}>{item}</li>
                     ))}
                   </ul>
                 </Reveal>
                 <Reveal delay={0.12}>
-                  <h4>{copy.work.metricLabel}</h4>
+                  <h4>{featured.metricLabel}</h4>
                   <strong className="metric">
-                    <Counter value={copy.work.metricValue} />
+                    <Counter value={featured.metricValue} />
                   </strong>
-                  <p>{copy.work.metricCaption}</p>
+                  <p>{featured.metricCaption}</p>
                 </Reveal>
               </div>
 
-              <Reveal className="featured-tags">
+              <Reveal className="featured-foot">
                 <div className="tags" aria-label={copy.aria.qoreTech}>
-                  {QORE_TAGS.map((tag) => (
+                  {qoredb.stack.map((tag) => (
                     <span key={tag}>{tag}</span>
                   ))}
                 </div>
+                <Link
+                  className="btn btn-solid"
+                  href={caseStudyPath(locale, "qoredb")}
+                >
+                  <span>
+                    {copy.work.readCase}
+                    <ArrowRight size={15} strokeWidth={2} />
+                  </span>
+                </Link>
               </Reveal>
             </div>
 
             <Reveal>
-              <p
-                className="mono"
-                style={{
-                  marginTop: "clamp(3rem, 7vw, 6rem)",
-                  color: "var(--ink-3)",
-                }}
-              >
-                {copy.work.selectedLabel}
-              </p>
+              <p className="subhead mono">{copy.work.casesLabel}</p>
             </Reveal>
+            <CaseStudyCards copy={copy} locale={locale} />
 
-            <WorkList copy={copy} />
+            <Reveal>
+              <p className="subhead mono">{copy.work.shippedLabel}</p>
+            </Reveal>
+            <ShippedGrid copy={copy} />
 
             <Reveal className="archive">
               <p>{copy.work.archiveText}</p>
               <a
                 className="link mono"
-                href="https://github.com/raphplt?tab=repositories"
+                href={`${GITHUB_URL}?tab=repositories`}
                 rel="noreferrer"
                 target="_blank"
               >
@@ -223,10 +188,75 @@ export function PortfolioPage({ locale }: { locale: Locale }) {
           </div>
         </section>
 
+        <section className="section experience" id="experience">
+          <div className="shell">
+            <Reveal className="section-head">
+              <p className="mono index">{copy.experience.label}</p>
+              <h2 className="display">{copy.experience.title}</h2>
+              <p className="lead">{copy.experience.lead}</p>
+            </Reveal>
+
+            <div className="jobs">
+              {copy.experience.jobs.map((job) => (
+                <Reveal as="article" className="job" key={job.company}>
+                  <div className="job-meta mono">
+                    <span>{job.period}</span>
+                    <span>{job.place}</span>
+                  </div>
+                  <div className="job-main">
+                    <h3>
+                      <span className="display">{job.company}</span>
+                      <span className="job-role">{job.role}</span>
+                    </h3>
+                    <ul>
+                      {job.points.map((point) => (
+                        <li key={point}>{point}</li>
+                      ))}
+                    </ul>
+                    <div className="job-foot">
+                      <span className="mono">{job.stack}</span>
+                      {job.caseStudy && (
+                        <Link
+                          className="link mono"
+                          href={caseStudyPath(locale, job.caseStudy)}
+                        >
+                          {copy.experience.readCase}
+                          <ArrowRight size={14} strokeWidth={2} />
+                        </Link>
+                      )}
+                    </div>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+
+            <Reveal className="education">
+              <p className="mono">{copy.experience.educationLabel}</p>
+              <ul>
+                {copy.experience.education.map((degree) => (
+                  <li key={degree.title}>
+                    <span className="mono">{degree.period}</span>
+                    <strong>{degree.title}</strong>
+                    <span>{degree.school}</span>
+                  </li>
+                ))}
+              </ul>
+              <a
+                className="link mono"
+                download
+                href="/cv-raphael-plassart.pdf"
+              >
+                <FileText size={14} strokeWidth={1.8} />
+                {copy.experience.cv}
+              </a>
+            </Reveal>
+          </div>
+        </section>
+
         <section className="section skills" id="skills">
           <div className="shell">
             <Reveal className="section-head">
-              <p className="mono index">{copy.skills.index}</p>
+              <p className="mono index">{copy.skills.label}</p>
               <h2 className="display">{copy.skills.title}</h2>
               <p className="lead">{copy.skills.lead}</p>
             </Reveal>
@@ -234,41 +264,47 @@ export function PortfolioPage({ locale }: { locale: Locale }) {
             <div className="skill-list">
               {copy.skills.items.map((item, index) => (
                 <Reveal className="skill-row" key={item.title}>
-                  <span className="num">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
                   <h3 className="display">{item.title}</h3>
                   <p>{item.text}</p>
                   <span className="stack">{skillStacks[index]}</span>
                 </Reveal>
               ))}
             </div>
+          </div>
+        </section>
 
-            <Reveal className="console">
-              <div className="console-bar">
-                <span>stack.current</span>
-                <span className="console-dots">
-                  <i />
-                  <i />
-                  <i />
-                </span>
-              </div>
-              <div className="console-body">
-                {copy.skills.console.map((label, index) => (
-                  <p key={label}>
-                    <b>{label}</b>
-                    {consoleStack[index]}
-                  </p>
-                ))}
-              </div>
+        <section className="section approach" id="approach">
+          <div className="shell approach-inner">
+            <Reveal className="approach-title">
+              <p className="mono index">{copy.approach.label}</p>
+              <h2 className="display">{copy.approach.title}</h2>
             </Reveal>
+
+            <Reveal className="manifesto-body" delay={0.06}>
+              {copy.approach.paragraphs.map((paragraph, index) => (
+                <Highlighted key={index} text={paragraph} />
+              ))}
+            </Reveal>
+
+            <Reveal className="pull-quote" delay={0.1}>
+              {copy.approach.quote}
+            </Reveal>
+
+            <div className="principles">
+              {copy.approach.principles.map((principle) => (
+                <Reveal as="article" key={principle.title}>
+                  <h3>{principle.title}</h3>
+                  <p>{principle.text}</p>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </section>
 
         <section className="section" id="lab">
           <div className="shell">
             <Reveal className="section-head">
-              <p className="mono index">{copy.lab.index}</p>
+              <p className="mono index">{copy.lab.label}</p>
               <h2 className="display">{copy.lab.title}</h2>
               <p className="lead">{copy.lab.lead}</p>
             </Reveal>
@@ -277,64 +313,10 @@ export function PortfolioPage({ locale }: { locale: Locale }) {
           </div>
         </section>
 
-        <section className="section" id="about">
-          <div className="shell">
-            <Reveal className="section-head">
-              <p className="mono index">{copy.about.index}</p>
-              <h2 className="display">{copy.about.title}</h2>
-              <p className="lead">{copy.about.lead}</p>
-            </Reveal>
-
-            <div className="about-layout">
-              <Reveal>
-                <blockquote className="about-quote">
-                  {copy.about.quote}
-                </blockquote>
-              </Reveal>
-
-              <div className="principles">
-                {copy.about.principles.map((principle, index) => (
-                  <Reveal as="article" key={principle.title}>
-                    <h3>
-                      <i>{String(index + 1).padStart(2, "0")}</i>
-                      {principle.title}
-                    </h3>
-                    <p>{principle.text}</p>
-                  </Reveal>
-                ))}
-              </div>
-            </div>
-
-            <div className="journey">
-              <Reveal className="journey-head">
-                <h3 className="display">{copy.about.journeyTitle}</h3>
-                <span className="mono" style={{ color: "var(--ink-3)" }}>
-                  {copy.about.journeyLabel}
-                </span>
-              </Reveal>
-
-              <ol>
-                {copy.about.journey.map((item, index) => (
-                  <Reveal as="li" key={`${item.date}-${item.title}`}>
-                    <span className="date">
-                      {index === copy.about.journey.length - 1 && (
-                        <i className="pulse" />
-                      )}
-                      {item.date}
-                    </span>
-                    <strong>{item.title}</strong>
-                    <p>{item.text}</p>
-                  </Reveal>
-                ))}
-              </ol>
-            </div>
-          </div>
-        </section>
-
         <section className="section contact" id="contact">
           <div className="shell">
             <Reveal>
-              <p className="mono index">{copy.contact.index}</p>
+              <p className="mono index">{copy.contact.label}</p>
             </Reveal>
 
             <MaskedHeadline
@@ -345,49 +327,35 @@ export function PortfolioPage({ locale }: { locale: Locale }) {
             <div className="contact-body">
               <Reveal>
                 <p className="lead">{copy.contact.lead}</p>
-                <a
-                  className="contact-email"
-                  data-cursor="label"
-                  data-cursor-label={copy.contact.emailLabel}
-                  href="mailto:contact@raphael-plassart.com"
-                  style={{ marginTop: "clamp(1.5rem, 3vw, 2.5rem)" }}
-                >
-                  contact@raphael-plassart.com
+                <a className="contact-email" href={`mailto:${EMAIL}`}>
+                  {EMAIL}
                   <ArrowUpRight size={26} strokeWidth={2} />
                 </a>
               </Reveal>
 
               <Reveal className="contact-side" delay={0.08}>
                 <dl>
-                  <dt>{copy.contact.location}</dt>
-                  <dd>
-                    <MapPin size={14} strokeWidth={1.8} />
-                    48.8566° N, 2.3522° E
-                  </dd>
-                </dl>
-                <dl>
-                  <dt>{copy.hero.statusLabel}</dt>
+                  <dt>{copy.contact.statusLabel}</dt>
                   <dd>
                     <i className="pulse" />
                     {copy.contact.availability}
                   </dd>
                 </dl>
+                <dl>
+                  <dt>{copy.contact.locationLabel}</dt>
+                  <dd>
+                    <MapPin size={14} strokeWidth={1.8} />
+                    {copy.contact.location}
+                  </dd>
+                </dl>
                 <div className="contact-socials">
-                  <a
-                    href="https://github.com/raphplt"
-                    rel="noreferrer"
-                    target="_blank"
-                  >
-                    <GitHubIcon size={15} />
-                    GitHub
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/rapha%C3%ABl-plassart/"
-                    rel="noreferrer"
-                    target="_blank"
-                  >
+                  <a href={LINKEDIN_URL} rel="noreferrer" target="_blank">
                     <LinkedInIcon size={15} />
                     LinkedIn
+                  </a>
+                  <a href={GITHUB_URL} rel="noreferrer" target="_blank">
+                    <GitHubIcon size={15} />
+                    GitHub
                   </a>
                   <a download href="/cv-raphael-plassart.pdf">
                     <FileText size={15} strokeWidth={1.8} />
@@ -404,8 +372,6 @@ export function PortfolioPage({ locale }: { locale: Locale }) {
               </p>
               <a
                 className="contact-atlas-link"
-                data-cursor="label"
-                data-cursor-label="Atlas"
                 href={atlasUrl(locale)}
                 rel="noopener"
                 target="_blank"
@@ -428,48 +394,7 @@ export function PortfolioPage({ locale }: { locale: Locale }) {
         </section>
       </main>
 
-      <footer className="footer">
-        <div className="shell footer-inner">
-          <p className="footer-note">
-            <b>{copy.footer.note}</b>
-            {copy.footer.built}
-          </p>
-
-          <div className="footer-links">
-            <a href="https://github.com/raphplt" rel="noreferrer" target="_blank">
-              <GitHubIcon size={15} />
-              GitHub
-            </a>
-            <a
-              href="https://www.linkedin.com/in/rapha%C3%ABl-plassart/"
-              rel="noreferrer"
-              target="_blank"
-            >
-              <LinkedInIcon size={15} />
-              LinkedIn
-            </a>
-            <a href="mailto:contact@raphael-plassart.com">
-              <Mail size={15} strokeWidth={1.8} />
-              Email
-            </a>
-            <a href={atlasUrl(locale)} rel="noopener" target="_blank">
-              <ArrowUpRight size={15} strokeWidth={1.8} />
-              Atlas
-            </a>
-          </div>
-
-          <div className="footer-meta mono">
-            <span>
-              © {new Date().getFullYear()} Raphaël Plassart ·{" "}
-              {copy.footer.rights}
-            </span>
-            <a className="link" href="#top">
-              {copy.footer.top}
-              <ArrowUpRight size={13} strokeWidth={2} />
-            </a>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter copy={copy} locale={locale} />
     </SiteChrome>
   );
 }

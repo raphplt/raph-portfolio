@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "../globals.css";
+import { content } from "@/lib/content";
 import { generateJsonLd } from "@/lib/json-ld";
 import { fontVariables } from "@/lib/fonts";
 import { noScriptStyles, themeScript } from "@/lib/theme";
@@ -10,8 +11,7 @@ export const metadata: Metadata = {
     default: "Raphaël Plassart - Full-stack Product Engineer",
     template: "%s - Raphaël Plassart",
   },
-  description:
-    "Développeur full-stack à Paris. Je conçois et livre des produits web, mobile et desktop, de l’architecture à la production. Créateur de QoreDB.",
+  description: content.fr.meta.description,
   keywords: [
     "développeur full-stack Paris",
     "product engineer",

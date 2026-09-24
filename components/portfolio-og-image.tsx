@@ -1,5 +1,7 @@
 import { ImageResponse } from "next/og";
+import { caseStudies } from "@/lib/case-studies";
 import { content, type Locale } from "@/lib/content";
+import { caseStudyAssets, type CaseStudySlug } from "@/lib/projects";
 import { stripMarkers } from "@/lib/rich-text";
 
 const surfaces: Record<Locale, string> = {
@@ -49,7 +51,7 @@ export function createPortfolioOgImage(locale: Locale) {
           }}
         >
           <span style={{ fontWeight: 800 }}>RAPHAËL PLASSART</span>
-          <span style={{ color: "#6e685e" }}>{copy.hero.place}</span>
+          <span style={{ color: "#6e685e" }}>{copy.hero.base.toUpperCase()}</span>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
@@ -104,6 +106,101 @@ export function createPortfolioOgImage(locale: Locale) {
             />
             {creatorLabels[locale]}
           </span>
+        </div>
+      </div>
+    ),
+    ogSize,
+  );
+}
+
+export function createCaseStudyOgImage(locale: Locale, slug: CaseStudySlug) {
+  const asset = caseStudyAssets[slug];
+  const study = caseStudies[slug][locale];
+
+  return new ImageResponse(
+    (
+      <div
+        style={{
+          display: "flex",
+          width: "100%",
+          height: "100%",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          padding: 64,
+          background: "#e9e5dc",
+          color: "#100e0c",
+          fontFamily: "sans-serif",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            paddingBottom: 22,
+            borderBottom: "1px solid rgba(16,14,12,0.22)",
+            fontSize: 20,
+            letterSpacing: "0.16em",
+          }}
+        >
+          <span style={{ fontWeight: 800 }}>RAPHAËL PLASSART</span>
+          <span style={{ color: "#6e685e" }}>
+            {content[locale].caseStudy.kicker.toUpperCase()} · {asset.year}
+          </span>
+        </div>
+
+        <div style={{ display: "flex", flexDirection: "column", gap: 28 }}>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "flex-end",
+              gap: 18,
+              fontSize: 150,
+              fontWeight: 900,
+              letterSpacing: "-0.04em",
+              lineHeight: 0.85,
+              textTransform: "uppercase",
+            }}
+          >
+            {asset.name}
+            <span
+              style={{
+                display: "flex",
+                width: 26,
+                height: 26,
+                marginBottom: 14,
+                background: "#ff3b00",
+              }}
+            />
+          </div>
+          <div
+            style={{
+              display: "flex",
+              maxWidth: 920,
+              color: "#46413a",
+              fontSize: 34,
+              lineHeight: 1.3,
+            }}
+          >
+            {study.tagline}
+          </div>
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            gap: 48,
+            paddingTop: 22,
+            borderTop: "1px solid rgba(16,14,12,0.22)",
+            fontSize: 22,
+          }}
+        >
+          {study.facts.slice(0, 3).map((fact) => (
+            <span key={fact.label} style={{ display: "flex", gap: 10 }}>
+              <b>{fact.value}</b>
+              <span style={{ color: "#6e685e" }}>{fact.label}</span>
+            </span>
+          ))}
         </div>
       </div>
     ),
