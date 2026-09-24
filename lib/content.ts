@@ -360,7 +360,7 @@ const fr: PortfolioContent = {
           "Reprise de toute la plateforme après une réorganisation de l’équipe : architecture, back, front, mobile et déploiement.",
           "Application mobile publiée sur le Play Store ; plateforme adoptée par plusieurs clients, avec plus de 50 utilisateurs réguliers.",
         ],
-        stack: "Turborepo · NestJS · Next.js · Expo · Tauri · Symfony · MySQL · Docker",
+        stack: "Turborepo · NestJS · Next.js · Expo · Tauri · MySQL · Docker",
         caseStudy: "pulse",
       },
       {
@@ -658,7 +658,7 @@ const en: PortfolioContent = {
           "Took over the whole platform after the team was reorganised: architecture, back end, front end, mobile and deployment.",
           "Mobile app published on Google Play; platform adopted by several clients, with 50+ regular users.",
         ],
-        stack: "Turborepo · NestJS · Next.js · Expo · Tauri · Symfony · MySQL · Docker",
+        stack: "Turborepo · NestJS · Next.js · Expo · Tauri · MySQL · Docker",
         caseStudy: "pulse",
       },
       {
@@ -951,7 +951,7 @@ const es: PortfolioContent = {
           "Asumí toda la plataforma tras una reorganización del equipo: arquitectura, back, front, móvil y despliegue.",
           "Aplicación móvil publicada en Google Play; plataforma adoptada por varios clientes, con más de 50 usuarios habituales.",
         ],
-        stack: "Turborepo · NestJS · Next.js · Expo · Tauri · Symfony · MySQL · Docker",
+        stack: "Turborepo · NestJS · Next.js · Expo · Tauri · MySQL · Docker",
         caseStudy: "pulse",
       },
       {
@@ -1245,7 +1245,7 @@ const de: PortfolioContent = {
           "Übernahme der gesamten Plattform nach einer Umstrukturierung des Teams: Architektur, Backend, Frontend, Mobil und Deployment.",
           "Mobile App bei Google Play veröffentlicht; Plattform von mehreren Kunden eingesetzt, mit über 50 regelmäßig Nutzenden.",
         ],
-        stack: "Turborepo · NestJS · Next.js · Expo · Tauri · Symfony · MySQL · Docker",
+        stack: "Turborepo · NestJS · Next.js · Expo · Tauri · MySQL · Docker",
         caseStudy: "pulse",
       },
       {

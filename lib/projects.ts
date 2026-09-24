@@ -64,7 +64,6 @@ export const caseStudyAssets: Record<CaseStudySlug, CaseStudyAsset> = {
       "Next.js",
       "Expo",
       "Tauri",
-      "Symfony",
       "MySQL",
       "Docker",
     ],

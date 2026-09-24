@@ -254,14 +254,14 @@ export const caseStudies: Record<CaseStudySlug, Record<Locale, CaseStudyCopy>> =
           title: "Le contexte",
           paragraphs: [
             "Des entreprises, des établissements scolaires et des structures médico-sociales utilisent des dizaines de casques de réalité virtuelle. Pulse leur permet de piloter cette flotte depuis une seule interface : déployer des contenus, suivre l’usage et l’état des appareils, les organiser par groupes et gérer les droits.",
-            "Je suis arrivé chez Tkorp en janvier 2024, en alternance, pour concevoir et développer la plateforme à partir d’un POC. Le travail couvrait aussi une base historique en Symfony et PHP.",
+            "Je suis arrivé chez Tkorp en janvier 2024, en alternance, pour concevoir et développer la plateforme à partir d’un POC.",
           ],
         },
         {
           title: "Ce que j’ai construit",
           items: [
             "Une architecture en monorepo Turborepo : une API NestJS, un tableau de bord Next.js, une application mobile Expo et une application desktop Tauri.",
-            "La V1 en production à partir du POC, en parallèle de la base historique.",
+            "La V1 en production à partir du POC.",
             "Une chaîne de livraison avec Docker et GitHub Actions, sur une base MySQL, et une application mobile publiée sur le Play Store.",
           ],
         },
@@ -301,14 +301,14 @@ export const caseStudies: Record<CaseStudySlug, Record<Locale, CaseStudyCopy>> =
           title: "Context",
           paragraphs: [
             "Companies, schools and care facilities run dozens of virtual-reality headsets. Pulse lets them manage that fleet from a single interface: deploy content, track usage and device health, organise headsets into groups and manage permissions.",
-            "I joined Tkorp in January 2024, on a work-study contract, to design and build the platform from a proof of concept. The work also covered a legacy Symfony and PHP codebase.",
+            "I joined Tkorp in January 2024, on a work-study contract, to design and build the platform from a proof of concept.",
           ],
         },
         {
           title: "What I built",
           items: [
             "A Turborepo monorepo architecture: a NestJS API, a Next.js dashboard, an Expo mobile app and a Tauri desktop app.",
-            "The V1 in production, grown out of the proof of concept, alongside the legacy codebase.",
+            "The V1 in production, grown out of the proof of concept.",
             "A delivery pipeline with Docker and GitHub Actions on a MySQL database, and a mobile app published on Google Play.",
           ],
         },
@@ -348,14 +348,14 @@ export const caseStudies: Record<CaseStudySlug, Record<Locale, CaseStudyCopy>> =
           title: "El contexto",
           paragraphs: [
             "Empresas, centros educativos y residencias usan decenas de visores de realidad virtual. Pulse les permite gestionar esa flota desde una sola interfaz: desplegar contenidos, seguir el uso y el estado de los dispositivos, organizarlos por grupos y gestionar los permisos.",
-            "Llegué a Tkorp en enero de 2024, en alternancia, para diseñar y desarrollar la plataforma a partir de una prueba de concepto. El trabajo también abarcaba una base histórica en Symfony y PHP.",
+            "Llegué a Tkorp en enero de 2024, en alternancia, para diseñar y desarrollar la plataforma a partir de una prueba de concepto.",
           ],
         },
         {
           title: "Lo que construí",
           items: [
             "Una arquitectura en monorepo Turborepo: una API NestJS, un panel en Next.js, una aplicación móvil Expo y una aplicación de escritorio Tauri.",
-            "La V1 en producción a partir de la prueba de concepto, en paralelo a la base histórica.",
+            "La V1 en producción a partir de la prueba de concepto.",
             "Una cadena de entrega con Docker y GitHub Actions sobre MySQL, y una aplicación móvil publicada en Google Play.",
           ],
         },
@@ -395,14 +395,14 @@ export const caseStudies: Record<CaseStudySlug, Record<Locale, CaseStudyCopy>> =
           title: "Der Kontext",
           paragraphs: [
             "Unternehmen, Schulen und Pflegeeinrichtungen betreiben Dutzende VR-Headsets. Mit Pulse steuern sie diese Flotte über eine einzige Oberfläche: Inhalte ausrollen, Nutzung und Gerätezustand verfolgen, Headsets in Gruppen organisieren und Rechte verwalten.",
-            "Ich kam im Januar 2024 im dualen Studium zu Tkorp, um die Plattform aus einem Proof of Concept heraus zu konzipieren und zu entwickeln. Die Arbeit umfasste auch eine gewachsene Codebasis in Symfony und PHP.",
+            "Ich kam im Januar 2024 im dualen Studium zu Tkorp, um die Plattform aus einem Proof of Concept heraus zu konzipieren und zu entwickeln.",
           ],
         },
         {
           title: "Was ich gebaut habe",
           items: [
             "Eine Monorepo-Architektur mit Turborepo: eine NestJS-API, ein Next.js-Dashboard, eine Expo-App für Mobilgeräte und eine Tauri-Desktop-App.",
-            "Die V1 in Produktion, aus dem Proof of Concept heraus, parallel zur alten Codebasis.",
+            "Die V1 in Produktion, aus dem Proof of Concept heraus.",
             "Eine Auslieferungskette mit Docker und GitHub Actions auf MySQL, und eine bei Google Play veröffentlichte mobile App.",
           ],
         },
