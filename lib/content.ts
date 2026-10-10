@@ -211,7 +211,7 @@ const fr: PortfolioContent = {
   meta: {
     title: "Raphaël Plassart · Full-stack Product Engineer",
     description:
-      "Développeur full-stack à Paris, trois ans en startup. J’ai mené Pulse, un SaaS B2B, du POC à la production, et je construis QoreDB, un client de bases de données open source en Rust. Disponible en novembre 2026.",
+      "Développeur full-stack à Paris, trois ans en startup. J’ai mené Pulse, un SaaS B2B, du POC à la production, et je construis QoreDB, un client de bases de données open source en Rust. Disponible en décembre 2026.",
     ogDescription:
       "Je construis les outils que je voulais utiliser. Web, mobile, desktop, infrastructure.",
   },
@@ -275,7 +275,7 @@ const fr: PortfolioContent = {
     ctaContact: "Me contacter",
     cv: "Télécharger le CV",
     statusLabel: "Disponibilité",
-    status: "Novembre 2026",
+    status: "Décembre 2026",
     lookingLabel: "Je cherche",
     looking: "Mon prochain poste, dans une équipe produit",
   },
@@ -462,13 +462,13 @@ const fr: PortfolioContent = {
       "UN PRODUIT *exigeant* ?",
       "PARLONS-EN.",
     ],
-    lead: "Je cherche mon prochain poste à partir de novembre 2026 : une équipe produit, des sujets qu’on me laisse traiter en entier, et des gens prêts à refaire une fois qu’on a compris le problème.",
+    lead: "Je cherche mon prochain poste à partir de décembre 2026 : une équipe produit, des sujets qu’on me laisse traiter en entier, et des gens prêts à refaire une fois qu’on a compris le problème.",
     emailLabel: "Écrivez-moi",
     cvLabel: "Curriculum vitae",
     locationLabel: "Basé à",
     location: "Paris · remote possible",
     statusLabel: "Disponibilité",
-    availability: "À partir de novembre 2026",
+    availability: "À partir de décembre 2026",
     atlas: {
       label: "Côté freelance",
       text: "Un site pour votre activité ? C’est le rôle d’*Atlas*, mon studio freelance : des sites rapides et bien référencés pour les artisans, les TPE et les indépendants.",
@@ -496,7 +496,7 @@ const fr: PortfolioContent = {
       "Produit client : le code n’est pas public.",
     contactTitle: "Un poste qui ressemble à ça ?",
     contactText:
-      "Je suis disponible à partir de novembre 2026. Le plus simple est de m’écrire.",
+      "Je suis disponible à partir de décembre 2026. Le plus simple est de m’écrire.",
     contactCta: "M’écrire",
   },
 };
@@ -505,7 +505,7 @@ const en: PortfolioContent = {
   meta: {
     title: "Raphaël Plassart · Full-stack Product Engineer",
     description:
-      "Full-stack developer in Paris, three years in startups. I took Pulse, a B2B SaaS, from proof of concept to production, and I build QoreDB, an open-source database client in Rust. Available from November 2026.",
+      "Full-stack developer in Paris, three years in startups. I took Pulse, a B2B SaaS, from proof of concept to production, and I build QoreDB, an open-source database client in Rust. Available from December 2026.",
     ogDescription:
       "I build the tools I wanted to use. Web, mobile, desktop, infrastructure.",
   },
@@ -569,7 +569,7 @@ const en: PortfolioContent = {
     ctaContact: "Get in touch",
     cv: "Download résumé",
     statusLabel: "Available",
-    status: "November 2026",
+    status: "December 2026",
     lookingLabel: "Looking for",
     looking: "My next role, on a product team",
   },
@@ -751,13 +751,13 @@ const en: PortfolioContent = {
   contact: {
     label: "Contact",
     lines: ["YOUR TEAM IS BUILDING", "A *demanding* PRODUCT?", "LET’S TALK."],
-    lead: "I am looking for my next role from November 2026: a product team, subjects I get to handle end to end, and people willing to redo something once we understand the problem.",
+    lead: "I am looking for my next role from December 2026: a product team, subjects I get to handle end to end, and people willing to redo something once we understand the problem.",
     emailLabel: "Write to me",
     cvLabel: "Résumé",
     locationLabel: "Based in",
     location: "Paris · open to remote",
     statusLabel: "Available",
-    availability: "From November 2026",
+    availability: "From December 2026",
     atlas: {
       label: "Freelance work",
       text: "Need a website for your business? That’s what *Atlas*, my freelance studio, is for: fast, well-ranked websites for craftspeople, small businesses and independents.",
@@ -785,7 +785,7 @@ const en: PortfolioContent = {
       "Client product: the code is not public.",
     contactTitle: "A role that looks like this?",
     contactText:
-      "I am available from November 2026. The simplest way is to write to me.",
+      "I am available from December 2026. The simplest way is to write to me.",
     contactCta: "Write to me",
   },
 };
@@ -794,7 +794,7 @@ const es: PortfolioContent = {
   meta: {
     title: "Raphaël Plassart · Full-stack Product Engineer",
     description:
-      "Desarrollador full-stack en París, tres años en startups. Llevé Pulse, un SaaS B2B, de la prueba de concepto a producción, y construyo QoreDB, un cliente de bases de datos de código abierto en Rust. Disponible en noviembre de 2026.",
+      "Desarrollador full-stack en París, tres años en startups. Llevé Pulse, un SaaS B2B, de la prueba de concepto a producción, y construyo QoreDB, un cliente de bases de datos de código abierto en Rust. Disponible en diciembre de 2026.",
     ogDescription:
       "Construyo las herramientas que quería usar. Web, móvil, escritorio, infraestructura.",
   },
@@ -858,7 +858,7 @@ const es: PortfolioContent = {
     ctaContact: "Contactarme",
     cv: "Descargar el CV",
     statusLabel: "Disponible",
-    status: "Noviembre de 2026",
+    status: "Diciembre de 2026",
     lookingLabel: "Busco",
     looking: "Mi próximo puesto, en un equipo de producto",
   },
@@ -1041,13 +1041,13 @@ const es: PortfolioContent = {
   contact: {
     label: "Contacto",
     lines: ["¿TU EQUIPO CONSTRUYE", "UN PRODUCTO *exigente*?", "HABLEMOS."],
-    lead: "Busco mi próximo puesto a partir de noviembre de 2026: un equipo de producto, temas que me dejen llevar de principio a fin, y gente dispuesta a rehacer algo cuando el problema ya se entiende.",
+    lead: "Busco mi próximo puesto a partir de diciembre de 2026: un equipo de producto, temas que me dejen llevar de principio a fin, y gente dispuesta a rehacer algo cuando el problema ya se entiende.",
     emailLabel: "Escríbeme",
     cvLabel: "Currículum",
     locationLabel: "Desde",
     location: "París · remoto posible",
     statusLabel: "Disponible",
-    availability: "A partir de noviembre de 2026",
+    availability: "A partir de diciembre de 2026",
     atlas: {
       label: "Trabajo freelance",
       text: "¿Necesitas una web para tu negocio? Para eso está *Atlas*, mi estudio freelance: sitios rápidos y bien posicionados para artesanos, pequeñas empresas e independientes.",
@@ -1075,7 +1075,7 @@ const es: PortfolioContent = {
       "Producto de cliente: el código no es público.",
     contactTitle: "¿Un puesto que se parezca a esto?",
     contactText:
-      "Estoy disponible a partir de noviembre de 2026. Lo más sencillo es escribirme.",
+      "Estoy disponible a partir de diciembre de 2026. Lo más sencillo es escribirme.",
     contactCta: "Escribirme",
   },
 };
@@ -1084,7 +1084,7 @@ const de: PortfolioContent = {
   meta: {
     title: "Raphaël Plassart · Full-stack Product Engineer",
     description:
-      "Full-Stack-Entwickler in Paris, drei Jahre in Startups. Ich habe Pulse, ein B2B-SaaS, vom Proof of Concept bis in die Produktion geführt und baue QoreDB, einen quelloffenen Datenbank-Client in Rust. Verfügbar ab November 2026.",
+      "Full-Stack-Entwickler in Paris, drei Jahre in Startups. Ich habe Pulse, ein B2B-SaaS, vom Proof of Concept bis in die Produktion geführt und baue QoreDB, einen quelloffenen Datenbank-Client in Rust. Verfügbar ab Dezember 2026.",
     ogDescription:
       "Ich baue die Werkzeuge, die ich benutzen wollte. Web, Mobil, Desktop, Infrastruktur.",
   },
@@ -1148,7 +1148,7 @@ const de: PortfolioContent = {
     ctaContact: "Kontakt aufnehmen",
     cv: "Lebenslauf herunterladen",
     statusLabel: "Verfügbar",
-    status: "November 2026",
+    status: "Dezember 2026",
     lookingLabel: "Ich suche",
     looking: "Meine nächste Stelle in einem Produktteam",
   },
@@ -1335,13 +1335,13 @@ const de: PortfolioContent = {
       "EIN *anspruchsvolles* PRODUKT?",
       "SPRECHEN WIR.",
     ],
-    lead: "Ich suche ab November 2026 meine nächste Stelle: ein Produktteam, Themen, die ich von Anfang bis Ende verantworten darf, und Menschen, die bereit sind, etwas neu zu bauen, sobald das Problem verstanden ist.",
+    lead: "Ich suche ab Dezember 2026 meine nächste Stelle: ein Produktteam, Themen, die ich von Anfang bis Ende verantworten darf, und Menschen, die bereit sind, etwas neu zu bauen, sobald das Problem verstanden ist.",
     emailLabel: "Schreib mir",
     cvLabel: "Lebenslauf",
     locationLabel: "Standort",
     location: "Paris · Remote möglich",
     statusLabel: "Verfügbar",
-    availability: "Ab November 2026",
+    availability: "Ab Dezember 2026",
     atlas: {
       label: "Freelance",
       text: "Sie brauchen eine Website für Ihr Unternehmen? Dafür gibt es *Atlas*, mein Freelance-Studio: schnelle, gut auffindbare Websites für Handwerk, kleine Betriebe und Selbstständige.",
@@ -1369,7 +1369,7 @@ const de: PortfolioContent = {
       "Kundenprodukt: Der Code ist nicht öffentlich.",
     contactTitle: "Eine Stelle, die so aussieht?",
     contactText:
-      "Ich bin ab November 2026 verfügbar. Am einfachsten schreibst du mir.",
+      "Ich bin ab Dezember 2026 verfügbar. Am einfachsten schreibst du mir.",
     contactCta: "Schreib mir",
   },
 };
