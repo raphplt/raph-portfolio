@@ -103,7 +103,7 @@ export const caseStudyAssets: Record<CaseStudySlug, CaseStudyAsset> = {
 
 export const caseStudyOrder: CaseStudySlug[] = ["qoredb", "pulse", "tcg-nexus"];
 
-export type ShippedSlug = "melios" | "zevent-radar" | "quori";
+export type ShippedSlug = "leximon" | "vestiges" | "melios";
 
 export type ShippedAsset = {
   slug: ShippedSlug;
@@ -116,6 +116,30 @@ export type ShippedAsset = {
 
 export const shippedProjects: ShippedAsset[] = [
   {
+    slug: "leximon",
+    name: "Leximon",
+    year: "2026",
+    href: "https://leximon.fr/",
+    image: {
+      src: "/images/projects/Leximon.png",
+      width: 1520,
+      height: 950,
+    },
+    stack: ["Next.js", "TypeScript", "PostgreSQL"],
+  },
+  {
+    slug: "vestiges",
+    name: "Vestiges",
+    year: "2026",
+    href: "https://parphelie.com/vestiges",
+    image: {
+      src: "/images/projects/Vestiges.png",
+      width: 1280,
+      height: 800,
+    },
+    stack: ["Godot 4", "C#", "Shaders"],
+  },
+  {
     slug: "melios",
     name: "Melios",
     year: "2024",
@@ -123,31 +147,11 @@ export const shippedProjects: ShippedAsset[] = [
     image: { src: "/images/projects/Melios.png", width: 1100, height: 1100 },
     stack: ["React Native", "Expo", "Firebase"],
   },
-  {
-    slug: "zevent-radar",
-    name: "ZEvent Radar",
-    year: "2026",
-    href: "https://zgoals.xyz/",
-    image: {
-      src: "/images/projects/ZEventRadar.png",
-      width: 1440,
-      height: 1220,
-    },
-    stack: ["React", "Cloudflare Workers", "PWA"],
-  },
-  {
-    slug: "quori",
-    name: "Quori",
-    year: "2025",
-    href: "https://github.com/raphplt/quori",
-    image: { src: "/images/projects/Quori.png", width: 2538, height: 1371 },
-    stack: ["Next.js", "NestJS", "PostgreSQL"],
-  },
 ];
 
 export type LabSlug =
-  | "leximon"
-  | "vestiges"
+  | "zevent-radar"
+  | "quori"
   | "penfolio"
   | "myriade"
   | "clear-mind"
@@ -164,20 +168,20 @@ export type LabAsset = {
 
 export const labProjects: LabAsset[] = [
   {
-    slug: "leximon",
-    name: "Leximon",
+    slug: "zevent-radar",
+    name: "ZEvent Radar",
     year: "2026",
-    href: "https://leximon.fr/",
-    image: "/images/projects/Leximon.png",
-    tag: "Next.js · Littré",
+    href: "https://zgoals.xyz/",
+    image: "/images/projects/ZEventRadar.png",
+    tag: "React · Workers",
   },
   {
-    slug: "vestiges",
-    name: "Vestiges",
-    year: "2026",
-    href: "https://parphelie.com/vestiges",
-    image: "/images/projects/Vestiges.png",
-    tag: "Godot 4 · C#",
+    slug: "quori",
+    name: "Quori",
+    year: "2025",
+    href: "https://github.com/raphplt/quori",
+    image: "/images/projects/Quori.png",
+    tag: "Next.js · NestJS",
   },
   {
     slug: "penfolio",

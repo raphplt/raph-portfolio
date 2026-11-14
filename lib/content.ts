@@ -319,23 +319,23 @@ const fr: PortfolioContent = {
     },
     shippedLabel: "Autres produits livrés",
     shipped: {
+      leximon: {
+        type: "Web · Jeu de cartes",
+        description:
+          "Un jeu de cartes à collectionner autour de plus de 2 000 mots oubliés du Littré, illustrés de gravures du XIXe siècle. Sachets quotidiens, album, défis et échanges.",
+        proof: "2 000+ mots du Littré",
+      },
+      vestiges: {
+        type: "Jeu PC · Création solo",
+        description:
+          "Un survivors-like en pixel art isométrique où l’on remonte la nuit qu’une ville a voulu oublier, pendant que le terrain s’efface dans le Vide.",
+        proof: "5 Terres · 60 FPS",
+      },
       melios: {
         type: "Mobile · Cofondateur",
         description:
           "Une application de développement personnel gamifiée, incubée à l’ESSEC et publiée sur l’App Store et le Play Store.",
         proof: "150+ bêta-testeurs",
-      },
-      "zevent-radar": {
-        type: "Web · Temps réel",
-        description:
-          "Le second écran du ZEvent : cagnottes en direct, donation goals à portée et alertes quand un palier approche. Tenu pendant les 77 heures de l’édition.",
-        proof: "Cloudflare Workers",
-      },
-      quori: {
-        type: "SaaS · Full-stack",
-        description:
-          "Votre activité GitHub transformée en publications LinkedIn présentables. Rédaction, édition, planification.",
-        proof: "NestJS · Redis",
       },
     },
     archiveText:
@@ -446,10 +446,10 @@ const fr: PortfolioContent = {
       "Un arcade en canvas, écrit pour le plaisir. Le classement est en PostgreSQL, parce qu’il fallait bien une excuse pour brancher une base.",
     gamePlay: "Lancer le jeu",
     items: {
-      leximon:
-        "Un jeu de cartes à collectionner autour des mots oubliés du Littré, illustrés de gravures du XIXe siècle.",
-      vestiges:
-        "Un survivors-like en pixel art isométrique écrit en C# sous Godot 4, où le terrain s’efface dans le Vide.",
+      "zevent-radar":
+        "Le second écran du ZEvent : cagnottes en direct, donation goals à portée et alertes quand un palier approche.",
+      quori:
+        "Votre activité GitHub transformée en publications LinkedIn présentables : rédaction, édition et planification.",
       penfolio:
         "Un générateur de portfolios qui agrège GitHub, LinkedIn et Behance. 200 portfolios créés.",
       myriade: "Un moteur de recherche expérimental, écrit en Python.",
@@ -617,23 +617,23 @@ const en: PortfolioContent = {
     },
     shippedLabel: "Other shipped products",
     shipped: {
+      leximon: {
+        type: "Web · Card game",
+        description:
+          "A collectible card game built around 2,000+ forgotten French words from the Littré dictionary and 19th-century engravings. Daily packs, album, challenges and trading.",
+        proof: "2,000+ Littré words",
+      },
+      vestiges: {
+        type: "PC game · Solo dev",
+        description:
+          "An isometric pixel-art survivors-like where you trace back the night a city tried to forget, as the ground gives way to the Void.",
+        proof: "5 Lands · 60 FPS",
+      },
       melios: {
         type: "Mobile · Co-founder",
         description:
           "A gamified personal-development app, incubated at ESSEC and published on the App Store and Google Play.",
         proof: "150+ beta testers",
-      },
-      "zevent-radar": {
-        type: "Web · Real time",
-        description:
-          "The ZEvent second screen: live donation totals, goals within reach and alerts when a milestone is closing in. Held up across the 77 hours of the event.",
-        proof: "Cloudflare Workers",
-      },
-      quori: {
-        type: "SaaS · Full-stack",
-        description:
-          "Your GitHub activity turned into LinkedIn posts that hold up. Writing, editing, scheduling.",
-        proof: "NestJS · Redis",
       },
     },
     archiveText:
@@ -743,10 +743,10 @@ const en: PortfolioContent = {
       "A canvas arcade, written for the fun of it. The leaderboard runs on PostgreSQL, because I needed an excuse to plug in a database.",
     gamePlay: "Launch the game",
     items: {
-      leximon:
-        "A collectible card game built around forgotten French words from the Littré dictionary and 19th-century engravings.",
-      vestiges:
-        "An isometric pixel-art survivors-like written in C# with Godot 4, where the ground gives way to the Void.",
+      "zevent-radar":
+        "The ZEvent second screen: live donation totals, goals within reach and alerts when a milestone is closing in.",
+      quori:
+        "Your GitHub activity turned into LinkedIn posts that hold up: writing, editing and scheduling.",
       penfolio:
         "A portfolio generator that aggregates GitHub, LinkedIn and Behance. 200 portfolios created.",
       myriade: "An experimental search engine, written in Python.",
@@ -910,23 +910,23 @@ const es: PortfolioContent = {
     },
     shippedLabel: "Otros productos entregados",
     shipped: {
+      leximon: {
+        type: "Web · Juego de cartas",
+        description:
+          "Un juego de cartas coleccionables con más de 2 000 palabras olvidadas del diccionario Littré y grabados del siglo XIX. Sobres diarios, álbum, desafíos e intercambios.",
+        proof: "2 000+ palabras del Littré",
+      },
+      vestiges: {
+        type: "Juego PC · En solitario",
+        description:
+          "Un survivors-like isométrico en pixel art donde remontas la noche que una ciudad quiso olvidar, mientras el terreno desaparece en el Vacío.",
+        proof: "5 Tierras · 60 FPS",
+      },
       melios: {
         type: "Móvil · Cofundador",
         description:
           "Una aplicación de desarrollo personal gamificada, incubada en ESSEC y publicada en la App Store y Google Play.",
         proof: "150+ beta-testers",
-      },
-      "zevent-radar": {
-        type: "Web · Tiempo real",
-        description:
-          "La segunda pantalla del ZEvent: donaciones en directo, goals al alcance y alertas cuando se acerca un hito. Aguantó las 77 horas del evento.",
-        proof: "Cloudflare Workers",
-      },
-      quori: {
-        type: "SaaS · Full-stack",
-        description:
-          "Tu actividad de GitHub convertida en publicaciones de LinkedIn presentables. Redacción, edición, planificación.",
-        proof: "NestJS · Redis",
       },
     },
     archiveText:
@@ -1037,10 +1037,10 @@ const es: PortfolioContent = {
       "Un arcade en canvas, escrito por gusto. La clasificación va en PostgreSQL, porque hacía falta una excusa para enchufar una base de datos.",
     gamePlay: "Lanzar el juego",
     items: {
-      leximon:
-        "Un juego de cartas coleccionables con palabras olvidadas del diccionario Littré y grabados del siglo XIX.",
-      vestiges:
-        "Un survivors-like isométrico en pixel art escrito en C# con Godot 4, donde el terreno desaparece en el Vacío.",
+      "zevent-radar":
+        "La segunda pantalla del ZEvent: donaciones en directo, goals al alcance y alertas cuando se acerca un hito.",
+      quori:
+        "Tu actividad de GitHub convertida en publicaciones de LinkedIn presentables: redacción, edición y planificación.",
       penfolio:
         "Un generador de portfolios que agrega GitHub, LinkedIn y Behance. 200 portfolios creados.",
       myriade: "Un motor de búsqueda experimental, escrito en Python.",
@@ -1204,23 +1204,23 @@ const de: PortfolioContent = {
     },
     shippedLabel: "Weitere gelieferte Produkte",
     shipped: {
+      leximon: {
+        type: "Web · Kartenspiel",
+        description:
+          "Ein Sammelkartenspiel rund um über 2 000 vergessene Wörter aus dem Littré-Wörterbuch und Stiche aus dem 19. Jahrhundert. Tägliche Booster, Album, Challenges und Tausch.",
+        proof: "2 000+ Littré-Wörter",
+      },
+      vestiges: {
+        type: "PC-Spiel · Solo-Projekt",
+        description:
+          "Ein isometrisches Pixel-Art-Survivors-like, in dem man die Nacht zurückverfolgt, die eine Stadt vergessen wollte, während das Gelände im Nichts verschwindet.",
+        proof: "5 Länder · 60 FPS",
+      },
       melios: {
         type: "Mobil · Mitgründer",
         description:
           "Eine spielerische App zur Persönlichkeitsentwicklung, an der ESSEC inkubiert und im App Store und bei Google Play veröffentlicht.",
         proof: "150+ Beta-Tester",
-      },
-      "zevent-radar": {
-        type: "Web · Echtzeit",
-        description:
-          "Der Second Screen des ZEvent: Spenden in Echtzeit, erreichbare Goals und Alerts, wenn ein Meilenstein näher rückt. Hielt die 77 Stunden der Edition durch.",
-        proof: "Cloudflare Workers",
-      },
-      quori: {
-        type: "SaaS · Full-stack",
-        description:
-          "Deine GitHub-Aktivität, übersetzt in vorzeigbare LinkedIn-Beiträge. Schreiben, Bearbeiten, Planen.",
-        proof: "NestJS · Redis",
       },
     },
     archiveText:
@@ -1331,10 +1331,10 @@ const de: PortfolioContent = {
       "Ein Canvas-Arcade, aus Spaß geschrieben. Die Rangliste läuft auf PostgreSQL, weil es einen Vorwand brauchte, eine Datenbank anzuschließen.",
     gamePlay: "Spiel starten",
     items: {
-      leximon:
-        "Ein Sammelkartenspiel rund um vergessene Wörter aus dem Littré-Wörterbuch und Stiche aus dem 19. Jahrhundert.",
-      vestiges:
-        "Ein isometrisches Pixel-Art-Survivors-like in C# mit Godot 4, in dem das Gelände im Nichts verschwindet.",
+      "zevent-radar":
+        "Der Second Screen des ZEvent: Spenden in Echtzeit, erreichbare Goals und Alerts, wenn ein Meilenstein näher rückt.",
+      quori:
+        "Deine GitHub-Aktivität, übersetzt in vorzeigbare LinkedIn-Beiträge: Schreiben, Bearbeiten und Planen.",
       penfolio:
         "Ein Portfolio-Generator, der GitHub, LinkedIn und Behance zusammenführt. 200 erstellte Portfolios.",
       myriade: "Eine experimentelle Suchmaschine, in Python geschrieben.",
