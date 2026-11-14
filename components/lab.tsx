@@ -53,7 +53,7 @@ export function Lab({ copy }: { copy: PortfolioContent }) {
                 <Image
                   alt={`${copy.aria.projectPreview} ${project.name}`}
                   fill
-                  sizes="(max-width: 48rem) 94vw, (max-width: 72rem) 45vw, 23vw"
+                  sizes="(max-width: 48rem) 94vw, (max-width: 72rem) 45vw, 31vw"
                   src={project.image}
                 />
               </div>

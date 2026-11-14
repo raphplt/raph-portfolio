@@ -145,7 +145,13 @@ export const shippedProjects: ShippedAsset[] = [
   },
 ];
 
-export type LabSlug = "penfolio" | "myriade" | "clear-mind" | "raphotos";
+export type LabSlug =
+  | "leximon"
+  | "vestiges"
+  | "penfolio"
+  | "myriade"
+  | "clear-mind"
+  | "raphotos";
 
 export type LabAsset = {
   slug: LabSlug;
@@ -157,6 +163,22 @@ export type LabAsset = {
 };
 
 export const labProjects: LabAsset[] = [
+  {
+    slug: "leximon",
+    name: "Leximon",
+    year: "2026",
+    href: "https://leximon.fr/",
+    image: "/images/projects/Leximon.png",
+    tag: "Next.js · Littré",
+  },
+  {
+    slug: "vestiges",
+    name: "Vestiges",
+    year: "2026",
+    href: "https://parphelie.com/vestiges",
+    image: "/images/projects/Vestiges.png",
+    tag: "Godot 4 · C#",
+  },
   {
     slug: "penfolio",
     name: "Penfolio",

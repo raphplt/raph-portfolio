@@ -446,6 +446,10 @@ const fr: PortfolioContent = {
       "Un arcade en canvas, écrit pour le plaisir. Le classement est en PostgreSQL, parce qu’il fallait bien une excuse pour brancher une base.",
     gamePlay: "Lancer le jeu",
     items: {
+      leximon:
+        "Un jeu de cartes à collectionner autour des mots oubliés du Littré, illustrés de gravures du XIXe siècle.",
+      vestiges:
+        "Un survivors-like en pixel art isométrique écrit en C# sous Godot 4, où le terrain s’efface dans le Vide.",
       penfolio:
         "Un générateur de portfolios qui agrège GitHub, LinkedIn et Behance. 200 portfolios créés.",
       myriade: "Un moteur de recherche expérimental, écrit en Python.",
@@ -739,6 +743,10 @@ const en: PortfolioContent = {
       "A canvas arcade, written for the fun of it. The leaderboard runs on PostgreSQL, because I needed an excuse to plug in a database.",
     gamePlay: "Launch the game",
     items: {
+      leximon:
+        "A collectible card game built around forgotten French words from the Littré dictionary and 19th-century engravings.",
+      vestiges:
+        "An isometric pixel-art survivors-like written in C# with Godot 4, where the ground gives way to the Void.",
       penfolio:
         "A portfolio generator that aggregates GitHub, LinkedIn and Behance. 200 portfolios created.",
       myriade: "An experimental search engine, written in Python.",
@@ -1029,6 +1037,10 @@ const es: PortfolioContent = {
       "Un arcade en canvas, escrito por gusto. La clasificación va en PostgreSQL, porque hacía falta una excusa para enchufar una base de datos.",
     gamePlay: "Lanzar el juego",
     items: {
+      leximon:
+        "Un juego de cartas coleccionables con palabras olvidadas del diccionario Littré y grabados del siglo XIX.",
+      vestiges:
+        "Un survivors-like isométrico en pixel art escrito en C# con Godot 4, donde el terreno desaparece en el Vacío.",
       penfolio:
         "Un generador de portfolios que agrega GitHub, LinkedIn y Behance. 200 portfolios creados.",
       myriade: "Un motor de búsqueda experimental, escrito en Python.",
@@ -1319,6 +1331,10 @@ const de: PortfolioContent = {
       "Ein Canvas-Arcade, aus Spaß geschrieben. Die Rangliste läuft auf PostgreSQL, weil es einen Vorwand brauchte, eine Datenbank anzuschließen.",
     gamePlay: "Spiel starten",
     items: {
+      leximon:
+        "Ein Sammelkartenspiel rund um vergessene Wörter aus dem Littré-Wörterbuch und Stiche aus dem 19. Jahrhundert.",
+      vestiges:
+        "Ein isometrisches Pixel-Art-Survivors-like in C# mit Godot 4, in dem das Gelände im Nichts verschwindet.",
       penfolio:
         "Ein Portfolio-Generator, der GitHub, LinkedIn und Behance zusammenführt. 200 erstellte Portfolios.",
       myriade: "Eine experimentelle Suchmaschine, in Python geschrieben.",
